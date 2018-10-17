@@ -30,7 +30,7 @@
       <a href="qna.bd"><button id="qna">Q&A</button></a>
    </div>
    <div id="mystore" >
-      <a href=""><button id="mystore">내 상점</button></a>
+      <a href=""><button id="mystore">내 상점이다</button></a>
    </div>
    <br>
 
