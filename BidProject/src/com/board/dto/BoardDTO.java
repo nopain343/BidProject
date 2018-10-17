@@ -1,7 +1,19 @@
 package com.board.dto;
 
 public class BoardDTO {
-	private int seq;
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
+/*	private int seq;
 	private String id;
 	private String name;
 	private String email;
@@ -92,5 +104,5 @@ public class BoardDTO {
 	}
 	public void setLogtime(String logtime) {
 		this.logtime = logtime;
-	}
+	}*/
 }

@@ -79,6 +79,17 @@ drop   sequence seq_board
 --☆ 자동으로 1씩 증가하는 값을 얻어오기
 select seq_board.nextval from dual
 
+//==================================
+
+CREATE TABLE TEST(name varchar2(20))
+
+insert into test values('a');
+insert into test values('sana');
+insert into test values('mina');
+insert into test values('momo');
+insert into test values('IU');
+
+select * from test
 
 
 

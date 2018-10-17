@@ -13,15 +13,13 @@
 	<tr>
 		<td>이름</td>
 		<td>나이</td>
-		<td>취미</td>
+		<td>${list2}</td>
 	</tr>
 	
 	<c:if test="${!empty list}">
 		<c:forEach items="${list}"  var="ob">
 			<tr>
 				<td>${ob.name}</td>
-				<td>${ob.seq}</td>
-				<td>${ob.id}</td>
 			</tr>
 		</c:forEach>
 	</c:if>

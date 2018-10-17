@@ -11,10 +11,11 @@ import com.board.dto.BoardDTO;
 @Service
 public class BoardListService{	
 	@Autowired
-	private BoardDAO dao;
+	private BoardDAO boardDAO;
 
 	public List<BoardDTO> boardList() {
-		return dao.boardList();
+		return boardDAO.boardList();
 	}
+
 
 }

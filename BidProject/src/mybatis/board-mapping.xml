@@ -4,7 +4,7 @@
 <mapper namespace="boardNameSpace">
 	<select id="boardlist" resultType="boardDto">
 		<![CDATA[
-			SELECT * FROM BOARD
+			SELECT * FROM TEST
 		]]>
 	</select>
 	
