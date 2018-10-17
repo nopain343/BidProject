@@ -11,9 +11,9 @@ LOGIN
 <form action="/BidProject/loginProc.go" method="post">
 	<input type="text" id="id" name="id" placeholder="ID"/>
 	<input type="password" id="password" name="password" placeholder="Password"/>
-	<input type="hidden" id="nickname" name="password" placeholder="Password"/>
-	<input type="hidden" id="address" name="password" placeholder="Password"/>
-	<input type="hidden" id="password" name="password" placeholder="Password"/>
+	<input type="hidden" id="nickname" name="nickname"/>
+	<input type="hidden" id="address" name="address"/>
+	<input type="hidden" id="phone" name="phone"/>
 	<input type="submit" value="로그인"/>
 </form>
 

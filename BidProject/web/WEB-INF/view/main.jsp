@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,9 +18,15 @@
          <a href=""><button id="search">검색</button></a>
    </div>
    <br>
-
+	
    <div id="log">
-      <a href="/BidProject/login.go"><button id="log">로그인</button></a>
+	   <c:if test="${empty logOK}">
+			<a href="/BidProject/login.go"><button id="login">로그인</button></a>
+	   </c:if>
+	
+	   <c:if test="${!empty logOK}">
+		  	<a href="/BidProject/logout.go"><button id="logout">로그아웃</button></a>
+	   </c:if>
    </div>
 
    <div id="sale" >

@@ -38,10 +38,17 @@ public class UserController {
 			
 			return new ModelAndView("main");
 		}else {
-			return new ModelAndView("/login.go");
+			return new ModelAndView("login");
 		}
 	}
 	
+	@RequestMapping(value = "/logout.go", method = RequestMethod.POST)
+	public ModelAndView logout(@ModelAttribute UserVO user, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.invalidate();
+			
+		return new ModelAndView("main");
+	}
 
 	@RequestMapping("/join.go")
 	public ModelAndView join(Model model) {
