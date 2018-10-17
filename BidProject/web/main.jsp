@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   중고경매 프로젝트
+   중고경매 프로젝트  2018-10-17
    <br>
 
    <div id="search" class="search">
