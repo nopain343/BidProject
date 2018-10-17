@@ -1,17 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE htm>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type">
 <title>Insert title here</title>
 </head>
 <body>
 LOGIN
 
-<input type="text" id="id" name="id" placeholder="ID" value=""/>
-<input type="password" id="pwd" name="pwd" placeholder="Password"/>
-<a href="">로그인</a>
+<form action="/BidProject/loginProc.go" method="post">
+	<input type="text" id="id" name="id" placeholder="ID"/>
+	<input type="password" id="password" name="password" placeholder="Password"/>
+	<input type="hidden" id="nickname" name="password" placeholder="Password"/>
+	<input type="hidden" id="address" name="password" placeholder="Password"/>
+	<input type="hidden" id="password" name="password" placeholder="Password"/>
+	<input type="submit" value="로그인"/>
+</form>
+
 <a href="join.go">회원가입</a>
 </body>
 </html>

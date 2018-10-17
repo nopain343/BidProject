@@ -2,19 +2,17 @@ drop table user1;
 
 create table user1(
 id varchar2(20),
-pwd varchar2(20),
-name_u varchar2(20),
-birth varchar2(20),
-gender number,
-tel varchar2(20));
+password varchar2(20),
+nickname varchar2(20),
+address varchar2(50),
+phone varchar2(20));
 
-insert into user1 values('a','1234','ddd','19921113','1','010123158')
-
+insert into user1 values('admin', '1234', 'tomato', 'ì„œìš¸ì‹œ ê°•ë‚¨êµ¬ ë…¼í˜„ë™', '010-1577-1577');
 select * from user1;
 
 select * from tab;
 
-
+SELECT * FROM USER1 WHERE ID='admin' AND PASSWORD='1234'
 //-------------------------------------------
 
 drop table category
@@ -42,54 +40,3 @@ descrip varchar2(4000)
 )
 
 select * from sales 
-
-//=================================================
-
-drop table board
-
-CREATE TABLE board(
-     seq NUMBER NOT NULL,                     --±Û¹øÈ£
-     id VARCHAR2(20) NOT NULL,              --¾ÆÀÌµğ
-     name VARCHAR2(40) NOT NULL,         --ÀÌ¸§
-     email VARCHAR2(40),                         --ÀÌ¸ŞÀÏ
-     subject VARCHAR2(255) NOT NULL,     --Á¦¸ñ
-     content VARCHAR2(4000) NOT NULL,   --³»¿ë 
-
-     ref NUMBER NOT NULL,                       --±×·ì¹øÈ£
-     lev NUMBER DEFAULT 0 NOT NULL,      --´Ü°è
-     step NUMBER DEFAULT 0 NOT NULL,    --±Û¼ø¼­
-     pseq NUMBER DEFAULT 0 NOT NULL,   --¿ø±Û¹øÈ£
-     reply NUMBER DEFAULT 0 NOT NULL,   --´äº¯¼ö
-
-     hit NUMBER DEFAULT 0,                      --Á¶È¸¼ö
-     logtime DATE DEFAULT SYSDATE
- );
- insert into board values(seq_board.nextval,'a','¼±Àç','sunup1','Á¦°ğ³»','³»°ğÁ¦',2,0,0,0,0,0,'2018-10-16')
- insert into board values(seq_board.nextval,'saan','sasdf','¤±¤¤¤©12','¤·¤·¤·','¤±¤¤¤·¤©',2,0,0,0,0,0,'2018-10-14')
- insert into board values(seq_board.nextval,'momo','³ª³ª','¤·³à½À','¤Ğ¤Ğ','³»°ğÁ¦',1,0,0,0,0,0,'2018-10-11')
---¡Ù ½ÃÄö½º °´Ã¼ ÀÛ¼º
-create sequence ½ÃÄö½º°´Ã¼¸í
-create sequence seq_board  nocache nocycle;
-
-select * from board
---¡Ù ½ÃÄö½º °´Ã¼ »èÁ¦
-drop   sequence ½ÃÄö½º°´Ã¼¸í
-drop   sequence seq_board
-
---¡Ù ÀÚµ¿À¸·Î 1¾¿ Áõ°¡ÇÏ´Â °ªÀ» ¾ò¾î¿À±â
-select seq_board.nextval from dual
-
-//==================================
-
-CREATE TABLE TEST(name varchar2(20))
-
-insert into test values('a');
-insert into test values('sana');
-insert into test values('mina');
-insert into test values('momo');
-insert into test values('IU');
-
-select * from test
-
-
-

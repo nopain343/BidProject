@@ -12,8 +12,8 @@ public class UserDao {
 	private SqlSessionFactory factory;
 	
 	public boolean loginUser(UserVO user) {
-		int n = factory.openSession().selectOne("bidMapper.loginUser");
-		return (n > 0) ? true : false;
+		UserVO vo = factory.openSession().selectOne("bidMapper.loginUser", user);
+		return (vo != null) ? true : false;
 	}
 	
 	public boolean insertUser(UserVO user) {
