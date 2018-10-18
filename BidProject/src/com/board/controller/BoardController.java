@@ -4,10 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.board.dto.BoardDTO;
 import com.board.service.BoardListService;
+
 
 
 @Controller
@@ -18,7 +22,7 @@ public class BoardController {
 
 
 	@RequestMapping("/qna.bd")
-	public ModelAndView login(Model model) {
+	public ModelAndView login() {
 		return new ModelAndView("boardList","list",boardListService.boardList());
 	}
 	
@@ -31,7 +35,16 @@ public class BoardController {
 		}
 	}*/
 
-
+	@RequestMapping(value="/write.bd", method=RequestMethod.POST)
+	public ModelAndView write(@ModelAttribute BoardDTO boardDTO) {
+		if(boardListService.insert(boardDTO)) {
+			return login();
+		}else {
+			return new ModelAndView("boardList","list",boardListService.boardList());
+		}
+		
+		
+	}
 
 }
 

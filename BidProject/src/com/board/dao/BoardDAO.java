@@ -20,6 +20,11 @@ public class BoardDAO {
 
 		return factory.openSession().selectList("boardNameSpace.boardlist");
 	}
+
+	public boolean insert(BoardDTO boardDTO) {
+		int n = factory.openSession().insert("boardNameSpace.insert", boardDTO);
+		return (n > 0) ? true : false;
+	}
 	
 	
 	
