@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="com.board.dto.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -11,13 +12,21 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="styleBoard.css">
 <script>
-/*  function checkLogin(id,seq,pg){
+
+/*  function checkLogin(seq,pg){
+	if(seq=='null') 
+	
+	location.href="/BidProject/board/boardView.jsp?seq="+seq+"&pg="+pg;
+
+}  */
+
+/*   function checkLogin(id,seq,pg){
 	if(id=='null') 
 		alert("먼저 로그인하세요");
 	else
-		location.href="/bbs/board/boardView.jsp?seq="+seq+"&pg="+pg;
+		location.href="/BidProject/board/boardView.jsp?seq="+seq+"&pg="+pg;
 	
-}  */
+} */
 </script>
 </head>
 <body>
@@ -46,10 +55,12 @@
 				<td>${ob.hit}</td>
 				<td>${ob.logtime}</td>
 			</tr>
+			<a href="#" onclick="checkLogin('${ob.seq}',${ob.pg})" class="subjectA"> ${ob.subject} </a>
 		</c:forEach>
 	</c:if>
+	
+	
 </table><br><br>
-
 
 
 <%-- <table>

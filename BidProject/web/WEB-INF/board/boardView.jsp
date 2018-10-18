@@ -11,8 +11,7 @@
 
 /* int seq = Integer.parseInt(request.getParameter("seq"));
 int pg = Integer.parseInt(request.getParameter("pg")); */
-BoardDAO.updateHit(seq);
-BoardDTO boardDto = BoardDAO.getBoard(seq);
+
 </script>
 </head>
 <body>
@@ -29,16 +28,16 @@ BoardDTO boardDto = BoardDAO.getBoard(seq);
 	<td colspan="3" bgcolor="777777"></td>
 </tr>
 <tr>
-	<td width="150">글번호 : BoardDTO.getSeq()</td>
-	<td width="200">작성자 : <%=BoardDTO.getId() %></td>
-	<td width="150">조회수 : <%=BoardDTO.getHit() %></td>
+	<td width="150">글번호 : ${ob.seq}</td>
+	<td width="200">작성자 : ${ob.name}</td>
+	<td width="150">조회수 : ${ob.hit}</td>
 </tr>
 <tr>
 	<td colspan="3" bgcolor="777777"></td>
 </tr>
 
 <tr>
-	<td colspan="3" height="200" valign="top"><pre><%=boardDto.getContent() %></pre></td>
+	<td colspan="3" height="200" valign="top"><pre>${ob.content}</pre></td>
 </tr>
 
 <tr>
