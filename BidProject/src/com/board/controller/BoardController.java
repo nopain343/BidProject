@@ -15,13 +15,11 @@ public class BoardController {
 	@Autowired
 	BoardListService boardListService;
 	
-	
-	//LOGIN & LOGOUT ------------------------------------------------------
-	
+
 
 	@RequestMapping("/qna.bd")
 	public ModelAndView login(Model model) {
-		return new ModelAndView("test","list",boardListService.boardList());
+		return new ModelAndView("boardList","list",boardListService.boardList());
 	}
 	
 	/*@RequestMapping(value = "/login.sp", method = RequestMethod.POST)
@@ -32,6 +30,7 @@ public class BoardController {
 			return new ModelAndView("/login.jsp");
 		}
 	}*/
+
 
 
 }
