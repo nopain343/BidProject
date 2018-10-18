@@ -35,14 +35,18 @@ public class BoardController {
 		}
 	}*/
 
-	@RequestMapping(value="/write.bd", method=RequestMethod.POST)
+	@RequestMapping("/write.bd")
+	public ModelAndView insert(Model model) {
+		return new ModelAndView("boardWrite");  
+	}
+	
+	@RequestMapping(value="/write_proc.bd", method=RequestMethod.POST)
 	public ModelAndView write(@ModelAttribute BoardDTO boardDTO) {
 		if(boardListService.insert(boardDTO)) {
 			return login();
 		}else {
 			return new ModelAndView("boardList","list",boardListService.boardList());
 		}
-		
 		
 	}
 	

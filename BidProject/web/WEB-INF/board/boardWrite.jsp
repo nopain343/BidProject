@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<form name="boardWriteForm" method="post" action="/BidProject/write.bd">
+<form method="post" action="/BidProject/write_proc.bd">
 <h3>글쓰기</h3>
 <table border="1" >
 	<tr>
