@@ -33,6 +33,10 @@
       <button id="sale">판매하기</button>
    </div>
    <br>
+    <div id="qna">
+      <a href="qna.bd"><button id="qna">Q&A</button></a>
+   </div>
+   <br>
    <div id="mystore" >
       <a href=""><button id="mystore">내 상점</button></a>
    </div>
