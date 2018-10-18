@@ -8,5 +8,9 @@
 		]]>
 	</select>
 	
-	
+		<select id="insert" parameterType="boardDto">
+		<![CDATA[
+			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id}, #{name}, #{email},, #{subject}, #{content},SEQ_BOARD.CURRVAL,0,0,0,0,0,SYSDATE)
+		]]>
+	</select>
 </mapper>

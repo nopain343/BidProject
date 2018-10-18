@@ -1,6 +1,6 @@
 
 drop table board
-
+ID, NAME, EMAIL, SUBJECT, CONTENT
 CREATE TABLE board(
      seq NUMBER NOT NULL,                     --글번호
      id VARCHAR2(20) NOT NULL,              --아이디
