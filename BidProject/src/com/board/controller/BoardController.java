@@ -36,8 +36,8 @@ public class BoardController {
 		}
 	}*/
 
-	@RequestMapping("/write.bd")
-	public ModelAndView insert(Model model) {
+	@RequestMapping(value="/write.bd")
+	public ModelAndView insert() {
 		return new ModelAndView("boardWrite");  
 	}
 	

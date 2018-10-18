@@ -25,7 +25,7 @@ CREATE TABLE board(
 create sequence ½ÃÄö½º°´Ã¼¸í
 create sequence seq_board  nocache nocycle;
 
-select * from board
+select * from board order by 1 desc 
 --¡Ù ½ÃÄö½º °´Ã¼ »èÁ¦
 drop   sequence ½ÃÄö½º°´Ã¼¸í
 drop   sequence seq_board

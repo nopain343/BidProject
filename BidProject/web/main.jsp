@@ -26,7 +26,7 @@
    </div>
    <br>
    
-    <div id="qna">
+    <div id="write">
       <a href="write.bd"><button id="qna">Q&A</button></a>
    </div>
    <div id="mystore" >

@@ -17,13 +17,10 @@
    /*  console.log(location.href); */
 }  
 
-/*   function checkLogin(id,seq,pg){
-	if(id=='null') 
-		alert("먼저 로그인하세요");
-	else
-		location.href="/BidProject/board/boardView.jsp?seq="+seq+"&pg="+pg;
+   function write(seq){
 	
-} */
+		location.href="write_proc.bd?seq="+seq;
+} 
 </script>
 </head>
 <body>
@@ -57,6 +54,12 @@
 	
 	
 </table><br><br>
+
+<a href="write.bd"><button id="write">글쓰기</button></a>
+
+
+
+
 
 
 <%-- <table>
