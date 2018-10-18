@@ -27,7 +27,7 @@
    <br>
    
     <div id="qna">
-      <a href="qna.bd"><button id="qna">Q&A</button></a>
+      <a href="write.bd"><button id="qna">Q&A</button></a>
    </div>
    <div id="mystore" >
       <a href=""><button id="mystore">내 상점이다 제발</button></a>

@@ -5,19 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글쓰기</title>
-<script>
-function checkBoardWrite(){
-	if(document.boardWriteForm.subject.value=="") 
-		alert("제목을 입력하세요");	
-	else if(document.boardWriteForm.content.value=="") 
-		alert("내용을 입력하세요");
-	else 
-		document.boardWriteForm.submit();
-}
-</script>
+
 </head>
 <body>
-<form name="boardWriteForm" method="post" action="/BidProject/write.bd"><!-- commandPro.properties 에서확인하고 써주는거 -->
+<form method="post" action="/BidProject/write_proc.bd">
 <h3>글쓰기</h3>
 <table border="1" >
 	<tr>
@@ -30,21 +21,21 @@ function checkBoardWrite(){
 	</tr>	
 	<tr>
 		<td>이메일</td>
-		<td><input type="text" name="email" size="50"></td>
+		<td><input type="text" name="email" value="test1_email" size="50"></td>
 	</tr>
 	<tr>
 		<td>제 목</td>
-		<td><input type="text" name="subject" size="50"></td>
+		<td><input type="text" name="subject" value="test1_title" size="50"></td>
 	</tr>
 	
 	<tr>
 		<td>내 용</td>
-		<td><textarea name="content" cols="50" rows="15"></textarea></td>
+		<td><textarea name="content" cols="50" rows="15" value="test1"></textarea></td>
 	</tr>
 	
 	<tr>
 		<td colspan="2" align="center">
-		<input type="button" value="글쓰기" onclick="checkBoardWrite()">
+		<input type="submit"  value="글쓰기">  
 		<input type="reset" value="다시작성">
 		</td>
 		
