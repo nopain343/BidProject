@@ -21,16 +21,16 @@
 	</tr>	
 	<tr>
 		<td>이메일</td>
-		<td><input type="text" name="email" value="test1_email" size="50"></td>
+		<td><input type="text" name="email" size="50"></td>
 	</tr>
 	<tr>
 		<td>제 목</td>
-		<td><input type="text" name="subject" value="test1_title" size="50"></td>
+		<td><input type="text" name="subject" size="50"></td>
 	</tr>
 	
 	<tr>
 		<td>내 용</td>
-		<td><textarea name="content" cols="50" rows="15" value="test1"></textarea></td>
+		<td><textarea name="content" cols="50" rows="15" ></textarea></td>
 	</tr>
 	
 	<tr>
