@@ -11,46 +11,38 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="styleBoard.css">
 <script>
-/* function checkLogin(id,seq,pg){
+/*  function checkLogin(id,seq,pg){
 	if(id=='null') 
 		alert("먼저 로그인하세요");
 	else
 		location.href="/bbs/board/boardView.jsp?seq="+seq+"&pg="+pg;
 	
-} */
+}  */
 </script>
 </head>
 <body>
 
-<table border="1">
+<table >
 	<tr>
-		<td>순서</td>
-		<td>이름</td>
-		<td>이메일</td>
-		<td>제목</td>
-		<td>내용</td>
-		<td>그룹번호</td>
-		<td>단계</td>
-		<td>글순서 ㅇㅇㅇㅇ</td>
-		<td>원글번호</td>
-		<td>답변수</td>
-		<td>조회수</td>
-		
+		<td colspan="5" bgcolor="777777"></td>
 	</tr>
-	
+
+	<tr>
+		<th width="100">글번호</th>
+		<th width="300">제목</th>
+		<th width="100">작성자</th>
+		<th width="100">조회수</th>
+		<th width="100">작성일</th>
+	</tr>
+	<tr>
+		<td colspan="5" bgcolor="777777"></td>
+	</tr>	
 	<c:if test="${!empty list}">
 		<c:forEach items="${list}"  var="ob">
 			<tr>
 				<td>${ob.seq}</td>
-				<td>${ob.name}</td>
-				<td>${ob.email}
 				<td>${ob.subject}</td>
-				<td>${ob.content}</td>
-				<td>${ob.ref}</td>
-				<td>${ob.lev}</td>
-				<td>${ob.step}</td>
-				<td>${ob.pseq}</td>
-				<td>${ob.reply}</td>
+				<td>${ob.name}</td>
 				<td>${ob.hit}</td>
 				<td>${ob.logtime}</td>
 			</tr>

@@ -25,6 +25,12 @@ public class BoardDAO {
 		int n = factory.openSession().insert("boardNameSpace.insert", boardDTO);
 		return (n > 0) ? true : false;
 	}
+
+	public List<BoardDTO> boardView() {
+		
+		return factory.openSession().selectList("boardNameSpace.boardlist");
+		
+	}
 	
 	
 	

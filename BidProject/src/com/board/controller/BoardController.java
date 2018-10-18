@@ -45,6 +45,13 @@ public class BoardController {
 		
 		
 	}
+	
+	
+	@RequestMapping("/boardview.bd")
+	public ModelAndView view() {
+		return new ModelAndView("boardView","list",boardListService.boardList());
+	}
+	
 
 }
 
