@@ -1,3 +1,4 @@
+<%@page import="com.user.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -20,12 +21,20 @@
    <br>
 	
    <div id="log">
-	   <c:if test="${empty logOK}">
+	   <c:if test="${empty loginOK}">
 			<a href="/BidProject/login.go"><button id="login">로그인</button></a>
 	   </c:if>
 	
-	   <c:if test="${!empty logOK}">
+	   <c:if test="${!empty loginOK}">
 		  	<a href="/BidProject/logout.go"><button id="logout">로그아웃</button></a>
+		  	<%
+				UserVO vo = (UserVO)session.getAttribute("loginOK");
+			%>
+			<%=vo.getId()%>
+			<%=vo.getPassword()%>
+			<%=vo.getUsername()%>
+			<%=vo.getPhone()%>
+			<%=vo.getAddress()%>
 	   </c:if>
    </div>
 

@@ -7,7 +7,7 @@ nickname varchar2(20),
 address varchar2(50),
 phone varchar2(20));
 
-insert into user1 values('admin', '1234', 'tomato', '서울시 강남구 논현동', '010-1577-1577');
+insert into user1 values('admin', '1234', '우원재', '서울시 강남구 논현동', '010-1577-1577');
 select * from user1;
 
 select * from tab;

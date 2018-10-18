@@ -5,19 +5,19 @@ public class UserVO {
 	private String password;
 	private String address;
 	private String phone;
-	private String nickname;
+	private String username;
 	
 	public UserVO() {
 		super();
 	}
 
-	public UserVO(String id, String password, String address, String phone, String nickname) {
+	public UserVO(String id, String password, String address, String phone, String username) {
 		super();
 		this.id = id;
 		this.password = password;
 		this.address = address;
 		this.phone = phone;
-		this.nickname = nickname;
+		this.username = username;
 	}
 
 	public String getId() {
@@ -52,12 +52,12 @@ public class UserVO {
 		this.phone = phone;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 }

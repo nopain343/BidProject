@@ -10,9 +10,12 @@ import com.user.vo.UserVO;
 public class UserService {
 	@Autowired
 	private UserDao dao;
-
-	public boolean loginUser(UserVO user) {
+	
+	public UserVO loginUser(UserVO user) {
 		return dao.loginUser(user);
-		
+	}
+
+	public boolean insertUser(UserVO user) {
+		return dao.insertUser(user);
 	}
 }

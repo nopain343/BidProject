@@ -19,30 +19,30 @@ public class UserController {
 	@Autowired
 	UserService service;
 	
-	
-	@RequestMapping(value="/main.go")
+	@RequestMapping("/main.go")
 	public ModelAndView main() {
 		return new ModelAndView("main");
 	}
 	
-	@RequestMapping(value="/login.go")
+	@RequestMapping("/login.go")
 	public ModelAndView login() {
 		return new ModelAndView("login");
 	}
 	
-	@RequestMapping(value = "/loginProc.go", method = RequestMethod.POST)
+	@RequestMapping(value="/loginProc.go", method=RequestMethod.POST)
 	public ModelAndView loginProc(@ModelAttribute UserVO user, HttpServletRequest request) {
-		if(service.loginUser(user)) {
+		if(service.loginUser(user) != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("logOK", user);
-			
+			session.setAttribute("loginOK", user);
+			System.out.println(user.getId());
+			System.out.println(user.getPhone());
 			return new ModelAndView("main");
 		}else {
 			return new ModelAndView("login");
 		}
 	}
 	
-	@RequestMapping(value = "/logout.go", method = RequestMethod.POST)
+	@RequestMapping("/logout.go")
 	public ModelAndView logout(@ModelAttribute UserVO user, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.invalidate();
@@ -50,10 +50,24 @@ public class UserController {
 		return new ModelAndView("main");
 	}
 
-	@RequestMapping("/join.go")
+	@RequestMapping("/insert.go")
 	public ModelAndView join(Model model) {
-		return new ModelAndView("join");
+		return new ModelAndView("insert");
 	}
+	
+	@RequestMapping(value="/insertProc.go", method=RequestMethod.POST)
+	public ModelAndView insertProc(@ModelAttribute UserVO user) {
+		if(service.insertUser(user)) {
+			return new ModelAndView("insertOK");
+		}else {
+			return new ModelAndView("insert");
+		}
+		
+	}
+	
+	
+	
+	
 }
 
 

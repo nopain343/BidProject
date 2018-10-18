@@ -11,9 +11,9 @@ public class UserDao {
 	@Autowired
 	private SqlSessionFactory factory;
 	
-	public boolean loginUser(UserVO user) {
+	public UserVO loginUser(UserVO user) {
 		UserVO vo = factory.openSession().selectOne("bidMapper.loginUser", user);
-		return (vo != null) ? true : false;
+		return vo;
 	}
 	
 	public boolean insertUser(UserVO user) {

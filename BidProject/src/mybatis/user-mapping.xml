@@ -2,21 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="bidMapper">
-	<select id="loginUser" parameterType="java.lang.String">
+	<select id="loginUser" parameterType="userInfo" resultType="userInfo">
 		<![CDATA[
-			SELECT * FROM USER WHERE ID = #{id} AND PASSWORD = #{password}
+			SELECT * FROM USER1 WHERE ID=#{id} AND PASSWORD=#{password}
 		]]>
 	</select>
 	
 	
-	<insert id="insertUser" parameterType="com.user.vo.UserVO">
+	<insert id="insertUser" parameterType="userInfo">
 		<![CDATA[
-			INSERT INTO USER(ID, PASSWORD, ADDRESS, PHONE, NICKNAME)
-			VALUES (#{id}, #{password}, #{address}, #{phone}, #{nickname})
+			INSERT INTO USER1(ID, PASSWORD, USERNAME, ADDRESS, PHONE)
+			VALUES (#{id}, #{password}, #{username}, #{address}, #{phone})
 		]]>
 	</insert>
 	
-	<delete id="deleteUser" parameterType="java.lang.String">
+<!-- 	<delete id="deleteUser" parameterType="java.lang.String">
 		<![CDATA[
 			DELETE FROM USER
 			WHERE NAME = #{id}
@@ -29,6 +29,6 @@
 			PASSWORD = #{password}, ADDRESS = #{address}, PHONE = #{phone}, NICKNAME = #{nickname}
 			WHERE ID = #{id}
 		]]>
-	</update>
+	</update> -->
 
 </mapper>
