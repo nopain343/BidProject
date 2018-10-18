@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   중고경매 프로젝트 됐으면 좋겠다.  --이규하
+   중고경매 프로젝트 됐으면 좋겠다.  --park
    <br>
 
    <div id="search" class="search">
