@@ -1,7 +1,8 @@
 package com.board.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,7 +23,7 @@ public class BoardController {
 
 
 	@RequestMapping("/qna.bd")
-	public ModelAndView login() {
+	public ModelAndView list() {
 		return new ModelAndView("boardList","list",boardListService.boardList());
 	}
 	
@@ -43,7 +44,7 @@ public class BoardController {
 	@RequestMapping(value="/write_proc.bd", method=RequestMethod.POST)
 	public ModelAndView write(@ModelAttribute BoardDTO boardDTO) {
 		if(boardListService.insert(boardDTO)) {
-			return login();
+			return list();
 		}else {
 			return new ModelAndView("boardList","list",boardListService.boardList());
 		}
@@ -53,9 +54,11 @@ public class BoardController {
 	
 	@RequestMapping(value="/boardview.bd", method=RequestMethod.GET)
 	public ModelAndView view(@ModelAttribute BoardDTO boardDTO) {
-		return new ModelAndView("boardView","list",boardDTO);
+		BoardDTO viewDto = new BoardDTO();
+		viewDto = boardListService.boardView(boardDTO).get(0);
 		
-		//return new ModelAndView("boardView","list",boardListService.boardView(boardDTO));
+		
+		return new ModelAndView("boardView","view",viewDto);
 	}
 	
 

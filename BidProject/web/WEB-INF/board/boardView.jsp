@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,9 +28,8 @@
 	<td colspan="3" bgcolor="777777"></td>
 </tr>
 <tr>
-	<td width="150">글번호 : ${list.seq}</td>
-	<td width="200">작성자 : ${list.name}</td>
-
+	<td width="150">글번호 : ${view.seq}</td>
+	<td width="200">작성자 : ${view.name }</td>
 </tr>
 <tr>
 	<td colspan="3" bgcolor="777777"></td>

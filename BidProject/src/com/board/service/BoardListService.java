@@ -22,6 +22,7 @@ public class BoardListService{
 	}
 
 	public List<BoardDTO> boardView(BoardDTO boardDTO) {
+		
 		return boardDAO.boardView(boardDTO);
 	}
 
