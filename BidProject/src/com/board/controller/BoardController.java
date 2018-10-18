@@ -21,7 +21,6 @@ public class BoardController {
 
 	@RequestMapping("/qna.bd")
 	public ModelAndView login(Model model) {
-
 		return new ModelAndView("test","list",boardListService.boardList());
 	}
 	
