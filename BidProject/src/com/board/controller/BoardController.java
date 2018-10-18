@@ -51,9 +51,11 @@ public class BoardController {
 	}
 	
 	
-	@RequestMapping("/boardview.bd")
-	public ModelAndView view() {
-		return new ModelAndView("boardView","list",boardListService.boardList());
+	@RequestMapping(value="/boardview.bd", method=RequestMethod.GET)
+	public ModelAndView view(@ModelAttribute BoardDTO boardDTO) {
+		return new ModelAndView("boardView","list",boardDTO);
+		
+		//return new ModelAndView("boardView","list",boardListService.boardView(boardDTO));
 	}
 	
 

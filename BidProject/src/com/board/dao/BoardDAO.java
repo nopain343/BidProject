@@ -26,9 +26,10 @@ public class BoardDAO {
 		return (n > 0) ? true : false;
 	}
 
-	public List<BoardDTO> boardView() {
+	public List<BoardDTO> boardView(BoardDTO boardDTO) {
 		
-		return factory.openSession().selectList("boardNameSpace.boardlist");
+		return factory.openSession().selectList("boardNameSpace.boardView", boardDTO);
+		
 		
 	}
 	

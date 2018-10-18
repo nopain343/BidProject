@@ -13,4 +13,10 @@
 			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id}, #{name}, #{email},#{subject}, #{content},3,0,0,0,0,0,SYSDATE)
 		]]>
 	</select>
+	
+	<select id="boardView" parameterType="boardDto" resultType="boardDto">
+		<![CDATA[
+			SELECT * FROM BOARD WHERE SEQ=#{seq}
+		]]>
+	</select>
 </mapper>

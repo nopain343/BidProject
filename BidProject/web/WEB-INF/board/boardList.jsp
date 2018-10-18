@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="com.board.dto.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -10,15 +9,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="styleBoard.css">
 <script>
 
-/*  function checkLogin(seq,pg){
-	if(seq=='null') 
+  function checkLogin(seq,name){
 	
-	location.href="/BidProject/board/boardView.jsp?seq="+seq+"&pg="+pg;
-
-}  */
+	location.href="boardview.bd?seq="+seq+"&name="+name;
+   /*  console.log(location.href); */
+}  
 
 /*   function checkLogin(id,seq,pg){
 	if(id=='null') 
@@ -50,12 +47,11 @@
 		<c:forEach items="${list}"  var="ob">
 			<tr>
 				<td>${ob.seq}</td>
-				<td>${ob.subject}</td>
+			<td><a href="javascript:checkLogin(${ob.seq},'${ob.name}')">${ob.subject}</a></td>
 				<td>${ob.name}</td>
 				<td>${ob.hit}</td>
 				<td>${ob.logtime}</td>
 			</tr>
-			<a href="#" onclick="checkLogin('${ob.seq}',${ob.pg})" class="subjectA"> ${ob.subject} </a>
 		</c:forEach>
 	</c:if>
 	
