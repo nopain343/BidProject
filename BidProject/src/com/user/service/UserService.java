@@ -2,7 +2,6 @@ package com.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.user.dao.UserDao;
 import com.user.vo.UserVO;
@@ -26,5 +25,9 @@ public class UserService {
 
 	public boolean updateUser(UserVO user) {
 		return dao.updateUser(user);
+	}
+
+	public boolean searchPassword2(UserVO user) {
+		return dao.searchPassword2(user);
 	}
 }
