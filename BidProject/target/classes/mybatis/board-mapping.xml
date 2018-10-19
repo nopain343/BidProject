@@ -4,9 +4,19 @@
 <mapper namespace="boardNameSpace">
 	<select id="boardlist" resultType="boardDto">
 		<![CDATA[
-			SELECT * FROM TEST
+			SELECT * FROM BOARD ORDER BY 1 DESC
 		]]>
 	</select>
 	
+		<select id="insert" parameterType="boardDto">
+		<![CDATA[
+			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id}, #{name}, #{email},#{subject}, #{content},3,0,0,0,0,0,SYSDATE)
+		]]>
+	</select>
 	
+	<select id="boardView" parameterType="boardDto" resultType="boardDto">
+		<![CDATA[
+			SELECT * FROM BOARD WHERE SEQ=#{seq}
+		]]>
+	</select>
 </mapper>

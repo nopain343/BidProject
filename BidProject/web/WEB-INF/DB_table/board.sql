@@ -1,5 +1,5 @@
 drop table board
-
+ID, NAME, EMAIL, SUBJECT, CONTENT
 CREATE TABLE board(
      seq NUMBER NOT NULL,                     --ê¸€ë²ˆí˜¸
      id VARCHAR2(20) NOT NULL,              --ì•„ì´ë””
@@ -24,9 +24,15 @@ CREATE TABLE board(
 create sequence ì‹œí€€ìŠ¤ê°ì²´ëª…
 create sequence seq_board  nocache nocycle;
 
+<<<<<<< HEAD
 select * from board
 --â˜† ì‹œí€€ìŠ¤ ê°ì²´ ì‚­ì œ
 drop   sequence ì‹œí€€ìŠ¤ê°ì²´ëª…
+=======
+select * from board order by 1 desc 
+--¡Ù ½ÃÄö½º °´Ã¼ »èÁ¦
+drop   sequence ½ÃÄö½º°´Ã¼¸í
+>>>>>>> branch 'master' of https://github.com/sunup1992/BidProject.git
 drop   sequence seq_board
 
 --â˜† ìë™ìœ¼ë¡œ 1ì”© ì¦ê°€í•˜ëŠ” ê°’ì„ ì–»ì–´ì˜¤ê¸°

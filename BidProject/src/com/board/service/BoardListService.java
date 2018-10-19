@@ -17,5 +17,14 @@ public class BoardListService{
 		return boardDAO.boardList();
 	}
 
+	public boolean insert(BoardDTO boardDTO) {
+		return boardDAO.insert(boardDTO);
+	}
+
+	public List<BoardDTO> boardView(BoardDTO boardDTO) {
+		
+		return boardDAO.boardView(boardDTO);
+	}
+
 
 }
