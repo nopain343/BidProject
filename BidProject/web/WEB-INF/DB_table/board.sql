@@ -1,34 +1,39 @@
-
 drop table board
 ID, NAME, EMAIL, SUBJECT, CONTENT
 CREATE TABLE board(
-     seq NUMBER NOT NULL,                     --±Û¹øÈ£
-     id VARCHAR2(20) NOT NULL,              --¾ÆÀÌµğ
-     name VARCHAR2(40) NOT NULL,         --ÀÌ¸§
-     email VARCHAR2(40),                         --ÀÌ¸ŞÀÏ
-     subject VARCHAR2(255) NOT NULL,     --Á¦¸ñ
-     content VARCHAR2(4000) NOT NULL,   --³»¿ë 
+     seq NUMBER NOT NULL,                     --ê¸€ë²ˆí˜¸
+     id VARCHAR2(20) NOT NULL,              --ì•„ì´ë””
+     name VARCHAR2(40) NOT NULL,         --ì´ë¦„
+     email VARCHAR2(40),                         --ì´ë©”ì¼
+     subject VARCHAR2(255) NOT NULL,     --ì œëª©
+     content VARCHAR2(4000) NOT NULL,   --ë‚´ìš© 
 
-     ref NUMBER NOT NULL,                       --±×·ì¹øÈ£
-     lev NUMBER DEFAULT 0 NOT NULL,      --´Ü°è
-     step NUMBER DEFAULT 0 NOT NULL,    --±Û¼ø¼­
-     pseq NUMBER DEFAULT 0 NOT NULL,   --¿ø±Û¹øÈ£
-     reply NUMBER DEFAULT 0 NOT NULL,   --´äº¯¼ö
+     ref NUMBER NOT NULL,                       --ê·¸ë£¹ë²ˆí˜¸
+     lev NUMBER DEFAULT 0 NOT NULL,      --ë‹¨ê³„
+     step NUMBER DEFAULT 0 NOT NULL,    --ê¸€ìˆœì„œ
+     pseq NUMBER DEFAULT 0 NOT NULL,   --ì›ê¸€ë²ˆí˜¸
+     reply NUMBER DEFAULT 0 NOT NULL,   --ë‹µë³€ìˆ˜
 
-     hit NUMBER DEFAULT 0,                      --Á¶È¸¼ö
+     hit NUMBER DEFAULT 0,                      --ì¡°íšŒìˆ˜
      logtime DATE DEFAULT SYSDATE
  );
- insert into board values(seq_board.nextval,'a','¼±Àç','sunup1','Á¦°ğ³»','³»°ğÁ¦',2,0,0,0,0,0,'2018-10-16')
- insert into board values(seq_board.nextval,'saan','sasdf','¤±¤¤¤©12','¤·¤·¤·','¤±¤¤¤·¤©',2,0,0,0,0,0,'2018-10-14')
- insert into board values(seq_board.nextval,'momo','³ª³ª','¤·³à½À','¤Ğ¤Ğ','³»°ğÁ¦',1,0,0,0,0,0,'2018-10-11')
---¡Ù ½ÃÄö½º °´Ã¼ ÀÛ¼º
-create sequence ½ÃÄö½º°´Ã¼¸í
+ insert into board values(seq_board.nextval,'a','ì„ ì¬','sunup1','ì œê³§ë‚´','ë‚´ê³§ì œ',2,0,0,0,0,0,'2018-10-16')
+ insert into board values(seq_board.nextval,'saan','sasdf','ã…ã„´ã„¹12','ã…‡ã…‡ã…‡','ã…ã„´ã…‡ã„¹',2,0,0,0,0,0,'2018-10-14')
+ insert into board values(seq_board.nextval,'momo','ë‚˜ë‚˜','ã…‡ë…€ìŠµ','ã… ã… ','ë‚´ê³§ì œ',1,0,0,0,0,0,'2018-10-11')
+--â˜† ì‹œí€€ìŠ¤ ê°ì²´ ì‘ì„±
+create sequence ì‹œí€€ìŠ¤ê°ì²´ëª…
 create sequence seq_board  nocache nocycle;
 
+<<<<<<< HEAD
+select * from board
+--â˜† ì‹œí€€ìŠ¤ ê°ì²´ ì‚­ì œ
+drop   sequence ì‹œí€€ìŠ¤ê°ì²´ëª…
+=======
 select * from board order by 1 desc 
 --¡Ù ½ÃÄö½º °´Ã¼ »èÁ¦
 drop   sequence ½ÃÄö½º°´Ã¼¸í
+>>>>>>> branch 'master' of https://github.com/sunup1992/BidProject.git
 drop   sequence seq_board
 
---¡Ù ÀÚµ¿À¸·Î 1¾¿ Áõ°¡ÇÏ´Â °ªÀ» ¾ò¾î¿À±â
+--â˜† ìë™ìœ¼ë¡œ 1ì”© ì¦ê°€í•˜ëŠ” ê°’ì„ ì–»ì–´ì˜¤ê¸°
 select seq_board.nextval from dual
