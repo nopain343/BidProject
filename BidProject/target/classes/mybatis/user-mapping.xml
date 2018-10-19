@@ -23,12 +23,18 @@
 		]]>
 	</delete>
 	
-	<update id="updateUser" parameterType="com.user.vo.UserVO">
+	<update id="updateUser" parameterType="userInfo">
 		<![CDATA[
 			UPDATE USER1 SET
-			PASSWORD = #{password}, USERNAME = #{username}, ROADFULLADDR = #{roadFullAddr}, PHONE = #{phone}, PWQUESTION = #{pwquestion}, PWANSWER = #{pwanswer}
+			PASSWORD = #{password}, USERNAME = #{username}, ROADFULLADDR = #{roadFullAddr}, PHONE = #{phone}
 			WHERE ID = #{id}
 		]]>
 	</update>
-
+	
+	<select id="searchPassword2" parameterType="userInfo">
+		<![CDATA[
+			SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = #{id}
+		]]>
+	</select>
+	
 </mapper>

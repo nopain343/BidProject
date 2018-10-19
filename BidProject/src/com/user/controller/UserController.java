@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,12 +47,12 @@ public class UserController {
 	}
 	
 	@RequestMapping("/mypage.go")
-	public ModelAndView mypage(Model model) {
+	public ModelAndView mypage() {
 		return new ModelAndView("mypage");
 	}
 	
 	@RequestMapping("/insert.go")
-	public ModelAndView insert(Model model) {
+	public ModelAndView insert() {
 		return new ModelAndView("insert");
 	}
 	
@@ -66,15 +65,16 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/update.go", method=RequestMethod.POST)
-	public ModelAndView update(@ModelAttribute UserVO user, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		session.setAttribute("loginOK", service.loginUser(user));
-		
+	public ModelAndView update() {
 		return new ModelAndView("update");
 	}
 	
 	@RequestMapping(value="/updateProc.go", method=RequestMethod.POST)
-	public ModelAndView updateProc(@ModelAttribute UserVO user) {
+	public ModelAndView updateProc(@ModelAttribute UserVO user, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("loginOK");
+		session.setAttribute("loginOK", user);
+		
 		if(service.updateUser(user)) {
 			return new ModelAndView("mypage");
 		}
@@ -90,6 +90,24 @@ public class UserController {
 			return new ModelAndView("deleteOK");
 		}
 		return null;
+	}
+	
+	@RequestMapping("/searchPassword.go")
+	public ModelAndView searchPassword() {
+		return new ModelAndView("searchPassword");
+	}
+	
+	@RequestMapping(value="/searchPassword2.go", method=RequestMethod.POST)
+	public ModelAndView searchPassword2(@ModelAttribute UserVO user, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		System.out.println(service.searchPassword2(user));
+		if(service.searchPassword2(user)) {
+			session.setAttribute("search", user);
+			return new ModelAndView("searchPassword2");
+		}else {
+			return new ModelAndView("searchPasswordFail");
+		}
+		
 	}
 }
 

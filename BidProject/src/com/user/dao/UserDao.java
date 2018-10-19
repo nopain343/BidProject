@@ -31,4 +31,9 @@ public class UserDao {
 		int n = factory.openSession().update("bidMapper.updateUser", user);
 		return (n > 0) ? true : false;
 	}
+
+	public boolean searchPassword2(UserVO user) {
+		int n = factory.openSession().update("bidMapper.searchPassword2", user);
+		return (n > 0) ? true : false;
+	}
 }
