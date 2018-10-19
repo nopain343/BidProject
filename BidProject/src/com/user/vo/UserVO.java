@@ -3,21 +3,26 @@ package com.user.vo;
 public class UserVO {
 	private String id;
 	private String password;
-	private String address;
+	private String roadFullAddr;
 	private String phone;
 	private String username;
+	private String pwquestion;
+	private String pwanswer;
 	
 	public UserVO() {
 		super();
 	}
 
-	public UserVO(String id, String password, String address, String phone, String username) {
+	public UserVO(String id, String password, String roadFullAddr, String phone, String username, String pwquestion,
+			String pwanswer) {
 		super();
 		this.id = id;
 		this.password = password;
-		this.address = address;
+		this.roadFullAddr = roadFullAddr;
 		this.phone = phone;
 		this.username = username;
+		this.pwquestion = pwquestion;
+		this.pwanswer = pwanswer;
 	}
 
 	public String getId() {
@@ -36,12 +41,12 @@ public class UserVO {
 		this.password = password;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getRoadFullAddr() {
+		return roadFullAddr;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setRoadFullAddr(String roadFullAddr) {
+		this.roadFullAddr = roadFullAddr;
 	}
 
 	public String getPhone() {
@@ -59,5 +64,23 @@ public class UserVO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+	public String getPwquestion() {
+		return pwquestion;
+	}
+
+	public void setPwquestion(String pwquestion) {
+		this.pwquestion = pwquestion;
+	}
+
+	public String getPwanswer() {
+		return pwanswer;
+	}
+
+	public void setPwanswer(String pwanswer) {
+		this.pwanswer = pwanswer;
+	}
+
+	
 	
 }

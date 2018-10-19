@@ -20,4 +20,15 @@ public class UserDao {
 		int n = factory.openSession().insert("bidMapper.insertUser", user);
 		return (n > 0) ? true : false;
 	}
+
+
+	public boolean deleteUser(String id) {
+		int n = factory.openSession().delete("bidMapper.deleteUser", id);
+		return (n > 0) ? true : false;
+	}
+
+	public boolean updateUser(UserVO user) {
+		int n = factory.openSession().update("bidMapper.updateUser", user);
+		return (n > 0) ? true : false;
+	}
 }

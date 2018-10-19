@@ -4,31 +4,31 @@
 <mapper namespace="bidMapper">
 	<select id="loginUser" parameterType="userInfo" resultType="userInfo">
 		<![CDATA[
-			SELECT * FROM USER1 WHERE ID=#{id} AND PASSWORD=#{password}
+			SELECT * FROM USER1 WHERE ID = #{id} AND PASSWORD = #{password}
 		]]>
 	</select>
 	
 	
 	<insert id="insertUser" parameterType="userInfo">
 		<![CDATA[
-			INSERT INTO USER1(ID, PASSWORD, USERNAME, ADDRESS, PHONE)
-			VALUES (#{id}, #{password}, #{username}, #{address}, #{phone})
+			INSERT INTO USER1(ID, PASSWORD, USERNAME, ROADFULLADDR, PHONE, PWQUESTION, PWANSWER)
+			VALUES (#{id}, #{password}, #{username}, #{roadFullAddr}, #{phone}, #{pwquestion}, #{pwanswer})
 		]]>
 	</insert>
 	
-<!-- 	<delete id="deleteUser" parameterType="java.lang.String">
+ 	<delete id="deleteUser" parameterType="java.lang.String">
 		<![CDATA[
-			DELETE FROM USER
-			WHERE NAME = #{id}
+			DELETE FROM USER1
+			WHERE ID = #{id}
 		]]>
 	</delete>
 	
 	<update id="updateUser" parameterType="com.user.vo.UserVO">
 		<![CDATA[
-			UPDATE USER SET
-			PASSWORD = #{password}, ADDRESS = #{address}, PHONE = #{phone}, NICKNAME = #{nickname}
+			UPDATE USER1 SET
+			PASSWORD = #{password}, USERNAME = #{username}, ROADFULLADDR = #{roadFullAddr}, PHONE = #{phone}, PWQUESTION = #{pwquestion}, PWANSWER = #{pwanswer}
 			WHERE ID = #{id}
 		]]>
-	</update> -->
+	</update>
 
 </mapper>

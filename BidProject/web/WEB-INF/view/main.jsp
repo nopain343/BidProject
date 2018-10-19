@@ -27,14 +27,6 @@
 	
 	   <c:if test="${!empty loginOK}">
 		  	<a href="/BidProject/logout.go"><button id="logout">로그아웃</button></a>
-		  	<%
-				UserVO vo = (UserVO)session.getAttribute("loginOK");
-			%>
-			<%=vo.getId()%>
-			<%=vo.getPassword()%>
-			<%=vo.getUsername()%>
-			<%=vo.getPhone()%>
-			<%=vo.getAddress()%>
 	   </c:if>
    </div>
 
@@ -46,8 +38,8 @@
       <a href="qna.bd"><button id="qna">Q&A</button></a>
    </div>
    <br>
-   <div id="mystore" >
-      <a href=""><button id="mystore">내 상점</button></a>
+   <div id="mypage">
+      <a href="/BidProject/mypage.go"><button id="mypage">마이페이지</button></a>
    </div>
    <br>
 

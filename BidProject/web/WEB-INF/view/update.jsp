@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="com.user.vo.UserVO"%>
 <!DOCTYPE htm>
 <html>
 <head>
 <meta http-equiv="Content-Type">
-<title>Insert title here</title>
-</head>
+<title>회원정보수정</title>
 <script type="text/javascript">
 function goPopup(){
    // 주소검색을 수행할 팝업 페이지를 호출합니다.
@@ -20,26 +20,27 @@ function jusoCallBack(roadFullAddr){
    document.form.roadFullAddr.value = roadFullAddr;   
 }
 </script>
+</head>
 <body>
-<h2>환영합니다.</h2>
-<h4>간단한 회원가입으로 저희와 함께하세요</h4>
-<form action="/BidProject/insertProc.go" method="post" name="form">
-아이디 <input type="text" id="id" name="id" placeholder="아이디 (4~12자 영문 대소문자)"/><br>
+<h2>[회원정보수정]</h2>
+<form action="/BidProject/updateProc.go" method="post">
+아이디 <input type="text" id="id" name="id" value="${loginOK.id}" readonly/><br>
 
-비밀번호 <input type="password" id="password" name="password" placeholder="비밀번호는 6~16자 영문 대소문자, 숫자를 조합하여 입력해주세요"/><br>
+비밀번호 <input type="password" id="password" name="password" value="${loginOK.password}"/><br>
 
-비밀번호 확인 <input type="password" id="password2" name="password2" placeholder="비밀번호 확인"/><br>
+비밀번호 확인 <input type="password" id="password2" name="password2"/><br>
 
-이름 <input type="text" id="username" name="username" placeholder="본인의 실명을 입력해주세요"/><br>
+이름 <input type="text" id="username" name="username" value="${loginOK.username}"/><br>
 
-주소 <input type="text" id="roadFullAddr" name="roadFullAddr" style="width: 500px"/>
+주소 <input type="text" id="roadFullAddr" name="roadFullAddr" style="width: 500px" value="${loginOK.roadFullAddr}"/>
 
 <input type="button" onclick="goPopup();" value="주소검색"/><br>
 
-전화번호 <input type="text" id="phone" name="phone" placeholder="예) 010-1234-5678"/><br>
+전화번호 <input type="text" id="phone" name="phone" value="${loginOK.phone}"/><br>
 
-비밀번호 찾기 질문 
+<%-- 비밀번호 찾기 질문 
 <select id="pwquestion" name="pwquestion">
+  <option value="${loginOK.pwquestion}">
   <option>기억에 남는 추억의 장소는?</option>
   <option>자신의 인생 좌우명은?</option>
   <option>가장 기억에 남는 선생님 성함은?</option>
@@ -50,14 +51,13 @@ function jusoCallBack(roadFullAddr){
   <option>초등학교 때 기억에 남은 짝궁 이름은?</option>
 </select>
 <br>
-비밀번호 찾기 답 <input type="text" id="pwanswer" name="pwanswer" placeholder="질문의 답을 해주세요"/>
+비밀번호 찾기 답 <input type="text" id="pwanswer" name="pwanswer" placeholder="질문의 답을 해주세요"  value="${loginOK.pwanswer}"/>
 
-<br><br><br><br>
+<br><br><br><br> --%>
 
-<input type="submit" value="회원가입"/>
-
+<input type="submit" value="수정완료"/>
 </form>
-<a href="/BidProject/login.go"><button id="back">뒤로가기</button></a>
+<a href="/BidProject/mypage.go"><button id="back">뒤로가기</button></a>
 
 </body>
 </html>
