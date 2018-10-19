@@ -21,6 +21,11 @@
 	
 		location.href="write_proc.bd?seq="+seq;
 } 
+   
+   function update(seq){
+		location.href="modify_proc.bd?seq="+seq;
+} 
+   
 </script>
 </head>
 <body>
@@ -56,7 +61,7 @@
 </table><br><br>
 
 <a href="write.bd"><button id="write">글쓰기</button></a>
-
+<a href="main.go"><button id="main">MAIN</button></a>
 
 
 

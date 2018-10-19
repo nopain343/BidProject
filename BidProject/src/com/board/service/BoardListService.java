@@ -27,4 +27,17 @@ public class BoardListService{
 	}
 
 
+	public List<BoardDTO> modify(BoardDTO boardDTO) {
+		return boardDAO.modify(boardDTO);
+	}
+
+	public boolean update(BoardDTO boardDTO) {
+		return boardDAO.update(boardDTO);
+	}
+
+	public List<BoardDTO> delete(BoardDTO boardDTO) {
+		return boardDAO.delete(boardDTO);
+	}
+
+
 }

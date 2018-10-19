@@ -33,8 +33,6 @@ public class UserController {
 	public ModelAndView loginProc(@ModelAttribute UserVO user, HttpServletRequest request) {
 		if(service.loginUser(user) != null) {
 			HttpSession session = request.getSession();
-//			id = user.getId();
-//			password = user.getPassword();
 			session.setAttribute("loginOK", service.loginUser(user));
 			return new ModelAndView("main");
 		}else {
