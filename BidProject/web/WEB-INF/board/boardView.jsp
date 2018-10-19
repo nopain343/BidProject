@@ -36,7 +36,7 @@
 </tr>
 
 <tr>
-	<td colspan="3" height="200" valign="top"><pre>${content}</pre></td>
+	<td colspan="3" height="200" valign="top"><pre>${view.content}</pre></td>
 </tr>
 
 <tr>
@@ -46,7 +46,9 @@
 
 </form>
 
-
+<a href="qna.bd"><button id="list">목록</button></a>
+<button>삭제</button>
+<button>수정</button>
 
 </body>
 </html>
