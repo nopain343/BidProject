@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.board.dao.BoardPaging;
 import com.board.dto.BoardDTO;
 import com.board.service.BoardListService;
 
@@ -18,8 +19,8 @@ public class BoardController {
 	@Autowired
 	BoardListService boardListService;
 
-	@RequestMapping("/qna.bd")
-	public ModelAndView list() {
+	@RequestMapping(value="/qna.bd", method = RequestMethod.GET)
+	public ModelAndView list(@ModelAttribute BoardPaging boardPaging) {
 		return new ModelAndView("boardList", "list", boardListService.boardList());
 	}
 

@@ -40,7 +40,7 @@
    </div>
    <br>
     <div id="qna">
-      <a href="qna.bd"><button id="qna">Q&A</button></a>
+      <a href="qna.bd?pg=1"><button id="qna">Q&A</button></a>
    </div>
    <br>
    <div id="mypage">

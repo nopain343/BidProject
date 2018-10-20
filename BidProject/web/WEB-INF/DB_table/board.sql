@@ -21,7 +21,6 @@ CREATE TABLE board(
  );
 
  select * from board;
-
 --☆ 시퀀스 객체 작성
 create sequence 시퀀스객체명
 create sequence seq_board  nocache nocycle;

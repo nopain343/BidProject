@@ -1,7 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
+<%@ page import="com.board.dto.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<jsp:useBean id="boardDao" class="com.board.dao.BoardDAO"/>
+
+<%
+int seq = Integer.parseInt(request.getParameter("seq"));
+
+boardDao.updatehit(seq);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +62,7 @@
 <a href="modify.bd?seq=${view.seq}"><button>수정</button></a>
 <a href="delete.bd?seq=${view.seq}"><button>삭제</button></a>
 </c:if>
+<a href="reply.bd?seq=${view.seq}"><button>답글쓰기</button></a>
 
 
 

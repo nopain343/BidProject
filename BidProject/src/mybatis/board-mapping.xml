@@ -19,18 +19,28 @@
 			SELECT * FROM BOARD WHERE SEQ=#{seq}
 		]]>
 	</select>
-		<select id="modify" parameterType="boardDto" resultType="boardDto">
+	<select id="modify" parameterType="boardDto" resultType="boardDto">
 		<![CDATA[
 			SELECT * FROM BOARD WHERE SEQ=#{seq}
 		]]>
 	</select>
-			<select id="update" parameterType="boardDto" resultType="boardDto">
+	
+	<select id="update" parameterType="boardDto" resultType="boardDto">
 		<![CDATA[
 			UPDATE BOARD SET SUBJECT=#{subject},CONTENT=#{content} WHERE SEQ=#{seq}
 		]]>
 	</select>
 	
-				<select id="delete" resultType="boardDto">
+	<update id="updatehit" parameterType="Integer">
+		<![CDATA[
+			UPDATE BOARD SET HIT=HIT+1 WHERE SEQ=#{seq}
+		]]>
+	</update>
+	
+	
+	
+	
+	<select id="delete" resultType="boardDto">
 		<![CDATA[
 			DELETE BOARD WHERE SEQ=#{seq}
 		]]>
