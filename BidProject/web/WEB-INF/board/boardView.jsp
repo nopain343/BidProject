@@ -49,10 +49,10 @@
 </form>
 
 <a href="qna.bd"><button id="list">목록</button></a>
-
+<c:if test="${loginOK.id == view.id}">
 <a href="modify.bd?seq=${view.seq}"><button>수정</button></a>
 <a href="delete.bd?seq=${view.seq}"><button>삭제</button></a>
-
+</c:if>
 
 
 

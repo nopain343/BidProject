@@ -13,11 +13,11 @@
 <table border="1" >
 	<tr>
 		<td>아이디</td>
-		<td><input type="text" name="id" size="50"  value="test1" readonly></td>
+		<td><input type="text" name="id" size="50"  value="${loginOK.id}" readonly></td>
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td><input type="text" name="name" size="50" value="test_name" readonly></td>
+		<td><input type="text" name="name" size="50" value="${loginOK.username}" readonly></td>
 	</tr>	
 	<tr>
 		<td>이메일</td>

@@ -29,7 +29,7 @@
 </script>
 </head>
 <body>
-
+${loginOK.id }
 <table >
 	<tr>
 		<td colspan="5" bgcolor="777777"></td>

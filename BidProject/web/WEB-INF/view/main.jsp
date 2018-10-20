@@ -9,7 +9,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-   중고경매 프로젝트 됐으면 좋겠다.  --park
+	<c:if test="${empty loginOK}">
+		로그인해주세요
+	</c:if>
+	<c:if test="${!empty loginOK}">
+		${loginOK.id }님이 로그인하셨습니다.
+	</c:if>
    <br>
 
    <div id="search" class="search">

@@ -15,6 +15,8 @@ insert into user1 values('admin', '1234', '�슦�썝�옱', '�꽌�슱�
 SELECT * FROM USER1 WHERE ID = 'test' AND PASSWORD = '1'
 select * from sales;
 select * from user1;
+delete user1;
+
 
 select * from tab;
 SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = 'abc'
