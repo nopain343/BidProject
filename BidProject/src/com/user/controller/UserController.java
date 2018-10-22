@@ -118,7 +118,22 @@ public class UserController {
 		else {
 			return new ModelAndView("searchPasswordFail2");
 		}
-		
+	}
+	
+	@RequestMapping("/searchId.go")
+	public ModelAndView searchId() {
+		return new ModelAndView("searchId");
+	}
+	
+	@RequestMapping(value="/searchId2.go", method=RequestMethod.POST)
+	public ModelAndView searchId2(@ModelAttribute UserVO user, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(service.searchId2(user) != null) {
+			session.setAttribute("searchOK", service.searchId2(user));
+			return new ModelAndView("searchIdOK");
+		}else {
+			return new ModelAndView("searchIdFail");
+		}
 	}
 }
 

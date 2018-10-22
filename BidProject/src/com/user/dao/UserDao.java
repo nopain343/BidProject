@@ -36,4 +36,9 @@ public class UserDao {
 		UserVO vo = factory.openSession().selectOne("bidMapper.searchPassword2", user);
 		return vo;
 	}
+
+	public UserVO searchId2(UserVO user) {
+		UserVO vo = factory.openSession().selectOne("bidMapper.searchId2", user);
+		return vo;
+	}
 }

@@ -30,4 +30,8 @@ public class UserService {
 	public UserVO searchPassword2(UserVO user) {
 		return dao.searchPassword2(user);
 	}
+
+	public UserVO searchId2(UserVO user) {
+		return dao.searchId2(user);
+	}
 }

@@ -16,12 +16,13 @@ LOGIN
 	<input type="hidden" id="phone" name="phone"/>
 	<input type="submit" value="로그인"/>
 </form>
+
 아직 아이디가 없으신가요?
 <a href="/BidProject/insert.go">회원가입</a>
 <a href="/BidProject/main.go">뒤로가기</a>
 <br>
 <br>
-<a href="/BidProject/searchID.go">아이디찾기</a>
+<a href="/BidProject/searchId.go">아이디찾기</a>
 <a href="/BidProject/searchPassword.go">비밀번호찾기</a>
 </body>
 </html>

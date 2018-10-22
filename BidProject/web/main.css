@@ -52,7 +52,7 @@ body{
 }
 
 #main {
-	background-image: url("https://cdn.pixabay.com/photo/2012/10/26/03/16/painting-63186_1280.jpg");
+	background-image: url("/BidProject/image/background.jpg");
 	background-size: cover;
 	height: 350px;
 }

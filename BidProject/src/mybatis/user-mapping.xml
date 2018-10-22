@@ -37,4 +37,10 @@
 		]]>
 	</select>
 	
+	<select id="searchId2" parameterType="userInfo" resultType="userInfo">
+		<![CDATA[
+			SELECT ID, USERNAME, PHONE FROM USER1 WHERE USERNAME = #{username} AND PHONE = #{phone}
+		]]>
+	</select>
+	
 </mapper>
