@@ -9,11 +9,8 @@
 	<typeAliases>
 		<typeAlias type="com.board.dto.BoardDTO" alias="boardDto"/>
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
-<<<<<<< HEAD
 		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
-=======
-		<typeAlias type="com.board.dto.paging" alias="total"/>
->>>>>>> branch 'master' of https://github.com/sunup1992/BidProject.git
+
 	</typeAliases>
 	
 	<mappers>
