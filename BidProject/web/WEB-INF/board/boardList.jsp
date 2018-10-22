@@ -86,49 +86,6 @@ ${loginOK.id }
 
 
 
-<%-- <table>
-	<tr>
-		<td colspan="5" bgcolor="777777"></td>
-	</tr>
-	<tr>
-		<th width="100">글번호</th>
-		<th width="300">제목</th>
-		<th width="100">작성자</th>
-		<th width="100">조회수</th>
-		<th width="100">작성일</th>
-	</tr>
-	<tr>
-		<td colspan="5" bgcolor="777777"></td>
-	</tr>
-	<%for(BoardDTO boardDto : list){ %>
-	<tr>
-		<td align="center"><%=boardDto.getSeq() %></td>
-		<td>
-		<% for(int i=0; i<boardDto.getLev(); i++){ %>
-			&nbsp;
-		<%} %>
-		
-		<%if(boardDto.getPseq()!=0){ %>
-			<img src="/bbs/image/reply.gif">
-		<%} %>
-		
-	
-		</td>
-		<td align="center"><%=boardDto.getId() %></td>
-		<td align="center"><%=boardDto.getHit() %></td>
-		<td align="center"><%=boardDto.getLogtime() %></td>
-	</tr>
-	<tr>
-		<td colspan="5" bgcolor="cccccc"></td>
-	</tr>
-	<%}//for %>
-	<tr>
-		<td colspan="5" bgcolor="777777"></td>
-	</tr>
-	<tr>
-		<td colspan="5" align="center"><%=paging.getPagingHTML() %></td>
-	</tr>
-</table> --%>
 </body>
 </html>
 

@@ -29,7 +29,7 @@ public class BoardDAO {
 	}
 
 	public List<BoardDTO> boardView(BoardDTO boardDTO) {
-
+		int n = factory.openSession().update("boardNameSpace.updatehit", boardDTO.getSeq());
 		return factory.openSession().selectList("boardNameSpace.boardView", boardDTO);
 
 	}
@@ -50,18 +50,6 @@ public class BoardDAO {
 	}
 
 
-	public void updatehit(int seq) {
-		int n = factory.openSession().update("boardNameSpace.updatehit", seq);
-	}
 
-	
-	public static BoardDAO getInstance() {
-		if(instance==null){
-			synchronized(BoardDAO.class){
-				instance = new BoardDAO();
-			}			
-		}
-		return instance;
-	}
 
 }

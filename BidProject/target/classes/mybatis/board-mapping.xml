@@ -39,11 +39,11 @@
 		]]>
 	</select>
 	
-<!-- 	<update id="updatehit" parameterType="Integer">
+	<update id="updatehit" parameterType="Integer">
 		<![CDATA[
 			UPDATE BOARD SET HIT=HIT+1 WHERE SEQ=#{seq}
 		]]>
-	</update> -->
+	</update> 
 	
 
 	<select id="delete" resultType="boardDto">

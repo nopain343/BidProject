@@ -6,11 +6,6 @@
 
 <jsp:useBean id="boardDao" class="com.board.dao.BoardDAO"/>
 
-<%
-int seq = Integer.parseInt(request.getParameter("seq"));
-
-boardDao.updatehit(seq);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +52,7 @@ boardDao.updatehit(seq);
 
 </form>
 
-<a href="qna.bd"><button id="list">목록</button></a>
+<a href="qna.bd?pg=1"><button id="list">목록</button></a>
 <c:if test="${loginOK.id == view.id}">
 <a href="modify.bd?seq=${view.seq}"><button>수정</button></a>
 <a href="delete.bd?seq=${view.seq}"><button>삭제</button></a>
