@@ -1,6 +1,5 @@
 package com.board.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,12 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.board.dto.BoardDTO;
-import com.board.dto.paging;
-
 @Repository
 public class BoardDAO {
 	private static BoardDAO instance;
-	paging paging;
 	@Autowired
 	private SqlSessionFactory factory;
 
