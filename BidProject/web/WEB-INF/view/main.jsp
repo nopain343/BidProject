@@ -40,7 +40,7 @@
 		</li>
 	
 		<li id="mypage">
-			<c:if test="${empty loginOK}">
+			<c:if test="${!empty loginOK}">
 	      		<h2><a href="/BidProject/mypage.go" class="mypage">MY PAGE</a></h2>
 	      	</c:if>
 	   	</li>
