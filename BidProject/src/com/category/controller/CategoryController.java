@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.board.dto.BoardPaging;
 import com.category.service.CategoryService;
+import com.category.vo.CategoryVO;
 @Controller
 public class CategoryController {
 	@Autowired
@@ -16,8 +16,9 @@ public class CategoryController {
 	
 	
 /*	@RequestMapping(value="/category.ct", method = RequestMethod.GET)
-	public ModelAndView list(@ModelAttribute BoardPaging boardPaging) {
-		return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
+	public ModelAndView list(@ModelAttribute CategoryVO categoryVO) {
+		CategoryVO categoryVo = new CategoryVO();
+		return new ModelAndView("category", "cate", categoryService.categoryList());
 	}
 */
 	
