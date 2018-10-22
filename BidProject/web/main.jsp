@@ -35,7 +35,7 @@
    <br>
 
    <div id="category">
-       <button id="category">카테고리</button>
+       z<button id="category">카테고리</button>
    </div>
    <br>
 
