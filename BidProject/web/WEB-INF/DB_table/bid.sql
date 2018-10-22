@@ -17,10 +17,17 @@ select * from sales;
 select * from user1;
 delete user1;
 
-insert into sales (cat1) values('test');
+insert into sales values('의류','자켓',50000,'1','AA01','may','2018-11-03','블랙 자켓~!~!');
+insert into sales values('의류','코트',70000,'2','AA02','Jin','2018-11-04','롱코트');
+insert into sales values('패션잡화','신발',30000,'3','BB01','jenni7','2018-11-03','나이키신발');
+insert into sales values('의류','자켓',50000,'1','AA01','may','2018-11-03','블랙 자켓~!~!');
+insert into sales values('패션잡화','name',111,'1','code','id','term','descrip');
+insert into sales (cat1) values('test1');
+select * from sales;
 
+delete from sales where cat1='test';
 
-출처: http://hyeonstorage.tistory.com/294 [개발이 하고 싶어요]
+SELECT * FROM SALES;
 
 select * from tab;
 SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = 'abc'

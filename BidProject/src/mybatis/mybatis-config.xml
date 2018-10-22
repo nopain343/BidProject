@@ -9,10 +9,12 @@
 	<typeAliases>
 		<typeAlias type="com.board.dto.BoardDTO" alias="boardDto"/>
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
+		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/board-mapping.xml"/>
 		<mapper resource="mybatis/user-mapping.xml"/>
+		<mapper resource="mybatis/category-mapping.xml"/>
 	</mappers>
 </configuration>
