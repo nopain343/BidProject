@@ -6,9 +6,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="main.go">
-당신의 비밀번호는 ${searchOK.password} 입니다.
-</form>
+비밀번호 확인 질문의 답과 일치하지 않습니다. 다시 적어주세요.
+
+<a href="/BidProject/searchPassword.go">뒤로 가기</a>
 
 
 </body>

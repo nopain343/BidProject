@@ -100,12 +100,23 @@ public class UserController {
 	@RequestMapping(value="/searchPassword2.go", method=RequestMethod.POST)
 	public ModelAndView searchPassword2(@ModelAttribute UserVO user, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		System.out.println(service.searchPassword2(user));
-		if(service.searchPassword2(user)) {
-			session.setAttribute("search", user);
+		if(service.searchPassword2(user) != null) {
+			session.setAttribute("searchOK", service.searchPassword2(user));
 			return new ModelAndView("searchPassword2");
 		}else {
 			return new ModelAndView("searchPasswordFail");
+		}
+	}
+	
+	@RequestMapping(value="/searchPassword3.go", method=RequestMethod.POST)
+	public ModelAndView searchPassword3(@ModelAttribute UserVO user, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		if(((UserVO)session.getAttribute("searchOK")).getPwanswer().equals(user.getPwanswer())) {
+			return new ModelAndView("searchPasswordOK");
+		}
+		else {
+			return new ModelAndView("searchPasswordFail2");
 		}
 		
 	}

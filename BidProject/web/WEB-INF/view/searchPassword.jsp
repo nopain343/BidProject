@@ -10,6 +10,8 @@
 아이디를 입력해주세요
 <input type="text" id="id" name="id"/>
 <input type="submit" value="찾기"/>
+
+<a href="/BidProject/login.go">뒤로 가기</a>
 </form>
 
 </body>
