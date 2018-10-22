@@ -11,11 +11,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.board.dto.BoardPaging;
+import com.board.dao.BoardDAO;
 import com.board.dto.BoardDTO;
 import com.board.service.BoardListService;
 
 @Controller
 public class BoardController {
+	int pg;// 현재페이지
+	int pageBlock = 3;   // [이전][1][2][3][다음]
+	int pageSize = 10;     // 1페이지당 5개씩 글 뿌리기
+	StringBuffer pagingHTML;
 	@Autowired
 	BoardListService boardListService;
 	BoardPaging boardPaging;
@@ -25,8 +30,12 @@ public class BoardController {
 		this.boardPaging = boardPaging;
 		return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
 	}
-
-
+	
+	//==========================================================================================================
+	
+	
+	
+	
 	@RequestMapping(value = "/write.bd")
 	public ModelAndView insert() {
 		return new ModelAndView("boardWrite");

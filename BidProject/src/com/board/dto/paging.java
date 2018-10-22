@@ -1,7 +1,6 @@
 package com.board.dto;
 
-public class BoardDTO {
-	
+public class paging {
 	private int seq;
 	private String id;
 	private String name;
@@ -15,14 +14,7 @@ public class BoardDTO {
 	private int reply;
 	private int hit;
 	private String logtime;
-	private int total;
 	
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
 	public int getSeq() {
 		return seq;
 	}
@@ -101,4 +93,5 @@ public class BoardDTO {
 	public void setLogtime(String logtime) {
 		this.logtime = logtime;
 	}
+	
 }

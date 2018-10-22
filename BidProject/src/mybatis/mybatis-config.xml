@@ -9,6 +9,7 @@
 	<typeAliases>
 		<typeAlias type="com.board.dto.BoardDTO" alias="boardDto"/>
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
+		<typeAlias type="com.board.dto.paging" alias="total"/>
 	</typeAliases>
 	
 	<mappers>
