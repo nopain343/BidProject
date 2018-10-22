@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="boardNameSpace">
-	<select id="boardlist" resultType="boardDto">
+	<select id="boardlist" resultType="boardDto" parameterType="Integer">
 		<![CDATA[
-			SELECT * FROM BOARD ORDER BY 1 DESC
+			SELECT SEQ,ID,NAME,EMAIL,SUBJECT,CONTENT,REF,LEV,STEP,PSEQ,REPLY,HIT,TO_CHAR(LOGTIME,'YYYY.MM.DD')AS LOGTIME FROM (SELECT ROWNUM RN, AA.* FROM(SELECT * FROM BOARD ORDER BY REF DESC,STEP ASC)AA) WHERE RN>=#{pg}*10-4 AND RN<=#{pg}*10
 		]]>
 	</select>
 	
 		<select id="insert" parameterType="boardDto">
 		<![CDATA[
-			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id}, #{name}, #{email},#{subject}, #{content},3,0,0,0,0,0,SYSDATE)
+			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id}, #{name}, #{email},#{subject}, #{content},seq_board.currval,0,0,0,0,0,SYSDATE)
 		]]>
 	</select>
 	
@@ -43,6 +43,12 @@
 	<select id="delete" resultType="boardDto">
 		<![CDATA[
 			DELETE BOARD WHERE SEQ=#{seq}
+		]]>
+	</select>
+	
+	<select id="getTotal" resultType="Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM BOARD
 		]]>
 	</select>
 	

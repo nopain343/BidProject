@@ -14,9 +14,9 @@ public class BoardDAO {
 	@Autowired
 	private SqlSessionFactory factory;
 
-	public List<BoardDTO> boardList() {
+	public List<BoardDTO> boardList(int pg) {
 
-		return factory.openSession().selectList("boardNameSpace.boardlist");
+		return factory.openSession().selectList("boardNameSpace.boardlist", pg);
 	}
 
 	public boolean insert(BoardDTO boardDTO) {
@@ -47,8 +47,12 @@ public class BoardDAO {
 
 
 	public void updatehit(int seq) {
-		System.out.println(seq);
 		int n = factory.openSession().update("boardNameSpace.updatehit", seq);
+	}
+
+	public int getTotalArticle() {
+		int n = factory.openSession().selectOne("boardNameSpace.getTotal");
+		return n;
 	}
 
 }

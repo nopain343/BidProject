@@ -13,8 +13,8 @@ public class BoardListService{
 	@Autowired
 	private BoardDAO boardDAO;
 
-	public List<BoardDTO> boardList() {
-		return boardDAO.boardList();
+	public List<BoardDTO> boardList(int pg) {
+		return boardDAO.boardList(pg);
 	}
 
 	public boolean insert(BoardDTO boardDTO) {

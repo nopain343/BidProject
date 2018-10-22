@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.board.dao.BoardPaging;
+import com.board.dto.BoardPaging;
 import com.board.dto.BoardDTO;
 import com.board.service.BoardListService;
 
@@ -18,18 +18,14 @@ import com.board.service.BoardListService;
 public class BoardController {
 	@Autowired
 	BoardListService boardListService;
+	BoardPaging boardPaging;
 
 	@RequestMapping(value="/qna.bd", method = RequestMethod.GET)
 	public ModelAndView list(@ModelAttribute BoardPaging boardPaging) {
-		return new ModelAndView("boardList", "list", boardListService.boardList());
+		this.boardPaging = boardPaging;
+		return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
 	}
 
-	/*
-	 * @RequestMapping(value = "/login.sp", method = RequestMethod.POST) public
-	 * ModelAndView loginProc(@ModelAttribute UserVO user) {
-	 * if(service.loginUser(user)) { return new ModelAndView("/index.sp"); }else {
-	 * return new ModelAndView("/login.jsp"); } }
-	 */
 
 	@RequestMapping(value = "/write.bd")
 	public ModelAndView insert() {
@@ -39,9 +35,9 @@ public class BoardController {
 	@RequestMapping(value = "/write_proc.bd", method = RequestMethod.POST)
 	public ModelAndView write(@ModelAttribute BoardDTO boardDTO) {
 		if (boardListService.insert(boardDTO)) {
-			return list();
+			return list(boardPaging);
 		} else {
-			return new ModelAndView("boardList", "list", boardListService.boardList());
+			return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
 		}
 	}
 
@@ -64,9 +60,9 @@ public class BoardController {
 	@RequestMapping(value = "/modify_proc.bd", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute BoardDTO boardDTO) {
 		if (boardListService.update(boardDTO)) {
-			return list();
+			return list(boardPaging);
 		} else {
-			return new ModelAndView("boardList", "list", boardListService.boardList());
+			return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
 		}
 	}
 	
@@ -74,7 +70,7 @@ public class BoardController {
 	public ModelAndView delete(@ModelAttribute BoardDTO boardDTO) {
 		boardListService.delete(boardDTO);
 		
-		return new ModelAndView("boardList", "list", boardListService.boardList());
+		return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
 
 	}
 
