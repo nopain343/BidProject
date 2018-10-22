@@ -13,17 +13,14 @@ public class BoardPaging {
 		
 	}
 
-	public void makePagingHTML(int total){
+	public void makePagingHTML(int total, int pg){
 		pagingHTML=new StringBuffer();
-		
+		this.pg = pg;
 		int totalA = total;//ÃÑ±Û¼ö			
 		int totalP=(totalA+pageSize-1)/pageSize;//ÃÑÆäÀÌÁö¼ö
-	
 		int startPage=
 				((int)((pg-1)/pageBlock))*pageBlock+1;		
-		
 		int endPage=startPage+pageBlock-1;
-				
 		if(endPage>totalP){
 			endPage=totalP;
 		}		

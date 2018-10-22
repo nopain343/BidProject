@@ -6,9 +6,10 @@
 
 <% 
 	int total= ((List<BoardDTO>)request.getAttribute("list")).get(0).getTotal();
+	int pg = ((List<BoardDTO>)request.getAttribute("list")).get(0).getPg();
 	BoardPaging paging = new BoardPaging();
 	
-	paging.makePagingHTML(total);
+	paging.makePagingHTML(total,pg);
 	
 %>
 

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import com.board.dto.BoardDTO;
 @Repository
 public class BoardDAO {
-	private static BoardDAO instance;
 	@Autowired
 	private SqlSessionFactory factory;
 
@@ -18,6 +17,7 @@ public class BoardDAO {
 		
 		int n = factory.openSession().selectOne("boardNameSpace.totalCount");
 		list.get(0).setTotal(n);
+		list.get(0).setPg(pg);
 		
 		return list;
 	}
