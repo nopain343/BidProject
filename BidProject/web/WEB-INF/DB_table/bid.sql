@@ -17,6 +17,12 @@ select * from sales;
 select * from user1;
 delete user1;
 
+insert into sales (cat1) values('test');
+
+INSERT INTO PLAYER (PLAYER_ID, PLAYER_NAME, TEAM_ID, POSITION, HEIGHT, WEIGHT, BACK_NO)
+VALUES ('2002007', ' 박지성', 'K07', 'MF' ,178, 73, 7);
+
+출처: http://hyeonstorage.tistory.com/294 [개발이 하고 싶어요]
 
 select * from tab;
 SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = 'abc'
