@@ -59,7 +59,7 @@
 		<h2><a href="" class="bidding">START BIDDING</a></h2>
 	</nav>
 	<div id="qna">
-	<h2><a href="qna.bd" class="qna">Q&amp;A</a></h2>
+	<h2><a href="qna.bd?pg=1" class="qna">Q&amp;A</a></h2>
 	</div>
 
 </section>

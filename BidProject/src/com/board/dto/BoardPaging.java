@@ -13,11 +13,10 @@ public class BoardPaging {
 		
 	}
 
-	public void makePagingHTML(){
+	public void makePagingHTML(int total){
 		pagingHTML=new StringBuffer();
 		
-		BoardDAO boardDAO=BoardDAO.getInstance();
-		int totalA = boardDAO.getTotalArticle();//총글수			
+		int totalA = total;//총글수			
 		int totalP=(totalA+pageSize-1)/pageSize;//총페이지수
 	
 		int startPage=
@@ -31,23 +30,23 @@ public class BoardPaging {
 		
 		//---------------------
 		if(startPage>pageBlock){			
-			pagingHTML.append("[<a href='/bbs/board/boardList.jsp?pg="
+			pagingHTML.append("[<a href='qna.bd?pg="
 		+(startPage-pageBlock)+"'>"+"이전</a>]");
 		}		
 		
 		for(int i=startPage;i<=endPage;i++){
 			if(pg==i){
-				pagingHTML.append("[<a href='/bbs/board/boardList.jsp?pg="
+				pagingHTML.append("[<a href='qna.bd?pg="
 			+i+"'><font color=red>"+i+"</font></a>]");
 			
 			}else{
-				pagingHTML.append("[<a href='/bbs/board/boardList.jsp?pg="
+				pagingHTML.append("[<a href='qna.bd?pg="
 			+i+"'>"+i+"</a>]");
 			}
 		}
 				
 		if(endPage<totalP){
-			pagingHTML.append("[<a href='/bbs/board/boardList.jsp?pg="
+			pagingHTML.append("[<a href='qna.bd?pg="
 		+(startPage+pageBlock)+"'>"+"다음</a>]");
 		}
 	}

@@ -1,7 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ page import="com.board.dto.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<% 
+	int total= ((List<BoardDTO>)request.getAttribute("list")).get(0).getTotal();
+	BoardPaging paging = new BoardPaging();
+	
+	paging.makePagingHTML(total);
+	
+%>
+
+
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -56,7 +67,15 @@ ${loginOK.id }
 			</tr>
 		</c:forEach>
 	</c:if>
-	
+	<tr>
+		<td colspan="5" bgcolor="cccccc"></td>
+	</tr>
+	<tr>
+		<td colspan="5" bgcolor="777777"></td>
+	</tr>
+	<tr>
+		<td colspan="5" align="center"><%=paging.getPagingHTML() %></td>
+	</tr>
 	
 </table><br><br>
 
