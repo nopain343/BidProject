@@ -6,9 +6,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Let It Bid</title>
 </head>
 <body>
+<header>
+	<div id="search" class="search">
+		<i class="fa fa-search" class="w3-xlarge"></i>
+		<input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text"/>
+	</div>
+
 	<c:if test="${empty loginOK}">
 		로그인해주세요
 	</c:if>
@@ -17,40 +27,51 @@
 	</c:if>
    <br>
 
-   <div id="search" class="search">
-      검색 <input id="query" name="query" type="text" title="검색어 입력"
-         maxlength="255" class="input_text" tabindex="1"
-          value="" />
-         <a href=""><button id="search">검색</button></a>
-   </div>
-   <br>
+	<h1>LET IT BID</h1>
 	
-   <div id="log">
-	   <c:if test="${empty loginOK}">
-			<a href="/BidProject/login.go"><button id="login">로그인</button></a>
-	   </c:if>
+	<ul>
+		<li id="log">
+			<c:if test="${empty loginOK}">
+				<h2><a href="/BidProject/login.go" class="log">LOGIN</a></h2>
+			</c:if>
+			<c:if test="${!empty loginOK}">
+			  	<h2><a href="/BidProject/logout.go" class="log">LOGOUT</a></h2>
+			</c:if>
+		</li>
 	
-	   <c:if test="${!empty loginOK}">
-		  	<a href="/BidProject/logout.go"><button id="logout">로그아웃</button></a>
-	   </c:if>
-   </div>
+		<li id="mypage">
+			<c:if test="${empty loginOK}">
+	      		<h2><a href="/BidProject/mypage.go" class="mypage">MY PAGE</a></h2>
+	      	</c:if>
+	   	</li>
+	</ul>
+</header>
 
-   <div id="sale" >
-      <button id="sale">판매하기</button>
-   </div>
-   <br>
-    <div id="qna">
-      <a href="qna.bd?pg=1"><button id="qna">Q&A</button></a>
-   </div>
-   <br>
-   <div id="mypage">
-      <a href="/BidProject/mypage.go"><button id="mypage">마이페이지</button></a>
-   </div>
-   <br>
+<section id="main" class="main">
+	<div>
+		<h1>BID YOUR ITEMS</h1>
+	</div>
+</section>
 
-   <div id="category">
-       <button id="category">카테고리</button>
-   </div>
-   <br>
+<section>
+	<nav id="filter">
+		<h2><a href="" class="category">CATEGORY</a></h2>
+		<h2><a href="" class="bidding">START BIDDING</a></h2>
+	</nav>
+</section>
 
+<section>
+	<div>
+		상품사진들 list로 들어가는 부분
+	</div>
+</section>
+
+<div id="qna">
+	<h2><a href="qna.bd" class="qna">Q&amp;A</a></h2>
+</div>
+
+<footer>
+FOOTER : 기타 정보들 입력
+</footer>
 </body>
+</html>

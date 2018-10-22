@@ -6,15 +6,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="/BidProject/searchPasswordOK.go">
-비밀번호 찾기 질문 : <input id="pwquestion" name="pwquestion" value="${search.pwquestion}">
+<form method="post" action="/BidProject/searchPassword3.go">
+비밀번호 찾기 질문 : <input id="pwquestion" name="pwquestion" value="${searchOK.pwquestion}">
 <br>
-비밀번호 찾기 답
-<input type="text" id="pwanswer" name="pwanswer" value="${search.pwanswer}"/>
-<input type="hidden" id="pwanswer" name="pwanswer"/>
-<input type="hidden" id="password" name="password" value="${search.password}"/>
-<input type="submit" value="아이디 확인"/>
+비밀번호 찾기 답 : 
+<input type="text" id="pwanswer" name="pwanswer"/>
+<br>
+<input type="submit" value="아이디 찾기"/>
 </form>
+
+<a href="/BidProject/searchPassword.go">뒤로 가기</a>
 
 
 </body>

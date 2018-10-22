@@ -6,11 +6,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="main.go">
 그런 아이디는 존재하지 않습니다.
-<input type="submit" value="메인으로"/>
-</form>
-
+<a href="/BidProject/searchPassword.go">뒤로 가기</a>
 
 </body>
 </html>

@@ -27,7 +27,7 @@ public class UserService {
 		return dao.updateUser(user);
 	}
 
-	public boolean searchPassword2(UserVO user) {
+	public UserVO searchPassword2(UserVO user) {
 		return dao.searchPassword2(user);
 	}
 }
