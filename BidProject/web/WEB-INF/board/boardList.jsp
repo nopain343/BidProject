@@ -25,23 +25,12 @@
 
   function checkLogin(seq,name){
 	
-	location.href="boardview.bd?seq="+seq+"&name="+name;
-   /*  console.log(location.href); */
+	location.href="boardview.bd?seq="+seq+"&pg="+name;
 }  
 
-   function write(seq){
-	
-		location.href="write_proc.bd?seq="+seq;
-} 
-   
-   function update(seq){
-		location.href="modify_proc.bd?seq="+seq;
-} 
-   
 </script>
 </head>
 <body>
-${loginOK.id }
 <table >
 	<tr>
 		<td colspan="5" bgcolor="777777"></td>
@@ -61,7 +50,14 @@ ${loginOK.id }
 		<c:forEach items="${list}"  var="ob">
 			<tr>
 				<td>${ob.seq}</td>
-			<td><a href="javascript:checkLogin(${ob.seq},'${ob.name}')">${ob.subject}</a></td>
+				<td>
+				<c:forEach begin="0" end="${ob.lev }" step="1">
+				&nbsp;
+				</c:forEach>
+				<c:if test="${ob.pseq != 0}">
+				<img src = "/BidProject/image/reply.gif">
+				</c:if>
+				<a href="javascript:checkLogin(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
 				<td>${ob.name}</td>
 				<td>${ob.hit}</td>
 				<td>${ob.logtime}</td>

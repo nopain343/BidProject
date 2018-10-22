@@ -66,6 +66,16 @@ public class BoardController {
 		return new ModelAndView("boardModify", "modify", modifyDto);
 	}
 
+
+	@RequestMapping(value = "/reply.bd", method = RequestMethod.GET)
+	public ModelAndView reply(@ModelAttribute BoardDTO boardDTO) {
+		
+		return new ModelAndView("boardReplyForm", "reply", boardDTO);
+
+	}
+	
+	
+	
 	@RequestMapping(value = "/modify_proc.bd", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute BoardDTO boardDTO) {
 		if (boardListService.update(boardDTO)) {
@@ -81,6 +91,18 @@ public class BoardController {
 		
 		return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
 
+	}
+	
+	
+	
+	
+	@RequestMapping(value = "/reply_proc.bd", method = RequestMethod.POST)
+	public ModelAndView reply_proc(@ModelAttribute BoardDTO boardDTO) {
+		if (boardListService.reply(boardDTO)) {
+			return list(boardPaging);
+		} else {
+			return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
+		}
 	}
 
 }

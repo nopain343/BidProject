@@ -4,7 +4,7 @@
 <mapper namespace="boardNameSpace">
 	<select id="boardlist" resultType="boardDto" parameterType="Integer">
 		<![CDATA[
-			SELECT SEQ,ID,NAME,EMAIL,SUBJECT,CONTENT,REF,LEV,STEP,PSEQ,REPLY,HIT,TO_CHAR(LOGTIME,'YYYY.MM.DD')AS LOGTIME FROM (SELECT ROWNUM RN, AA.* FROM(SELECT * FROM BOARD ORDER BY REF DESC,STEP ASC)AA) WHERE RN>=#{pg}*10-9 AND RN<=#{pg}*10
+			SELECT SEQ,ID,NAME,EMAIL,SUBJECT,CONTENT,REF,LEV,STEP,PSEQ,REPLY,HIT,TO_CHAR(LOGTIME,'YYYY.MM.DD')AS LOGTIME FROM (SELECT ROWNUM RN, AA.* FROM(SELECT * FROM BOARD ORDER BY REF DESC,STEP DESC)AA) WHERE RN>=#{pg}*10-9 AND RN<=#{pg}*10
 		]]>
 	</select>
 	
@@ -53,6 +53,24 @@
 	</select>
 	
 	
+	
+	<update id="reply1" parameterType="boardDto">
+		<![CDATA[
+			UPDATE BOARD SET STEP=STEP+1 WHERE REF=#{ref} AND STEP>#{step}
+		]]>
+	</update> 
+	
+	<insert id="reply2" parameterType="boardDto">
+		<![CDATA[
+		INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id},#{name},#{email},#{subject},#{content},#{ref},#{lev},#{step},#{pseq},0,0,SYSDATE)
+		]]>
+	</insert>
+	
+	<update id="reply3" parameterType="boardDto">
+		<![CDATA[
+			UPDATE BOARD SET REPLY=REPLY+1 WHERE SEQ=#{seq}
+		]]>
+	</update> 
 	
 	
 </mapper>

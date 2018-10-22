@@ -39,5 +39,9 @@ public class BoardListService{
 		return boardDAO.delete(boardDTO);
 	}
 
+	public boolean reply(BoardDTO boardDTO) {
+		return boardDAO.reply(boardDTO);
+	}
+
 
 }

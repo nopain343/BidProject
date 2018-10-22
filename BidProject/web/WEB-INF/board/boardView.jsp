@@ -52,12 +52,14 @@
 
 </form>
 
-<a href="qna.bd?pg=1"><button id="list">목록</button></a>
+<a href="qna.bd?pg=${view.pg }"><button id="list">목록</button></a>
 <c:if test="${loginOK.id == view.id}">
 <a href="modify.bd?seq=${view.seq}"><button>수정</button></a>
 <a href="delete.bd?seq=${view.seq}"><button>삭제</button></a>
 </c:if>
-<a href="reply.bd?seq=${view.seq}"><button>답글쓰기</button></a>
+<c:if test="${!empty loginOK.id }">
+<a href="reply.bd?seq=${view.seq}&pg=${view.pg}"><button>답글쓰기</button></a>
+</c:if>
 
 
 

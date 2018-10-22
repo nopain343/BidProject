@@ -30,7 +30,10 @@ public class BoardDAO {
 
 	public List<BoardDTO> boardView(BoardDTO boardDTO) {
 		int n = factory.openSession().update("boardNameSpace.updatehit", boardDTO.getSeq());
-		return factory.openSession().selectList("boardNameSpace.boardView", boardDTO);
+		List<BoardDTO> list = factory.openSession().selectList("boardNameSpace.boardView", boardDTO);
+		list.get(0).setPg(boardDTO.getPg());
+		list.get(0).setSeq(boardDTO.getSeq());
+		return list;
 
 	}
 
@@ -47,6 +50,30 @@ public class BoardDAO {
 
 	public List<BoardDTO> delete(BoardDTO boardDTO) {
 		return factory.openSession().selectList("boardNameSpace.delete", boardDTO);
+	}
+
+
+	
+	
+	
+	
+	
+	
+	public boolean reply(BoardDTO boardDTO) {
+		BoardDTO originDto = (BoardDTO)factory.openSession().selectList("boardNameSpace.boardView", boardDTO).get(0);
+		
+		int n = factory.openSession().update("boardNameSpace.reply1",originDto);
+		
+		boardDTO.setRef(originDto.getRef());
+		boardDTO.setLev(originDto.getLev()+1);
+		boardDTO.setStep(originDto.getStep()+1);
+		boardDTO.setPseq(originDto.getSeq());
+		
+		n = factory.openSession().insert("boardNameSpace.reply2",boardDTO);
+		
+		n = factory.openSession().update("boardNameSpace.reply3",originDto);
+		
+		return (n > 0) ? true : false;
 	}
 
 
