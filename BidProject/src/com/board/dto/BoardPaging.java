@@ -6,18 +6,18 @@ public class BoardPaging {
 	int pg;// 현재페이지
 	int pageBlock = 3;   // [이전][1][2][3][다음]
 	int pageSize = 10;     // 1페이지당 5개씩 글 뿌리기
-	int totalA;
 	StringBuffer pagingHTML;
+
 	
 	public BoardPaging() {
 		
 	}
 
-	/*public void makePagingHTML(){
+	public void makePagingHTML(){
 		pagingHTML=new StringBuffer();
 		
-
-		this.totalA = BoardDAO.getTotalArticle();//총글수			
+		BoardDAO boardDAO=BoardDAO.getInstance();
+		int totalA = boardDAO.getTotalArticle();//총글수			
 		int totalP=(totalA+pageSize-1)/pageSize;//총페이지수
 	
 		int startPage=
@@ -51,7 +51,7 @@ public class BoardPaging {
 		+(startPage+pageBlock)+"'>"+"다음</a>]");
 		}
 	}
-*/
+
 	public String getPagingHTML() {
 		return pagingHTML.toString();
 	}

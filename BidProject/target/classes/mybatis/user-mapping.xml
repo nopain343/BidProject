@@ -31,7 +31,7 @@
 		]]>
 	</update>
 	
-	<select id="searchPassword2" parameterType="userInfo">
+	<select id="searchPassword2" parameterType="userInfo" resultType="userInfo">
 		<![CDATA[
 			SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = #{id}
 		]]>

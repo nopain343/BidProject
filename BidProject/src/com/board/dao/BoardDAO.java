@@ -10,7 +10,7 @@ import com.board.dto.BoardDTO;
 
 @Repository
 public class BoardDAO {
-
+	private static BoardDAO instance;
 	@Autowired
 	private SqlSessionFactory factory;
 
@@ -53,6 +53,15 @@ public class BoardDAO {
 	public int getTotalArticle() {
 		int n = factory.openSession().selectOne("boardNameSpace.getTotal");
 		return n;
+	}
+
+	public static BoardDAO getInstance() {
+		if(instance==null){
+			synchronized(BoardDAO.class){
+				instance = new BoardDAO();
+			}			
+		}
+		return instance;
 	}
 
 }

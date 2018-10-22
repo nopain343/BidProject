@@ -55,9 +55,13 @@
 
 <section>
 	<nav id="filter">
-		<h2><a href="" class="category">CATEGORY</a></h2>
+		<h2><a href="category.ct" class="category">CATEGORY</a></h2>
 		<h2><a href="" class="bidding">START BIDDING</a></h2>
 	</nav>
+	<div id="qna">
+	<h2><a href="qna.bd" class="qna">Q&amp;A</a></h2>
+	</div>
+
 </section>
 
 <section>
@@ -66,9 +70,7 @@
 	</div>
 </section>
 
-<div id="qna">
-	<h2><a href="qna.bd" class="qna">Q&amp;A</a></h2>
-</div>
+
 
 <footer>
 FOOTER : 기타 정보들 입력
