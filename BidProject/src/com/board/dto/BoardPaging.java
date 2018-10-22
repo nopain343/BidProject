@@ -13,6 +13,8 @@ public class BoardPaging {
 		
 	}
 
+	
+	
 	/*public void makePagingHTML(){
 		pagingHTML=new StringBuffer();
 		
