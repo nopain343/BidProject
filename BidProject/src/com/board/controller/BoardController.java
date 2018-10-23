@@ -18,8 +18,8 @@ import com.board.service.BoardListService;
 @Controller
 public class BoardController {
 	int pg;// 현재페이지
-	int pageBlock = 3;   // [이전][1][2][3][다음]
-	int pageSize = 10;     // 1페이지당 5개씩 글 뿌리기
+	int pageBlock = 3;  
+	int pageSize = 10;    
 	StringBuffer pagingHTML;
 	@Autowired
 	BoardListService boardListService;
