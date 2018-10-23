@@ -3,11 +3,10 @@
 
 <mapper namespace="categoryNameSpace">
 
-	<select id="categorylist" resultType="categoryVO">
+	<select id="categorylist" resultType="categoryVO" parameterType="Integer">
 		<![CDATA[
-			SELECT * FROM SALES
+			SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, SALES.* FROM SALES) WHERE RN>=#{page}*10-9 AND RN<=#{page}*10
 		]]>
-
 	</select>
 
 	

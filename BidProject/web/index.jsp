@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:redirect url="main.go"/>
+<c:redirect url="main.go?page=1"/>
 </body>	
 </html>

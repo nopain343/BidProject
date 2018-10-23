@@ -1,5 +1,6 @@
 package com.user.controller;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.category.service.CategoryService;
+import com.category.vo.CategoryVO;
 import com.user.service.UserService;
 import com.user.vo.UserVO;
 
@@ -17,10 +20,13 @@ import com.user.vo.UserVO;
 public class UserController {
 	@Autowired
 	UserService service;
+	@Autowired
+	CategoryService categoryService;
 	
-	@RequestMapping("/main.go")
-	public ModelAndView main() {
-		return new ModelAndView("main");
+	@RequestMapping(value="/main.go", method=RequestMethod.GET)
+	public ModelAndView list(@ModelAttribute CategoryVO category) {
+		System.out.println(category.getPage());
+		return new ModelAndView("main", "list", categoryService.categoryList(category.getPage()));
 	}
 	
 	@RequestMapping("/login.go")

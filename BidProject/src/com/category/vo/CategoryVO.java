@@ -11,6 +11,15 @@ public class CategoryVO {
 	private String id;
 	private String term;
 	private String descrip;
+	private int page;
+	
+	
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
 	public String getCat1() {
 		return cat1;
 	}

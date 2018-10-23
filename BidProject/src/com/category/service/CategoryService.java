@@ -13,9 +13,9 @@ public class CategoryService {
 	@Autowired
 	private CategoryDAO categoryDAO;
 	
-	public List<CategoryVO> categoryList() {
+	public List<CategoryVO> categoryList(int page) {
 		
-		return categoryDAO.categoryList();
+		return categoryDAO.categoryList(page);
 
 	}
 
