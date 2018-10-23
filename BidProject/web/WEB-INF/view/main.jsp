@@ -77,11 +77,11 @@
 </section>
 
 <section class="product2">
-	<div class="photo">product2</div>
+	<div class="photo">${list.get(0).prodname }</div>
 </section>
 
 <section class="product3">
-	<div class="photo">product3</div>
+	<div class="photo">${list.get(1).prodname }</div>
 </section>
 
 <section class="product4">
