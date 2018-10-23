@@ -62,12 +62,11 @@
 	<div id="qna" class="qna">
 	<h2><a href="qna.bd?pg=1" class="qna2" style="color:black">Q&amp;A</a></h2>
 	</div>
-
 </section>
 
 <section class="product1">
 	<div class="photo">
-		<a href="auction.go">Product Click</a>
+		<a href="/BidProject/auction.au">Product Click</a>
 	</div>
 </section>
 

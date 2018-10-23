@@ -2,20 +2,20 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
-
 <configuration>
 
-	
 	<typeAliases>
 		<typeAlias type="com.board.dto.BoardDTO" alias="boardDto"/>
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
 		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
-
+		<typeAlias type="com.auction.vo.AuctionVO" alias="auctionVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/board-mapping.xml"/>
 		<mapper resource="mybatis/user-mapping.xml"/>
 		<mapper resource="mybatis/category-mapping.xml"/>
+		<mapper resource="mybatis/auction-mapping.xml"/>
 	</mappers>
+	
 </configuration>
