@@ -16,7 +16,15 @@ public class BoardDTO {
 	private int hit;
 	private String logtime;
 	private int total;
+	private int pg;
 	
+	
+	public int getPg() {
+		return pg;
+	}
+	public void setPg(int pg) {
+		this.pg = pg;
+	}
 	public int getTotal() {
 		return total;
 	}

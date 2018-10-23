@@ -31,11 +31,12 @@ SELECT * FROM SALES;
 select * from tab;
 SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = 'abc'
 //-------------------------------------------
-
+drop table sales
 create table sales(
-category varchar2(20),
-name_p varchar2(20),
+cat1 varchar2(20),
+prodname varchar2(20),
 price number,
+condition varchar2(50),
 ref varchar2(1000),
 code varchar2(20),
 id varchar2(20),

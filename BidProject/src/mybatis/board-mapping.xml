@@ -39,11 +39,11 @@
 		]]>
 	</select>
 	
-<!-- 	<update id="updatehit" parameterType="Integer">
+	<update id="updatehit" parameterType="Integer">
 		<![CDATA[
 			UPDATE BOARD SET HIT=HIT+1 WHERE SEQ=#{seq}
 		]]>
-	</update> -->
+	</update> 
 	
 
 	<select id="delete" resultType="boardDto">
@@ -53,6 +53,24 @@
 	</select>
 	
 	
+	
+	<update id="reply1" parameterType="boardDto">
+		<![CDATA[
+			UPDATE BOARD SET STEP=STEP+1 WHERE REF=#{ref} AND STEP>#{step}
+		]]>
+	</update> 
+	
+	<insert id="reply2" parameterType="boardDto">
+		<![CDATA[
+		INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id},#{name},#{email},#{subject},#{content},#{ref},#{lev},#{step},#{pseq},0,0,SYSDATE)
+		]]>
+	</insert>
+	
+	<update id="reply3" parameterType="boardDto">
+		<![CDATA[
+			UPDATE BOARD SET REPLY=REPLY+1 WHERE SEQ=#{seq}
+		]]>
+	</update> 
 	
 	
 </mapper>

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import com.board.dto.BoardDTO;
 @Repository
 public class BoardDAO {
-	private static BoardDAO instance;
 	@Autowired
 	private SqlSessionFactory factory;
 
@@ -18,6 +17,7 @@ public class BoardDAO {
 		
 		int n = factory.openSession().selectOne("boardNameSpace.totalCount");
 		list.get(0).setTotal(n);
+		list.get(0).setPg(pg);
 		
 		return list;
 	}
@@ -29,8 +29,11 @@ public class BoardDAO {
 	}
 
 	public List<BoardDTO> boardView(BoardDTO boardDTO) {
-
-		return factory.openSession().selectList("boardNameSpace.boardView", boardDTO);
+		int n = factory.openSession().update("boardNameSpace.updatehit", boardDTO.getSeq());
+		List<BoardDTO> list = factory.openSession().selectList("boardNameSpace.boardView", boardDTO);
+		list.get(0).setPg(boardDTO.getPg());
+		list.get(0).setSeq(boardDTO.getSeq());
+		return list;
 
 	}
 
@@ -50,18 +53,30 @@ public class BoardDAO {
 	}
 
 
-	public void updatehit(int seq) {
-		int n = factory.openSession().update("boardNameSpace.updatehit", seq);
+	
+	
+	
+	
+	
+	
+	public boolean reply(BoardDTO boardDTO) {
+		BoardDTO originDto = (BoardDTO)factory.openSession().selectList("boardNameSpace.boardView", boardDTO).get(0);
+		
+		int n = factory.openSession().update("boardNameSpace.reply1",originDto);
+		
+		boardDTO.setRef(originDto.getRef());
+		boardDTO.setLev(originDto.getLev()+1);
+		boardDTO.setStep(originDto.getStep()+1);
+		boardDTO.setPseq(originDto.getSeq());
+		
+		n = factory.openSession().insert("boardNameSpace.reply2",boardDTO);
+		
+		n = factory.openSession().update("boardNameSpace.reply3",originDto);
+		
+		return (n > 0) ? true : false;
 	}
 
-	
-	public static BoardDAO getInstance() {
-		if(instance==null){
-			synchronized(BoardDAO.class){
-				instance = new BoardDAO();
-			}			
-		}
-		return instance;
-	}
+
+
 
 }
