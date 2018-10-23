@@ -58,18 +58,30 @@
 		<h2><a href="category.ct" class="category">CATEGORY</a></h2>
 		<h2><a href="" class="bidding">START BIDDING</a></h2>
 	</nav>
-	<div id="qna">
-	<h2><a href="qna.bd?pg=1" class="qna">Q&amp;A</a></h2>
+	
+	<div id="qna" class="qna">
+	<h2><a href="qna.bd?pg=1" class="qna2" style="color:black">Q&amp;A</a></h2>
 	</div>
 
 </section>
 
-<section>
-	<div>
-		상품사진들 list로 들어가는 부분
+<section class="product1">
+	<div class="photo">
+		<a href="auction.go">Product Click</a>
 	</div>
 </section>
 
+<section class="product2">
+	<div class="photo">product2</div>
+</section>
+
+<section class="product3">
+	<div class="photo">product3</div>
+</section>
+
+<section class="product4">
+	<div class="photo">product4</div>
+</section>
 
 
 <footer>
