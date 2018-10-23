@@ -55,7 +55,7 @@
 				&nbsp;
 				</c:forEach>
 				<c:if test="${ob.pseq != 0}">
-				<img src = "/BidProject/image/reply.gif">
+				<img src = "resources/image/reply.gif">
 				</c:if>
 				<a href="javascript:checkLogin(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
 				<td>${ob.name}</td>

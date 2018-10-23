@@ -51,7 +51,7 @@ body{
 }
 
 #main {
-	background-image: url("image/background.jpg");
+	background-image: url("/BidProject/resources/image/background.jpg");
 	background-size: cover;
 	height: 350px;
 }

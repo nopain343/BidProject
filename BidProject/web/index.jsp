@@ -8,5 +8,5 @@
 </head>
 <body>
 <c:redirect url="main.go"/>
-</body>
+</body>	
 </html>
