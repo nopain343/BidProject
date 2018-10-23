@@ -69,6 +69,7 @@
 	</div>
 </section>
 
+<section class="category">
 <section class="product1">
 	<div class="photo">
 		<a href="/BidProject/auction.au">Product Click</a>
@@ -87,9 +88,33 @@
 	<div class="photo">product4</div>
 </section>
 
+<section class="product5">
+	<div class="photo">product5</div>
+</section>
 
-<footer>
+<section class="product6">
+	<div class="photo">product6</div>
+</section>
+
+<section class="product7">
+	<div class="photo">product7</div>
+</section>
+
+<section class="product8">
+	<div class="photo">product8</div>
+</section>
+
+<section class="product9">
+	<div class="photo">product9</div>
+</section>
+
+<section class="product10">
+	<div class="photo">product10</div>
+</section>
+
+</section>
+<!-- <footer class="footer">
 FOOTER : 기타 정보들 입력
-</footer>
+</footer> -->
 </body>
 </html>

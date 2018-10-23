@@ -48,6 +48,7 @@ header li {
 
 body{
 	margin: 0;
+	height: 100%;
 }
 
 #main {
@@ -80,28 +81,38 @@ nav#filter{
 	padding: 15px;
 }
 
+
+.category{
+	margin : 20px;
+	background-color: #80ffff;
+	padding-left: 80px;
+	padding-top: 18px;
+	margin-bottom: 10px;
+}
+
 .product1 {
-	height: 350px;
-	width: 24%;
-	background-color: #0f1111;
+	height: 330px;
+	width: 18%;
+	background-color: #7d9fb6;
 	border: 2px dashed teal;
 	float: left;
 	margin-right: 8px;
-	font: 40px bold;
 }
 
 .product2 {
-	height: 350px;
-	width: 24%;
-	background-color: #e5647f;
+	height: 330px;
+	width: 18%;
+	background-color: #7d9fb6;
 	border: 2px dashed teal;
 	float: left;
 	margin-right: 8px;
+	
+	
 }
 
 .product3 {
-	height: 350px;
-	width: 24%;
+	height: 330px;
+	width: 18%;
 	background-color: #7d9fb6;
 	border: 2px dashed teal;
 	float: left;
@@ -109,10 +120,69 @@ nav#filter{
 }
 
 .product4 {
-	height: 350px;
-	width: 24%;
+	height: 330px;
+	width: 18%;
 	background-color: #a5d649;
 	border: 2px dashed teal;
+	float: left;
+	margin-right: 8px;
+}
+
+.product5 {
+	height: 330px;
+	width: 18%;
+	background-color: #a5d649;
+	border: 2px dashed teal;
+	float: left;
+	margin-right: 8px;
+}
+
+.product6 {
+	height: 330px;
+	width: 18%;
+	background-color: #a5d649;
+	border: 2px dashed teal;
+	margin-top : 10px;
+	float: left;
+	margin-right: 8px;
+}
+
+.product7 {
+	height: 330px;
+	width: 18%;
+	background-color: #a5d649;
+	border: 2px dashed teal;
+	margin-top : 10px;
+	float: left;
+	margin-right: 8px;
+}
+
+.product8 {
+	height: 330px;
+	width: 18%;
+	background-color: #a5d649;
+	border: 2px dashed teal;
+	margin-top : 10px;
+	float: left;
+	margin-right: 8px;
+}
+
+.product9 {
+	height: 330px;
+	width: 18%;
+	background-color: #7d9fb6;
+	border: 2px dashed teal;
+	margin-top : 10px;
+	float: left;
+	margin-right: 8px;
+}
+
+.product10 {
+	height: 330px;
+	width: 18%;
+	background-color: #7d9fb6;
+	border: 2px dashed teal;
+	margin-top : 10px;
 	float: left;
 	margin-right: 8px;
 }
@@ -140,8 +210,33 @@ div.qna {
 
 
 /*FOOTER*****************************************************************************************************/
-
+/* 
 footer{
+	
 	border: 1px solid #DDDDDD;
 	height: 200px;
-}
+} */
+
+
+/* .footer{
+	
+	position : absolute;
+ 
+    left: 0;
+    
+    right:0;
+
+    bottom: 0;
+
+    width: 100%;
+
+	padding: 15px 0;
+
+	text-align: center;
+
+	color: white;
+
+	background: blue;
+
+
+} */
