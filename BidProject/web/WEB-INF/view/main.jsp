@@ -113,8 +113,8 @@
 </section>
 
 </section>
-<!-- <footer class="footer">
+<footer class="footer">
 FOOTER : 기타 정보들 입력
-</footer> -->
+</footer>
 </body>
 </html>
