@@ -21,7 +21,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script>
 
+  function checkLogin(seq,name){
+	
+	location.href="boardview.bd?seq="+seq+"&name="+name;
+   /*  console.log(location.href); */
+}  
+
+   
+</script>
 </head>
 <body>
 <table >
