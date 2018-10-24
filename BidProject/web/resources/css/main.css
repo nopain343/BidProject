@@ -147,11 +147,14 @@ nav#filter{
 
 .prodname{
 	background-color: #7d9fb6;
-    width: 200px;
+    width: 228px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
     
     
     
-	/* width:228 
+/* 	width:228 
 	너비 고정시키고
 	overflow:hidden;
 	text-overflow:ellipsis;
