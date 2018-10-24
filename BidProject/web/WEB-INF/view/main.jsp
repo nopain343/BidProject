@@ -83,19 +83,26 @@ $(function(){
 	</div>
 </section>
 
-<section class="product1">
-	<div class="photo">
-		<a href="/BidProject/auction.au">Product Click</a>
-	</div>
-</section>
 
-<c:forEach var="ob" items="${list}">
-      <section class="product2">
-         <div class="photo">${ob.prodname} ${ob.ref} ${ob.price }</div>
-       </section>
-   </c:forEach>
-
-</section>
+<section class=wrap0>
+	<c:forEach var="ob" items="${list}">
+		<section class="product1">
+					<div class="photo"></div>
+				<section class=wrap01>
+						<section class="wrap1">		
+							<div class="prodname"><a href="/BidProject/auction.au">${ob.prodname}</a><br></div>
+										<div class="wrap2">	 
+											<div class="ref">${ob.ref}<br></div>
+								        	 <div class="price">${ob.price}<br></div> 
+											  			[현재가격]<br> 
+											 <div class="term">${ob.term}</div>
+										</div>
+				</section>
+				</section>
+		</section>
+	</c:forEach>
+	
+	</section>
 <footer class="footer">
 FOOTER : 기타 정보들 입력
 </footer>
