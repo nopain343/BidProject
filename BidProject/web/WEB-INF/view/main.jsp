@@ -16,6 +16,20 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Let It Bid</title>
+<script src=jquery-3.3.1.min.js></script>
+<script>
+$(function(){
+	$.getScript("${pageContext.request.contextPath}/resources/js/test.js");
+
+	$(".product2").click(function(){
+		var sendData = setName("test");
+		$('#message').html(sendData);
+	});
+	
+});
+</script>
+
+
 </head>
 <body>
 <header>
@@ -69,7 +83,6 @@
 	</div>
 </section>
 
-<section class="category">
 <section class="product1">
 	<div class="photo">
 		<a href="/BidProject/auction.au">Product Click</a>
@@ -77,7 +90,7 @@
 </section>
 
 <section class="product2">
-	<div class="photo">${list.get(0).prodname }</div>
+	<div id="message">${list.get(0).prodname }</div>
 </section>
 
 <section class="product3">
