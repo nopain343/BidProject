@@ -89,41 +89,11 @@ $(function(){
 	</div>
 </section>
 
-<section class="product2">
-	<div id="message">${list.get(0).prodname }</div>
-</section>
-
-<section class="product3">
-	<div class="photo">${list.get(1).prodname }</div>
-</section>
-
-<section class="product4">
-	<div class="photo">product4</div>
-</section>
-
-<section class="product5">
-	<div class="photo">product5</div>
-</section>
-
-<section class="product6">
-	<div class="photo">product6</div>
-</section>
-
-<section class="product7">
-	<div class="photo">product7</div>
-</section>
-
-<section class="product8">
-	<div class="photo">product8</div>
-</section>
-
-<section class="product9">
-	<div class="photo">product9</div>
-</section>
-
-<section class="product10">
-	<div class="photo">product10</div>
-</section>
+<c:forEach var="ob" items="${list}">
+      <section class="product2">
+         <div class="photo">${ob.prodname} ${ob.ref} ${ob.price }</div>
+       </section>
+   </c:forEach>
 
 </section>
 <footer class="footer">
