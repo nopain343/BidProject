@@ -7,14 +7,7 @@
 <title>Auction</title>
 </head>
 <body>
-옥션페이지
-${auction.prodName}
-<br>
-${auction.price}
-<br>
-${auction.condition}
-<br>
-${auction.descrip}
+실패!
 
 </body>
 </html>

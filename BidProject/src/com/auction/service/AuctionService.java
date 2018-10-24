@@ -1,15 +1,19 @@
 package com.auction.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.auction.dao.AuctionDao;
+import com.auction.vo.AuctionVO;
 
 @Service
 public class AuctionService {
-//	@Autowired
-//	private AuctionDao dao;
-//	
-//	public AuctionVO loginUser(AuctionVO user) {
-//		return dao.loginUser(user);
-//	}
+	@Autowired
+	private AuctionDao dao;
+	
+	public AuctionVO auction(String code) {
+		return dao.auction(code);
+	}
 
 	
 	
