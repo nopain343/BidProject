@@ -7,6 +7,9 @@ a{
 	text-decoration: none;
 	color: white;
 }
+html {
+height: 100%;
+}
 
 /*HEADER*****************************************************************************************************/
 header{
@@ -83,10 +86,14 @@ nav#filter{
 
 
 .category{
+	min-height:100%;
+	position : relative;
+	padding-bottom:15px;
 	margin : 20px;
 	padding-left: 80px;
 	padding-top: 18px;
 	margin-bottom: 10px;
+
 }
 
 .product1 {
@@ -209,17 +216,10 @@ div.qna {
 
 
 /*FOOTER*****************************************************************************************************/
-/* 
-footer{
-	
-	border: 1px solid #DDDDDD;
-	height: 200px;
-} */
 
-
-/* .footer{
+.footer{
 	
-	position : absolute;
+	position : relative;
  
     left: 0;
     
@@ -229,13 +229,13 @@ footer{
 
     width: 100%;
 
-	padding: 15px 0;
+	padding: 15px;
 
 	text-align: center;
 
 	color: white;
 
-	background: blue;
+	background: #DDDDDD;
 
 
-} */
+}
