@@ -11,13 +11,6 @@ import com.category.service.CategoryService;
 public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
-	
-	@RequestMapping(value="/category.ct")
-	public ModelAndView list() {
-
-		return new ModelAndView("category", "list", categoryService.categoryList());
-
-	}
 
 	
 	

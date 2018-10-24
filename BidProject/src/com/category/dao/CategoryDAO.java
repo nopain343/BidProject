@@ -9,12 +9,12 @@ import org.springframework.stereotype.Repository;
 import com.category.vo.CategoryVO;
 @Repository
 public class CategoryDAO {
-@Autowired
+	@Autowired
 	private SqlSessionFactory factory;
 
-	public List<CategoryVO> categoryList() {
-		
-		return factory.openSession().selectList("categoryNameSpace.categorylist");
+	public List<CategoryVO> categoryList(int page) {
+		System.out.println(page);
+		return factory.openSession().selectList("categoryNameSpace.categorylist", page);
 		
 	}
 

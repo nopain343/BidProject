@@ -16,6 +16,20 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Let It Bid</title>
+<script src=jquery-3.3.1.min.js></script>
+<script>
+$(function(){
+	$.getScript("${pageContext.request.contextPath}/resources/js/test.js");
+
+	$(".product2").click(function(){
+		var sendData = setName("test");
+		$('#message').html(sendData);
+	});
+	
+});
+</script>
+
+
 </head>
 <body>
 <header>
@@ -76,19 +90,43 @@
 </section>
 
 <section class="product2">
-	<div class="photo">product2</div>
+	<div id="message">${list.get(0).prodname }</div>
 </section>
 
 <section class="product3">
-	<div class="photo">product3</div>
+	<div class="photo">${list.get(1).prodname }</div>
 </section>
 
 <section class="product4">
 	<div class="photo">product4</div>
 </section>
 
+<section class="product5">
+	<div class="photo">product5</div>
+</section>
 
-<footer>
+<section class="product6">
+	<div class="photo">product6</div>
+</section>
+
+<section class="product7">
+	<div class="photo">product7</div>
+</section>
+
+<section class="product8">
+	<div class="photo">product8</div>
+</section>
+
+<section class="product9">
+	<div class="photo">product9</div>
+</section>
+
+<section class="product10">
+	<div class="photo">product10</div>
+</section>
+
+</section>
+<footer class="footer">
 FOOTER : 기타 정보들 입력
 </footer>
 </body>
