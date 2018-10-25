@@ -28,7 +28,15 @@ public class BoardController {
 	@RequestMapping(value="/qna.bd", method = RequestMethod.GET)
 	public ModelAndView list(@ModelAttribute BoardPaging boardPaging) {
 		this.boardPaging = boardPaging;
-		return new ModelAndView("boardList", "list", boardListService.boardList(boardPaging.getPg()));
+		
+		List<BoardDTO> boardlist = boardListService.boardList(boardPaging.getPg());
+		if(boardlist == null) {
+			return new ModelAndView("boardList");
+		}else {
+			return new ModelAndView("boardList", "list", boardlist);
+		}
+		
+		
 	}
 	
 	//==========================================================================================================
@@ -55,7 +63,6 @@ public class BoardController {
 	public ModelAndView view(@ModelAttribute BoardDTO boardDTO) {
 		BoardDTO viewDto = new BoardDTO();
 		viewDto = boardListService.boardView(boardDTO).get(0);
-
 		return new ModelAndView("boardView", "view", viewDto);
 	}
 
