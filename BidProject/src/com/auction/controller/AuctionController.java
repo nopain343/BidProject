@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,17 +21,24 @@ public class AuctionController {
 	@RequestMapping(value="/auction.au", method=RequestMethod.GET)
 	public ModelAndView auction(@RequestParam(value="code") String code, HttpServletRequest request) {
 		if(service.auction(code) != null) {
-			System.out.println("1");
 			HttpSession session = request.getSession();
-			System.out.println("2");
 			session.setAttribute("auction", service.auction(code));
-			System.out.println("3");
 			return new ModelAndView("auction");
 		}else {
 			return new ModelAndView("auctionFail");
 		}
 	}
 	
+	@RequestMapping(value="/auctionProc.au", method=RequestMethod.POST)
+	public ModelAndView auctionProc(@ModelAttribute int finalPrice, HttpServletRequest request) {
+		if(service.auctionProc(finalPrice)) {
+			HttpSession session = request.getSession();
+			session.setAttribute("auction", service.auctionProc(finalPrice));
+			return new ModelAndView("auction");
+		}else {
+			return new ModelAndView("auctionFail");
+		}
+	}
 }
 
 

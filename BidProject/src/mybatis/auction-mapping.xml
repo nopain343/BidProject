@@ -8,14 +8,14 @@
 		]]>
 	</select>
 	
-	
-	<!-- <insert id="insertUser" parameterType="userInfo">
+	<insert id="bidPlace" parameterType="java.lang.Integer">
 		<![CDATA[
-			INSERT INTO USER1(ID, PASSWORD, USERNAME, ROADFULLADDR, PHONE, PWQUESTION, PWANSWER)
-			VALUES (#{id}, #{password}, #{username}, #{roadFullAddr}, #{phone}, #{pwquestion}, #{pwanswer})
+			INSERT INTO AUCTION(CODE, FINALPRICE, TERM)
+			VALUES (#{code}, #{finalPrice}, #{term})
 		]]>
 	</insert>
 	
+	<!--
  	<delete id="deleteUser" parameterType="java.lang.String">
 		<![CDATA[
 			DELETE FROM USER1

@@ -91,7 +91,7 @@ $(function(){
 
 <c:forEach var="ob" items="${list}">
       <section class="product2">
-         <div class="photo">${ob.prodname} ${ob.ref} ${ob.price }</div>
+         <div class="photo">${ob.prodname} ${ob.ref} ${ob.price}</div>
        </section>
    </c:forEach>
 

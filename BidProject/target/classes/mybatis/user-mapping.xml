@@ -43,4 +43,10 @@
 		]]>
 	</select>
 	
+	<select id="idcheck" parameterType="java.lang.String">
+		<![CDATA[
+			SELECT ID FROM USER1 WHERE ID = #{id}
+		]]>
+	</select>
+	
 </mapper>

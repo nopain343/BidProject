@@ -9,14 +9,14 @@
 </head>
 
 
-
 <body>
 <h2>환영합니다.</h2>
 <h4>간단한 회원가입으로 저희와 함께하세요</h4>
 <form action="/BidProject/insertProc.go" method="post" name="form" onsubmit="return Validate();">
 
 아이디 
-	 <input type="text" id="id" name="id" maxlength="12"/><br>&nbsp;&nbsp;&nbsp;
+	 <input type="text" id="id" name="id" maxlength="12"/>&nbsp;&nbsp;&nbsp;
+	 <input type="button" id="idcheck" value="아이디 중복확인"/>
 	 <span id="idch"></span><br>
 
 비밀번호

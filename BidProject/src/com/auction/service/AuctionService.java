@@ -15,6 +15,11 @@ public class AuctionService {
 		return dao.auction(code);
 	}
 
+
+	public boolean auctionProc(int finalPrice) {
+		return dao.auctionProc(finalPrice);
+	}
+
 	
 	
 //	public boolean insertUser(UserVO user) {

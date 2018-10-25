@@ -13,9 +13,12 @@ public class AuctionDao {
 	
 	public AuctionVO auction(String code) {
 		AuctionVO vo = factory.openSession().selectOne("auctionMapper.view", code);
-		System.out.println(code);
-		System.out.println(vo);
 		return vo;
+	}
+
+	public boolean auctionProc(int finalPrice) {
+		int n = factory.openSession().insert("auctionMapper.bidPlace", finalPrice);
+		return n > 0 ? true : false;
 	}
 	
 	
