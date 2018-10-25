@@ -41,11 +41,6 @@ $(document).ready(function(){
 				console.log(total);
 				$('#update').html(total+"</section>");
 	        	
-	
-	        	
-	        	
-	        	
-	        	
 	        }
 	    });
 		
@@ -114,7 +109,7 @@ $(document).ready(function(){
 	<c:forEach var="ob" items="${list}">
 		<section class="product1">
 					<div class="photo">
-					<img src="/BidProject/resources/image/${ob.code }.jpg">
+					<img src="/BidProject/resources/image/${ob.code }.jpg" style="width:100%; height: 180px;">
 					</div>
 				<section class=wrap01>
 						<section class="wrap1">		
