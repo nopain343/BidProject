@@ -113,7 +113,9 @@ $(document).ready(function(){
 <section class=wrap0>
 	<c:forEach var="ob" items="${list}">
 		<section class="product1">
-					<div class="photo"></div>
+					<div class="photo">
+					<img src="/BidProject/resources/image/${ob.code }.jpg">
+					</div>
 				<section class=wrap01>
 						<section class="wrap1">		
 							<div class="prodname"><a href="/BidProject/auction.au">${ob.prodname}</a><br></div>
