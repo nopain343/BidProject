@@ -1,6 +1,6 @@
 drop table user1 purge;
 drop table sales purge;
-
+SELECT * FROM SALES WHERE CAT1 = '애완'
 create table user1(
 id varchar2(20),
 password varchar2(20),
@@ -22,7 +22,7 @@ insert into sales values('패션잡화','신발',30000,'3','BB01','jenni7','2018
 insert into sales values('의류','자켓',50000,'1','AA01','may','2018-11-03','블랙 자켓~!~!');
 insert into sales values('패션잡화','name',111,'1','code','id','term','descrip');
 insert into sales (cat1) values('test1');
-select * from sales;
+select * from board;
 
 delete from sales where cat1='test';
 

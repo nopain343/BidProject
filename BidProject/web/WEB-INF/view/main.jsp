@@ -18,14 +18,35 @@
 <title>Let It Bid</title>
 <script src=jquery-3.3.1.min.js></script>
 <script>
-$(function(){
-	$.getScript("${pageContext.request.contextPath}/resources/js/test.js");
-
-	$(".product2").click(function(){
-		var sendData = setName("test");
-		$('#message').html(sendData);
-	});
+$(document).ready(function(){
+	$('#category').click(function(){
+		$.ajax({
+	        url : "category.ct",
+	        type: "get",
+	        data : { "cat1" : "HH" },
+	        error : function(request,status,error){
+	            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	        	},
+	        success : function(responseData){
+	        	console.log(responseData);
+	        	var total = "<section class=wrap0>";
+	        	var box1 = "<section class='product1'><div class='photo'></div><section class='wrap01'><section class='wrap1'><div class='prodname'><a href='/BidProject/auction.au'>";
+				var box2 = "</a><br></div><div class='wrap2'><div class='ref'>";
+				var box3 = "<br></div><div class='price'>";
+				var box4 = "<br></div>[현재가격]<br><div class='term'>"
+				var last = "</div></div></section></section></section>"
+	        	$.each(responseData, function(index, entry){
+					total += box1 + entry.prodname + box2 + entry.ref + box3 + entry.price + box4 + entry.term + last;
+			});
+				console.log(total);
+				$('#update').html(total+"</section>");
+	        	
+	        }
+	    });
+		
+		
 	
+	});
 });
 </script>
 
@@ -74,7 +95,7 @@ $(function(){
 
 <section>
 	<nav id="filter">
-		<h2><a href="category.ct" class="category">CATEGORY</a></h2>
+		<div id="category"><h2>CATEGORY</h2></div>
 		<h2><a href="" class="bidding">START BIDDING</a></h2>
 	</nav>
 	
@@ -83,11 +104,28 @@ $(function(){
 	</div>
 </section>
 
-<section class="product1">
-	<div class="photo">
-		<a href="/BidProject/auction.au">Product Click</a>
-	</div>
+<div id="update">
+<section class=wrap0>
+	<c:forEach var="ob" items="${list}">
+		<section class="product1">
+					<div class="photo">
+					<img src="/BidProject/resources/image/${ob.code }.jpg" style="width:100%; height: 180px;">
+					</div>
+				<section class=wrap01>
+						<section class="wrap1">		
+							<div class="prodname"><a href="/BidProject/auction.au">${ob.prodname}</a><br></div>
+										<div class="wrap2">	 
+											<div class="ref">${ob.ref}<br></div>
+								        	 <div class="price">${ob.price}<br></div> 
+											  			[현재가격]<br> 
+											 <div class="term">${ob.term}</div>
+										</div>
+				</section>
+				</section>
+		</section>
+	</c:forEach>
 </section>
+<<<<<<< HEAD
 
 <c:forEach var="ob" items="${list}">
       <section class="product2">
@@ -96,6 +134,9 @@ $(function(){
    </c:forEach>
 
 </section>
+=======
+</div>	
+>>>>>>> branch 'master' of https://github.com/sunup1992/BidProject.git
 <footer class="footer">
 FOOTER : 기타 정보들 입력
 </footer>

@@ -23,9 +23,9 @@
 <title>Insert title here</title>
 <script>
 
-  function checkLogin(seq,name){
+  function checkLogin(seq,pg){
 	
-	location.href="boardview.bd?seq="+seq+"&name="+name;
+	location.href="boardview.bd?seq="+seq+"&pg="+pg;
    /*  console.log(location.href); */
 }  
 
@@ -60,12 +60,16 @@
 				<img src = "resources/image/reply.gif">
 				</c:if>
 				<a href="javascript:checkLogin(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
-				<td>${ob.name}</td>
+				<td>${ob.username}</td>
 				<td>${ob.hit}</td>
 				<td>${ob.logtime}</td>
 			</tr>
 		</c:forEach>
 	</c:if>
+	<c:if test="${empty list}">
+		<tr><th>내용이 없습니다.</th></tr>
+	</c:if>
+	
 	<tr>
 		<td colspan="5" bgcolor="cccccc"></td>
 	</tr>
@@ -79,7 +83,7 @@
 </table><br><br>
 
 <a href="write.bd"><button id="write">글쓰기</button></a>
-<a href="main.go"><button id="main">MAIN</button></a>
+<a href="main.go?page=1"><button id="main">MAIN</button></a>
 
 
 

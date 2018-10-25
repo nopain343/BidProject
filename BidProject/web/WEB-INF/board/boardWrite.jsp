@@ -17,12 +17,12 @@
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td><input type="text" name="name" size="50" value="${loginOK.username}" readonly></td>
+		<td><input type="text" name="username" size="50" value="${loginOK.username}" readonly></td>
 	</tr>	
-	<tr>
+<!-- 	<tr>
 		<td>이메일</td>
 		<td><input type="text" name="email" size="50"></td>
-	</tr>
+	</tr> -->
 	<tr>
 		<td>제 목</td>
 		<td><input type="text" name="subject" size="50"></td>

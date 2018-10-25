@@ -4,8 +4,7 @@ public class BoardDTO {
 	
 	private int seq;
 	private String id;
-	private String name;
-	private String email;
+	private String username;
 	private String subject;
 	private String content;
 	private int ref;
@@ -17,20 +16,6 @@ public class BoardDTO {
 	private String logtime;
 	private int total;
 	private int pg;
-	
-	
-	public int getPg() {
-		return pg;
-	}
-	public void setPg(int pg) {
-		this.pg = pg;
-	}
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
 	public int getSeq() {
 		return seq;
 	}
@@ -43,17 +28,11 @@ public class BoardDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getSubject() {
 		return subject;
@@ -109,4 +88,18 @@ public class BoardDTO {
 	public void setLogtime(String logtime) {
 		this.logtime = logtime;
 	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	public int getPg() {
+		return pg;
+	}
+	public void setPg(int pg) {
+		this.pg = pg;
+	}
+	
+	
 }

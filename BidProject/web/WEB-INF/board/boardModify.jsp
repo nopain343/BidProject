@@ -10,20 +10,18 @@
 </head>
 <body>
 <form method="post" action="/BidProject/modify_proc.bd">
-<h3>글 수정</h3>
+<h3>글 수정</h3> 
 <table border="1" >
+
 	<tr>
 		<td>아이디</td>
 		<td><input type="text" name="id" size="50" readonly value=${modify.id }></td>
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td><input type="text" name="name" size="50" readonly value=${modify.name }></td>
+		<td><input type="text" name="name" size="50" readonly value=${modify.username }></td>
 	</tr>	
-	<tr>
-		<td>이메일</td>
-		<td><input type="text" name="email" size="50" readonly>${modify.email}</td>
-	</tr>
+
 	<tr>
 		<td>제 목</td>
 		<td><textarea name="subject" cols="50" rows="1">${modify.subject}</textarea></td>

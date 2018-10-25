@@ -60,6 +60,9 @@ body{
 	height: 350px;
 }
 
+
+
+
 #main h1 {
 	color: #DDFFFF;
 	text-shadow: 1px 4px teal; 
@@ -96,28 +99,92 @@ nav#filter{
 
 }
 
+
+/* ////////////////////////////sales내용  start////////////////////////////////////////////////////////// */
+
+
 .product1 {
-	height: 330px;
-	width: 18%;
-	background-color: #7d9fb6;
+	position:relative;
+	height: 345px;
+	width: 250px;
+	/* background-color: #7d9fb6; */
 	border: 2px dashed teal;
 	float: left;
-	margin-right: 8px;
-}
-
-
-.product2 {
-	height: 330px;
-	width: 18%;
-	background-color: #7d9fb6;
-	border: 2px dashed teal;
-	float: left;
+	margin-left:8px;
 	margin-top : 10px;
-	margin-right: 8px;
+	margin-bottom: 10px;
+	
+		 
+}
+.photo{
+	
+ 	 border: 1px solid black;
 	 
+ /*   height: 180px;
+    width: 228px;*/
+     margin: 10px 10px 10px 10px;
 	
 }
 
+
+.wrap0{
+	
+    padding-left: 85px;
+	
+}
+.wrap1{
+
+    width: 230px;
+    height: 136px;
+   
+}
+
+.wrap01{
+    border: 1px solid magenta;
+    height: 135px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.prodname{
+	background-color: #7d9fb6;
+    width: 228px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    
+    
+    
+/* 	width:228 
+	너비 고정시키고
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap; */
+}
+
+.wrap2{
+	border: solid 1px;
+	width: 228px;
+	
+	}
+
+.ref{
+	
+	font-size: 11px;
+	border: 1px solid;
+    height: 38px;
+}
+.price{
+	text-align: right;
+	font-size: 20px;
+}
+.term{
+	text-align: right;
+	margin-bottom: 0px;
+}
+
+/* /////////////////////////////////////sales내용 end///////////////////////////////////////////////// */
 section div p {
 	border: 1px solid black;
 	
@@ -125,14 +192,14 @@ section div p {
 
 div.qna{
 	
-	position: fixed !important;
-	right: 30px !important;
-	bottom: 30px !important;
-	width: 80px !important;
-	height: 60px !important;
-	margin: 0 !important;
-	padding-bottom: 10px !important;
-	text-align: center !important;
+	position: fixed ;
+	right: 30px;
+	bottom: 30px;
+	width: 80px;
+	height: 60px;
+	margin: 0 ;
+	padding-bottom: 10px;
+	text-align: center;
 	
 	
 }
@@ -148,19 +215,12 @@ div.qna{
 .footer{
 	
 	position : inherit;
- 
     left: 0;
-    
     right:0;
-
     bottom: 0;
-
     width: 100%;
-
 	padding: 15px;
-
 	text-align: center;
-
 	color: white;
 	background: #DDDDDD;
 	float: left;
