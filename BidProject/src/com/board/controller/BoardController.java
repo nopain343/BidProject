@@ -43,6 +43,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/write_proc.bd", method = RequestMethod.POST)
 	public ModelAndView write(@ModelAttribute BoardDTO boardDTO) {
+		
 		if (boardListService.insert(boardDTO)) {
 			return list(boardPaging);
 		} else {

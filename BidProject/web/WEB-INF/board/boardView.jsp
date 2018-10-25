@@ -34,7 +34,7 @@
 </tr>
 <tr>
 	<td width="150">글번호 : ${view.seq}</td>
-	<td width="200">작성자 : ${view.name }</td>
+	<td width="200">작성자 : ${view.username }</td>
 	
 </tr>
 <tr>

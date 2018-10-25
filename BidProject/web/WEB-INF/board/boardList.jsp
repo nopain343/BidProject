@@ -23,9 +23,9 @@
 <title>Insert title here</title>
 <script>
 
-  function checkLogin(seq,name){
+  function checkLogin(seq,username){
 	
-	location.href="boardview.bd?seq="+seq+"&name="+name;
+	location.href="boardview.bd?seq="+seq+"&username="+username;
    /*  console.log(location.href); */
 }  
 
@@ -60,7 +60,7 @@
 				<img src = "resources/image/reply.gif">
 				</c:if>
 				<a href="javascript:checkLogin(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
-				<td>${ob.name}</td>
+				<td>${ob.username}</td>
 				<td>${ob.hit}</td>
 				<td>${ob.logtime}</td>
 			</tr>

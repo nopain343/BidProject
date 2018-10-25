@@ -18,12 +18,9 @@
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td><input type="text" name="name" size="50" readonly value=${modify.name }></td>
+		<td><input type="text" name="name" size="50" readonly value=${modify.username }></td>
 	</tr>	
-	<tr>
-		<td>이메일</td>
-		<td><input type="text" name="email" size="50" readonly>${modify.email}</td>
-	</tr>
+
 	<tr>
 		<td>제 목</td>
 		<td><textarea name="subject" cols="50" rows="1">${modify.subject}</textarea></td>

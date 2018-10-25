@@ -4,7 +4,7 @@
 <mapper namespace="boardNameSpace">
 	<select id="boardlist" resultType="boardDto" parameterType="Integer">
 		<![CDATA[
-			SELECT SEQ,ID,NAME,EMAIL,SUBJECT,CONTENT,REF,LEV,STEP,PSEQ,REPLY,HIT,TO_CHAR(LOGTIME,'YYYY.MM.DD')AS LOGTIME FROM (SELECT ROWNUM RN, AA.* FROM(SELECT * FROM BOARD ORDER BY REF DESC,STEP ASC)AA) WHERE RN>=#{pg}*10-9 AND RN<=#{pg}*10
+			SELECT SEQ,ID,USERNAME,SUBJECT,CONTENT,REF,LEV,STEP,PSEQ,REPLY,HIT,TO_CHAR(LOGTIME,'YYYY.MM.DD')AS LOGTIME FROM (SELECT ROWNUM RN, AA.* FROM(SELECT * FROM BOARD ORDER BY REF DESC,STEP ASC)AA) WHERE RN>=#{pg}*10-9 AND RN<=#{pg}*10
 		]]>
 	</select>
 	
@@ -16,11 +16,11 @@
 	
 	
 	
-		<select id="insert" parameterType="boardDto">
+		<insert id="insert" parameterType="boardDto">
 		<![CDATA[
-			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id}, #{name}, #{email},#{subject}, #{content},seq_board.currval,0,0,0,0,0,SYSDATE)
+			INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id},#{username},#{subject},#{content},SEQ_BOARD.CURRVAL,0,0,0,0,0,SYSDATE)
 		]]>
-	</select>
+	</insert>
 	
 	<select id="boardView" parameterType="boardDto" resultType="boardDto">
 		<![CDATA[
@@ -62,7 +62,7 @@
 	
 	<insert id="reply2" parameterType="boardDto">
 		<![CDATA[
-		INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id},#{name},#{email},#{subject},#{content},#{ref},#{lev},#{step},#{pseq},0,0,SYSDATE)
+		INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{id},#{username},#{subject},#{content},#{ref},#{lev},#{step},#{pseq},0,0,SYSDATE)
 		]]>
 	</insert>
 	
