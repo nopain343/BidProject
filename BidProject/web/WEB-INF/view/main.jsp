@@ -125,18 +125,6 @@ $(document).ready(function(){
 		</section>
 	</c:forEach>
 </section>
-<<<<<<< HEAD
-
-<c:forEach var="ob" items="${list}">
-      <section class="product2">
-         <div class="photo">${ob.prodname} ${ob.ref} ${ob.price}</div>
-       </section>
-   </c:forEach>
-
-</section>
-=======
-</div>	
->>>>>>> branch 'master' of https://github.com/sunup1992/BidProject.git
 <footer class="footer">
 FOOTER : 기타 정보들 입력
 </footer>
