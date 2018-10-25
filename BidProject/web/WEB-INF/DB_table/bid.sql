@@ -1,6 +1,6 @@
 drop table user1 purge;
 drop table sales purge;
-
+SELECT * FROM SALES WHERE CAT1 = '애완'
 create table user1(
 id varchar2(20),
 password varchar2(20),

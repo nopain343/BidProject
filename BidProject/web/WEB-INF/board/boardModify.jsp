@@ -10,8 +10,9 @@
 </head>
 <body>
 <form method="post" action="/BidProject/modify_proc.bd">
-<h3>글 수정</h3>
+<h3>글 수정</h3> 
 <table border="1" >
+
 	<tr>
 		<td>아이디</td>
 		<td><input type="text" name="id" size="50" readonly value=${modify.id }></td>

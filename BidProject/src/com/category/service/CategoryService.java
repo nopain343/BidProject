@@ -2,6 +2,7 @@ package com.category.service;
 
 import java.util.List;
 
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,10 @@ public class CategoryService {
 		
 		return categoryDAO.categoryList(page);
 
+	}
+	public List<CategoryVO> getCategory() {
+		
+		return categoryDAO.getCategory();
 	}
 
 }
