@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="saleNameSpace">
+
+	<insert id="insert" parameterType="saleVO" >
+			<![CDATA[
+			INSERT INTO SALES (CAT1, ID, TERM, CODE, PRODNAME, PRICE, CONDITION, REF, DESCRIP)
+			
+			VALUES(#{cat1},#{id},#{term},#{code},#{prodname},#{price},#{condition},#{ref},#{descrip})
+		]]>
+	
+	
+		</insert>
+	
+
+
+
+
+</mapper>

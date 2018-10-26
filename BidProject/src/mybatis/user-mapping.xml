@@ -43,7 +43,7 @@
 		]]>
 	</select>
 	
-	<select id="idcheck" parameterType="java.lang.String">
+	<select id="idcheck" parameterType="java.lang.String" resultType="userInfo">
 		<![CDATA[
 			SELECT ID FROM USER1 WHERE ID = #{id}
 		]]>

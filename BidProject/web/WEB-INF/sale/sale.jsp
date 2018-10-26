@@ -8,9 +8,15 @@
 </head>
 <body>
 	bidding 올리긩 파일업로드
-<!-- form name="imageBoardWrifeform" -->
+	
+	<!-- 
 	<form method="post"
-		enctype="multipart/form-data" action="/BidProject/saleUpload.sa">
+		enctype="multipart/form-data" action="/BidProject/saleUpload.sa"> -->
+	
+<!-- form name="imageBoardWrifeform" -->
+
+	<form method="post"
+		 action="/BidProject/saleUpload.sa">
 		<table>
 			<tr>
 				<td><select name="code">
@@ -40,18 +46,20 @@
 			</tr>
 			<tr>
 				<td><b>내용</b></td>
-				<td><textarea rows="12" cols="40" name="imageContent"></textarea>
+				<td><textarea rows="12" cols="40" name="content"></textarea>
 				</td>
 			</tr>
-			<tr>
+<!-- 			<tr>
 				<td><b>이미지</b></td>
 				<td><input type="file" name="imagePath" size="40"></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td colspan="2" align="center">
-					<input type="button" value="등록" onclick="checkImageBoardWrite()"> 
+					<input type="submit" value="등록"> 
 					<input type="reset" value="취소"> 
-					<input type="button" value="목록" onclick="location.href='/BidProject/saleList'">
+					<a href="qna.bd?pg=${view.pg}"><button id="list">목록</button></a>
+					
+					
 				</td>
 			</tr>
 		</table>

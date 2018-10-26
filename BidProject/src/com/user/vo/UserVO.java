@@ -1,5 +1,7 @@
 package com.user.vo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class UserVO {
 	private String id;
 	private String password;
@@ -32,7 +34,8 @@ public class UserVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
+	@JsonIgnore
 	public String getPassword() {
 		return password;
 	}
@@ -40,7 +43,8 @@ public class UserVO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	@JsonIgnore
 	public String getRoadFullAddr() {
 		return roadFullAddr;
 	}
@@ -49,6 +53,7 @@ public class UserVO {
 		this.roadFullAddr = roadFullAddr;
 	}
 
+	@JsonIgnore
 	public String getPhone() {
 		return phone;
 	}
@@ -57,6 +62,7 @@ public class UserVO {
 		this.phone = phone;
 	}
 
+	@JsonIgnore
 	public String getUsername() {
 		return username;
 	}
@@ -65,6 +71,7 @@ public class UserVO {
 		this.username = username;
 	}
 
+	@JsonIgnore
 	public String getPwquestion() {
 		return pwquestion;
 	}
@@ -73,6 +80,7 @@ public class UserVO {
 		this.pwquestion = pwquestion;
 	}
 
+	@JsonIgnore
 	public String getPwanswer() {
 		return pwanswer;
 	}

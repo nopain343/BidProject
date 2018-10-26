@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.category.service.CategoryService;
@@ -69,6 +71,14 @@ public class UserController {
 		}
 		return null;
 	}
+	
+	@RequestMapping(value="/idcheck.go", method=RequestMethod.GET)
+	@ResponseBody
+	public UserVO idcheck(@RequestParam(value="id") String user) {
+		UserVO vo = service.idcheck(user);
+		return vo;
+	}
+
 	
 	@RequestMapping(value="/update.go", method=RequestMethod.POST)
 	public ModelAndView update() {
