@@ -1,52 +1,18 @@
 package com.category.vo;
 
-import com.board.dao.BoardDAO;
 
 public class CatogoryPaging {
-	int page;// 현재페이지
-	int pageSize = 10;     // 1페이지당 5개씩 글 뿌리기
-	StringBuffer pagingHTML;
-
+	public static boolean categorycheck = false;
+	public CatogoryPaging(boolean categorycheck) {
 	
-	public CatogoryPaging() {
-		
 	}
-/*
-	public void makePagingHTML(int total, int pg){
-		pagingHTML=new StringBuffer();
-		this.pg = pg;
-		int totalA = total;//총글수			
-		int totalP=(totalA+pageSize-1)/pageSize;//총페이지수
-		int startPage=
-				((int)((pg-1)/pageBlock))*pageBlock+1;		
-		int endPage=startPage+pageBlock-1;
-		if(endPage>totalP){
-			endPage=totalP;
-		}		
-		
-		//---------------------
-		if(startPage>pageBlock){			
-			pagingHTML.append("[<a href='qna.bd?pg="
-		+(startPage-pageBlock)+"'>"+"이전</a>]");
-		}		
-		
-		for(int i=startPage;i<=endPage;i++){
-			if(pg==i){
-				pagingHTML.append("[<a href='qna.bd?pg="
-			+i+"'><font color=red>"+i+"</font></a>]");
-			
-			}else{
-				pagingHTML.append("[<a href='qna.bd?pg="
-			+i+"'>"+i+"</a>]");
-			}
-		}
-				
-		if(endPage<totalP){
-			pagingHTML.append("[<a href='qna.bd?pg="
-		+(startPage+pageBlock)+"'>"+"다음</a>]");
-		}
+	public static boolean isCategorycheck() {
+		return categorycheck;
 	}
-*/
+	public static void setCategorycheck(boolean categorycheck) {
+		CatogoryPaging.categorycheck = categorycheck;
+	}
+	
 	
 }
 

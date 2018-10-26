@@ -1,5 +1,37 @@
 중고 / 중고+하자(하자가 있는 중고) / 새물품(미사용) / 새것+하자(새것이고 하자가 있음) / 거의 새것(새것이고 하자가 없음)
 
+
+SELECT * FROM SALES WHERE CAT1 like '%GG%'
+SELECT * FROM SALES WHERE CAT1 like '%AA%'
+
+SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, SALES.* FROM SALES) WHERE RN>=1 AND RN<=10 AND CAT1='GG'
+
+SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, SALES.* FROM SALES) WHERE RN>=1 AND RN<=10 AND CAT1='GG'
+
+SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, SALES.* FROM SALES) WHERE RN<=10 AND CAT1='GG'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 insert into sales values('GG','츄르 60개입',15000,'새물품(미사용)','#고양이#마약#간식#츄르#대용량','GG01','may','2018-11-02 21:00:00','실수로 너무 많이 사서 다시 팔려고 합니다.
 포장 안 뜯었습니다.');
 

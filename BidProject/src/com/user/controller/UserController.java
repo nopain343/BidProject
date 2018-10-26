@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.category.service.CategoryService;
 import com.category.vo.CategoryVO;
+import com.category.vo.CatogoryPaging;
 import com.user.service.UserService;
 import com.user.vo.UserVO;
 
@@ -27,7 +28,7 @@ public class UserController {
 	
 	@RequestMapping(value="/main.go", method=RequestMethod.GET)
 	public ModelAndView list(@ModelAttribute CategoryVO category) {
-		System.out.println(category.getPage());
+		CatogoryPaging.categorycheck = false;
 		return new ModelAndView("main", "list", categoryService.categoryList(category.getPage()));
 	}
 	

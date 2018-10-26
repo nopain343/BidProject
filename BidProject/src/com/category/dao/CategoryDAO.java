@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.board.dto.BoardDTO;
 import com.category.vo.CategoryVO;
 @Repository
 public class CategoryDAO {
@@ -21,12 +22,24 @@ public class CategoryDAO {
 	private SqlSessionFactory factory;
 
 	public List<CategoryVO> categoryList(int page) {
-		System.out.println(page);
-		return factory.openSession().selectList("categoryNameSpace.categorylist", page);
+		List<CategoryVO> list = factory.openSession().selectList("categoryNameSpace.categorylist", page);
+		
+		int n = factory.openSession().selectOne("categoryNameSpace.totalCount");
+		list.get(0).setTotal(n);
+		list.get(0).setPage(page);
+		
+		return list;
 		
 	}
 
-	public List<CategoryVO> getCategory(String cat1) {
+
+	//카테고리별 main 소환
+		public List<CategoryVO> getlist(CategoryVO vo) {
+			return factory.openSession().selectList("categoryNameSpace.getlist", vo);
+		}
+	
+	
+	public List<CategoryVO> getCategory(int page, String cat1) {
 		Connection conn=null;
 		List<CategoryVO> list = null;	
 		try{
@@ -43,10 +56,9 @@ public class CategoryDAO {
 		ResultSet rs=null;
 		
 		try{
-			pstmt=conn.prepareStatement("SELECT * FROM SALES WHERE CAT1 = ?");
-			pstmt.setString(1, cat1);
+			pstmt=conn.prepareStatement("SELECT * FROM SALES WHERE CAT1 like ?");
+			pstmt.setString(1, "%"+ cat1 + "%");
 			rs=pstmt.executeQuery();
-			
 		
 			list = new ArrayList();
 			
@@ -73,50 +85,6 @@ public class CategoryDAO {
 		}
 		return list;	
 	}
-	
-	/*public JSONArray getCategory() {
-		Connection conn=null;
-		JSONArray jArray = null;	
-		try{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn=DriverManager.getConnection(
-					"jdbc:oracle:thin:@192.168.0.68:1521:xe",
-					"bidproject", "1234");
-			System.out.println("접속 성공!!!");
-		}catch(Exception e){
-			e.printStackTrace();		
-		}
-		
-		PreparedStatement pstmt=null;
-		ResultSet rs=null;
-		
-		try{
-			pstmt=conn.prepareStatement("SELECT * FROM SALES");
-			rs=pstmt.executeQuery();
-			
-		
-			jArray = new JSONArray();
-			
-			while(rs.next())
-			{
-				JSONObject jObject = new JSONObject();
-				jObject.put("prodname",rs.getString("PRODNAME"));
-				jObject.put("price",rs.getString("PRICE"));
-				jObject.put("condition",rs.getString("CONDITION"));
-				
-				jArray.add(jObject);
-			}		
-			
-		}catch(SQLException e){
-			e.printStackTrace();
-		}finally{
-			try{
-				rs.close();
-				pstmt.close();
-				conn.close();
-			}catch(SQLException e){}
-		}
-		return jArray;	
-	}*/
+
 	
 }
