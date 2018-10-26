@@ -31,7 +31,7 @@ drop table sales
 select * from tab;
 SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = 'abc'
 //-------------------------------------------
-drop table sales
+
 
 create table sales(
 cat1 varchar2(20),

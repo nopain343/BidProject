@@ -26,7 +26,7 @@ public class CategoryDAO {
 		
 	}
 
-	public List<CategoryVO> getCategory() {
+	public List<CategoryVO> getCategory(String cat1) {
 		Connection conn=null;
 		List<CategoryVO> list = null;	
 		try{
@@ -43,7 +43,8 @@ public class CategoryDAO {
 		ResultSet rs=null;
 		
 		try{
-			pstmt=conn.prepareStatement("SELECT * FROM SALES WHERE CAT1 = '¾Ö¿Ï'");
+			pstmt=conn.prepareStatement("SELECT * FROM SALES WHERE CAT1 = ?");
+			pstmt.setString(1, cat1);
 			rs=pstmt.executeQuery();
 			
 		
@@ -57,7 +58,7 @@ public class CategoryDAO {
 				vo.setCondition(rs.getString("CONDITION"));
 				vo.setRef(rs.getString("REF"));
 				vo.setTerm(rs.getString("TERM"));
-				
+				vo.setCode(rs.getString("CODE"));
 				list.add(vo);
 			}		
 			
