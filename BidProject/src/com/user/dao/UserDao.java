@@ -43,9 +43,7 @@ public class UserDao {
 	}
 
 	public UserVO idcheck(String user) {
-		System.out.println("33");
 		UserVO vo = factory.openSession().selectOne("bidMapper.idcheck", user);
-		System.out.println("44");
 		return vo;
 	}
 }
