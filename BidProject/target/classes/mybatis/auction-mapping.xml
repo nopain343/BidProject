@@ -2,19 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="auctionMapper">
-	<select id="view" parameterType="java.lang.String" resultType="auctionVO">
+	<select id="view" parameterType="java.lang.String" resultType="categoryVO">
 		<![CDATA[
 			SELECT * FROM SALES WHERE CODE = #{code}
 		]]>
 	</select>
 	
-	<insert id="bidPlace" parameterType="java.lang.Integer">
+	<select id="maxPrice" parameterType="java.lang.String" resultType="java.lang.Integer">
 		<![CDATA[
-			INSERT INTO AUCTION(CODE, FINALPRICE, TERM)
-			VALUES (#{code}, #{finalPrice}, #{term})
+			SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = #{code}
+		]]>
+	</select>
+	
+	<insert id="bidPlace" parameterType="BidVO">
+		<![CDATA[
+			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE)
+			VALUES (#{id}, #{code}, #{term}, #{finalPrice})
 		]]>
 	</insert>
-	
 	<!--
  	<delete id="deleteUser" parameterType="java.lang.String">
 		<![CDATA[

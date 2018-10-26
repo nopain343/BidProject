@@ -21,12 +21,11 @@ public class CategoryController {
 
 	@RequestMapping(value = "category.ct", method = RequestMethod.GET)
 	public @ResponseBody List<CategoryVO> category(@RequestParam("cat1") String cat1) {
-		System.out.println("controllerÀÔ¼º");
+		System.out.println("controllerï¿½Ô¼ï¿½");
 		System.out.println(cat1);
 		List<CategoryVO> list = categoryService.getCategory(cat1);
 		System.out.println(list);
 		return list;
-		
 	}
 	
 }
