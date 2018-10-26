@@ -35,7 +35,8 @@ public class UserService {
 		return dao.searchId2(user);
 	}
 
-	public boolean idcheck(String user) {
+	public UserVO idcheck(String user) {
+		System.out.println("service check");
 		return dao.idcheck(user);
 	}
 }

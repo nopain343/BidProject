@@ -136,35 +136,23 @@ function Validate() {
     
 
 //회원가입 폼 입력 시--------------------------------------------------------------------------------------------------
+
 //아이디 중복체크
-
-var id="admin";	//데이터에서 가져온 아이디
-
-$(document).ready(function(){
-	$('#idcheck').click(function(){
-		var sendId = JSON.stringify({id:$('#id').val()});		//사용자가 적은 아이디
-			console.log(sendID);
-		$.ajax({
-			url:  "<c:url value='/idcheck.go' />",
-			type: "POST",
-			data: sendId,
-			dataType: "json",									// 응답받을 타입
-			contentType:"application/json;charset=UTF-8",
-			success: function(data){							// 결과를 가져옴
-				console.log(data);						//html(태그) or text(문자)
-			},
-			error: function(data) {
-				console.log(data);
-			}
-		});
+function getID(){
+	var id = $("#id").val();
 	
-		if(id==sid)
-			alert("사용할 수 없는 아이디 입니다.");
-		else
-			alert("사용할 수 있는 아이디 입니다.");
+	$.ajax({
+		type:"GET",
+		url:"/BidProject/idcheck.go?id=" + id,
+		dataType:"json",
+		error:function(){
+			alert("사용가능한 아이디입니다");
+		},
+		success:function(data){
+			alert("아이디가 이미 존재합니다");
+		}
 	});
-});
-
+}
 
 
 //전화번호 형식
