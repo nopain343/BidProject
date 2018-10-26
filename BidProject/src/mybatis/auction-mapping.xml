@@ -8,13 +8,12 @@
 		]]>
 	</select>
 	
-	<insert id="bidPlace" parameterType="java.lang.Integer">
+	<insert id="bidPlace" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(CODE, FINALPRICE, TERM)
-			VALUES (#{code}, #{finalPrice}, #{term})
+			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE)
+			VALUES (#{id}, #{code}, #{term}, #{finalPrice})
 		]]>
 	</insert>
-	
 	<!--
  	<delete id="deleteUser" parameterType="java.lang.String">
 		<![CDATA[

@@ -9,7 +9,10 @@
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
 		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
 		<typeAlias type="com.auction.vo.AuctionVO" alias="auctionVO"/>
-		<typeAlias type="com.sale.vo.SaleVO" alias="saleVO"/>
+		<typeAlias type="com.auction.vo.BidVO" alias="BidVO"/>
+		
+		
+
 	</typeAliases>
 	
 	<mappers>
@@ -18,6 +21,7 @@
 		<mapper resource="mybatis/category-mapping.xml"/>
 		<mapper resource="mybatis/auction-mapping.xml"/>
 		<mapper resource="mybatis/sale-mapping.xml"/>
+
 	</mappers>
 	
 </configuration>

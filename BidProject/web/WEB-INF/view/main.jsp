@@ -96,10 +96,10 @@ $(document).ready(function(){
 
 <section>
 	<nav id="filter">
-<<<<<<< HEAD
+
 		<div id="category"><h2>CATEGORY</h2></div>
 		<h2><a href="sale.sa" class="sale">START BIDDING</a></h2>
-=======
+
 		<div id="menu"><h2>CATEGORY</h2>
 		<span>
 		<a href="">의류</a>
@@ -127,8 +127,7 @@ $(document).ready(function(){
 		</span>
 		
 	</div>
-		<h2><a href="sala.sa" class="sale">START BIDDING</a></h2>
->>>>>>> branch 'master' of https://github.com/sunup1992/BidProject.git
+		<h2><a href="sale.sa" class="sale">START BIDDING</a></h2>
 	</nav>
 	
 	<div id="qna" class="qna">

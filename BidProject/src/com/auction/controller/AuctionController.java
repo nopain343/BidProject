@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.service.AuctionService;
+import com.auction.vo.BidVO;
 
 @Controller
 public class AuctionController {
@@ -30,11 +31,9 @@ public class AuctionController {
 	}
 	
 	@RequestMapping(value="/auctionProc.au", method=RequestMethod.POST)
-	public ModelAndView auctionProc(@ModelAttribute int finalPrice, HttpServletRequest request) {
-		if(service.auctionProc(finalPrice)) {
-			HttpSession session = request.getSession();
-			session.setAttribute("auction", service.auctionProc(finalPrice));
-			return new ModelAndView("auction");
+	public ModelAndView auctionProc(@ModelAttribute BidVO vo, HttpServletRequest request) {
+		if(service.auctionProc(vo)) {
+			return new ModelAndView("auctionOK");
 		}else {
 			return new ModelAndView("auctionFail");
 		}

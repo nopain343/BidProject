@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.auction.dao.AuctionDao;
 import com.auction.vo.AuctionVO;
+import com.auction.vo.BidVO;
 
 @Service
 public class AuctionService {
@@ -15,15 +16,8 @@ public class AuctionService {
 		return dao.auction(code);
 	}
 
-
-	public boolean auctionProc(int finalPrice) {
-		return dao.auctionProc(finalPrice);
+	public boolean auctionProc(BidVO vo) {
+		return dao.auctionProc(vo);
 	}
-
-	
-	
-//	public boolean insertUser(UserVO user) {
-//		return dao.insertUser(user);
-//	}
 
 }
