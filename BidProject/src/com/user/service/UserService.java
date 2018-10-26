@@ -36,7 +36,6 @@ public class UserService {
 	}
 
 	public UserVO idcheck(String user) {
-		System.out.println("service check");
 		return dao.idcheck(user);
 	}
 }

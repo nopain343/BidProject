@@ -75,7 +75,6 @@ public class UserController {
 	@RequestMapping(value="/idcheck.go", method=RequestMethod.GET)
 	@ResponseBody
 	public UserVO idcheck(@RequestParam(value="id") String user) {
-		System.out.println(user);
 		UserVO vo = service.idcheck(user);
 		return vo;
 	}
