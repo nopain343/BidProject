@@ -12,13 +12,14 @@
 <body>
 <h2>환영합니다.</h2>
 <h4>간단한 회원가입으로 저희와 함께하세요</h4>
+
 <form action="/BidProject/insertProc.go" method="post" name="form" onsubmit="return Validate();">
 
 아이디 
 	 <input type="text" id="id" name="id" maxlength="12"/>&nbsp;&nbsp;&nbsp;
-	 <input type="button" id="idcheck" value="아이디 중복확인"/>
+	 <button onclick="getID();">아이디 중복확인</button>
 	 <span id="idch"></span><br>
-
+	 
 비밀번호
 	 <input type="password" id="password" name="password" maxlength="16" placeholder="6~16자의 영문 대소문자, 숫자"/><br>
 

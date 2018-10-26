@@ -96,22 +96,26 @@ $(document).ready(function(){
 
 <section>
 	<nav id="filter">
-		<div id="menu">CATEGORY
+		<div id="menu"><h2>CATEGORY</h2>
 		<span>
-		의류&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+		<a href="">의류</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
 		</span>
 		<span>
-		패션잡화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">패션잡화</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span>
-		뷰티미용&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">뷰티미용</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span>
-		유아,아동,출산&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="">유아,아동,출산</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		
-		</div>
-		<h2><a href="" class="bidding">START BIDDING</a></h2>
+	</div>
+		<h2><a href="sala.sa" class="sale">START BIDDING</a></h2>
 	</nav>
 	
 	<div id="qna" class="qna">
@@ -130,7 +134,7 @@ $(document).ready(function(){
 					</div>
 				<section class=wrap01>
 						<section class="wrap1">		
-							<div class="prodname"><a href="/BidProject/auction.au">${ob.prodname}</a><br></div>
+							<div class="prodname"><a href="/BidProject/auction.au?code=${ob.code}">${ob.prodname}</a><br></div>
 										<div class="wrap2">	 
 											<div class="ref">${ob.ref}<br></div>
 								        	 <div class="price">${ob.price}<br></div> 
