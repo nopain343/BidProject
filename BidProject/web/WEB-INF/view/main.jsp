@@ -113,6 +113,11 @@ $(document).ready(function(){
 		<a href="">유아,아동,출산</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
+		<span>
+		<a href="">스포츠레저</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		</span>
+		
 		
 	</div>
 		<h2><a href="sala.sa" class="sale">START BIDDING</a></h2>
