@@ -115,6 +115,10 @@ $(document).ready(function(){
 
 <section>
 	<nav id="filter">
+
+		<div id="category"><h2>CATEGORY</h2></div>
+		<h2><a href="sale.sa" class="sale">START BIDDING</a></h2>
+
 		<div id="menu"><h2>CATEGORY</h2>
 		<span>
 		<a href="main.ct?cat1=AA">의류</a>
