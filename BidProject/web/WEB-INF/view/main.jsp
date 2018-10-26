@@ -112,6 +112,7 @@ $(document).ready(function(){
 	</div>
 </section>
 
+
 <section>
 	<nav id="filter">
 		<div id="menu"><h2>CATEGORY</h2>
