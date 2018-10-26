@@ -96,7 +96,7 @@ $(document).ready(function(){
 <section>
 	<nav id="filter">
 		<div id="category"><h2>CATEGORY</h2></div>
-		<h2><a href="" class="bidding">START BIDDING</a></h2>
+		<h2><a href="sale.sa" class="sale">START BIDDING</a></h2>
 	</nav>
 	
 	<div id="qna" class="qna">

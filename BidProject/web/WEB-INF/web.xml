@@ -75,7 +75,18 @@
   	<servlet-name>auction</servlet-name>
   	<url-pattern>*.au</url-pattern>
   </servlet-mapping>
-  
+
+	<servlet>
+		<servlet-name>sale</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sale</servlet-name>
+		<url-pattern>*.sa</url-pattern>
+	</servlet-mapping>
+
 
 <!--    <servlet>
     <servlet-name>resource</servlet-name>
