@@ -19,24 +19,25 @@
 <script src=jquery-3.3.1.min.js></script>
 <script>
 $(document).ready(function(){
-	$('#category').click(function(){
+	$('#next').click(function(){
 		$.ajax({
 	        url : "category.ct",
 	        type: "get",
-	        data : { "cat1" : "HH" },
+	        data : { "cat1" : $("#nxt_page").val()},
 	        error : function(request,status,error){
 	            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 	        	},
 	        success : function(responseData){
 	        	console.log(responseData);
 	        	var total = "<section class=wrap0>";
-	        	var box1 = "<section class='product1'><div class='photo'></div><section class='wrap01'><section class='wrap1'><div class='prodname'><a href='/BidProject/auction.au'>";
-				var box2 = "</a><br></div><div class='wrap2'><div class='ref'>";
-				var box3 = "<br></div><div class='price'>";
-				var box4 = "<br></div>[현재가격]<br><div class='term'>"
+	        	var box1 = "<section class='product1'><div class='photo'><img src='/BidProject/resources/image/"
+	        	var box2 = ".jpg' style='width:100%; height: 180px;'></div><section class='wrap01'><section class='wrap1'><div class='prodname'><a href='/BidProject/auction.au'>";
+				var box3 = "</a><br></div><div class='wrap2'><div class='ref'>";
+				var box4 = "<br></div><div class='price'>";
+				var box5 = "<br></div>[현재가격]<br><div class='term'>"
 				var last = "</div></div></section></section></section>"
 	        	$.each(responseData, function(index, entry){
-					total += box1 + entry.prodname + box2 + entry.ref + box3 + entry.price + box4 + entry.term + last;
+					total += box1 + entry.code + box2+ entry.prodname + box3 + entry.ref + box4 + entry.price + box5 + entry.term + last;
 			});
 				console.log(total);
 				$('#update').html(total+"</section>");
@@ -95,7 +96,21 @@ $(document).ready(function(){
 
 <section>
 	<nav id="filter">
-		<div id="category"><h2>CATEGORY</h2></div>
+		<div id="menu">CATEGORY
+		<span>
+		의류&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+		</span>
+		<span>
+		패션잡화&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		<span>
+		뷰티미용&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		<span>
+		유아,아동,출산&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+		
+		</div>
 		<h2><a href="" class="bidding">START BIDDING</a></h2>
 	</nav>
 	
@@ -103,7 +118,9 @@ $(document).ready(function(){
 	<h2><a href="qna.bd?pg=1" class="qna2" style="color:black">Q&amp;A</a></h2>
 	</div>
 </section>
-
+	<div id="next">
+		<input type="hidden" id="nxt_page" value="AA"><h4>다음</h4>
+	</div>
 <div id="update">
 <section class=wrap0>
 	<c:forEach var="ob" items="${list}">
@@ -125,6 +142,9 @@ $(document).ready(function(){
 		</section>
 	</c:forEach>
 </section>
+	
+
+</div>
 <footer class="footer">
 FOOTER : 기타 정보들 입력
 </footer>

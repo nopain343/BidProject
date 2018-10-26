@@ -20,10 +20,10 @@ public class CategoryController {
 	CategoryService categoryService;
 
 	@RequestMapping(value = "category.ct", method = RequestMethod.GET)
-	public @ResponseBody List<CategoryVO> category(@RequestParam("cat1") String id) {
+	public @ResponseBody List<CategoryVO> category(@RequestParam("cat1") String cat1) {
 		System.out.println("controller¿‘º∫");
-		System.out.println(id);
-		List<CategoryVO> list = categoryService.getCategory();
+		System.out.println(cat1);
+		List<CategoryVO> list = categoryService.getCategory(cat1);
 		System.out.println(list);
 		return list;
 		

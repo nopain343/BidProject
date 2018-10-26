@@ -19,9 +19,9 @@ public class CategoryService {
 		return categoryDAO.categoryList(page);
 
 	}
-	public List<CategoryVO> getCategory() {
+	public List<CategoryVO> getCategory(String cat1) {
 		
-		return categoryDAO.getCategory();
+		return categoryDAO.getCategory(cat1);
 	}
 
 }
