@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.auction.vo.AuctionVO;
+import com.auction.vo.BidVO;
 
 @Repository
 public class AuctionDao {
@@ -16,15 +17,10 @@ public class AuctionDao {
 		return vo;
 	}
 
-	public boolean auctionProc(int finalPrice) {
-		int n = factory.openSession().insert("auctionMapper.bidPlace", finalPrice);
+	public boolean auctionProc(BidVO vo) {
+		int n = factory.openSession().insert("auctionMapper.bidPlace", vo);
+		System.out.println("22");
 		return n > 0 ? true : false;
 	}
 	
-	
-//	public boolean deleteUser(String id) {
-//		int n = factory.openSession().delete("bidMapper.deleteUser", id);
-//		return (n > 0) ? true : false;
-//	}
-
 }
