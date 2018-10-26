@@ -3,18 +3,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login.css">
 <title>로그인, 회원가입</title>
 </head>
 <body>
-LOGIN
 
+
+<div id="wrapper">
+<p>LOGIN</p><br><br>
 <form action="/BidProject/loginProc.go" method="post">
-	<input type="text" id="id" name="id" placeholder="ID"/>
-	<input type="password" id="password" name="password" placeholder="Password"/>
+	<input type="text" id="id" name="id" placeholder="ID"/><br><br>
+	<input type="password" id="password" name="password" placeholder="Password"/><br><br>
 	<input type="hidden" id="username" name="username"/>
 	<input type="hidden" id="roadFullAddr" name="roadFullAddr"/>
 	<input type="hidden" id="phone" name="phone"/>
-	<input type="submit" value="로그인"/>
+	<input type="submit" id="submit" value="로그인"/>
 </form>
 
 아직 아이디가 없으신가요?
@@ -24,5 +27,6 @@ LOGIN
 <br>
 <a href="/BidProject/searchId.go">아이디찾기</a>
 <a href="/BidProject/searchPassword.go">비밀번호찾기</a>
+</div>
 </body>
 </html>

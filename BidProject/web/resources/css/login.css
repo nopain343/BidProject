@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#wrapper
+{
+	width:1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#id
+{
+	width:320px;
+	height: 30px;
+}
+
+
+#password
+{
+	width:320px;
+	height: 30px;
+}
+
+#submit
+{
+	width:320px;
+	height: 30px;
+	background-color: mint;
+}
