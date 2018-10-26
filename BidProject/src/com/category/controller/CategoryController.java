@@ -38,8 +38,8 @@ public class CategoryController {
 		System.out.println("controller입성");
 		List<CategoryVO> list = categoryService.getCategory(page, cat1);
 		System.out.println("controller 현재카테고리 : " + cat1);
+
 		System.out.println(list);
 		return list;
-		
 	}
 }

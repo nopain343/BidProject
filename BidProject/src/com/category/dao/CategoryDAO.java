@@ -16,6 +16,9 @@ import org.springframework.stereotype.Repository;
 
 import com.board.dto.BoardDTO;
 import com.category.vo.CategoryVO;
+
+
+
 @Repository
 public class CategoryDAO {
 	@Autowired

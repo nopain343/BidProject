@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.service.AuctionService;
+import com.auction.vo.BidVO;
 
 @Controller
 public class AuctionController {
@@ -29,12 +31,22 @@ public class AuctionController {
 		}
 	}
 	
+	@RequestMapping(value="/maxPrice.au", method=RequestMethod.GET)
+	@ResponseBody
+	public BidVO maxPrice(@RequestParam(value="code") String code) {
+		System.out.println("maxprice : " + code);
+		Integer n = service.maxPrice(code);
+		BidVO vo = new BidVO();
+		vo.setFinalPrice(n);
+		System.out.println(vo.getFinalPrice());
+		return vo;
+	}
+	
+	
 	@RequestMapping(value="/auctionProc.au", method=RequestMethod.POST)
-	public ModelAndView auctionProc(@ModelAttribute int finalPrice, HttpServletRequest request) {
-		if(service.auctionProc(finalPrice)) {
-			HttpSession session = request.getSession();
-			session.setAttribute("auction", service.auctionProc(finalPrice));
-			return new ModelAndView("auction");
+	public ModelAndView auctionProc(@ModelAttribute BidVO vo) {
+		if(service.auctionProc(vo)) {
+			return new ModelAndView("auctionOK");
 		}else {
 			return new ModelAndView("auctionFail");
 		}
