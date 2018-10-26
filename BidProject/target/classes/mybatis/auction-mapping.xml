@@ -2,9 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="auctionMapper">
-	<select id="view" parameterType="java.lang.String" resultType="auctionVO">
+	<select id="view" parameterType="java.lang.String" resultType="categoryVO">
 		<![CDATA[
 			SELECT * FROM SALES WHERE CODE = #{code}
+		]]>
+	</select>
+	
+	<select id="maxPrice" parameterType="java.lang.String" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = #{code}
 		]]>
 	</select>
 	

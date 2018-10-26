@@ -28,6 +28,7 @@ code varchar2(20),
 term varchar2(20),
 finalPrice number);
 
+SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = 'GG01';
 
 select * from sales;
 select * from user1;
