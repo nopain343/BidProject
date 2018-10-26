@@ -8,6 +8,18 @@
 			SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, SALES.* FROM SALES) WHERE RN>=#{page}*10-9 AND RN<=#{page}*10
 		]]>
 	</select>
+	<select id="totalCount" resultType="Integer">
+		<![CDATA[
+			SELECT COUNT(*) AS NUM FROM SALES
+		]]>
+	</select>
+
+
+	<select id="getlist" resultType="categoryVO" parameterType="categoryVO">
+		<![CDATA[
+			SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, SALES.* FROM SALES WHERE CAT1=#{cat1}) WHERE RN<=10
+		]]>
+	</select>
 
 	
 </mapper>

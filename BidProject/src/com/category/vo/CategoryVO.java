@@ -12,8 +12,16 @@ public class CategoryVO {
 	private String term;
 	private String descrip;
 	private int page;
+	private int total;
 	
 	
+	
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
 	public int getPage() {
 		return page;
 	}

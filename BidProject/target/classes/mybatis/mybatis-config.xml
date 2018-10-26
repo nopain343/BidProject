@@ -8,8 +8,8 @@
 		<typeAlias type="com.board.dto.BoardDTO" alias="boardDto"/>
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
 		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
-		<typeAlias type="com.auction.vo.AuctionVO" alias="auctionVO"/>
 		<typeAlias type="com.auction.vo.BidVO" alias="BidVO"/>
+
 		
 		
 

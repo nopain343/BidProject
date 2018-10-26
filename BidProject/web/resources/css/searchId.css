@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+*{
+	background-color: #FAFAFA;
+	
+}
+
+.wrap
+{
+	width:50%;
+	height:100%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 7%;
+	
+}
+
+
+#username,#phone
+{
+	background-color: white;
+	width:30%;
+	height: 7%;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.submit
+{
+	width:30%;
+	height: 7%;
+	background-color: #272727;
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+	line-height: 2em;
+}
+
+
+.leg
+{
+	text-align: left;
+	line-height: 2em;
+	font-weight: bold;
+	font-size: 20px;
+	
+}
+
+.box1
+{
+	background-color: black;
+	max-width;
+	height: 60px;
+	margin: 0;	
+	
+}
+
+.txtphone
+{
+	display: block;
+	padding-right: 170px;
+	line-height: 1em;
+	font-weight: bold;
+}
+
+.txtname
+{
+	display: block;
+	padding-right: 160px;
+	line-height: 1em;
+	font-weight: bold;
+}
+
+
+
+
+

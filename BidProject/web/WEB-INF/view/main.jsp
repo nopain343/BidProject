@@ -1,6 +1,20 @@
 <%@page import="com.user.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.category.vo.*" %>
+<% 
+	int total= ((List<CategoryVO>)request.getAttribute("list")).get(0).getTotal();
+	int pg = ((List<CategoryVO>)request.getAttribute("list")).get(0).getPage();
+	String cat1 = "";
+
+	
+	if(CatogoryPaging.categorycheck == true){
+		cat1 = ((List<CategoryVO>)request.getAttribute("list")).get(0).getCat1();
+	}
+		
+	System.out.println("현재 페이지 : " + pg);
+%>
 
 <!DOCTYPE html>
 <html>
@@ -20,10 +34,14 @@
 <script>
 $(document).ready(function(){
 	$('#next').click(function(){
+		var dataToPost = { 
+				"page" : $("#nxt_page").val(),
+		        "cat1" : $("#category").val()
+		        };
 		$.ajax({
-	        url : "category.ct",
+	        url : "paging.ct",
 	        type: "get",
-	        data : { "cat1" : $("#nxt_page").val()},
+	        data :dataToPost,
 	        error : function(request,status,error){
 	            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 	        	},
@@ -90,9 +108,10 @@ $(document).ready(function(){
 
 <section id="main" class="main">
 	<div>
-		<h1>BID YOUR ITEMS</h1>
+		<a href="main.go?page=1"><h1>BID YOUR ITEMS</h1></a>
 	</div>
 </section>
+
 
 <section>
 	<nav id="filter">
@@ -102,30 +121,37 @@ $(document).ready(function(){
 
 		<div id="menu"><h2>CATEGORY</h2>
 		<span>
-		<a href="">의류</a>
+		<a href="main.ct?cat1=AA">의류</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
 		</span>
 		<span>
-		<a href="">패션잡화</a>
+		<a href="main.ct?cat1=BB">패션잡화</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span>
-		<a href="">뷰티미용</a>
+		<a href="main.ct?cat1=CC">뷰티미용</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span>
-		<a href="">유아,아동,출산</a>
+		<a href="main.ct?cat1=DD">유아,아동,출산</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span>
-		<a href="">스포츠레저</a>
+		<a href="main.ct?cat1=EE">스포츠레저</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span>
-		<a href="">디지털가전</a>
+		<a href="main.ct?cat1=FF">디지털가전</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-		
+		<span>
+		<a href="main.ct?cat1=GG">애완</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		</span>
+		<span>
+		<a href="main.ct?cat1=HH">도서/티켓</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		</span>
 	</div>
 		<h2><a href="sale.sa" class="sale">START BIDDING</a></h2>
 	</nav>
@@ -134,9 +160,7 @@ $(document).ready(function(){
 	<h2><a href="qna.bd?pg=1" class="qna2" style="color:black">Q&amp;A</a></h2>
 	</div>
 </section>
-	<div id="next">
-		<input type="hidden" id="nxt_page" value="AA"><h4>다음</h4>
-	</div>
+
 <div id="update">
 <section class=wrap0>
 	<c:forEach var="ob" items="${list}">
@@ -158,9 +182,30 @@ $(document).ready(function(){
 		</section>
 	</c:forEach>
 </section>
+<input type="hidden" id="category" value="<%=cat1%>">
+<% if(pg != 1){ %>
+	<div id="previous">
+		<input type="hidden" id="pre_page" value="<%=pg-1%>">
+		<h4>Previous</h4>
+	</div>
+<% } %>
+
+<% 
+int totalP=(total+9)/10;
+if(pg != totalP){%>
+	<div id="next">
+		<input type="hidden" id="nxt_page" value="<%=pg+1%>">
+		
+		<h4>Next</h4>
+	</div>
+<% 
+}
+
+%>
+	
+</div>
 	
 
-</div>
 <footer class="footer">
 FOOTER : 기타 정보들 입력
 </footer>
