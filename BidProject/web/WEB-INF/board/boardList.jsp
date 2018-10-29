@@ -20,6 +20,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/boardList.css">
 <title>Insert title here</title>
 <script>
 
@@ -33,21 +38,19 @@
 </script>
 </head>
 <body>
-<table >
-	<tr>
-		<td colspan="5" bgcolor="777777"></td>
-	</tr>
+<div class="container">
+<table class="table table-striped">
 
+	<thead>
 	<tr>
-		<th width="100">글번호</th>
-		<th width="300">제목</th>
-		<th width="100">작성자</th>
-		<th width="100">조회수</th>
-		<th width="100">작성일</th>
+		<th>글번호</th>
+		<th>제목</th>
+		<th>작성자</th>
+		<th>조회수</th>
+		<th>작성일</th>
 	</tr>
-	<tr>
-		<td colspan="5" bgcolor="777777"></td>
-	</tr>	
+	</thead>'
+
 	<c:if test="${!empty list}">
 		<c:forEach items="${list}"  var="ob">
 			<tr>
@@ -70,25 +73,38 @@
 		<tr><th>내용이 없습니다.</th></tr>
 	</c:if>
 	
-	<tr>
-		<td colspan="5" bgcolor="cccccc"></td>
-	</tr>
-	<tr>
-		<td colspan="5" bgcolor="777777"></td>
-	</tr>
-	<tr>
-		<td colspan="5" align="center"><%=paging.getPagingHTML() %></td>
-	</tr>
+
+	<%-- <tr>
+		 <td colspan="5" align="center"><%=paging.getPagingHTML() %></td>
+	</tr> --%>
 	
+	<%-- <div class="center-block">
+		<ul class="pagination">
+	<li class="page-item"><a class="page-link" href="#"><%=paging.getPagingHTML() %></a></li>
+		</ul>
+	</div> --%>
+	
+	
+
+
+
 </table><br><br>
 
-<a href="write.bd"><button id="write">글쓰기</button></a>
-<a href="main.go?page=1"><button id="main">MAIN</button></a>
+	<!-- Paging 처리, Bootstrap -->
+<%-- <nav aria-label="..." style="text-align:center">
+  <ul class="pagination">
+    <%=paging.getPagingHTML() %>
+  </ul>
+</nav> --%>
 
+<!-- <a href="write.bd"><button id="write">글쓰기</button></a>
+<a href="main.go?page=1"><button id="main">MAIN</button></a> -->
+<div class="row justify-content-end">
+<div class="float-left"><a href="write.bd" class="btn btn-primary">글쓰기</a></div>
+<div class="col-md-offset-3"><a href="main.go?page=1" class="btn btn-outline-primary">MAIN</a></div>
+</div>
 
-
-
-
+</div>
 </body>
 </html>
 

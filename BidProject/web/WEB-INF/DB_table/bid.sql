@@ -11,7 +11,7 @@ pwquestion varchar2(100),
 pwanswer varchar2(20));
 
 insert into user1 values('admin', '1234', '�슦�썝�옱', '�꽌�슱�떆 媛뺣궓援� �끉�쁽�룞', '010-1577-1577');
-SELECT * FROM USER1 WHERE ID = 'test' AND PASSWORD = '1'
+SELECT * FROM USER1 WHERE ID = 'a' AND PASSWORD = '1'
 select * from sales;
 select * from user1;
 delete user1;

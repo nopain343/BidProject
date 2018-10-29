@@ -7,7 +7,9 @@
 <title>아이디 찾기</title>
 </head>
 <body>
-<div class="box1"></div>
+<div class="box1">
+<span class="let">LET IT BID</span>
+</div>
 
 <div class="wrap">
 <form action="/BidProject/searchId2.go" method="post">
@@ -19,9 +21,10 @@
 	
 	<label for="phone" class="txtphone">휴대전화</label><br>
 	<input type="text" id="phone" name="phone"/>
-	<br><br>
+	<br><br><br>
 	
-	<input type="submit" class="submit" value="아이디 찾기"/><br>
+	<input type="submit" class="submit" value="아이디 찾기"></input>
+	<br><br>
  </fieldset>	
 </form>
 <!-- <a href="/BidProject/login.go">뒤로 가기</a> -->

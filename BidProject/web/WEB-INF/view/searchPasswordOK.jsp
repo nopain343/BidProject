@@ -4,12 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/searchPasswordOK.css">
 </head>
 <body>
-<form method="post" action="main.go">
-당신의 비밀번호는 ${searchOK.password} 입니다.
-</form>
+<div class="box1">
+<span class="let">LET IT BID</span>
+</div>
 
+
+
+<div class="wrap">
+<form method="post" action="main.go">
+회원님의 비밀번호는 ${searchOK.password} 입니다
+</form>
+</div>
 
 </body>
 </html>
