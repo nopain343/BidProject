@@ -22,9 +22,9 @@ $(document).ready(function(){
 		},
 		error:function(request,status,error){
             alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-    	};
+    	}
 	
-		
+	});
 	setInterval(function() {
 			var code = $("#code").val();
 			
@@ -33,7 +33,7 @@ $(document).ready(function(){
 				url:"maxPrice.au?code="+code,
 				dataType : "json",
 				success:function(data){
-					console.log(data.finalPrice);
+					console.log(data);
 					$("#output").html(data.finalPrice + "원");
 					
 				},
@@ -66,7 +66,7 @@ ${auction.prodname}
 <form action="/BidProject/auctionProc.au" method="post">
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" id="code" name="code"/>
-	<input type="hidden" value="${auction.term}" name="term"/>
+	<input type="hidden" value="${auction.term}" id="term" name="term"/>
 	응찰가 : <input type="number" id="click" name="finalPrice"/>
 	<input type="submit" value="PLACE BID"/>
 </form>

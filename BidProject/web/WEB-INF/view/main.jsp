@@ -78,12 +78,13 @@ function paging(data){
 });
 	
 	if(${check}){
-	
-	total += "<input type='hidden' id='category' value='" + data[0].cat1 + "'>";
-	}else{
 		
-	total += "<input type='hidden' id='category' value=''>";	
-	}
+		total += "<input type='hidden' id='category' value='" + data[0].cat1 + "'>";
+		}else{
+			
+		total += "<input type='hidden' id='category' value=''>";	
+		}
+		
 	
 	var totalP = (data[0].total+9)/10;
 	console.log(totalP);

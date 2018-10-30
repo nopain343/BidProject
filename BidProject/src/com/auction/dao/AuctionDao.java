@@ -23,7 +23,10 @@ public class AuctionDao {
 	}
 	
 	public boolean auctionProc(BidVO vo) {
+		System.out.println(vo.getCode());
+		System.out.println(vo.getfinalPrice());
 		int n = factory.openSession().insert("auctionMapper.bidPlace", vo);
+		System.out.println(n);
 		return n > 0 ? true : false;
 	}
 	

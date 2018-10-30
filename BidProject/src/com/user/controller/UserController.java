@@ -33,6 +33,8 @@ public class UserController {
 		return new ModelAndView("main", "list", categoryService.categoryList(category.getPage()));
 	}
 	
+
+	
 	@RequestMapping("/login.go")
 	public ModelAndView login() {
 		return new ModelAndView("login");
@@ -43,7 +45,8 @@ public class UserController {
 		if(service.loginUser(user) != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOK", service.loginUser(user));
-			return new ModelAndView("main.go?page=1");
+			CatogoryPaging.categorycheck = false;
+			return new ModelAndView("main", "list", categoryService.categoryList(1));
 		}else {
 			return new ModelAndView("login");
 		}

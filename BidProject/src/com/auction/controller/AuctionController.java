@@ -1,15 +1,11 @@
 package com.auction.controller;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -50,6 +46,7 @@ public class AuctionController {
 		
 		
 		BidVO vo = service.maxPrice(code);
+		
 		try {
 	        response.getWriter().print(mapper.writeValueAsString(vo));
 	    } catch (IOException e) {
@@ -61,7 +58,7 @@ public class AuctionController {
 	@RequestMapping(value="/auctionProc.au", method=RequestMethod.POST)
 	public ModelAndView auctionProc(@ModelAttribute BidVO vo) {
 		if(service.auctionProc(vo)) {
-			return new ModelAndView("auctionOK");
+			return new ModelAndView("auction");
 		}else {
 			return new ModelAndView("auctionFail");
 		}
