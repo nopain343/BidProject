@@ -7,32 +7,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.category.service.CategoryService;
 import com.category.vo.CategoryVO;
 import com.sale.service.SaleService;
+import com.sale.validate.UploadFile;
 
 
 @Controller
 public class SaleController {
 	@Autowired
 	SaleService saleService;
-	@Autowired
-	CategoryService categoryService;
 	
-	@RequestMapping("/sale.sa")
-	public ModelAndView list() {
-		return new ModelAndView("/WEB-INF/sale/sale.jsp");
+	@RequestMapping(value="/sale.sa", method=RequestMethod.GET)
+	public String view(@ModelAttribute UploadFile uploadFile) {
+		return "sale/sale";
 	}
-	
 	
 	@RequestMapping(value="/saleUpload.sa", method=RequestMethod.POST)
 	public ModelAndView insert(@ModelAttribute CategoryVO categoryVO) {
-		System.out.println("controlller");
-		System.out.println(categoryVO.getDescrip());
-		
 		if(saleService.insert(categoryVO)) {
-			return new ModelAndView ("/WEB-INF/view/main.jsp","list", categoryService.categoryList(1));
-			//	return new ModelAndView("main","bool",categoryService.insert(categoryVO));
+			return new ModelAndView ("sale/saleOK");
 		}else {
 			return new ModelAndView("sale");
 		}

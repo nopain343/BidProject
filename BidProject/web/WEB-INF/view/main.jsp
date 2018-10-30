@@ -184,7 +184,7 @@ function paging(data){
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 	</div>
-		<h2><a href="sale.sa" class="sale">START BIDDING</a></h2>
+		<h2><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></h2>
 	</nav>
 	
 	<div id="qna" class="qna">

@@ -43,7 +43,7 @@ public class UserController {
 		if(service.loginUser(user) != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOK", service.loginUser(user));
-			return new ModelAndView("main");
+			return new ModelAndView("main.go?page=1");
 		}else {
 			return new ModelAndView("login");
 		}
