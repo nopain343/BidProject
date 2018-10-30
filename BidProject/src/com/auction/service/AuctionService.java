@@ -16,7 +16,7 @@ public class AuctionService {
 		return dao.auction(code);
 	}
 	
-	public int maxPrice(String code) {
+	public BidVO maxPrice(String code) {
 		return dao.maxPrice(code);
 	}
 

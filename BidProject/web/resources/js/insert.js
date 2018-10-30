@@ -149,6 +149,7 @@ function getID(){
 			alert("사용가능한 아이디입니다");
 		},
 		success:function(data){
+			console.log(data);
 			alert("아이디가 이미 존재합니다");
 		}
 	});

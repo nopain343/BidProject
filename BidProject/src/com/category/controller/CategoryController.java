@@ -39,7 +39,7 @@ public class CategoryController {
 		System.out.println("category : " + cat1);
 		System.out.println("next_page : " + page);
 		List<CategoryVO> list = categoryService.getCategory(page, cat1);
-		System.out.println("ÇöÀç Ä«Å×°í¸® ÃÑ°¹¼ö : " + list.get(0).getTotal());
+		System.out.println("ÇöÀç Ä«Å×°í¸® ÃÑ°¹¼ö : " + list);
 		list.get(0).setPage(page);
 		return list;
 	}

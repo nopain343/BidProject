@@ -8,9 +8,9 @@
 		]]>
 	</select>
 	
-	<select id="maxPrice" parameterType="java.lang.String" resultType="java.lang.Integer">
+	<select id="maxPrice" parameterType="java.lang.String" resultType="BidVO">
 		<![CDATA[
-			SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = #{code}
+			SELECT MAX(FINALPRICE) AS FINALPRICE FROM AUCTION WHERE CODE = #{code}
 		]]>
 	</select>
 	

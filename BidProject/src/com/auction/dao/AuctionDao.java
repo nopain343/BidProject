@@ -17,9 +17,9 @@ public class AuctionDao {
 		return vo;
 	}
 
-	public int maxPrice(String code) {
-		int n = factory.openSession().selectOne("auctionMapper.maxPrice", code);
-		return n;
+	public BidVO maxPrice(String code) {
+		BidVO vo = factory.openSession().selectOne("auctionMapper.maxPrice", code);
+		return vo;
 	}
 	
 	public boolean auctionProc(BidVO vo) {

@@ -5,7 +5,54 @@
 <meta charset="UTF-8">
 <title>Auction</title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/maxPrice.js"></script>
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/maxPrice.js"></script> --%>
+<script>
+
+$(document).ready(function(){
+	var code = $("#code").val();
+			
+	$.ajax({
+		type:"get",
+		url:"maxPrice.au?code="+code,
+		dataType : "json",
+		success:function(data){
+			console.log(data.finalPrice);
+			$("#output").html(data.finalPrice + "원");
+			
+		},
+		error:function(request,status,error){
+            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+    	};
+	
+		
+	setInterval(function() {
+			var code = $("#code").val();
+			
+			$.ajax({
+				type:"get",
+				url:"maxPrice.au?code="+code,
+				dataType : "json",
+				success:function(data){
+					console.log(data.finalPrice);
+					$("#output").html(data.finalPrice + "원");
+					
+				},
+				error:function(request,status,error){
+		            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		    	}
+				 
+			});
+		}, 3000);
+
+		
+		
+		
+		
+	
+	
+});
+</script>
+
 </head>
 <body>
 옥션페이지
@@ -20,7 +67,7 @@ ${auction.prodname}
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" id="code" name="code"/>
 	<input type="hidden" value="${auction.term}" name="term"/>
-	응찰가 : <input type="number" name="finalPrice"/>
+	응찰가 : <input type="number" id="click" name="finalPrice"/>
 	<input type="submit" value="PLACE BID"/>
 </form>
 제품상태 : ${auction.condition}
