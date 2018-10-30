@@ -36,10 +36,11 @@ public class CategoryController {
 	@RequestMapping(value = "paging.ct", method = RequestMethod.GET)
 	public @ResponseBody List<CategoryVO> category(@RequestParam("page") int page,@RequestParam("cat1") String cat1) {
 		System.out.println("controller입성");
+		System.out.println("category : " + cat1);
+		System.out.println("next_page : " + page);
 		List<CategoryVO> list = categoryService.getCategory(page, cat1);
-		System.out.println("controller 현재카테고리 : " + cat1);
-
-		System.out.println(list);
+		System.out.println("현재 카테고리 총갯수 : " + list.get(0).getTotal());
+		list.get(0).setPage(page);
 		return list;
 	}
 }
