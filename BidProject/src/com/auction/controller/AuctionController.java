@@ -44,7 +44,6 @@ public class AuctionController {
 	public void maxPrice(@RequestParam(value="code") String code,HttpServletResponse response) {
 		ObjectMapper mapper = new ObjectMapper();
 		
-		
 		BidVO vo = service.maxPrice(code);
 		
 		try {

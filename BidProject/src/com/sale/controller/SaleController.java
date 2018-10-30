@@ -75,8 +75,6 @@ public class SaleController {
 			System.out.println("업로드시 실제저장될 경로 : " + path);
 			
 			System.out.println(newFile.getName());
-//		    file.transferTo(newFile);
-
 		
 			if(!newFile.exists()) {
 				newFile.createNewFile();

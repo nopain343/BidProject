@@ -23,11 +23,11 @@
 						<option value="AA">의류</option>
 						<option value="BB">패션잡화</option>
 						<option value="CC">뷰티미용</option>
-						<option value="CC">유아/아동/출산</option>
-						<option value="CC">스포츠레저</option>
-						<option value="CC">디지털가전</option>
-						<option value="CC">애완</option>
-						<option value="CC">도서/티켓</option>
+						<option value="DD">유아/아동/출산</option>
+						<option value="EE">스포츠레저</option>
+						<option value="FF">디지털가전</option>
+						<option value="GG">애완</option>
+						<option value="HH">도서/티켓</option>
 				</select></td>
 			</tr>
 			<tr>
@@ -50,11 +50,22 @@
 				<td><b>시작가</b></td>
 				<td><input type="number" name="price"></td>
 			</tr>
+			
 			<tr>
-				<td><b>상태</b></td>
-				<td><input type="text" name="condition"></td>
-			</tr>
-				<tr>
+	            <td><b>상태</b></td>
+	            <td>
+		            <select name="condition">
+		                  <option selected>중고</option>
+		                  <option >중고+하자 (하자가 있는 중고)</option>
+		                  <option >새물품(미사용)</option>
+		                  <option>새것+하자(새것이고 하자가 있음)</option>
+		                  <option >거의새것(새것이고 하자가 없음)</option>
+		
+		            </select>
+	            </td>
+         	</tr>
+         
+			<tr>
 				<td><b>해시태그</b></td>
 				<td><input type="text" name="ref"></td>
 			</tr>

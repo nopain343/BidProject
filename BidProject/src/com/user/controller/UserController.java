@@ -56,7 +56,8 @@ public class UserController {
 	public ModelAndView logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		return new ModelAndView("main");
+		CatogoryPaging.categorycheck = false;
+		return new ModelAndView("main", "list", categoryService.categoryList(1));
 	}
 	
 	@RequestMapping("/mypage.go")
