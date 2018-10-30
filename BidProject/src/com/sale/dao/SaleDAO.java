@@ -11,9 +11,7 @@ public class SaleDAO {
 	private SqlSessionFactory factory;
 	
 	public boolean insert(CategoryVO categoryVO) {
-		System.out.println("dao");
-		System.out.println(categoryVO.getDescrip());
 		int n = factory.openSession().insert("saleNameSpace.saleInsert", categoryVO);
-				return (n > 0) ? true : false;
+		return (n > 0) ? true : false;
 	}
 }

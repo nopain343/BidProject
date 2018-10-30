@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +9,13 @@
 <body>
 	bidding 올리긩 파일업로드
 
-	<!-- 
-	<form method="post"
+	
+	<!-- <form method="post"
 		enctype="multipart/form-data" action="/BidProject/saleUpload.sa"> -->
 
 	<!-- form name="imageBoardWrifeform" -->
 
-	<form method="post" enctype="multipart/form-data" action="/BidProject/saleUpload.sa">
+	<form:form method="post" action="/BidProject/saleUpload.sa">
 		<table>
 			<tr>
 				<td><select name="cat1">
@@ -32,7 +32,7 @@
 			</tr>
 			<tr>
 				<td><b>아이디</b></td>
-				<td><input type="text" name="id"></td>
+				<td><input type="text" name="id" value="${loginOK.id}" readonly></td>
 			</tr>
 			<tr>
 				<td><b>마감시간</b></td>
@@ -66,7 +66,8 @@
 			
 			<tr>
 				<td><b>이미지</b></td>
-				<td><input type="file" name="imagePath" size="40"></td>
+				<td><input type="file"></td>
+				<td><form:errors path="file"/></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="등록">
@@ -74,10 +75,10 @@
 					
 					
 					
-					<%-- <a href="qna.bd?pg=${view.pg}"><button id="list">목록</button></a></td> --%>
+					<a href="qna.bd?pg=${view.pg}"><button id="list">목록</button></a></td>
 			</tr>
 		</table>
-	</form>
+	</form:form>
 
 </body>
 </html>
