@@ -15,7 +15,7 @@
 
 	<!-- form name="imageBoardWrifeform" -->
 
-	<form:form method="post" action="/BidProject/saleUpload.sa">
+	<form:form method="post" enctype="multipart/form-data" modelAttribute="uploadFile" action="/BidProject/saleUpload.sa">
 		<table>
 			<tr>
 				<td><select name="cat1">
@@ -66,7 +66,7 @@
 			
 			<tr>
 				<td><b>이미지</b></td>
-				<td><input type="file"></td>
+				<td><input type="file" name="file"></td>
 				<td><form:errors path="file"/></td>
 			</tr>
 			<tr>
