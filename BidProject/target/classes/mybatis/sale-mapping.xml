@@ -7,8 +7,6 @@
 			INSERT INTO SALES (CAT1, ID, TERM, CODE, PRODNAME, PRICE, CONDITION, REF, DESCRIP)
 			VALUES(#{cat1},#{id},#{term},#{code},#{prodname},#{price},#{condition},#{ref},#{descrip})
 		]]>
-	
 	</insert>
 
-	
 </mapper>

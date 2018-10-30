@@ -42,11 +42,11 @@ public class BidVO {
 		this.term = term;
 	}
 
-	public int getfinalPrice() {
+	public int getFinalPrice() {
 		return finalPrice;
 	}
 
-	public void setfinalPrice(int finalPrice) {
+	public void setFinalPrice(int finalPrice) {
 		this.finalPrice = finalPrice;
 	}
 

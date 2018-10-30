@@ -1,5 +1,7 @@
 package com.category.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class CategoryVO {
 
 	private String cat1;
@@ -13,7 +15,8 @@ public class CategoryVO {
 	private String descrip;
 	private int page;
 	private int total;
-	
+	private String filename;
+	private MultipartFile file;
 	
 	
 	public int getTotal() {
@@ -82,7 +85,17 @@ public class CategoryVO {
 	public void setDescrip(String descrip) {
 		this.descrip = descrip;
 	}
-
-
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 	
 }
