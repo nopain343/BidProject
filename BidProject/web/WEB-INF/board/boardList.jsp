@@ -38,24 +38,31 @@
 </script>
 </head>
 <body>
-<div class="container">
-<table class="table table-striped">
 
-	<thead>
+<div class="box1">
+<span class="let">LET IT BID</span>
+</div>
+
+<div class="container">
+<h1 class="qna">Q&A</h1>
+
+<table class="table table-hover table-secondary">
+
+	<thead class="thead-dark">
 	<tr>
 		<th>글번호</th>
-		<th>제목</th>
+		<th class="tt">제목</th>
 		<th>작성자</th>
 		<th>조회수</th>
 		<th>작성일</th>
 	</tr>
-	</thead>'
+	</thead>
 
 	<c:if test="${!empty list}">
 		<c:forEach items="${list}"  var="ob">
 			<tr>
-				<td>${ob.seq}</td>
-				<td>
+				<td class="seq">${ob.seq}</td>
+				<td class="sub">
 				<c:forEach begin="0" end="${ob.lev }" step="1">
 				&nbsp;
 				</c:forEach>
@@ -63,8 +70,8 @@
 				<img src = "resources/image/reply.gif">
 				</c:if>
 				<a href="javascript:checkLogin(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
-				<td>${ob.username}</td>
-				<td>${ob.hit}</td>
+				<td class="name">${ob.username}</td>
+				<td class="hit">${ob.hit}</td>
 				<td>${ob.logtime}</td>
 			</tr>
 		</c:forEach>
@@ -75,33 +82,41 @@
 	
 
 	<%-- <tr>
-		 <td colspan="5" align="center"><%=paging.getPagingHTML() %></td>
+		 <td colspan="5" align="center" bgcolor="white"><span class="pg"><%=paging.getPagingHTML() %></span></td>
+		 
+		 
 	</tr> --%>
 	
-	<%-- <div class="center-block">
-		<ul class="pagination">
-	<li class="page-item"><a class="page-link" href="#"><%=paging.getPagingHTML() %></a></li>
-		</ul>
-	</div> --%>
-	
-	
+
+</table><br>
+
+
+<span class="pg" align="center" bgcolor="white"><%=paging.getPagingHTML() %></span>
+
+		
+		
+<ul class="pagination">
+<%-- <c:forEach var="i" begin="i" end="${startPage}" step="-1">      
+<li><c:if test="${endPage<totalP}"> class="active"</c:if><a class="page-link" href="/BidProject/qna.bd?pg=${i}">이전</a></li>
+</c:forEach>    --%>
+  
+
+<%-- <c:forEach var="i" begin="${startPage}" end="${endPage}" step="1">
+    <li class="page-item"><c:if test="${pg==i+1}"> class="active"</c:if><a class="page-link" href="/BidProject/qna.bd?pg=${i+1}">${i+1}</a></li>
+</c:forEach>   --%>  
+
+<%-- <c:forEach var="i" begin="i" end="${endPage}" step="1">
+<li><c:if test="${startPage>pageBlock}"> class="active"</c:if><a class="page-link" href="/BidProject/qna.bd?pg=${i}">다음</a></li>
+</c:forEach>   --%>
+</ul>
+    
+    
 
 
 
-</table><br><br>
-
-	<!-- Paging 처리, Bootstrap -->
-<%-- <nav aria-label="..." style="text-align:center">
-  <ul class="pagination">
-    <%=paging.getPagingHTML() %>
-  </ul>
-</nav> --%>
-
-<!-- <a href="write.bd"><button id="write">글쓰기</button></a>
-<a href="main.go?page=1"><button id="main">MAIN</button></a> -->
 <div class="row justify-content-end">
-<div class="float-left"><a href="write.bd" class="btn btn-primary">글쓰기</a></div>
-<div class="col-md-offset-3"><a href="main.go?page=1" class="btn btn-outline-primary">MAIN</a></div>
+<div class="write"><a href="write.bd" class="btn btn-dark">글쓰기</a></div>
+<div class="col-md-offset-3"><a href="main.go?page=1" class="btn btn-outline-dark">MAIN</a></div>
 </div>
 
 </div>

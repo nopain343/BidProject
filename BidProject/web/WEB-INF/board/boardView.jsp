@@ -10,12 +10,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/boardView.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 
 </script>
 </head>
 <body>
+<div class="box1">
+<span class="let">LET IT BID</span>
+</div>
+
+
+<div class="wrap">
 <h2>게시글 보기</h2>
  <form method="get" action="/BidProject/boardview.bd">
 
@@ -62,6 +69,6 @@
 </c:if>
 
 
-
+</div>
 </body>
 </html>
