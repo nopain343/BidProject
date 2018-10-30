@@ -1,6 +1,8 @@
 package com.auction.service;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,17 +22,41 @@ public class AuctionService {
 	
 	public BidVO maxPrice(String code){
 		BidVO vo = dao.maxPrice(code);
+		
+		//날짜 계산
 		String term = vo.getTerm();
-/*		int year = Integer.parseInt(term.substring(0, 2));
-		int month = Integer.parseInt(term.substring(2, 4));
-		int day = Integer.parseInt(term.substring(4, 6));
-		int hour = Integer.parseInt(term.substring(6, 8));
-		int min = Integer.parseInt(term.substring(8, 10));
+		Date today = new Date();
 		
-		System.out.println("term : " + year + "-" + month + "-" + day + "  " + hour + ":" + min);
 		
-*/		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		
+		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		try {
+			Date dday = dateForm.parse(term);
+			long datetime = dday.getTime();
+			today = dateForm.parse(dateForm.format(today));
+			long todaytime = today.getTime();
+			
+			long min = (datetime - todaytime) / 60000;
+			long hour = (datetime - todaytime) / 3600000;
+			long date = hour/24;
+			
+			/*
+			System.out.println("남은 일수 : " + date);
+			System.out.println("남은 시간 : " + (hour-(date*24)));
+			System.out.println("남은 분 : " + ((min-hour*60)+1));
+			*/
+			String ddate = String.valueOf(date);
+			String dhour = String.valueOf(hour-(date*24));
+			String dmin = String.valueOf((min-hour*60)+1);
+			
+			
+			
+			String dtime = ddate + dhour + dmin;
+			System.out.println(dtime);
+			vo.setTerm(dtime);
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 
 		return vo;
 	}

@@ -35,7 +35,7 @@ $(document).ready(function(){
 				success:function(data){
 					console.log(data);
 					$("#output").html(data.finalPrice + "원");
-					
+					$("#dtime").html(data.term.substring(0,1) + "일 " + data.term.substring(1,3) + "시간 ");
 				},
 				error:function(request,status,error){
 		            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -72,7 +72,7 @@ ${auction.prodname}
 </form>
 제품상태 : ${auction.condition}
 <br>
-응찰마감시간 : ${auction.term}
+남은 시간 : <span id="dtime"></span>
 <br>
 태그 : ${auction.ref}
 <h3>상세설명</h3>
