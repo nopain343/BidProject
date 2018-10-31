@@ -23,27 +23,31 @@
 
 
 <div class="wrap">
-<h2>게시글 보기</h2>
- <form method="get" action="/BidProject/boardview.bd">
+<!-- <h2>게시글 보기</h2> -->
+<form method="get" action="/BidProject/boardview.bd">
 
 <table width="500">
-<tr>
+<!-- <tr>
 	<td colspan="3" bgcolor="777777"></td>
-</tr>
+</tr> -->
 
 <tr>
 <!-- 	<td colspan="3"><font size="5">{ob.subject}</font></td> -->
 </tr>
-<td width="200" align="center">제목 : [${view.subject}]</td>
+<tr>
+<td width="500" class="sub">${view.subject}</td>
+</tr>
 <tr>
 	<td colspan="3" bgcolor="555555"></td>
 	
 </tr>
 <tr>
-	<td width="150">글번호 : ${view.seq}</td>
-	<td width="200">작성자 : ${view.username }</td>
+	<td width="150">no. ${view.seq}</td>
+	<td width="200" class="user"><img src="https://png.icons8.com/windows/50/000000/user-male-circle.png" class="icon"> 
+	 <span class="username">${view.username }</span></td>
 	
 </tr>
+
 <tr>
 	<td colspan="3" bgcolor="777777"></td>
 </tr>
@@ -57,17 +61,18 @@
 </tr>
 </table>
 
-</form>
+</form><br>
 
+<div class="button">
 <a href="qna.bd?pg=${view.pg }"><button id="list">목록</button></a>
 <c:if test="${loginOK.id == view.id}">
-<a href="modify.bd?seq=${view.seq}"><button>수정</button></a>
-<a href="delete.bd?seq=${view.seq}"><button>삭제</button></a>
+<a href="modify.bd?seq=${view.seq}"><button id="mod">수정</button></a>
+<a href="delete.bd?seq=${view.seq}"><button id="del">삭제</button></a>
 </c:if>
 <c:if test="${!empty loginOK.id }">
-<a href="reply.bd?seq=${view.seq}&pg=${view.pg}"><button>답글쓰기</button></a>
+<a href="reply.bd?seq=${view.seq}&pg=${view.pg}"><button id="rep">답글</button></a>
 </c:if>
-
+</div>
 
 </div>
 </body>

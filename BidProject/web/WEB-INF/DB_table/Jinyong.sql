@@ -22,6 +22,15 @@ term varchar2(20),
 descrip varchar2(4000)
 );
 
+create table test3(
+cat1 varchar2(20),
+code varchar2(20),
+id varchar2(20));
+
+create sequence code_idx increment by 1 start with 1 nocache nocycle;
+
+insert into test3 values('AA','')
+
 create table auction(
 id varchar2(20),
 code varchar2(20),

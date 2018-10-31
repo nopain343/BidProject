@@ -43,10 +43,10 @@
 }
 
 
-#id,#password,#password2,#username,#roadFullAddr,#phone,#pwquestion,#pwanswer
+/* #id,#password,#password2,#username,#roadFullAddr,#phone,#pwquestion,#pwanswer
 {
 	background-color: white;
-}
+} */
 
 #idch,#pwch,#usernamech,#addrch,#phonech,#questionch
 {
@@ -54,7 +54,7 @@
 }
 
 
-#id,#roadFullAddr
+#roadFullAddr
 {
 	width:25%;
 	height: 5%;
@@ -63,11 +63,12 @@
 	font-size: 18px;
 }
 
-#password,#password2,#username,#phone,#pwquestion,#pwanswer
+#id,#password,#password2,#username,#phone,#pwquestion,#pwanswer
 {
 	width:30%;
 	height: 5%;
 	cursor: pointer;
+	background-color: white;
 	font-size: 18px;
 }
 
@@ -83,6 +84,7 @@
 	text-decoration: none;
 	border: none;
 	color: white;
+	margin-bottom: 5%;
 }
 
 .submit:active {

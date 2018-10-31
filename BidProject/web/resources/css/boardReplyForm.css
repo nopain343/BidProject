@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* *{
+	background-color: #FAFAFA;
+} */
 
 body
 {
@@ -14,11 +17,11 @@ body
 {
 	box-sizing:border-box;
 	position: absolute;
-	left:34%;
+	left:36%;
 	
 	margin: 0 auto;
-	text-align: left;
-	margin-top: 5%;
+	text-align: center;
+	margin-top: 6%;
 }
 
 .box1
@@ -29,8 +32,6 @@ body
 	margin: 0;	
 	
 }
-
-
 
 .let
 {
@@ -44,55 +45,52 @@ body
 
 .sub
 {
-	text-align: left;
-	font-weight: bold;
-	font-size: 18px;
+	padding-right: 10px;
+	line-height: 2em;
 }
 
-.user
+.name
 {
-	position: relative;
+	padding-right: 10px;
+	line-height: 2em;
 }
 
-.username
+.section
 {
-	display:inline-block;
-	position: absolute;
-	top:10px;
-	left:90px;
+	padding-right: 5px;
 }
 
-
-.icon
+.btn1
 {
-	padding-top: 6px;
-	padding-left:50px;
-	height: 30px;
-	
-}
-
-.button
-{
-	text-align: right;
-}
-
-#list,#mod,#del,#rep
-{
+	width: 20%;
+	height:20%;
+	margin-right: 15px;
+	margin-top:15px;
+	margin-left:50px;
 	background-color: #272727;
 	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
 	border: none;
 	color: white;
 	border-radius: 2px;
 }
 
-#list:hover,#mod:hover,#del:hover,#rep:hover
+
+.btn2
 {
-	background-color: black;
+	width: 20%;
+	background-color: #272727;
+	cursor: pointer;
+	display: inline-block;
+	border: none;
+	color: white;
+	border-radius: 2px;
 }
 
-
-
-
+.btn1:hover,.btn2:hover {
+	background-color: black;
+}
 
 
 

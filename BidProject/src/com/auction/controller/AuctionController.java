@@ -1,6 +1,9 @@
 package com.auction.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.service.AuctionService;
 import com.auction.vo.BidVO;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class AuctionController {
@@ -29,24 +33,31 @@ public class AuctionController {
 		}else {
 			return new ModelAndView("auctionFail");
 		}
+		
+		
 	}
 	
-	@RequestMapping(value="/maxPrice.au", method=RequestMethod.GET)
+
+	
+	@RequestMapping(value="maxPrice.au", method=RequestMethod.GET)
 	@ResponseBody
-	public BidVO maxPrice(@RequestParam(value="code") String code) {
-		System.out.println("maxprice : " + code);
-		Integer n = service.maxPrice(code);
-		BidVO vo = new BidVO();
-		vo.setFinalPrice(n);
-		System.out.println(vo.getFinalPrice());
-		return vo;
+	public void maxPrice(@RequestParam(value="code") String code,HttpServletResponse response) {
+		ObjectMapper mapper = new ObjectMapper();
+		
+		BidVO vo = service.maxPrice(code);
+		
+		try {
+	        response.getWriter().print(mapper.writeValueAsString(vo));
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }	
 	}
 	
 	
 	@RequestMapping(value="/auctionProc.au", method=RequestMethod.POST)
 	public ModelAndView auctionProc(@ModelAttribute BidVO vo) {
 		if(service.auctionProc(vo)) {
-			return new ModelAndView("auctionOK");
+			return new ModelAndView("auction");
 		}else {
 			return new ModelAndView("auctionFail");
 		}

@@ -12,6 +12,36 @@ function jusoCallBack(roadFullAddr){
    document.form.roadFullAddr.value = roadFullAddr;   
 }
 
+//아이디 중복체크--------------------------------------------------------------------------------------------
+$(document).ready(function(){
+	$('#id').blur(function(){
+	var id = $("#id").val();
+	
+	$.ajax({
+		type:"GET",
+		url:"/BidProject/idcheck.go?id=" + id,
+		dataType:"json",
+		error:function(){
+			for (var i = 0; i < form.id.value.length; i++) {
+		        ch = form.id.value.charAt(i)
+		        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z') || id.length < 4){
+		        	$('#idch').html("4~12자의 영문 대소문자, 숫자만 사용 가능합니다.").css("color","red")
+				    form.id.focus();
+				    return false;
+		        	
+		        }else{	
+				$('#idch').html("멋진 아이디네요!").css("color","green")
+		        }
+			}
+		},
+		success:function(data){
+			console.log(data);
+			$('#idch').html("이미 사용중인 아이디 입니다").css("color","red")
+			form.id.focus();
+		}
+	})
+})
+});
 
 //버튼 클릭 시----------------------------------------------------------------------------------------------------------
 
@@ -19,6 +49,95 @@ function Validate() {
 	var fphone=document.form.phone.value;
 	var regex = /^01([0|1|6|7|8|9]?)-([0-9]{3,4})-([0-9]{4})$/;
 	
+	//아이디 입력여부 체크
+	if (form.id.value == "") {
+		$('#idch').html("필수 정보입니다").css("color","red")
+		form.id.focus();
+		return false;
+	}  
+	
+	
+	
+	//아이디 유효성 검사 (영문소문자, 숫자만 허용)
+	for (var i = 0; i < form.id.value.length; i++) {
+		ch = form.id.value.charAt(i)
+		if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
+			$('#idch').html("아이디는 영문 대소문자, 숫자만 입력가능합니다.").css("color","red")
+			form.id.focus();
+			form.id.select();
+			return false;
+		}
+	}
+	
+	//아이디에 공백 사용하지 않기
+	if (form.id.value.indexOf(" ") >= 0) {
+		$('#idch').html("아이디에 공백을 사용할 수 없습니다.").css("color","red")
+		form.id.focus();
+		form.id.select();
+		return false;
+	}
+	
+	
+	//아이디 길이체크
+	if(form.id.value.length < 4){
+		$('#idch').html("아이디는 4글자 이상이여야만 합니다!").css("color","red")
+		form.id.focus();
+		form.id.select();
+		return false;
+	}
+	
+	//비밀번호 입력여부 체크
+	if (form.password.value == "") {
+		$('#pwch').html("필수 정보입니다").css("color","red")
+		form.password.focus();
+		return false;
+	} 
+	
+	
+	//비밀번호 유효성 검사 (영문소문자, 숫자만 허용)
+	for (var i = 0; i < form.password.value.length; i++) {
+		ck = form.password.value.charAt(i)
+		if (!(ck >= '0' && ck <= '9') && !(ck >= 'a' && ck <= 'z')&&!(ck >= 'A' && ck <= 'Z')) {
+			$('#pwch').html("비밀번호는 영문 대소문자, 숫자만 입력가능합니다.").css("color","red")
+			form.id.focus();
+			form.id.select();
+			return false;
+		}
+	}
+	
+	
+	
+	//비밀번호 길이 체크(6~16자 까지 허용)
+	if (form.password.value.length<6 || document.form.password.value.length>16) {
+		$('#pwch').html("비밀번호를 6~16까지 입력해주세요.").css("color","red")
+		form.password.focus();
+		form.password.select();
+		return false;
+	}
+	
+	
+	//비밀번호와 비밀번호 확인 일치여부 체크
+	if (form.password.value != form.password2.value) {
+		$('#pwch').html("비밀번호가 일치하지 않습니다").css("color","red")
+		form.password2.value = ""
+		return false;
+	}
+	
+	
+    //이름 입력여부 체크
+    if (form.username.value == "") {
+    	$('#usernamech').html("필수 정보입니다").css("color","red")
+        form.username.focus();
+        return false;
+    } 
+	
+    //주소 입력여부 체크
+    if (form.roadFullAddr.value == "") {
+    	$('#addrch').html("필수 정보입니다").css("color","red")
+        form.roadFullAddr.focus();
+        return false;
+    }  
+    
 	//전화번호 입력여부 체크
     if (form.phone.value == "") {
     	$('#phonech').html("필수 정보입니다").css("color","red")
@@ -33,97 +152,6 @@ function Validate() {
 	    return false;
 		}
 	
-	
-	
-	//아이디 입력여부 체크
-    if (form.id.value == "") {
-    	$('#idch').html("필수 정보입니다").css("color","red")
-        form.id.focus();
-        return false;
-    }  
-	
-	
-	
-	//아이디 유효성 검사 (영문소문자, 숫자만 허용)
-	for (var i = 0; i < form.id.value.length; i++) {
-        ch = form.id.value.charAt(i)
-        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
-        	$('#idch').html("아이디는 영문 대소문자, 숫자만 입력가능합니다.").css("color","red")
-            form.id.focus();
-            form.id.select();
-            return false;
-        }
-    }
-	
-	//아이디에 공백 사용하지 않기
-    if (form.id.value.indexOf(" ") >= 0) {
-        $('#idch').html("아이디에 공백을 사용할 수 없습니다.").css("color","red")
-        form.id.focus();
-        form.id.select();
-        return false;
-    }
-	
-    
-    //아이디 길이체크
-    if(form.id.value.length < 4){
-    	$('#idch').html("아이디는 4글자 이상이여야만 합니다!").css("color","red")
-    	form.id.focus();
-    	form.id.select();
-    	return false;
-    }
-    
-    //비밀번호 유효성 검사 (영문소문자, 숫자만 허용)
-	for (var i = 0; i < form.password.value.length; i++) {
-        ck = form.password.value.charAt(i)
-        if (!(ck >= '0' && ck <= '9') && !(ck >= 'a' && ck <= 'z')&&!(ck >= 'A' && ck <= 'Z')) {
-            $('#pwch').html("비밀번호는 영문 대소문자, 숫자만 입력가능합니다.").css("color","red")
-            form.id.focus();
-            form.id.select();
-            return false;
-        }
-    }
-    
-    
-   
-    //비밀번호 길이 체크(6~16자 까지 허용)
-    if (form.password.value.length<6 || document.form.password.value.length>16) {
-        $('#pwch').html("비밀번호를 6~16까지 입력해주세요.").css("color","red")
-        form.password.focus();
-        form.password.select();
-        return false;
-    }
-    
-    
-    //비밀번호와 비밀번호 확인 일치여부 체크
-    if (form.password.value != form.password2.value) {
-        $('#pwch').html("비밀번호가 일치하지 않습니다").css("color","red")
-        form.password2.value = ""
-        form.password2.focus();
-        return false;
-    }
-    
-    
-    //비밀번호 입력여부 체크
-    if (form.password.value == "") {
-    	$('#pwch').html("필수 정보입니다").css("color","red")
-        form.password.focus();
-        return false;
-    } 
-    
-    //이름 입력여부 체크
-    if (form.username.value == "") {
-    	$('#usernamech').html("필수 정보입니다").css("color","red")
-        form.username.focus();
-        return false;
-    } 
-    
-    
-	//주소 입력여부 체크
-    if (form.roadFullAddr.value == "") {
-    	$('#addrch').html("필수 정보입니다").css("color","red")
-        form.roadFullAddr.focus();
-        return false;
-    }  
     
     //비밀번호 찾기 답 입력여부 체크
     if (form.pwanswer.value == "") {
@@ -137,22 +165,6 @@ function Validate() {
 
 //회원가입 폼 입력 시--------------------------------------------------------------------------------------------------
 
-//아이디 중복체크
-function getID(){
-	var id = $("#id").val();
-	
-	$.ajax({
-		type:"GET",
-		url:"/BidProject/idcheck.go?id=" + id,
-		dataType:"json",
-		error:function(){
-			alert("사용가능한 아이디입니다");
-		},
-		success:function(data){
-			alert("아이디가 이미 존재합니다");
-		}
-	});
-}
 
 
 //전화번호 형식
@@ -216,28 +228,7 @@ $(document).ready(function(){
 	});
 		
 
-//아이디 형식	
-	$(document).ready(function(){
-		$('#id').blur(function(){
-			var fid=$('#id').val();
-			
-			
-			for (var i = 0; i < form.id.value.length; i++) {
-		        ch = form.id.value.charAt(i)
-		        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z') || fid.length < 4){
-		        	$('#idch').html("4~12자의 영문 대소문자, 숫자만 사용 가능합니다.").css("color","red")
-				    form.id.focus();
-		        	form.id.select();
-				    return false;
-		        	
-		        }else{	
-				$('#idch').html("멋진 아이디네요!").css("color","green")
-		        }
-			}
-		});
-		
-	});
-	
+
 	
 //공백으로 넘어갈 시----------------------------------------------------------------------------------------------------
 	

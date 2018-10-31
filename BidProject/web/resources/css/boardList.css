@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-.*{
+/* *{
 	background-color: #FAFAFA;
-}
+} */
 
 .box1
 {
@@ -16,6 +16,7 @@
 body
 {
 	margin: 0;
+	background-color: #FAFAFA;
 }
 
 .let
@@ -80,8 +81,8 @@ font{
 
  a:link { color: black; text-decoration: none;}
  a:visited {text-decoration: none;}
- a:hover { color: #80ffff; text-decoration: none;}
- font:hover { color: #80ffff; text-decoration: none;}
+ a:hover { color: grey; text-decoration: none;}
+ font:hover { color: grey; text-decoration: none;}
 
 
 

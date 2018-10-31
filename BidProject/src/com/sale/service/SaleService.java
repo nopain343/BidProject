@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.category.vo.CategoryVO;
 import com.sale.dao.SaleDAO;
+
 @Service
 public class SaleService {
 	@Autowired	

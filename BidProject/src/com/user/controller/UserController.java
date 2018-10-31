@@ -1,6 +1,7 @@
 package com.user.controller;
 
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -33,6 +34,8 @@ public class UserController {
 		return new ModelAndView("main", "list", categoryService.categoryList(category.getPage()));
 	}
 	
+
+	
 	@RequestMapping("/login.go")
 	public ModelAndView login() {
 		return new ModelAndView("login");
@@ -43,7 +46,8 @@ public class UserController {
 		if(service.loginUser(user) != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOK", service.loginUser(user));
-			return new ModelAndView("main");
+			CatogoryPaging.categorycheck = false;
+			return new ModelAndView("main", "list", categoryService.categoryList(1));
 		}else {
 			return new ModelAndView("login");
 		}
@@ -53,7 +57,8 @@ public class UserController {
 	public ModelAndView logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		return new ModelAndView("main");
+		CatogoryPaging.categorycheck = false;
+		return new ModelAndView("main", "list", categoryService.categoryList(1));
 	}
 	
 	@RequestMapping("/mypage.go")
@@ -78,6 +83,7 @@ public class UserController {
 	@ResponseBody
 	public UserVO idcheck(@RequestParam(value="id") String user) {
 		UserVO vo = service.idcheck(user);
+		System.out.println(vo);
 		return vo;
 	}
 

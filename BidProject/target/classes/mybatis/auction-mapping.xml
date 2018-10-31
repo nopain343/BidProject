@@ -8,16 +8,15 @@
 		]]>
 	</select>
 	
-	<select id="maxPrice" parameterType="java.lang.String" resultType="java.lang.Integer">
+	<select id="maxPrice" parameterType="java.lang.String" resultType="BidVO">
 		<![CDATA[
-			SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = #{code}
+			SELECT FINALPRICE, TERM FROM AUCTION WHERE FINALPRICE = (SELECT MAX(FINALPRICE) AS FINALPRICE FROM AUCTION WHERE CODE = #{code})
 		]]>
 	</select>
 	
 	<insert id="bidPlace" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE)
-			VALUES (#{id}, #{code}, #{term}, #{finalPrice})
+			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE) VALUES (#{id}, #{code}, #{term}, #{finalPrice})
 		]]>
 	</insert>
 	<!--

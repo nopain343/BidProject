@@ -5,7 +5,54 @@
 <meta charset="UTF-8">
 <title>Auction</title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/maxPrice.js"></script>
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/maxPrice.js"></script> --%>
+<script>
+
+$(document).ready(function(){
+	var code = $("#code").val();
+			
+	$.ajax({
+		type:"get",
+		url:"maxPrice.au?code="+code,
+		dataType : "json",
+		success:function(data){
+			console.log(data.finalPrice);
+			$("#output").html(data.finalPrice + "원");
+			
+		},
+		error:function(request,status,error){
+            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+    	}
+	
+	});
+	setInterval(function() {
+			var code = $("#code").val();
+			
+			$.ajax({
+				type:"get",
+				url:"maxPrice.au?code="+code,
+				dataType : "json",
+				success:function(data){
+					console.log(data);
+					$("#output").html(data.finalPrice + "원");
+					$("#dtime").html(data.term.substring(0,1) + "일 " + data.term.substring(1,3) + "시간 ");
+				},
+				error:function(request,status,error){
+		            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		    	}
+				 
+			});
+		}, 3000);
+
+		
+		
+		
+		
+	
+	
+});
+</script>
+
 </head>
 <body>
 옥션페이지
@@ -19,13 +66,13 @@ ${auction.prodname}
 <form action="/BidProject/auctionProc.au" method="post">
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" id="code" name="code"/>
-	<input type="hidden" value="${auction.term}" name="term"/>
-	응찰가 : <input type="number" name="finalPrice"/>
+	<input type="hidden" value="${auction.term}" id="term" name="term"/>
+	응찰가 : <input type="number" id="click" name="finalPrice"/>
 	<input type="submit" value="PLACE BID"/>
 </form>
 제품상태 : ${auction.condition}
 <br>
-응찰마감시간 : ${auction.term}
+남은 시간 : <span id="dtime"></span>
 <br>
 태그 : ${auction.ref}
 <h3>상세설명</h3>

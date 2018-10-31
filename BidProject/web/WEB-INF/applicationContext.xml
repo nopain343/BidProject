@@ -22,7 +22,7 @@
 <bean id="dataSource"
 	  class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 	  p:driverClassName="oracle.jdbc.driver.OracleDriver"
-	  p:url="jdbc:oracle:thin:@192.168.0.68:1521:xe"
+	  p:url="jdbc:oracle:thin:@192.168.1.145:1521:xe"
 	  p:username="bidproject"
 	  p:password="1234"/>
 	  

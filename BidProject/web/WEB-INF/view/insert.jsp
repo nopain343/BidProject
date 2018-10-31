@@ -20,8 +20,8 @@
 
 
 <label for="id" class="txtid">아이디</label><br>
-	 <input type="text" id="id" name="id" maxlength="12"/>
-	 <button class="idbtn" onclick="getID();">중복확인</button><br>
+	 <input type="text" id="id" name="id" maxlength="12" autocomplete="off"/><br>
+	 <!-- <button class="idbtn" onclick="getID();">중복확인</button><br> -->
 	 <span id="idch"></span><br>
 	 
 	 
@@ -63,7 +63,7 @@
      
      
 <label for="pwanswer" class="txtpwas">비밀번호 찾기 답</label><br>
-	 <input type="text" id="pwanswer" name="pwanswer"/><br>
+	 <input type="text" id="pwanswer" name="pwanswer" autocomplete="off"/><br>
    	 <span id="questionch"></span><br>
 
 
@@ -71,7 +71,6 @@
 <input type="submit" class="submit" value="가입하기"/>
 
 </form>
-<!-- <a href="/BidProject/login.go"><button id="back">뒤로가기</button></a> -->
 
 </div>
 </body>

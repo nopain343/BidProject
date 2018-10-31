@@ -38,10 +38,25 @@ public class CategoryDAO {
 
 	//카테고리별 main 소환
 		public List<CategoryVO> getlist(CategoryVO vo) {
-			return factory.openSession().selectList("categoryNameSpace.getlist", vo);
+			List<CategoryVO> list = factory.openSession().selectList("categoryNameSpace.getlist", vo);
+			
+			int n = factory.openSession().selectOne("categoryNameSpace.categoryCount", vo);
+			list.get(0).setTotal(n);
+			list.get(0).setPage(1);
+			return list;
 		}
 	
 	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	// AJAX 페이징 처리
 	public List<CategoryVO> getCategory(int page, String cat1) {
 		Connection conn=null;
 		List<CategoryVO> list = null;	
@@ -59,8 +74,10 @@ public class CategoryDAO {
 		ResultSet rs=null;
 		
 		try{
-			pstmt=conn.prepareStatement("SELECT * FROM SALES WHERE CAT1 like ?");
+			pstmt=conn.prepareStatement("SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, AA.* FROM SALES AA WHERE CAT1 like ?) WHERE RN>=?*10-9 AND RN<=?*10");
 			pstmt.setString(1, "%"+ cat1 + "%");
+			pstmt.setInt(2, page);
+			pstmt.setInt(3, page);
 			rs=pstmt.executeQuery();
 		
 			list = new ArrayList();
@@ -68,6 +85,7 @@ public class CategoryDAO {
 			while(rs.next())
 			{
 				CategoryVO vo = new CategoryVO();
+				vo.setCat1(rs.getString("CAT1"));
 				vo.setProdname(rs.getString("PRODNAME"));
 				vo.setPrice(rs.getInt("PRICE"));
 				vo.setCondition(rs.getString("CONDITION"));
@@ -75,6 +93,26 @@ public class CategoryDAO {
 				vo.setTerm(rs.getString("TERM"));
 				vo.setCode(rs.getString("CODE"));
 				list.add(vo);
+			}		
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			try{
+				rs.close();
+				pstmt.close();
+			}catch(SQLException e){}
+		}
+		
+		try{
+			pstmt=conn.prepareStatement("SELECT COUNT(*) AS NUM FROM SALES WHERE CAT1 like ?");
+			pstmt.setString(1, "%"+ cat1 + "%");
+			rs=pstmt.executeQuery();
+		
+			
+			while(rs.next())
+			{
+				list.get(0).setTotal(rs.getInt("NUM"));
 			}		
 			
 		}catch(SQLException e){

@@ -6,9 +6,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-비밀번호 확인 질문의 답과 일치하지 않습니다. 다시 적어주세요.
+<script type="text/javascript">
+alert('비밀번호 확인 질문의 답과 일치하지 않습니다');  history.go(-1);
+</script>
 
-<a href="/BidProject/searchPassword.go">뒤로 가기</a>
+
+<!-- <a href="/BidProject/searchPassword.go">뒤로 가기</a> -->
 
 
 </body>

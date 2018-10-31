@@ -6,8 +6,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-그런 아이디는 존재하지 않습니다.
-<a href="/BidProject/searchPassword.go">뒤로 가기</a>
+<script type="text/javascript">
+alert('존재하지 않는 아이디 입니다.');  history.go(-1);
+</script>
+
+<!-- <a href="/BidProject/searchPassword.go">뒤로 가기</a> -->
 
 </body>
 </html>
