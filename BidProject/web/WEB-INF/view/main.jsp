@@ -13,7 +13,7 @@
 	if(CatogoryPaging.categorycheck == true){
 		cat1 = ((List<CategoryVO>)request.getAttribute("list")).get(0).getCat1();
 %>
-		<c:set var="check" value="true"/>
+	<c:set var="check" value="true"/>
 <% 
 	}else{
 %>		
@@ -41,6 +41,7 @@
 
 <title>Let It Bid</title>
 <script src=jquery-3.3.1.min.js></script>
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/category.js"></script> --%>
 <script>
 function ajax(value){
 	var dataToPost = { 
@@ -61,23 +62,23 @@ function ajax(value){
         }
     });
 	
-//ajax
 }
 
 function paging(data){
 	console.log("data[0] : " + data[0].prodname);
 	var total = "<section class=wrap0>";
 	var box1 = "<section class='product1'><div class='photo'><img src='/BidProject/resources/image/"
-	var box2 = ".jpg' style='width:100%; height: 180px;'></div><section class='wrap01'><section class='wrap1'><div class='prodname'><a href='/BidProject/auction.au'>";
+	var box2 = ".jpg' style='width:100%; height: 180px;'></div><section class='wrap01'><section class='wrap1'><div class='prodname'><a href='/BidProject/auction.au?code=";
+	var plus = "'>";
 	var box3 = "</a><br></div><div class='wrap2'><div class='ref'>";
 	var box4 = "<br></div><div class='price'>";
 	var box5 = "<br></div>[현재가격]<br><div class='term'>";
 	var last = "</div></div></section></section></section>";
 	$.each(data, function(index, entry){
-		total += box1 + entry.code + box2+ entry.prodname + box3 + entry.ref + box4 + entry.price + box5 + entry.term + last;
+		total += box1 + entry.code + box2+ entry.code + plus + entry.prodname + box3 + entry.ref + box4 + entry.price + box5 + entry.term + last;
 });
-	
-	if(${check}){
+
+	if(${check} == true){
 		
 		total += "<input type='hidden' id='category' value='" + data[0].cat1 + "'>";
 		}else{
@@ -108,22 +109,12 @@ function paging(data){
 
 </head>
 <body>
-<header>
+<jsp:include page="/menu.jsp" flush="true" />
+<%-- <header>
 	<div id="search" class="search">
 		<i class="fa fa-search" class="w3-xlarge"></i>
 		<input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text"/>
 	</div>
-
-	<c:if test="${empty loginOK}">
-		로그인해주세요
-	</c:if>
-	<c:if test="${!empty loginOK}">
-		${loginOK.id }님이 로그인하셨습니다.
-	</c:if>
-   <br>
-
-	<h1>LET IT BID</h1>
-	
 	<ul>
 		<li id="log">
 			<c:if test="${empty loginOK}">
@@ -133,18 +124,21 @@ function paging(data){
 			  	<h2><a href="/BidProject/logout.go" class="log">LOGOUT</a></h2>
 			</c:if>
 		</li>
-	
 		<li id="mypage">
 			<c:if test="${!empty loginOK}">
 	      		<h2><a href="/BidProject/mypage.go" class="mypage">MY PAGE</a></h2>
 	      	</c:if>
 	   	</li>
 	</ul>
-</header>
+
+	<h1><a href="main.go?page=1">LET IT BID</a></h1>
+	
+	
+</header> --%>
 
 <section id="main" class="main">
 	<div>
-		<a href="main.go?page=1"><h1>BID YOUR ITEMS</h1></a>
+		<h1>BID YOUR ITEMS</h1>
 	</div>
 </section>
 

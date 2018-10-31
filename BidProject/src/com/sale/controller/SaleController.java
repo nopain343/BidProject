@@ -49,12 +49,13 @@ public class SaleController {
 	
 	@RequestMapping(value="/saleUpload.sa", method=RequestMethod.POST)
 	public ModelAndView insert(HttpServletRequest request, @ModelAttribute CategoryVO categoryVO, BindingResult result) {
-		System.out.println(categoryVO.getCat1());
+//		System.out.println(categoryVO.getCat1());
 		
 		fileValidator.validate(categoryVO, result);
 		if(result.hasErrors()) {
-			return new ModelAndView("upload/uploadForm");
+			return new ModelAndView("sale/sale");
 		}
+		
 		MultipartFile file = categoryVO.getFile();
 		String filename_original = file.getOriginalFilename();
 		String exc = filename_original.substring(filename_original.lastIndexOf(".")+1, filename_original.length());
@@ -74,7 +75,7 @@ public class SaleController {
 			File newFile = new File(path + "/" + filename_new);
 			System.out.println("업로드시 실제저장될 경로 : " + path);
 			
-			System.out.println(newFile.getName());
+//			System.out.println(newFile.getName());
 		
 			if(!newFile.exists()) {
 				newFile.createNewFile();

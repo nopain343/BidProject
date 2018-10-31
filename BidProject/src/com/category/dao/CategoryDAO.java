@@ -36,7 +36,7 @@ public class CategoryDAO {
 	}
 
 
-	//Ä«Å×°í¸®º° main ¼ÒÈ¯
+	//Ä«ï¿½×°ï¿½ï¿½ï¿½ main ï¿½ï¿½È¯
 		public List<CategoryVO> getlist(CategoryVO vo) {
 			List<CategoryVO> list = factory.openSession().selectList("categoryNameSpace.getlist", vo);
 			
@@ -56,16 +56,15 @@ public class CategoryDAO {
 		
 		
 		
-	// AJAX ÆäÀÌÂ¡ Ã³¸®
+	// AJAX ï¿½ï¿½ï¿½ï¿½Â¡ Ã³ï¿½ï¿½
 	public List<CategoryVO> getCategory(int page, String cat1) {
 		Connection conn=null;
 		List<CategoryVO> list = null;	
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn=DriverManager.getConnection(
-					"jdbc:oracle:thin:@192.168.0.68:1521:xe",
+					"jdbc:oracle:thin:@192.168.1.145:1521:xe",
 					"bidproject", "1234");
-			System.out.println("Á¢¼Ó ¼º°ø!!!");
 		}catch(Exception e){
 			e.printStackTrace();		
 		}

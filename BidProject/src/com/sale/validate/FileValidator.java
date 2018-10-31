@@ -15,11 +15,14 @@ public class FileValidator implements Validator{
 	}
 
 	@Override
-	public void validate(Object uploadFile, Errors errors) {
-		CategoryVO file = (CategoryVO)uploadFile;
+	public void validate(Object categoryVO, Errors errors) {
+		CategoryVO file = (CategoryVO)categoryVO;
 		if(file.getFile().getSize() == 0) {
-			errors.rejectValue("file", "uploadForm", "Please select a file !!");
+			System.out.println("errorOK?");
+			errors.rejectValue("file", "file", "check your file size!");
 		}
 	}
 
 }
+
+//  || file.getFile().getSize() > 5242880

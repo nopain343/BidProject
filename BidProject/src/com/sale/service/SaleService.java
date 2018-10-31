@@ -13,8 +13,6 @@ public class SaleService {
 	
 	public boolean insert(CategoryVO categoryVO) {
 		return saleDAO.insert(categoryVO);
-		
-		
 	}
 
 }
