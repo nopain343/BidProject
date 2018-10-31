@@ -65,7 +65,6 @@ public class CategoryDAO {
 			conn=DriverManager.getConnection(
 					"jdbc:oracle:thin:@192.168.0.68:1521:xe",
 					"bidproject", "1234");
-			System.out.println("접속 성공!!!");
 		}catch(Exception e){
 			e.printStackTrace();		
 		}
