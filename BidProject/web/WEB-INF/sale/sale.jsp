@@ -9,16 +9,12 @@
 <body>
 	bidding 올리긩 파일업로드
 
-	
-	<!-- <form method="post"
-		enctype="multipart/form-data" action="/BidProject/saleUpload.sa"> -->
-
-	<!-- form name="imageBoardWrifeform" -->
 
 	<form:form method="post" enctype="multipart/form-data" modelAttribute="uploadFile" action="/BidProject/saleUpload.sa">
 		<table>
 			<tr>
-				<td><select name="cat1">
+				<td>
+					<select name="cat1">
 						<option value='' selected>카테고리</option>
 						<option value="AA">의류</option>
 						<option value="BB">패션잡화</option>
@@ -28,7 +24,8 @@
 						<option value="FF">디지털가전</option>
 						<option value="GG">애완</option>
 						<option value="HH">도서/티켓</option>
-				</select></td>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td><b>아이디</b></td>
@@ -78,7 +75,7 @@
 			<tr>
 				<td><b>이미지</b></td>
 				<td><input type="file" name="file"></td>
-				<td><form:errors path="file"/></td>
+				<form:errors path="file"/>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="등록">
@@ -89,6 +86,7 @@
 					<a href="qna.bd?pg=${view.pg}"><button id="list">목록</button></a></td>
 			</tr>
 		</table>
+		
 	</form:form>
 
 </body>
