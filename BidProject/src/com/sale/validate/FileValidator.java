@@ -17,9 +17,9 @@ public class FileValidator implements Validator{
 	@Override
 	public void validate(Object categoryVO, Errors errors) {
 		CategoryVO file = (CategoryVO)categoryVO;
-		System.out.println(file.getFile());
 		if(file.getFile().getSize() == 0) {
-			errors.rejectValue("file", "sale", "check your file size!");
+			System.out.println("errorOK?");
+			errors.rejectValue("file", "file", "check your file size!");
 		}
 	}
 
