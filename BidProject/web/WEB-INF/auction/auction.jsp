@@ -5,53 +5,7 @@
 <meta charset="UTF-8">
 <title>Auction</title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/maxPrice.js"></script> --%>
-<script>
-
-$(document).ready(function(){
-	var code = $("#code").val();
-			
-	$.ajax({
-		type:"get",
-		url:"maxPrice.au?code="+code,
-		dataType : "json",
-		success:function(data){
-			console.log(data.finalPrice);
-			$("#output").html(data.finalPrice + "원");
-			
-		},
-		error:function(request,status,error){
-            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-    	}
-	
-	});
-	setInterval(function() {
-			var code = $("#code").val();
-			
-			$.ajax({
-				type:"get",
-				url:"maxPrice.au?code="+code,
-				dataType : "json",
-				success:function(data){
-					console.log(data);
-					$("#output").html(data.finalPrice + "원");
-					$("#dtime").html(data.term.substring(0,1) + "일 " + data.term.substring(1,3) + "시간 ");
-				},
-				error:function(request,status,error){
-		            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		    	}
-				 
-			});
-		}, 3000);
-
-		
-		
-		
-		
-	
-	
-});
-</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/maxPrice.js"></script>
 
 </head>
 <body>
