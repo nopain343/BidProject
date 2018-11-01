@@ -14,12 +14,32 @@ public class SaleDAO {
 	
 	public boolean insert(CategoryVO categoryVO) {
 		BidVO vo = new BidVO();
+		vo.setCat1(categoryVO.getCat1());
 		vo.setId(categoryVO.getId());
-		vo.setCode(categoryVO.getCode());
+//		vo.setCode(code);
 		vo.setTerm(categoryVO.getTerm());
 		vo.setFinalPrice(categoryVO.getPrice());
 		
-		factory.openSession().insert("auctionMapper.bidPlace", vo);
+		System.out.println("11111");
+		
+		if(vo.getCat1().equals("AA")) {
+			factory.openSession().insert("auctionMapper.bidPlaceA", vo);
+		}else if(vo.getCat1().equals("BB")) {
+			factory.openSession().insert("auctionMapper.bidPlaceB", vo);
+		}else if(vo.getCat1().equals("CC")) {
+			factory.openSession().insert("auctionMapper.bidPlaceC", vo);
+		}else if(vo.getCat1().equals("DD")) {
+			factory.openSession().insert("auctionMapper.bidPlaceD", vo);
+		}else if(vo.getCat1().equals("EE")) {
+			factory.openSession().insert("auctionMapper.bidPlaceE", vo);
+		}else if(vo.getCat1().equals("FF")) {
+			factory.openSession().insert("auctionMapper.bidPlaceF", vo);
+		}else if(vo.getCat1().equals("GG")) {
+			factory.openSession().insert("auctionMapper.bidPlaceG", vo);
+		}else if(vo.getCat1().equals("HH")) {
+			factory.openSession().insert("auctionMapper.bidPlaceH", vo);
+		}
+		
 		
 		int n;
 		if(categoryVO.getCat1().equals("AA")) {

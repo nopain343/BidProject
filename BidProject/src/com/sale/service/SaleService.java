@@ -12,6 +12,7 @@ public class SaleService {
 	private SaleDAO saleDAO;
 	
 	public boolean insert(CategoryVO categoryVO) {
+		System.out.println("service " + categoryVO.getCode());
 		return saleDAO.insert(categoryVO);
 	}
 
