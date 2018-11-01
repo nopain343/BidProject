@@ -22,6 +22,8 @@ term varchar2(20),
 descrip varchar2(4000)
 );
 
+drop sequence code_A
+
 
 create sequence code_AA increment by 1 start with 11 nocache nocycle;
 create sequence code_BB increment by 1 start with 11 nocache nocycle;
@@ -41,6 +43,8 @@ create sequence code_F increment by 1 start with 11 nocache nocycle;
 create sequence code_G increment by 1 start with 11 nocache nocycle;
 create sequence code_H increment by 1 start with 11 nocache nocycle;
 
+INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES ('encore', 'AA'||CODE_A.NEXTVAL, '2018-11-03 10:00:00', '25000', 'AA')
+
 create table auction(
 id varchar2(20),
 code varchar2(20),
@@ -49,7 +53,7 @@ finalPrice number);
 
 SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = 'GG01';
 
-select * from sales order by 6 asc;
+select * from sales where code like 'AA%' order by 6 asc;
 select * from user1;
 select * from board;
 select * from auction order by 2 asc;
