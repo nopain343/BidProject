@@ -25,6 +25,7 @@ public class MypageController {
 
 	public ModelAndView list(@ModelAttribute CategoryVO categoryVO) {
 
+		
 		return new ModelAndView("myBid","list",mybidService.mybid(categoryVO));
 		
 			
@@ -43,5 +44,16 @@ public class MypageController {
 
 		
 	}
+	
+	@RequestMapping(value="/mymodi.go" , method=RequestMethod.POST)
+	public ModelAndView modify(@ModelAttribute CategoryVO categoryVO) {
+		
+		System.out.println("modi controller");
+		
+		
+		return new ModelAndView("sale");
+	}
+	
+	
 
 }

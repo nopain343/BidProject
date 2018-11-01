@@ -40,8 +40,5 @@
 		</section>
 	</c:forEach>
 
-
-<a href="saModify.sa"><button id="mod">수정</button></a>
-
 </body>
 </html>
