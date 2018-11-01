@@ -22,7 +22,8 @@ ${auction.prodname}
 	<input type="hidden" value="${auction.code}" id="code" name="code"/>
 	<input type="hidden" value="${auction.term}" id="term" name="term"/>
 	응찰가 : <input type="number" id="click" name="finalPrice"/>
-	<input type="submit" value="PLACE BID"/>
+	
+	<span id="submit"><input type="submit" value="PLACE BID"/></span>
 </form>
 제품상태 : ${auction.condition}
 <br>
