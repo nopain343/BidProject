@@ -14,6 +14,12 @@
 		]]>
 	</select>
 	
+	<insert id="bidPlace" parameterType="BidVO">
+		<![CDATA[
+			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE) VALUES (#{id}, #{code}, #{term}, #{finalPrice})
+		]]>
+	</insert>
+	
 	<insert id="bidPlaceA" parameterType="BidVO">
 		<![CDATA[
 			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_A.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
