@@ -57,5 +57,5 @@
 			VALUES(#{cat1},#{id},#{term},#{cat1}||CODE_HH.NEXTVAL,#{prodname},#{price},#{condition},#{ref},#{descrip})
 		]]>
 	</insert>
-
+	
 </mapper>

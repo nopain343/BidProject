@@ -14,37 +14,44 @@ public class SaleDAO {
 	
 	public boolean insert(CategoryVO categoryVO) {
 		BidVO vo = new BidVO();
+		vo.setCat1(categoryVO.getCat1());
 		vo.setId(categoryVO.getId());
-		vo.setCode(categoryVO.getCode());
 		vo.setTerm(categoryVO.getTerm());
 		vo.setFinalPrice(categoryVO.getPrice());
 		
-		factory.openSession().insert("auctionMapper.bidPlace", vo);
 		
 		int n;
 		if(categoryVO.getCat1().equals("AA")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertAA", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceA", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("BB")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertBB", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceB", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("CC")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertCC", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceC", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("DD")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertDD", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceD", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("EE")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertEE", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceE", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("FF")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertFF", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceF", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("GG")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertGG", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceG", vo);
 			return (n > 0) ? true : false;
 		}else if(categoryVO.getCat1().equals("HH")) {
 			n = factory.openSession().insert("saleNameSpace.saleInsertHH", categoryVO);
+			factory.openSession().insert("auctionMapper.bidPlaceH", vo);
 			return (n > 0) ? true : false;
 		}
 		

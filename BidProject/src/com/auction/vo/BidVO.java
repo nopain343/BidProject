@@ -1,6 +1,7 @@
 package com.auction.vo;
 
 public class BidVO {
+	private String cat1;
 	private String id;
 	private String code;
 	private String term;
@@ -10,12 +11,21 @@ public class BidVO {
 		super();
 	}
 
-	public BidVO(String id, String code, String term, int finalPrice) {
+	public BidVO(String cat1, String id, String code, String term, int finalPrice) {
 		super();
+		this.cat1 = cat1;
 		this.id = id;
 		this.code = code;
 		this.term = term;
 		this.finalPrice = finalPrice;
+	}
+
+	public String getCat1() {
+		return cat1;
+	}
+
+	public void setCat1(String cat1) {
+		this.cat1 = cat1;
 	}
 
 	public String getId() {
