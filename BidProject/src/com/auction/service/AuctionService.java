@@ -32,7 +32,10 @@ public class AuctionService {
 			long datetime = dday.getTime();
 			today = dateForm.parse(dateForm.format(today));
 			long todaytime = today.getTime();
-			
+			if((datetime - todaytime)<0) {
+				vo.setTerm("fin");
+				return vo;
+			}
 		
 			long min = (datetime - todaytime) / 60000;
 			long hour = (datetime - todaytime) / 3600000;

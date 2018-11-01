@@ -5,7 +5,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="com.category.vo.*"%>
 
-<%-- <c:import url="mypage.jsp" /> --%>
+<c:import url="mypage.jsp" />
+<c:import url="main.jsp"/>
 
 
 <!DOCTYPE html>
@@ -16,7 +17,6 @@
 </head>
 <body>
 	내 경매내역
-
 	<c:forEach var="ob" items="${list}">
 		<section class="product1">
 			<div class="photo">
