@@ -31,7 +31,7 @@ public class AuctionController {
 			session.setAttribute("auction", service.auction(code));
 			return new ModelAndView("auction");
 		}else {
-			return new ModelAndView("auctionFail");
+			return new ModelAndView("auction");
 		}
 		
 		
@@ -59,7 +59,7 @@ public class AuctionController {
 		if(service.auctionProc(vo)) {
 			return new ModelAndView("auction");
 		}else {
-			return new ModelAndView("auctionFail");
+			return new ModelAndView("auction");
 		}
 	}
 }
