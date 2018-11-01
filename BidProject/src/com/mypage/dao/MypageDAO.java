@@ -18,7 +18,7 @@ public class MypageDAO {
 		System.out.println("dao?");
 		categoryVO.getId();
 		categoryVO.getDescrip();
-		return factory.openSession().selectList("bidMapper.mybid",categoryVO);
+		return factory.openSession().selectList("myPageMapper.mybid",categoryVO);
 	
 	}
 

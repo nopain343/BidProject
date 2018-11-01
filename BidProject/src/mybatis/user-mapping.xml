@@ -49,12 +49,4 @@
 		]]>
 	</select>
 	
-			<select id="mybid" resultType="categoryVO" parameterType="categoryVO">
-		<![CDATA[
-		
-			SELECT * FROM SALES WHERE ID=#{id}
-		
-		]]>
-	</select>
-	
 </mapper>
