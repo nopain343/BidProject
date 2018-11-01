@@ -6,7 +6,6 @@
 <%@ page import="com.category.vo.*"%>
 
 <c:import url="mypage.jsp" />
-<c:import url="main.jsp"/>
 
 
 <!DOCTYPE html>
@@ -40,9 +39,6 @@
 			</section>
 		</section>
 	</c:forEach>
-
-
-<a href="saModify.sa"><button id="mod">수정</button></a>
 
 </body>
 </html>

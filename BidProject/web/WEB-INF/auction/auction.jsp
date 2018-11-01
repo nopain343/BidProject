@@ -39,5 +39,12 @@ ${loginOK.id}
 ${auction.code}
 ${auction.term}
 
+
+<c:if test="${loginOK.id == sale.id}">
+<a href="mymodi.go"><button>수정</button></a>
+<a href="delete.bd?seq=${saModi.seq}"><button>삭제</button></a>
+</c:if>
+
 </body>
 </html>
+
