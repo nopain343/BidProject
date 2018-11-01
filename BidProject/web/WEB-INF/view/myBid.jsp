@@ -6,7 +6,6 @@
 <%@ page import="com.category.vo.*"%>
 
 <c:import url="mypage.jsp" />
-<c:import url="main.jsp"/>
 
 
 <!DOCTYPE html>
