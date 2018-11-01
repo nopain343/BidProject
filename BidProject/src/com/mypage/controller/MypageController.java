@@ -25,6 +25,7 @@ public class MypageController {
 
 	public ModelAndView list(@ModelAttribute CategoryVO categoryVO) {
 
+		
 		return new ModelAndView("myBid","list",mybidService.mybid(categoryVO));
 		
 			
