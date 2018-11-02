@@ -111,6 +111,19 @@ function paging(data){
 
 }
 
+// 메뉴 효과 주기 
+$(document).on('mouseover','#menuclick', function(){
+	
+	$('#menubar').slideDown(200);	
+	
+});
+
+$(document).on('mouseleave','#filter', function(){
+	$('#menubar').slideUp(200);
+	
+}); 
+
+
 </script>
 
 
@@ -128,42 +141,28 @@ function paging(data){
 
 <section>
 	<nav id="filter">
-		<div id="menu"><h2>CATEGORY</h2>
-		<span>
+		<span class="boldmenu" id="menuclick">CATEGORY</span>
+		<span id="menubar">
 		<a href="main.ct?cat1=AA">의류</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-		</span>
-		<span>
 		<a href="main.ct?cat1=BB">패션잡화</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		<span>
 		<a href="main.ct?cat1=CC">뷰티미용</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		<span>
 		<a href="main.ct?cat1=DD">유아,아동,출산</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		<span>
 		<a href="main.ct?cat1=EE">스포츠레저</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		<span>
 		<a href="main.ct?cat1=FF">디지털가전</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		<span>
 		<a href="main.ct?cat1=GG">애완</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		<span>
 		<a href="main.ct?cat1=HH">도서/티켓</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-	</div>
-		<h2><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></h2>
-	</nav>
+		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></span>
+	</nav>	
+
 	
 	<div id="qna" class="qna">
 	<h2><a href="qna.bd?pg=1" class="qna2" style="color:black">Q&amp;A</a></h2>
