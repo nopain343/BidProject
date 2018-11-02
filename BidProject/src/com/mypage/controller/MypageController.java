@@ -1,15 +1,11 @@
 package com.mypage.controller;
 
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.category.vo.CategoryVO;
@@ -22,38 +18,32 @@ public class MypageController {
 	
 	
 	@RequestMapping(value="/myBid.go" , method=RequestMethod.GET)
-
 	public ModelAndView list(@ModelAttribute CategoryVO categoryVO) {
-
-		
 		return new ModelAndView("myBid","list",mybidService.mybid(categoryVO));
-		
-			
-			
-			
-//			String id= request.getParameter("id");
-			//public ModelAndView list(@RequestParam("id") String id) {	
-		
-		 //public ModelAndView list(HttpServletRequest request,@RequestParam(value="id") String id) {
-			
-	/*		CategoryVO categoryVo = new CategoryVO();
-			List<CategoryVO> list = mybidService.mybid(categoryVo);
-			
-			return new ModelAndView("myBid", "list", list);
-			*/
-
-		
-	}
-	
-	@RequestMapping(value="/mymodi.go" , method=RequestMethod.POST)
-	public ModelAndView modify(@ModelAttribute CategoryVO categoryVO) {
-		
-		System.out.println("modi controller");
-		
-		
-		return new ModelAndView("sale");
 	}
 	
 	
-
+//	@RequestMapping(value="maxPrice.au", method=RequestMethod.GET)
+//	@ResponseBody
+//	public void maxPrice(@RequestParam(value="code") String code,HttpServletResponse response) {
+//		ObjectMapper mapper = new ObjectMapper();
+//		
+//		BidVO vo = service.maxPrice(code);
+//		
+//		try {
+//	        response.getWriter().print(mapper.writeValueAsString(vo));
+//	    } catch (IOException e) {
+//	        e.printStackTrace();
+//	    }	
+//	}
+	
+	
+//	@RequestMapping(value="/mymodi.go" , method=RequestMethod.POST)
+//	public ModelAndView modify(@ModelAttribute CategoryVO categoryVO) {
+//		
+//		System.out.println("modi controller");
+//		
+//		
+//		return new ModelAndView("sale");
+//	}
 }

@@ -4,6 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/myBidCount.js"></script>
 </head>
 <body>
 <h2>[마이페이지]</h2>
@@ -23,8 +25,4 @@
 		<input type="submit" value="나의 입찰 현황" />
 	</form>
 
-<a href="/BidProject/main.go">메인으로 가기</a>
-
-
-</body>
-</html>
+<a href="/BidProject/main.go?page=1">메인으로 가기</a>
