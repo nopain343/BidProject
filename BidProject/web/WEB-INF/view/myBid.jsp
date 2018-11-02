@@ -4,7 +4,6 @@
 <c:import url="mypage.jsp" />
 
 <h3>내상품관리</h3>
-<input type="hidden" id="length" value="${list.length}"/>
 	<c:forEach var="ob" items="${list}" varStatus="status">
 		<section class="product1">
 		

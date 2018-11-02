@@ -37,7 +37,6 @@ public class CategoryService {
 			}catch(ParseException e) {
 				e.printStackTrace();
 			}
-			System.out.println(i.getTerm());
 		}
 		return list;
 
@@ -67,7 +66,6 @@ public class CategoryService {
 			}catch(ParseException e) {
 				e.printStackTrace();
 			}
-			System.out.println(i.getTerm());
 		}
 		return list;
 		
@@ -96,11 +94,44 @@ public class CategoryService {
 			}catch(ParseException e) {
 				e.printStackTrace();
 			}
-			System.out.println(i.getTerm());
 		}
 		return list;
 		
 
+	}
+
+
+
+
+	public List<CategoryVO> getSearch(String word) {
+
+		Date today = new Date();
+		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		
+		List<CategoryVO> list = categoryDAO.getSearch(word);
+		if(list != null) {
+			for(CategoryVO i : list) {
+				String term = i.getTerm();
+				try {
+					Date dday = dateForm.parse(term);
+					long datetime = dday.getTime();
+					today = dateForm.parse(dateForm.format(today));
+					long todaytime = today.getTime();
+					
+					if((datetime - todaytime)<0) {
+						i.setTerm("경매가 종료되었습니다.");
+					}
+				}catch(ParseException e) {
+					e.printStackTrace();
+				}
+			}
+			return list;
+		}else {
+			return list;
+		}
+		
+		
 	}
 
 }

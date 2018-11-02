@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	setInterval(function() {
-		var term = $("#term").val();
-		var length = $("#length").val();
-		var term = $("input[id='term" + length + "']");
+		for(var i=1; i<10; i++){
+			
+//		var term = $("#term").val();
+		var term = $("input[id='term" + i + "']");
 
 		var months = parseInt(term.substring(5, 7));
 		var days = parseInt(term.substring(8, 10));
@@ -61,7 +62,7 @@ $(document).ready(function(){
 		}else{
 			$("#myBid").html('<a href="/BidProject/auction.au?code=${ob.code}">응찰자 정보 보기</a>')
 		}
-		
+		}
 	}, 1000);
 });
 
