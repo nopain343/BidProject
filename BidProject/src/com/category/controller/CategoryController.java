@@ -35,13 +35,23 @@ public class CategoryController {
 	
 	@RequestMapping(value = "paging.ct", method = RequestMethod.GET)
 	public @ResponseBody List<CategoryVO> category(@RequestParam("page") int page,@RequestParam("cat1") String cat1) {
-		System.out.println("controller¿‘º∫");
-		System.out.println("category : " + cat1);
-		System.out.println("next_page : " + page);
 		List<CategoryVO> list = categoryService.getCategory(page, cat1);
 		list.get(0).setPage(page);
 		return list;
 	}
 	
-	
+	@RequestMapping(value = "search.ct", method = RequestMethod.GET)
+	public ModelAndView category(@RequestParam("word") String word) {
+				
+		List<CategoryVO> list = categoryService.getSearch(word);
+		
+		System.out.println(list.size());
+		
+		if(list.size() != 0) {
+			list.get(0).setPage(1);
+		}
+		CatogoryPaging.categorycheck = false;
+		return new ModelAndView("/WEB-INF/view/main.jsp", "list", list);
+		
+	}
 }

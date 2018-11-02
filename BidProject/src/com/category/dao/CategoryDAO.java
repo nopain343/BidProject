@@ -36,7 +36,6 @@ public class CategoryDAO {
 	}
 
 
-	//ī�װ��� main ��ȯ
 		public List<CategoryVO> getlist(CategoryVO vo) {
 			List<CategoryVO> list = factory.openSession().selectList("categoryNameSpace.getlist", vo);
 			
@@ -48,15 +47,27 @@ public class CategoryDAO {
 	
 	
 		
+
+	public List<CategoryVO> getSearch(String word2) {
+			String word = "%" + word2 + "%";
+			List<CategoryVO> list = factory.openSession().selectList("categoryNameSpace.searchList", word);
+			
+			int n = factory.openSession().selectOne("categoryNameSpace.searchCount", word);
+			
+			if(n == 0) {
+				return list;
+			}else{
+				list.get(0).setTotal(n);
+				list.get(0).setPage(1);
+				return list;
+			}
+			
+			
+		}
+	
 		
 		
 		
-		
-		
-		
-		
-		
-	// AJAX ����¡ ó��
 	public List<CategoryVO> getCategory(int page, String cat1) {
 		Connection conn=null;
 		List<CategoryVO> list = null;	
@@ -125,6 +136,7 @@ public class CategoryDAO {
 		}
 		return list;	
 	}
+
 
 	
 }

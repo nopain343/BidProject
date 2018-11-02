@@ -6,11 +6,21 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+
+<script>
+function search(){
+	var word = $("#query").val();
+	
+	location.href="search.ct?word="+word;
+	
+}
+</script>
 </head>
+
 <body>
 <header>
 	<div id="search" class="search">
-		<i class="fa fa-search" class="w3-xlarge"></i>
+		<span onclick="search()"><i class="fa fa-search" class="w3-xlarge"></i></span>
 		<input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text"/>
 	</div>
 	<ul>

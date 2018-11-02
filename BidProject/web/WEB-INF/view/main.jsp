@@ -4,10 +4,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="com.category.vo.*" %>
 <% 
-	int total= ((List<CategoryVO>)request.getAttribute("list")).get(0).getTotal();
-	System.out.println("main.jsp에서 total갯수 : " + total);
-	int pg = ((List<CategoryVO>)request.getAttribute("list")).get(0).getPage();
+	int total = 0;
+	int pg= 0;
 	String cat1 = "";
+	int searchn = ((List<CategoryVO>)request.getAttribute("list")).size();
+	
+	if(searchn != 0){
+	total= ((List<CategoryVO>)request.getAttribute("list")).get(0).getTotal();
+	
+	System.out.println("main.jsp에서 total갯수 : " + total);
+	pg = ((List<CategoryVO>)request.getAttribute("list")).get(0).getPage();
+	
 	
 	
 	if(CatogoryPaging.categorycheck == true){
@@ -20,9 +27,9 @@
 	<c:set var="check" value="false"/>		
 <% 		
 	}
-	
-		
 	System.out.println("현재 페이지 : " + pg);
+ 	
+	}
 %>
 
 
@@ -85,7 +92,7 @@ function paging(data){
 			
 		total += "<input type='hidden' id='category' value=''>";	
 		}
-		
+			
 	
 	var totalP = (data[0].total+9)/10;
 	console.log(totalP);
@@ -164,7 +171,9 @@ function paging(data){
 </section>
 
 <div id="update">
-
+<%
+if(searchn != 0){ 
+%>
 
 <section class=wrap0>
 	<c:forEach var="ob" items="${list}">
@@ -199,7 +208,11 @@ if(pg != totalP){%>
 	</div>
 <% 
 }
-
+}else{
+%>
+	<h4>찾으시는 상품이 없습니다.<h4>
+<%
+}
 %>
 	 
 
@@ -207,8 +220,15 @@ if(pg != totalP){%>
 </div>
 	
 
-<footer class="footer">
-FOOTER : 기타 정보들 입력
-</footer>
+<ul class="footer">
+<li>LET IT BID 소개</li>
+<li>이용 안내</li>
+<li>개인정보 처리방식</li>
+<li>이용 약관</li>
+</ul>
+<div class="footerdesc">
+ LET IT BID 주소 : 335 효령로 서초1동 서초구 서울특별시     TEL : 02-754-7302 <br>
+ LET IT BID는 판매중개자로서 중고거래마켓의 거래 당사자가 아니며, 입점판매가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.
+</div>
 </body>
 </html>

@@ -26,5 +26,22 @@
 		]]>
 	</select>
 
+
+
+
+
+
+
+	<select id="searchList" resultType="categoryVO" parameterType="String">
+		<![CDATA[
+		SELECT * FROM SALES WHERE PRODNAME LIKE #{word} OR REF LIKE #{word} OR DESCRIP LIKE #{word}
+		]]>
+	</select>
+	
+	<select id="searchCount" resultType="Integer" parameterType="String">
+		<![CDATA[
+		SELECT COUNT(*) FROM SALES WHERE PRODNAME LIKE #{word} OR REF LIKE #{word} OR DESCRIP LIKE #{word}
+		]]>
+	</select>
 	
 </mapper>
