@@ -17,20 +17,9 @@ public class CategoryVO {
 	private int total;
 	private String filename;
 	private MultipartFile file;
+	private int confirm;
 	
 	
-	public int getTotal() {
-		return total;
-	}
-	public void setTotal(int total) {
-		this.total = total;
-	}
-	public int getPage() {
-		return page;
-	}
-	public void setPage(int page) {
-		this.page = page;
-	}
 	public String getCat1() {
 		return cat1;
 	}
@@ -85,6 +74,18 @@ public class CategoryVO {
 	public void setDescrip(String descrip) {
 		this.descrip = descrip;
 	}
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
 	public String getFilename() {
 		return filename;
 	}
@@ -97,5 +98,12 @@ public class CategoryVO {
 	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
+	public int getConfirm() {
+		return confirm;
+	}
+	public void setConfirm(int confirm) {
+		this.confirm = confirm;
+	}
+	
 	
 }

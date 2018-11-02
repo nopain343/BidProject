@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.util.WebUtils;
 
 import com.category.service.CategoryService;
 import com.category.vo.CategoryVO;
@@ -43,7 +42,7 @@ public class SaleController {
 	
 	
 	@RequestMapping(value="/sale.sa", method=RequestMethod.GET)
-	public String view(@ModelAttribute CategoryVO uploadFile) {
+	public String view(@ModelAttribute CategoryVO categoryVO) {
 		return "sale/sale";
 	}
 	
@@ -58,9 +57,10 @@ public class SaleController {
 		
 		MultipartFile file = categoryVO.getFile();
 		String filename_original = file.getOriginalFilename();
+		System.out.println(filename_original);
 		String exc = filename_original.substring(filename_original.lastIndexOf(".")+1, filename_original.length());
 		String filename_new = categoryVO.getCode() + "." + exc;
-				
+		System.out.println(filename_new);
 				
 		CategoryVO fileobj = new CategoryVO();
 		fileobj.setFilename(filename_new);
@@ -70,10 +70,12 @@ public class SaleController {
 		
 		try {
 			inputStream = file.getInputStream();
+			File newFile = new File("‎⁨users/jypark/workspace-sts-3.9.6.RELEASE/BidProject/web/resources/image/⁩" + filename_new);
 			
-			String path = WebUtils.getRealPath(request.getSession().getServletContext(), "/resources/image");
-			File newFile = new File(path + "/" + filename_new);
-			System.out.println("업로드시 실제저장될 경로 : " + path);
+//			String path = WebUtils.getRealPath(request.getSession().getServletContext(), "/resources/image");
+//			File newFile = new File(path + "/" + filename_new);
+//			System.out.println("업로드시 실제저장될 경로 : " + path);
+			System.out.println("업로드 경로 : " + newFile);
 			
 //			System.out.println(newFile.getName());
 		

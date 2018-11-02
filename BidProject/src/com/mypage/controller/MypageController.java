@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.category.vo.CategoryVO;
 import com.mypage.service.MypageService;
+
 @Controller
 public class MypageController {
 	
@@ -23,19 +24,10 @@ public class MypageController {
 	}
 	
 	
-//	@RequestMapping(value="maxPrice.au", method=RequestMethod.GET)
-//	@ResponseBody
-//	public void maxPrice(@RequestParam(value="code") String code,HttpServletResponse response) {
-//		ObjectMapper mapper = new ObjectMapper();
-//		
-//		BidVO vo = service.maxPrice(code);
-//		
-//		try {
-//	        response.getWriter().print(mapper.writeValueAsString(vo));
-//	    } catch (IOException e) {
-//	        e.printStackTrace();
-//	    }	
-//	}
+	@RequestMapping(value="/confirm.go", method=RequestMethod.GET)
+	public ModelAndView confirm(@ModelAttribute CategoryVO categoryVO) {
+		return new ModelAndView("myBid","list", mybidService.confirm(categoryVO));
+	}
 	
 	
 //	@RequestMapping(value="/mymodi.go" , method=RequestMethod.POST)
