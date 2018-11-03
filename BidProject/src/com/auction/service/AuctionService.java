@@ -3,22 +3,30 @@ package com.auction.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.auction.dao.AuctionDao;
+import com.auction.vo.AuctionVO;
 import com.auction.vo.BidVO;
-import com.category.vo.CategoryVO;
+import com.auction.vo.ReplyVO;
 
 @Service
 public class AuctionService {
 	@Autowired
 	private AuctionDao dao;
 	
-	public CategoryVO auction(String code) {
+	public AuctionVO auction(String code) {
 		return dao.auction(code);
 	}
+	public List<ReplyVO> reply(String code) {
+		return dao.reply(code);
+	}
+	
+	
+	
 	
 	public BidVO maxPrice(String code){
 		BidVO vo = dao.maxPrice(code);
@@ -70,5 +78,7 @@ public class AuctionService {
 	public boolean auctionProc(BidVO vo) {
 		return dao.auctionProc(vo);
 	}
+
+	
 
 }

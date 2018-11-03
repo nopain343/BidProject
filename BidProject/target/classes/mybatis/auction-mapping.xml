@@ -2,11 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="auctionMapper">
-	<select id="view" parameterType="java.lang.String" resultType="categoryVO">
+	<select id="view" parameterType="java.lang.String" resultType="AuctionVO">
 		<![CDATA[
 			SELECT * FROM SALES WHERE CODE = #{code}
 		]]>
 	</select>
+	<select id="reply" parameterType="java.lang.String" resultType="AuctionVO">
+		<![CDATA[
+			SELECT * FROM SALES WHERE CODE = #{code}
+		]]>
+	</select>
+	<select id="replyTotal" parameterType="java.lang.String" resultType="AuctionVO">
+		<![CDATA[
+			SELECT * FROM SALES WHERE CODE = #{code}
+		]]>
+	</select>
+	
+	
+	
+	
+	
+	
+	
 	
 	<select id="maxPrice" parameterType="java.lang.String" resultType="BidVO">
 		<![CDATA[
@@ -68,32 +85,5 @@
 		]]>
 	</insert>
 	
-	<!--
- 	<delete id="deleteUser" parameterType="java.lang.String">
-		<![CDATA[
-			DELETE FROM USER1
-			WHERE ID = #{id}
-		]]>
-	</delete>
-	
-	<update id="updateUser" parameterType="userInfo">
-		<![CDATA[
-			UPDATE USER1 SET
-			PASSWORD = #{password}, USERNAME = #{username}, ROADFULLADDR = #{roadFullAddr}, PHONE = #{phone}
-			WHERE ID = #{id}
-		]]>
-	</update>
-	
-	<select id="searchPassword2" parameterType="userInfo" resultType="userInfo">
-		<![CDATA[
-			SELECT PASSWORD, PWQUESTION, PWANSWER FROM USER1 WHERE ID = #{id}
-		]]>
-	</select>
-	
-	<select id="searchId2" parameterType="userInfo" resultType="userInfo">
-		<![CDATA[
-			SELECT ID, USERNAME, PHONE FROM USER1 WHERE USERNAME = #{username} AND PHONE = #{phone}
-		]]>
-	</select> -->
 	
 </mapper>

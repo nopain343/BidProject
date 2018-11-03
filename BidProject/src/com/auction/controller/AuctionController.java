@@ -1,6 +1,7 @@
 package com.auction.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.auction.service.AuctionService;
+import com.auction.vo.AuctionVO;
 import com.auction.vo.BidVO;
+import com.auction.vo.ReplyVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
@@ -26,9 +29,11 @@ public class AuctionController {
 	
 	@RequestMapping(value="/auction.au", method=RequestMethod.GET)
 	public ModelAndView auction(@RequestParam(value="code") String code, HttpServletRequest request) {
-		if(service.auction(code) != null) {
+		AuctionVO Avo = service.auction(code);
+		if(Avo != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("auction", service.auction(code));
+			session.setAttribute("auction", Avo);
+			List<ReplyVO> list = service.reply(code);
 			return new ModelAndView("auction");
 		}else {
 			return new ModelAndView("auction");

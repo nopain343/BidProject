@@ -2,7 +2,7 @@ package com.auction.vo;
 
 public class AuctionVO {
 	private String category;
-	private String prodName;
+	private String prodname;
 	private int price;
 	private String condition;
 	private String ref;
@@ -11,15 +11,16 @@ public class AuctionVO {
 	private String term;
 	private String descrip;
 	
+	
 	public AuctionVO() {
 		super();
 	}
 
-	public AuctionVO(String category, String prodName, int price, String condition, String ref, String code, String id,
+	public AuctionVO(String category, String prodname, int price, String condition, String ref, String code, String id,
 			String term, String descrip) {
 		super();
 		this.category = category;
-		this.prodName = prodName;
+		this.prodname = prodname;
 		this.price = price;
 		this.condition = condition;
 		this.ref = ref;
@@ -37,12 +38,12 @@ public class AuctionVO {
 		this.category = category;
 	}
 
-	public String getProdName() {
-		return prodName;
+	public String getprodname() {
+		return prodname;
 	}
 
-	public void setProdName(String prodName) {
-		this.prodName = prodName;
+	public void setprodname(String prodname) {
+		this.prodname = prodname;
 	}
 
 	public int getPrice() {

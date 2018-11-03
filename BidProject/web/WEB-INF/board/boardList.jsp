@@ -28,10 +28,9 @@
 <title>Insert title here</title>
 <script>
 
-  function checkLogin(seq,pg){
+  function boardView(seq,pg){
 	
 	location.href="boardview.bd?seq="+seq+"&pg="+pg;
-   /*  console.log(location.href); */
 }  
 
    
@@ -69,7 +68,7 @@
 				<c:if test="${ob.pseq != 0}">
 				<img src = "resources/image/reply.gif">
 				</c:if>
-				<a href="javascript:checkLogin(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
+				<a href="javascript:boardView(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
 				<td class="name">${ob.username}</td>
 				<td class="hit">${ob.hit}</td>
 				<td>${ob.logtime}</td>
@@ -81,11 +80,7 @@
 	</c:if>
 	
 
-	<%-- <tr>
-		 <td colspan="5" align="center" bgcolor="white"><span class="pg"><%=paging.getPagingHTML() %></span></td>
-		 
-		 
-	</tr> --%>
+	
 	
 
 </table><br>
