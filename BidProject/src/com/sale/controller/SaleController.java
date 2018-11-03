@@ -61,7 +61,7 @@ public class SaleController {
 		String exc = filename_original.substring(filename_original.lastIndexOf(".")+1, filename_original.length());
 		String filename_new = categoryVO.getCode() + "." + exc;
 		System.out.println(filename_new);
-				
+		
 		CategoryVO fileobj = new CategoryVO();
 		fileobj.setFilename(filename_new);
 		
