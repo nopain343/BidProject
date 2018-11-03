@@ -2,6 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="saleNameSpace">
+	<select id="code" parameterType="categoryVO" resultType="java.lang.String">
+		<![CDATA[
+			SELECT CODE FROM SALES WHERE PRODNAME=#{prodname} AND ID=#{id}
+		]]>
+	</select>
+	
 	<insert id="saleInsertAA" parameterType="categoryVO">
 		<![CDATA[
 			INSERT INTO SALES (CAT1, ID, TERM, CODE, PRODNAME, PRICE, CONDITION, REF, DESCRIP)

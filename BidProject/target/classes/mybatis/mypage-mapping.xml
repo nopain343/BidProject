@@ -2,9 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="myPageMapper">
-	<select id="mybid" resultType="categoryVO" parameterType="categoryVO">
+	<select id="view" resultType="categoryVO" parameterType="categoryVO">
 		<![CDATA[
-			SELECT * FROM SALES WHERE ID=#{id}
+			SELECT PRODNAME, CODE, TERM, FINAL AS PRICE, CONFIRM
+			FROM (SELECT MAX(FINALPRICE) AS FINAL, CODE FROM AUCTION GROUP BY CODE)
+			JOIN SALES USING(CODE)
+			WHERE ID=#{id}
+			ORDER BY TERM
 		]]>
-	</select>	
+	</select>
+	
+<!-- 	<resultMap id="VOMap" type="categoryVO">
+    	<id property="id" column="id" />
+    	<result property="value" column="value" /> 
+    </resultMap>
+    
+    <resultMap id="VOMap" type="bidVO">
+    	<id property="id" column="id" />
+    	<result property="value" column="value" /> 
+    </resultMap>
+     -->
+	
+	
+	<select id="viewByCode" resultType="categoryVO" parameterType="java.lang.String">
+		<![CDATA[
+			SELECT * FROM SALES WHERE ID=(SELECT ID FROM SALES WHERE CODE=#{code})
+		]]>
+	</select>
+	
+	<update id="update" parameterType="java.lang.String">
+		<![CDATA[
+			UPDATE SALES SET
+			CONFIRM = 1
+			WHERE CODE = #{code}
+		]]>
+	</update>
 </mapper>

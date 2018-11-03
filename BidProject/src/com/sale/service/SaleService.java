@@ -11,7 +11,7 @@ public class SaleService {
 	@Autowired	
 	private SaleDAO saleDAO;
 	
-	public boolean insert(CategoryVO categoryVO) {
+	public String insert(CategoryVO categoryVO) {
 		return saleDAO.insert(categoryVO);
 	}
 

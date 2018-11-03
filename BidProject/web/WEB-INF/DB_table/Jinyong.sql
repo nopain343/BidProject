@@ -1,5 +1,7 @@
 drop table user1 purge;
 drop table sales purge;
+drop table auction purge;
+delete sales;
 
 create table user1(
 id varchar2(20),
@@ -51,9 +53,16 @@ code varchar2(20),
 term varchar2(20),
 finalPrice number);
 
+UPDATE SALES SET CONFIRM = 0 WHERE CODE = 'HH11'
+SELECT * FROM SALES WHERE ID=(select id from sales where CODE='HH11')
+SELECT * FROM SALES LEFT JOIN AUCTION USING(id) WHERE ID='jin' and code='hh11'
+select * from sales join auction using (code)
+
 SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = 'GG01';
 
-select * from sales where code like 'AA%' order by 6 asc;
+select code from sales where prodname='그레고리 백팩 구 로고' and id='data';
+
+select * from sales where code like 'CC%' order by 6 asc;
 select * from user1;
 select * from board;
 select * from auction order by 2 asc;

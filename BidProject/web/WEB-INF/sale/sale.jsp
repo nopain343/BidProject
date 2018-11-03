@@ -10,7 +10,7 @@
 	bidding 올리긩 파일업로드
 
 
-	<form:form method="post" enctype="multipart/form-data" modelAttribute="uploadFile" action="/BidProject/saleUpload.sa">
+	<form:form method="post" enctype="multipart/form-data" modelAttribute="categoryVO" action="/BidProject/saleUpload.sa">
 		<table>
 			<tr>
 				<td>

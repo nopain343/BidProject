@@ -15,8 +15,15 @@ public class MypageDAO {
 	
 	
 	public List<CategoryVO> myBid(CategoryVO categoryVO) {
-		return factory.openSession().selectList("myPageMapper.mybid",categoryVO);
+		return factory.openSession().selectList("myPageMapper.view",categoryVO);
 	
+	}
+
+
+	public List<CategoryVO> confirm(CategoryVO categoryVO) {
+		factory.openSession().update("myPageMapper.update", categoryVO);
+		List<CategoryVO> list = factory.openSession().selectList("myPageMapper.viewByCode", categoryVO);
+		return list;
 	}
 
 }
