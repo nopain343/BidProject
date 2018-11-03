@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="saleNameSpace">
-	<select id="code" parameterType="categoryVO" resultType="categoryVO">
+	<select id="code" parameterType="categoryVO" resultType="java.lang.String">
 		<![CDATA[
-			select code from sales where (#{cat1},#{id},#{term},#{cat1}||CODE_AA.NEXTVAL,#{prodname},#{price},#{condition},#{ref},#{descrip})
+			SELECT CODE FROM SALES WHERE PRODNAME=#{prodname} AND ID=#{id}
 		]]>
 	</select>
 	

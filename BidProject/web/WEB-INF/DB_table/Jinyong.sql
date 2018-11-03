@@ -60,6 +60,7 @@ select * from sales join auction using (code)
 
 SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = 'GG01';
 
+select code from sales where prodname='그레고리 백팩 구 로고' and id='data';
 
 select * from sales where code like 'CC%' order by 6 asc;
 select * from user1;
