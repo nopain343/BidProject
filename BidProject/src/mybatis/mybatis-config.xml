@@ -10,6 +10,7 @@
 		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
 		<typeAlias type="com.auction.vo.BidVO" alias="BidVO"/>
 		<typeAlias type="com.auction.vo.AuctionVO" alias="AuctionVO"/>
+		<typeAlias type="com.auction.vo.ReplyVO" alias="ReplyVO"/>
 
 	</typeAliases>
 	

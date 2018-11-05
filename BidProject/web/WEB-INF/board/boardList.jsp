@@ -91,18 +91,7 @@
 		
 		
 <ul class="pagination">
-<%-- <c:forEach var="i" begin="i" end="${startPage}" step="-1">      
-<li><c:if test="${endPage<totalP}"> class="active"</c:if><a class="page-link" href="/BidProject/qna.bd?pg=${i}">이전</a></li>
-</c:forEach>    --%>
-  
 
-<%-- <c:forEach var="i" begin="${startPage}" end="${endPage}" step="1">
-    <li class="page-item"><c:if test="${pg==i+1}"> class="active"</c:if><a class="page-link" href="/BidProject/qna.bd?pg=${i+1}">${i+1}</a></li>
-</c:forEach>   --%>  
-
-<%-- <c:forEach var="i" begin="i" end="${endPage}" step="1">
-<li><c:if test="${startPage>pageBlock}"> class="active"</c:if><a class="page-link" href="/BidProject/qna.bd?pg=${i}">다음</a></li>
-</c:forEach>   --%>
 </ul>
     
     

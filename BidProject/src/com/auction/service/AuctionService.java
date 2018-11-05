@@ -78,6 +78,9 @@ public class AuctionService {
 	public boolean auctionProc(BidVO vo) {
 		return dao.auctionProc(vo);
 	}
+	public boolean replyInsert(ReplyVO vo) {
+		return dao.replyInsert(vo);
+	}
 
 	
 

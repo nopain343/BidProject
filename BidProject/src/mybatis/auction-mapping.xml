@@ -7,19 +7,23 @@
 			SELECT * FROM SALES WHERE CODE = #{code}
 		]]>
 	</select>
-	<select id="reply" parameterType="java.lang.String" resultType="AuctionVO">
+	<select id="reply" parameterType="java.lang.String" resultType="ReplyVO">
 		<![CDATA[
-			SELECT * FROM SALES WHERE CODE = #{code}
+			SELECT * FROM REPLY WHERE CODE = #{code}
 		]]>
 	</select>
-	<select id="replyTotal" parameterType="java.lang.String" resultType="AuctionVO">
+	<select id="replyTotal" parameterType="java.lang.String" resultType="Integer">
 		<![CDATA[
-			SELECT * FROM SALES WHERE CODE = #{code}
+			SELECT COUNT(*) FROM REPLY WHERE CODE = #{code}
 		]]>
 	</select>
 	
 	
-	
+	<insert id="insertReply" parameterType="ReplyVO">
+		<![CDATA[
+		INSERT INTO REPLY(SEQ, ID, CONTENT, CODE, REF, LOGTIME) VALUES(SEQ_REPLY.NEXTVAL, ${id}, ${content},${code}, SEQ_REPLY.CURRVAL,SYSDATE)
+		]]>
+	</insert>
 	
 	
 	
