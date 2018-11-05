@@ -20,10 +20,14 @@ public class AuctionDao {
 		return vo;
 	}
 	public List<ReplyVO> reply(String code) {
-		List<ReplyVO> list = factory.openSession().selectOne("auctionMapper.reply", code);
 		
+		List<ReplyVO> list = factory.openSession().selectList("auctionMapper.reply", code);
 		int n = factory.openSession().selectOne("auctionMapper.replyTotal", code);
-		list.get(0).setTotal(n);
+		
+		if(list.size() == 0) {
+		}else {
+			list.get(0).setTotal(n);
+		}
 		
 		return list;
 	}
@@ -36,6 +40,15 @@ public class AuctionDao {
 	
 	public boolean auctionProc(BidVO vo) {
 		int n = factory.openSession().insert("auctionMapper.bidPlace", vo);
+		return n > 0 ? true : false;
+	}
+	public boolean replyInsert(ReplyVO vo) {
+		vo.setId("'" + vo.getId() + "'");
+		vo.setContent("'" + vo.getContent() + "'");
+		vo.setCode("'" + vo.getCode() + "'");
+		int n = factory.openSession().insert("auctionMapper.insertReply", vo);
+		vo.setCode((vo.getCode().substring(1,vo.getCode().length()-1)));
+	
 		return n > 0 ? true : false;
 	}
 

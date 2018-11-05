@@ -34,7 +34,9 @@ public class AuctionController {
 			HttpSession session = request.getSession();
 			session.setAttribute("auction", Avo);
 			List<ReplyVO> list = service.reply(code);
-			return new ModelAndView("auction");
+			
+			
+			return new ModelAndView("auction","reply",list);
 		}else {
 			return new ModelAndView("auction");
 		}
@@ -42,7 +44,9 @@ public class AuctionController {
 		
 	}
 	
-
+	
+	
+	
 	
 	@RequestMapping(value="maxPrice.au", method=RequestMethod.GET)
 	@ResponseBody
@@ -62,10 +66,23 @@ public class AuctionController {
 	@RequestMapping(value="/auctionProc.au", method=RequestMethod.POST)
 	public ModelAndView auctionProc(@ModelAttribute BidVO vo) {
 		if(service.auctionProc(vo)) {
-			return new ModelAndView("auction");
+			List<ReplyVO> list = service.reply(vo.getCode());
+			return new ModelAndView("auction","reply",list);
 		}else {
 			return new ModelAndView("auction");
 		}
+	}
+	@RequestMapping(value="/replyInsert.au", method=RequestMethod.POST)
+	public ModelAndView replyInsert(@ModelAttribute ReplyVO vo) {
+		
+		if(service.replyInsert(vo)) {
+			List<ReplyVO> list = service.reply(vo.getCode());
+			return new ModelAndView("auction","reply",list);
+		}else {
+			List<ReplyVO> list = service.reply(vo.getCode());
+			return new ModelAndView("auction","reply",list);
+		}
+		
 	}
 }
 

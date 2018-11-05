@@ -7,7 +7,6 @@
 	int n = ((List<CategoryVO>)request.getAttribute("list")).size();
 %>
 <c:import url="mypage.jsp" />
-
 <h3>내상품관리</h3>
 	<c:forEach var="ob" items="${list}" varStatus="vs">
 		<section class="product1">

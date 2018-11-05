@@ -5,11 +5,15 @@ public class ReplyVO {
 	private String id;
 	private String content;
 	private String code;
-	private int ref, lev, step, pseq, logtime;
+	private int ref, lev, step, pseq;
+	private String logtime;
+	
 	private int total;
 	
 	
-	
+	public void setLogtime(String logtime) {
+		this.logtime = logtime;
+	}
 	public int getTotal() {
 		return total;
 	}
@@ -64,12 +68,10 @@ public class ReplyVO {
 	public void setPseq(int pseq) {
 		this.pseq = pseq;
 	}
-	public int getLogtime() {
+	public String getLogtime() {
 		return logtime;
 	}
-	public void setLogtime(int logtime) {
-		this.logtime = logtime;
-	}
+	
 	
 	
 }

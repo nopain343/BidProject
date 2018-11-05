@@ -12,18 +12,6 @@
 		]]>
 	</select>
 	
-<!-- 	<resultMap id="VOMap" type="categoryVO">
-    	<id property="id" column="id" />
-    	<result property="value" column="value" /> 
-    </resultMap>
-    
-    <resultMap id="VOMap" type="bidVO">
-    	<id property="id" column="id" />
-    	<result property="value" column="value" /> 
-    </resultMap>
-     -->
-	
-	
 	<select id="viewByCode" resultType="categoryVO" parameterType="java.lang.String">
 		<![CDATA[
 			SELECT * FROM SALES WHERE ID=(SELECT ID FROM SALES WHERE CODE=#{code})

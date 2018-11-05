@@ -1,6 +1,5 @@
 package com.mypage.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +26,11 @@ public class MypageController {
 	@RequestMapping(value="/confirm.go", method=RequestMethod.GET)
 	public ModelAndView confirm(@ModelAttribute CategoryVO categoryVO) {
 		return new ModelAndView("myBid","list", mybidService.confirm(categoryVO));
+	}
+	
+	@RequestMapping(value="/trade.go", method=RequestMethod.GET)
+	public ModelAndView trade(@ModelAttribute CategoryVO categoryVO) {
+		return new ModelAndView("trade","list", mybidService.confirm(categoryVO));
 	}
 	
 	
