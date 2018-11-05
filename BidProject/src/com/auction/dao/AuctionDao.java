@@ -42,13 +42,20 @@ public class AuctionDao {
 		int n = factory.openSession().insert("auctionMapper.bidPlace", vo);
 		return n > 0 ? true : false;
 	}
-	public boolean replyInsert(ReplyVO vo) {
-		vo.setId("'" + vo.getId() + "'");
-		vo.setContent("'" + vo.getContent() + "'");
-		vo.setCode("'" + vo.getCode() + "'");
-		int n = factory.openSession().insert("auctionMapper.insertReply", vo);
-		vo.setCode((vo.getCode().substring(1,vo.getCode().length()-1)));
 	
+	
+	public boolean replyInsert(ReplyVO vo) {
+
+		int n = factory.openSession().insert("auctionMapper.insertReply", vo);
+	
+		return n > 0 ? true : false;
+	}
+	public boolean replyplus(ReplyVO vo) {
+		
+		int n = factory.openSession().update("auctionMapper.replyupdate",vo);
+
+		n= factory.openSession().insert("auctionMapper.replyplus",vo);
+		
 		return n > 0 ? true : false;
 	}
 

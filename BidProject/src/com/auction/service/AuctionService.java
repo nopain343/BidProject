@@ -81,6 +81,9 @@ public class AuctionService {
 	public boolean replyInsert(ReplyVO vo) {
 		return dao.replyInsert(vo);
 	}
+	public boolean replyplus(ReplyVO vo) {
+		return dao.replyplus(vo);
+	}
 
 	
 

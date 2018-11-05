@@ -17,6 +17,17 @@
 		total = ((List<ReplyVO>)request.getAttribute("reply")).get(0).getTotal();
 	}
 %>
+
+<script>
+function replyplus(value){
+	var replynum = "#reply" + value;
+	var submitform = "<td colspan='3'><form action='/BidProject/replyplus.au' method='post'><input type='hidden' value='${loginOK.id}' name='id'/><input type='hidden' value='${auction.code}' name='code'/><input type='hidden' value='"
+	var submitform2 = "' name='seq'/>";
+		
+	
+	$(replynum).html(submitform + value + submitform2 + "<img src = 'resources/image/reply.gif'>&nbsp;<input type='text' id='content' name='content' style='width:450px; height:19px;'/>&nbsp;&nbsp;<input type='submit' value=' 등록  '/></form></td>");
+}
+</script>
 </head>
 <body>
 옥션페이지
@@ -60,9 +71,24 @@ ${auction.term}
 <c:if test="${!empty reply}">
 <c:forEach var="ob" items="${reply}">
 	<tr>
-		<td>${ob.id }&nbsp;&nbsp;&nbsp;</td>
-		<td>${ob.content }</td>
+		<td>
+			<c:forEach begin="0" end="${ob.lev }" step="1">
+				&nbsp;
+			</c:forEach>
+		<c:if test="${ob.lev != 0}">
+				<img src = "resources/image/reply.gif">
+		</c:if>
+		&nbsp;&nbsp;${ob.id }&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		
+		<td style="width:400px;">${ob.content }</td>
+		
+		<td>
+		<c:if test="${ob.lev == 0}">
+				<span onclick="replyplus(${ob.seq})" style="font-size:15px; color:gray; width:100px;">답글 달기</span>	
+		</c:if>
+		</td>
 	</tr>
+	<tr id="reply${ob.seq }"></tr>
 </c:forEach>
 </c:if>
 </table>
