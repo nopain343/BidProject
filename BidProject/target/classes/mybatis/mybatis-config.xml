@@ -11,6 +11,7 @@
 		<typeAlias type="com.auction.vo.BidVO" alias="BidVO"/>
 		<typeAlias type="com.auction.vo.AuctionVO" alias="AuctionVO"/>
 		<typeAlias type="com.auction.vo.ReplyVO" alias="ReplyVO"/>
+		<typeAlias type="com.mypage.vo.TradeVO" alias="TradeVO"/>
 
 	</typeAliases>
 	

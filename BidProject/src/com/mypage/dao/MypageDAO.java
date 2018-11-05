@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.auction.vo.BidVO;
 import com.category.vo.CategoryVO;
+import com.mypage.vo.TradeVO;
 @Repository
 public class MypageDAO {
 	
@@ -25,5 +27,17 @@ public class MypageDAO {
 		List<CategoryVO> list = factory.openSession().selectList("myPageMapper.viewByCode", categoryVO);
 		return list;
 	}
+
+	public List<BidVO> bidplace(CategoryVO categoryVO) {
+		categoryVO.setId("'"+categoryVO.getId()+"'");
+		return factory.openSession().selectList("myPageMapper.bidplace",categoryVO);
+	}
+
+
+	public TradeVO trade(TradeVO tradeVO) {
+		TradeVO vo = factory.openSession().selectOne("myPageMapper.trade", tradeVO);
+		return vo;
+	}
+
 
 }

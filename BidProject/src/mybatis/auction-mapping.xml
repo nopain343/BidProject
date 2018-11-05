@@ -43,49 +43,49 @@
 	
 	<insert id="bidPlaceA" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_A.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES ( #{cat1}||CODE_A.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceB" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_B.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_B.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceC" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_C.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_C.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceD" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_D.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_D.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceE" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_E.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_E.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceF" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_F.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_F.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceG" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_G.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_G.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	
 	<insert id="bidPlaceH" parameterType="BidVO">
 		<![CDATA[
-			INSERT INTO AUCTION(ID, CODE, TERM, FINALPRICE, CAT1) VALUES (#{id}, #{cat1}||CODE_H.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
+			INSERT INTO AUCTION(CODE, TERM, FINALPRICE, CAT1) VALUES (#{cat1}||CODE_H.NEXTVAL, #{term}, #{finalPrice}, #{cat1})
 		]]>
 	</insert>
 	

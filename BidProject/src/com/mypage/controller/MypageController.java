@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.category.vo.CategoryVO;
 import com.mypage.service.MypageService;
+import com.mypage.vo.TradeVO;
 
 @Controller
 public class MypageController {
@@ -29,8 +30,15 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/trade.go", method=RequestMethod.GET)
-	public ModelAndView trade(@ModelAttribute CategoryVO categoryVO) {
-		return new ModelAndView("trade","list", mybidService.confirm(categoryVO));
+	public ModelAndView trade(@ModelAttribute TradeVO tradeVO) {
+		return new ModelAndView("trade","vo", mybidService.trade(tradeVO));
+	}
+	
+	
+	@RequestMapping(value="/myBidPlace.go" , method=RequestMethod.GET)
+	public ModelAndView place(@ModelAttribute CategoryVO categoryVO) {
+		return new ModelAndView("myBidPlace","list",mybidService.bidplace(categoryVO));
+		
 	}
 	
 	

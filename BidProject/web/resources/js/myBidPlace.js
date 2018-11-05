@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	setInterval(function() {
-		var total = $("#catchTotal").val();
+		var total = $("#catchTotalP").val();
 		
 		for(var i=1; i<total+1; i++){
 			var termname = "#term" + i;
@@ -9,7 +9,6 @@ $(document).ready(function(){
 			var myBidname = "#myBid" + i;
 			var secretCodename = "#secretCode" + i;
 			var confirmname = "#confirm" + i;
-			var finalPrice = "#price" + i;
 			
 			var months = parseInt(term.substring(5, 7));
 			var days = parseInt(term.substring(8, 10));
@@ -56,15 +55,14 @@ $(document).ready(function(){
 			var minutes = Math.floor(interval / msecPerMinute );
 			interval = interval - (minutes * msecPerMinute );
 	
-			var seconds = Math.floor(interval / 1000);
+			var seconds = Math.floor(interval / 1000 );
 			
-			$(timetestname).html(months + " months, " +  days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds.");
+			$(timetestname).html(months + " months, " +  days + " days, " + hours + " hours, " + minutes + " minutes ");
 			
 			
 			
 			if($(confirmname).val() == 1){
-				$(myBidname).html('<a href="/BidProject/trade.go?code=' + $(secretCodename).val() + 
-						          '&finalPrice=' + $(finalPrice).val() + '">응찰자 연결</a>')
+				$(myBidname).html('<a href="/BidProject/trade.go?code=' + $(secretCodename).val() + '">성공</a>')
 			}else{
 				if(months < 0 || days < 0 || hours < 0 || minutes < 0 || seconds < 0){
 					$(myBidname).html('<a href="/BidProject/confirm.go?code=' + $(secretCodename).val() + '">판매확정</a>')

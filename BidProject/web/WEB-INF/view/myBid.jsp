@@ -18,7 +18,8 @@
 				<section class="wrap1">
 					<span class="prodname">${ob.prodname}</span>
 					<div class="wrap2">
-						현재응찰 최고가: <span class="price">${ob.price}</span><br>
+						현재응찰 최고가:
+						<input id="price${vs.count}" class="price" value="${ob.price}"><br>
 						<span class="term">응찰 마감 시간: ${ob.term}</span>
 					</div>
 					<input type="hidden" id="term${vs.count}" value="${ob.term}"/>
