@@ -30,6 +30,13 @@ public class MypageController {
 	}
 	
 	
+	@RequestMapping(value="/myBidPlace.go" , method=RequestMethod.GET)
+	public ModelAndView place(@ModelAttribute CategoryVO categoryVO) {
+		return new ModelAndView("myBidPlace","list",mybidService.bidplace(categoryVO));
+		
+	}
+	
+	
 //	@RequestMapping(value="/mymodi.go" , method=RequestMethod.POST)
 //	public ModelAndView modify(@ModelAttribute CategoryVO categoryVO) {
 //		

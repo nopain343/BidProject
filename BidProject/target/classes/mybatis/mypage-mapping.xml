@@ -37,4 +37,13 @@
 			WHERE CODE = #{code}
 		]]>
 	</update>
+	
+	
+	<select id="bidplace" resultType="categoryVO" parameterType="categoryVO">
+		<![CDATA[
+			SELECT PRODNAME, CODE, TERM, FINALPRICE AS PRICE
+			FROM (SELECT MAX(FINALPRICE) AS FINALPRICE, CODE FROM (SELECT * FROM AUCTION WHERE ID=${id}) GROUP BY CODE) 
+			JOIN SALES USING(CODE)
+		]]>
+		</select>
 </mapper>

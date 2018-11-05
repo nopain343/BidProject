@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.auction.vo.BidVO;
 import com.category.vo.CategoryVO;
 import com.mypage.dao.MypageDAO;
 
@@ -22,4 +23,9 @@ public class MypageService {
 		return mybidDAO.confirm(categoryVO);
 	}
 	
+	
+	public List<BidVO> bidplace(CategoryVO categoryVO) {
+		
+		return mybidDAO.bidplace(categoryVO);
+	}
 }
