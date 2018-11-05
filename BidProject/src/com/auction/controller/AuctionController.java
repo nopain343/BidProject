@@ -84,6 +84,20 @@ public class AuctionController {
 		}
 		
 	}
+	
+	@RequestMapping(value="/replyplus.au", method=RequestMethod.POST)
+	public ModelAndView replyplus(@ModelAttribute ReplyVO vo) {
+		
+		if(service.replyplus(vo)) {
+			List<ReplyVO> list = service.reply(vo.getCode());
+			return new ModelAndView("auction","reply",list);
+		}else {
+			List<ReplyVO> list = service.reply(vo.getCode());
+			return new ModelAndView("auction","reply",list);
+		}
+		
+		
+	}
 }
 
 
