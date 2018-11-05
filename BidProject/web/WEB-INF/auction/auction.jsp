@@ -33,18 +33,23 @@ ${auction.prodname}
 <h3>상세설명</h3>
 <hr>
 ${auction.descrip}
-<br>
+<br><br>
 
 ${loginOK.id}
 ${auction.code}
 ${auction.term}
 
-
+<br>댓글 수 &nbsp;&nbsp;&nbsp;&nbsp;
 <c:if test="${loginOK.id == sale.id}">
 <a href="mymodi.go"><button>수정</button></a>
 <a href="delete.bd?seq=${saModi.seq}"><button>삭제</button></a>
 </c:if>
+<hr>
 
+<table class="table table-hover table-secondary">
+
+
+</table>
 </body>
 </html>
 

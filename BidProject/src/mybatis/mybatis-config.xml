@@ -9,6 +9,7 @@
 		<typeAlias type="com.user.vo.UserVO" alias="userInfo"/>
 		<typeAlias type="com.category.vo.CategoryVO" alias="categoryVO"/>
 		<typeAlias type="com.auction.vo.BidVO" alias="BidVO"/>
+		<typeAlias type="com.auction.vo.AuctionVO" alias="AuctionVO"/>
 
 	</typeAliases>
 	
