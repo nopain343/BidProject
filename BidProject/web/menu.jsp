@@ -29,7 +29,6 @@ $(document).on('mouseleave','#search', function(){
 
 <body>
 <header>
-	
 	<ul>
 		<li id="log">
 			<c:if test="${empty loginOK}">
@@ -52,6 +51,4 @@ $(document).on('mouseleave','#search', function(){
 	
 
 	<h1><a href="main.go?page=1" id="title">LET IT BID</a></h1>
-	
-	
 </header>
