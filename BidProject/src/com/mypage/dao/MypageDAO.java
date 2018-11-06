@@ -28,8 +28,8 @@ public class MypageDAO {
 		return list;
 	}
 
-	public List<BidVO> bidplace(CategoryVO categoryVO) {
-		categoryVO.setId("'"+categoryVO.getId()+"'");
+	public List<CategoryVO> bidplace(CategoryVO categoryVO) {
+		factory.openSession().selectList("myPageMapper.comparePrice", categoryVO);
 		return factory.openSession().selectList("myPageMapper.bidplace",categoryVO);
 	}
 
@@ -38,6 +38,7 @@ public class MypageDAO {
 		TradeVO vo = factory.openSession().selectOne("myPageMapper.trade", tradeVO);
 		return vo;
 	}
+
 
 
 }

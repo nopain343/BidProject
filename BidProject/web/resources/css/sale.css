@@ -1,5 +1,52 @@
 @charset "UTF-8";
 
+*{
+	font-family: 'Cinzel';
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+/* html {
+height: 100%;
+} */
+
+/*HEADER*****************************************************************************************************/
+header{
+	background-color: #272727;
+	color: white;
+	width: 100%;
+	margin: 0;
+	height: 120px;
+}
+
+header div {
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 8px;
+}
+
+header #query {
+	margin-left: 5px;
+	background-color: #DDDDDD;
+}
+
+header h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 35px;
+	letter-spacing: 5px;
+}
+
+header li {
+	float: right;
+	padding: 5px;
+	list-style: none;
+	margin: 0;
+}
+
+/*BODY*****************************************************************************************************/
 header{
 	background-color: #272727;
 	color: black;
@@ -7,7 +54,6 @@ header{
 	margin: 0;
 	height: 120px;
 }
-
 header h1 {
     margin: 0;
     text-align: center;
@@ -15,3 +61,136 @@ header h1 {
     letter-spacing: 5px;
     color: white;
 }
+
+#main {
+	background-image: url("/BidProject/resources/image/minimal.jpg");
+	background-size: cover;
+	height: 200px;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+
+.table{
+	   
+    margin: auto;
+    padding-bottom: 22px;
+    margin-top: 225px;
+    margin-bottom: 33px;
+    padding-top: 20px;
+    padding-left: 199px;
+    padding-right: 217px;
+
+	
+/* 	    position: center;
+	    width: 30%;
+	    height : 1000px;
+	    margin: auto;
+	  	 border-color : aqua;
+	    border: solid;
+	    background-color: light grey;
+	    padding-bottom: 22px; */
+}
+
+.head{
+	font-size: 55px;
+	text-align: center;
+	font-style: 'Cinzel';
+	color: white;
+	font-weight: bold;
+	margin-top: 100px;
+}
+
+
+.form{
+	border: solid;
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	opacity: 0.9;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.formcover{
+	border: solid;
+	position: absolute;
+	background-color : #d9aa80;
+	width:100%;
+	height : 200px;
+	z-index: 3;
+	opacity: 0.2;
+	
+}
+
+/* .left{
+	width: 50px;
+	height:200px;
+	padding-top:100px;
+	margin-left: 10px;
+	border: 1px;
+	background-color: magenta;
+} */
+
+#cat1{
+	height: 43px;
+    width: 223px;
+}
+#term{
+	height: 34px;
+	width: 219px;
+}
+#prodname{
+	height: 34px;
+	width: 219px;
+}
+#price{
+	height: 34px;
+	width: 219px;
+}
+#ref{
+	height: 34px;
+	width: 219px;
+}
+#condition{
+	height: 43px;
+    width: 223px;
+}
+input[type=text] {
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+}
+input[type=number] {
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+	border-bottom-color: grey;
+	
+}
+select{
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+}
+
+#submit
+{
+	width:30%;
+	height: 7%;
+	background-color: #c0c0c0;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+}
+
+input[type=file] {
+
+    color: #000080;
+}
+
+

@@ -27,6 +27,16 @@ function replyplus(value){
 	
 	$(replynum).html(submitform + value + submitform2 + "<img src = 'resources/image/reply.gif'>&nbsp;<input type='text' id='content' name='content' style='width:450px; height:19px;'/>&nbsp;&nbsp;<input type='submit' value=' 등록  '/></form></td>");
 }
+
+function check(){
+
+	if(bidding.finalPrice.value <= fprice){
+		alert("가격을 다시 한번 확인해주세요");
+		return false;
+	}else{
+		return true;
+	}
+}
 </script>
 </head>
 <body>
@@ -38,7 +48,7 @@ ${auction.prodname}
 <br>
 시작가 : KRW ${auction.price}
 <br>
-<form action="/BidProject/auctionProc.au" method="post">
+<form action="/BidProject/auctionProc.au" name="bidding" method="post" onsubmit="return check()">
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" id="code" name="code"/>
 	<input type="hidden" value="${auction.term}" id="term" name="term"/>
