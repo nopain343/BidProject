@@ -7,10 +7,7 @@
 <title>아이디 찾기</title>
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
-
+<jsp:include page="/menu.jsp" flush="true" />
 <div class="wrap">
 <form action="/BidProject/searchId2.go" method="post">
  <fieldset>
@@ -22,6 +19,7 @@
 	<label for="phone" class="txtphone">휴대전화</label><br>
 	<input type="text" id="phone" name="phone"/>
 	<br><br><br>
+	
 	
 	<input type="submit" class="submit" value="아이디 찾기"></input>
 	<br><br>

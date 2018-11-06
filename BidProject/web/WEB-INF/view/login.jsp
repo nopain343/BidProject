@@ -5,20 +5,33 @@
 <meta http-equiv="Content-Type">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/login.css">
 <title>로그인, 회원가입</title>
+<script type="text/javascript">
+function valid() {
+	if(logform.id.value=="" || logform.password.value=="")
+		alert("아이디 또는 패스워드를 입력해주세요.");
+}
+
+function enterkey() {
+    if (window.event.keyCode == 13) {
+
+         // 엔터키가 눌렸을 때 실행할 내용
+    }
+}
+</script>
 </head>
 <body class="body">
 
 
 <div id="wrapper">
 <!-- <p class="header">LOGIN</p><br> -->
-<h1><a href="/BidProject/main.go"><span class="header">LET IT BID</span></a></h1><br>
-<form action="/BidProject/loginProc.go" method="post">
+<h1><a href="main.go?page=1"><span class="header">LET IT BID</span></a></h1><br>
+<form action="/BidProject/loginProc.go" method="post" name="logform" onsubmit="return valid();">
 	<input type="text" id="id" name="id" placeholder="ID"/><br><br>
 	<input type="password" id="password" name="password" placeholder="Password"/><br><br><br>
 	<input type="hidden" id="username" name="username"/>
 	<input type="hidden" id="roadFullAddr" name="roadFullAddr"/>
 	<input type="hidden" id="phone" name="phone"/>
-	<input type="submit" id="submit" value="로그인"/>
+	<input type="submit" id="submit" value="로그인"onkeyup="enterkey();"/>
 </form>
 
 계정이 없으신가요?&nbsp;

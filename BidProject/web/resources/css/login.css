@@ -59,7 +59,7 @@
 /* #submit:hover {background-color: #92FFFF} */
 
 #submit:active {
-  background-color: #6EE3F7;
+  /* background-color: #6EE3F7; */
   border: none;
   transform: translateY(1px);
 }

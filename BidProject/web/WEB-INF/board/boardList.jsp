@@ -37,10 +37,9 @@
 </script>
 </head>
 <body>
+<jsp:include page="/menu.jsp" flush="true" />
 
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
+<div class="backimg"></div>
 
 <div class="container">
 <h1 class="qna">Q&A</h1>

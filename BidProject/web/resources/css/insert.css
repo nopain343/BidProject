@@ -25,6 +25,13 @@
 	color: #272727;
 }
 
+a{
+	cursor:pointer;
+	border: none;
+	text-decoration: none;
+	color: black;
+}
+
 .idbtn,.addrbtn
 {
 	height: 5%;
@@ -88,7 +95,7 @@
 }
 
 .submit:active {
-  background-color: #6EE3F7;
+  /* background-color: #6EE3F7; */
   border: none;
   transform: translateY(1px);
 }
