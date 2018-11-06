@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/sale.css">
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/menu.jsp" flush="true" />
+
 	bidding 올리긩 파일업로드
 
 
