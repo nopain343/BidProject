@@ -26,7 +26,6 @@ descrip varchar2(4000)
 
 drop sequence code_A
 
-
 create sequence code_AA increment by 1 start with 11 nocache nocycle;
 create sequence code_BB increment by 1 start with 11 nocache nocycle;
 create sequence code_CC increment by 1 start with 11 nocache nocycle;
@@ -54,26 +53,16 @@ term varchar2(20),
 finalPrice number);
 
 UPDATE SALES SET CONFIRM = 0 WHERE CODE = 'HH11'
-SELECT * FROM SALES WHERE ID=(select id from sales where CODE='HH11')
-SELECT * FROM SALES LEFT JOIN AUCTION USING(id) WHERE ID='jin' and code='hh11'
-select * from sales join auction using (code)
 
-SELECT MAX(FINALPRICE) FROM AUCTION WHERE CODE = 'GG01';
+select finalprice from auction where id = 'jin' and code = 'DD11'
 
-SELECT PRODNAME, DESCRIP, FINALPRICE, USERNAME AS USERNAME_SELLER, ROADFULLADDR AS ROADFULLADDR_SELLER, PHONE AS PHONE_SELLER
-FROM (SELECT MAX(FINALPRICE) AS FINALPRICE, CODE FROM AUCTION GROUP BY CODE)
+SELECT PRODNAME, CODE, TERM, FINALPRICE, PRICE
+FROM (SELECT MAX(FINALPRICE) AS FINALPRICE, CODE FROM AUCTION WHERE ID='jin' GROUP BY CODE)
 JOIN SALES USING(CODE)
-JOIN USER1 USING(ID)
-WHERE CODE = 'CC17'
 
-SELECT USERNAME AS USERNAME_SELLER, ROADFULLADDR AS ROADFULLADDR_SELLER, PHONE AS PHONE_SELLER, CODE, PRODNAME,DESCRIP, FINALPRICE, USERNAME_BIDDER, ROADFULLADDR_BIDDER, PHONE_BIDDER 
-FROM (SELECT * FROM SALES WHERE CODE='CC17') 
-JOIN (SELECT MAX(FINALPRICE) AS FINALPRICE, CODE FROM AUCTION WHERE CODE = 'CC17' GROUP BY CODE) USING(CODE) 
-JOIN USER1 USING(ID) 
-JOIN (SELECT USERNAME AS USERNAME_BIDDER, ROADFULLADDR AS ROADFULLADDR_BIDDER, PHONE AS PHONE_BIDDER, CODE FROM (SELECT ID, CODE FROM AUCTION WHERE CODE='CC17' AND FINALPRICE = 67500) JOIN USER1 USING(ID)) USING(CODE);
-
-
-
+select max(finalprice) as finalprice from auction where code = 'DD11' group by code --코드별 최고 가격
+union
+select max(finalprice) as finalprice from auction where code = 'DD11' and id='jin' group by id  --아이디별 최고 가격
 
 
 select * from sales where code like 'CC%' order by 6 asc;

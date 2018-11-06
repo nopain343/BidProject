@@ -7,6 +7,7 @@ public class CategoryVO {
 	private String cat1;
 	private String prodname;
 	private int price;
+	private int finalPrice;
 	private String condition;
 	private String ref;
 	private String code;
@@ -18,6 +19,7 @@ public class CategoryVO {
 	private String filename;
 	private MultipartFile file;
 	private int confirm;
+	
 	
 	
 	public String getCat1() {
@@ -37,6 +39,12 @@ public class CategoryVO {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public int getFinalPrice() {
+		return finalPrice;
+	}
+	public void setFinalPrice(int finalPrice) {
+		this.finalPrice = finalPrice;
 	}
 	public String getCondition() {
 		return condition;
