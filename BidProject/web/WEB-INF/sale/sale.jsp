@@ -1,21 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	<jsp:include page="/menu.jsp" flush="true" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/sale.css">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 <title>Insert title here</title>
-</head>
 <body>
-	bidding 올리긩 파일업로드
 
 
-	<form:form method="post" enctype="multipart/form-data" modelAttribute="categoryVO" action="/BidProject/saleUpload.sa">
-		<table>
+<div class="formcover"></div>
+<div class="form">
+<section id="main" class="main">
+	<section id = "head" class="head">START BIDDING</section><br>
+</section>
+	<form:form method="post" enctype="multipart/form-data"
+		modelAttribute="categoryVO" action="/BidProject/saleUpload.sa">
+<div class="left"></div>
+<div class="right"></div>
+<table class="table">
 			<tr>
+			<td>카테고리</td>
 				<td>
-					<select name="cat1">
-						<option value='' selected>카테고리</option>
+					<select name="cat1" id="cat1">
+						<option value='' selected>----------------select--------------</option>
 						<option value="AA">의류</option>
 						<option value="BB">패션잡화</option>
 						<option value="CC">뷰티미용</option>
@@ -28,31 +36,26 @@
 				</td>
 			</tr>
 			<tr>
-				<td><b>아이디</b></td>
-				<td><input type="text" name="id" value="${loginOK.id}" readonly></td>
-			</tr>
-			<tr>
-				<td><b>마감시간</b></td>
-				<td><input type="text" name="term"></td>
-			</tr>
-			<tr>
-				<td><b>코드</b></td>
-				<td><input type="text" name="code"></td>
-			</tr>
-			<tr>
-				<td><b>상품명</b></td>
-				<td><input type="text" name="prodname"></td>
-			</tr>
-			<tr>
-				<td><b>시작가</b></td>
-				<td><input type="number" name="price"></td>
+				<td>상품명</td>
+				<td><input type="text" name="prodname" id="prodname" id="prodname"></td>
 			</tr>
 			
 			<tr>
-	            <td><b>상태</b></td>
+				<td>시작가</td>
+				<td><input type="number" name="price" id="price"></td>
+			</tr>
+			<tr>
+				<td>마감시간</td>
+				<td><input type="text" name="term" id="term" placeholder="YYYY-MM-DD 00:00:00"></td>
+			</tr>
+
+			
+			<tr>
+	            <td>상태</td>
 	            <td>
-		            <select name="condition">
-		                  <option selected>중고</option>
+		            <select name="condition" id="condition">
+		            <option value='' selected>----------------select--------------</option>
+		                  <option>중고</option>
 		                  <option >중고+하자 (하자가 있는 중고)</option>
 		                  <option >새물품(미사용)</option>
 		                  <option>새것+하자(새것이고 하자가 있음)</option>
@@ -63,31 +66,27 @@
          	</tr>
          
 			<tr>
-				<td><b>해시태그</b></td>
-				<td><input type="text" name="ref"></td>
+				<td>해시태그</td>
+				<td><input type="text" name="ref" id="ref"></td>
 			</tr>
-
 			<tr>
-				<td><b>내용</b></td>
+				<td><br>내용</td>
 				<td><textarea rows="12" cols="40" name="descrip"></textarea></td>
 			</tr>
 			
 			<tr>
-				<td><b>이미지</b></td>
+				<td>이미지 업로드</td>
 				<td><input type="file" name="file"></td>
 				<form:errors path="file"/>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" value="등록">
-					<input type="reset" value="취소"> 
-					
-					
-					
-					<a href="qna.bd?pg=${view.pg}"><button id="list">목록</button></a></td>
+				<td colspan="2" align="center">
+				<input type="submit" id="submit" value="등록">
+				<input type="reset" id="submit" value="다시쓰기">
+				<input type="reset" id="submit" value="메인으로">
 			</tr>
 		</table>
-		
 	</form:form>
-
+</div>
 </body>
 </html>
