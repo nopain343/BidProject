@@ -7,12 +7,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/searchPasswordOK.css">
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
-
-
-
+<jsp:include page="/menu.jsp" flush="true" />
 <div class="wrap">
 <form method="post" action="main.go">
 회원님의 비밀번호는 ${searchOK.password} 입니다

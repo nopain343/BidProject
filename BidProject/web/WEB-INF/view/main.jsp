@@ -47,9 +47,9 @@
 	<script defer src="js/all.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <title>Let It Bid</title>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/category.js"></script> --%>
 <script>
 function ajax(value){

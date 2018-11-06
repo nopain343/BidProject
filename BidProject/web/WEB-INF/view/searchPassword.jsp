@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
+<jsp:include page="/menu.jsp" flush="true" />
 
 <div class="wrap">
 <form action="/BidProject/searchPassword2.go" method="post">
