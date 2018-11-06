@@ -11,7 +11,7 @@
 
 
 <body>
-<h1 class="title">LET IT BID</h1>
+<h1 class="title"><a href="main.go?page=1">LET IT BID</a></h1>
 
 <div class="wrap">
 

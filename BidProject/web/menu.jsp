@@ -8,6 +8,14 @@
 <title>Insert title here</title>
 
 <script>
+function enterkey() {
+    if (window.event.keyCode == 13) {
+
+         // 엔터키가 눌렸을 때 실행할 내용
+         search();
+    }
+}
+
 function search(){
 	var word = $("#query").val();
 	
@@ -20,15 +28,16 @@ $(document).on('mouseover','#searchon', function(){
 	
 });
 
-$(document).on('mouseleave','#search', function(){
+/* $(document).on('mouseleave','#search', function(){
 	$('#query').slideUp(200);
 	
-});
+}); */
 </script>
 </head>
 
 <body>
 <header>
+<div>
 	<ul>
 		<li id="log">
 			<c:if test="${empty loginOK}">
@@ -46,9 +55,11 @@ $(document).on('mouseleave','#search', function(){
 	</ul>
 	<div id="search" class="search">
 		<span id="searchon" onclick="search()"><i class="fa fa-search" class="w3-xlarge"></i></span>
-		<input id="query" name="query" type="text" title="검색어 입력" maxlength="255" class="input_text" style="display : none;"/>
+		<input id="query" name="query" type="text" title="검색어 입력" maxlength="255" onkeyup="enterkey();" 
+		 class="input_text" style="display : none; color:black;"/>
 	</div>
 	
 
 	<h1><a href="main.go?page=1" id="title">LET IT BID</a></h1>
+</div>	
 </header>

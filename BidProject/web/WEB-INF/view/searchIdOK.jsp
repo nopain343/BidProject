@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
-
+<jsp:include page="/menu.jsp" flush="true" />
 <div class="wrap">
 <form method="post" action="main.go">
 <P class="idconf">회원님의 아이디는 ${searchOK.id} 입니다.</P>
