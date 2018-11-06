@@ -20,6 +20,7 @@
 	<input type="text" id="phone" name="phone"/>
 	<br><br><br>
 	
+	
 	<input type="submit" class="submit" value="아이디 찾기"></input>
 	<br><br>
  </fieldset>	
