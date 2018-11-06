@@ -37,13 +37,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script defer src="js/all.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
-
-		
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>Let It Bid</title>
@@ -79,7 +81,7 @@ function paging(data){
 	var plus = "'>";
 	var box3 = "</a><br></div><div class='wrap2'><div class='ref'>";
 	var box4 = "<br></div><div class='price'>";
-	var box5 = "<br></div>[현재가격]<br><div class='term'>";
+	var box5 = "<br></div>입찰가<br><div class='term'>";
 	var last = "</div></div></section></section></section>";
 	$.each(data, function(index, entry){
 		total += box1 + entry.code + box2+ entry.code + plus + entry.prodname + box3 + entry.ref + box4 + entry.price + box5 + entry.term + last;
@@ -98,14 +100,14 @@ function paging(data){
 	console.log(totalP);
 	if(data[0].page != 1){
 		var prepage = parseInt(data[0].page)-1;
-		total += "<div onclick='ajax(" + prepage + ")'><h4>Previous</h4></div>";
+		total += "<div onclick='ajax(" + prepage + ")'><span class='leftarrow'><i class='fas fa-angle-left'></i></span></div>";
 	}
 	
 	if(data[0].page != totalP){
 			
 		var nextpage = parseInt(data[0].page)+1;
-		total += "<div onclick='ajax(" + nextpage + ")'><h4>Next</h4></div>";
-	 
+		total += "<div onclick='ajax(" + nextpage + ")'><span class='arrow'><i class='fas fa-angle-right'></i></span></div>";
+
 	}
 	$('#update').html(total+"</section>");
 
@@ -161,18 +163,62 @@ $(document).on('mouseleave','#filter', function(){
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
 		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></span>
+		
+			<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
+	
 	</nav>	
 
 	
-	<div id="qna" class="qna">
-	<h2><a href="qna.bd?pg=1" class="qna2" style="color:black">Q&amp;A</a></h2>
-	</div>
+	
 </section>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+ 
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <a href="http://m.bunjang.co.kr/splash"><img src="/BidProject/resources/image/iphone.jpg" alt="Los Angeles" style="width:60%;"></a>
+       
+      </div>
+
+      <div class="item">
+       <a href="http://m.bunjang.co.kr/products/91762800?ref=event_banner"><img src="/BidProject/resources/image/knit.jpg" alt="Chicago" style="width: 60%;"></a> 
+        
+      </div>
+    
+      <div class="item">
+       <a href="http://m.bunjang.co.kr/products/79107403?ref=event_banner"> <img src="/BidProject/resources/image/cosmetic.jpg" alt="New York" style="width:60%;"></a>
+    
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+
+<span class="deal">오늘의 경매</span> <span class="hot">ㅣ Let it Bid가 엄선한 핫한 경매품!</span>
+
+
 
 <div id="update">
 <%
 if(searchn != 0){ 
 %>
+
+
 
 <section class=wrap0>
 	<c:forEach var="ob" items="${list}">
@@ -185,8 +231,10 @@ if(searchn != 0){
 							<div class="prodname"><a href="/BidProject/auction.au?code=${ob.code}">${ob.prodname}</a><br></div>
 										<div class="wrap2">	 
 											<div class="ref">${ob.ref}<br></div>
-								        	 <div class="price">${ob.price}<br></div> 
-											  			[현재가격]<br> 
+											<span class="pricetag">입찰가</span>
+											
+								        	 <div class="price">${ob.price}원</div> 
+											  			<br> 
 											 <div class="term">${ob.term}</div>
 										</div>
 				</section>
@@ -194,6 +242,9 @@ if(searchn != 0){
 		</section>
 	</c:forEach>
 </section>
+
+
+
 <input type="hidden" id="category" value="<%=cat1%>">
 
 <% 
@@ -203,7 +254,7 @@ if(pg != totalP){%>
 	<div onclick="ajax(<%=pg+1%>)">
 		<input type="hidden" id="nxt_page" value="<%=pg+1%>">
 		
-		<h4>Next</h4>
+		<!-- <h4>Next</h4> --><span class="arrow"><i class="fas fa-angle-right"></i></span>
 	</div>
 <% 
 }
@@ -217,6 +268,7 @@ if(pg != totalP){%>
 
 
 </div>
+
 	
 
 <ul class="footer">
