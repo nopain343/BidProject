@@ -10,15 +10,16 @@ $(document).ready(function(){
 		url:"/BidProject/maxPrice.au?code="+code,
 		dataType : "json",
 		success:function(data){
-			fprice = data.finalPrice;
-			$("#output").html("<span id='fprice' value=" + data.finalPrice + ">" + data.finalPrice + "원</span>");
-			console.log(data.term);
+			var table = "<table id='timetable' style='margin-left: auto; margin-right: auto;' ><tr><th>Days</th><th>Hours</th><th>Minutes</th></tr><tr><td class='timerbox'><span class='timer'>0</span>&nbsp;<span class='timer'>";
+			var table2 = "</span></td></tr></table>"
+			var result = comma(data.finalPrice);
+			$("#output").html("KRW " + result);
 			if(data.term == 'fin'){
 				$("#dtime").html("-일 -시 -분")
-				$("#submit").html("<input type='button' value='경매가 종료되었습니다'/>")
+				$("#submit").html("<input type='button' id='submitbutton' value='경매가 종료되었습니다'/>")
 			}else{
-				$("#dtime").html(data.term.substring(0,1) + "일 " + data.term.substring(1,3) + "시간 " +  data.term.substring(3,6) + "분 ");
-				$("#submit").html("<input type='submit' value='PLACE BID'/>")
+				$("#dtime").html(table + data.term.substring(0,1) + "</span></td><td class='timerbox'><span class='timer'>" + data.term.substring(1,2) + "</span>&nbsp;<span class='timer'>" + data.term.substring(2,3) + "</span></td><td class='timerbox'><span class='timer'>" +  data.term.substring(3,4) + "</span>&nbsp;<span class='timer'>" + data.term.substring(4,5) + table2);
+				$("#submit").html("<input type='submit'  id='submitbutton' value='PLACE BID'/>")
 			}
 			
 			
@@ -36,15 +37,16 @@ $(document).ready(function(){
 				url:"maxPrice.au?code="+code,
 				dataType : "json",
 				success:function(data){
-					$("#output").html("<span id='fprice' value=" + data.finalPrice + ">" + data.finalPrice + "원</span>");
-					console.log(data.term);
-				
+					var table = "<table id='timetable' style='margin-left: auto; margin-right: auto;'><tr><th>Days</th><th>Hours</th><th>Minutes</th></tr><tr><td class='timerbox'><span class='timer'>0</span>&nbsp;<span class='timer'>";
+					var table2 = "</span></td></tr></table>"
+					var result = comma(data.finalPrice);
+					$("#output").html("KRW " + result);
 					if(data.term == 'fin'){
 						$("#dtime").html("-일 -시 -분")
-						$("#submit").html("<input type='button' value='경매가 종료되었습니다'/>")
+						$("#submit").html("<input type='button' id='submitbutton'  value='경매가 종료되었습니다'/>")
 					}else{
-						$("#dtime").html(data.term.substring(0,1) + "일 " + data.term.substring(1,3) + "시간 " +  data.term.substring(3,6) + "분 ");
-						$("#submit").html("<input type='submit' value='PLACE BID'/>")
+						$("#dtime").html(table + data.term.substring(0,1) + "</span></td><td class='timerbox'><span class='timer'>" + data.term.substring(1,2) + "</span>&nbsp;<span class='timer'>" + data.term.substring(2,3) + "</span></td><td class='timerbox'><span class='timer'>" +  data.term.substring(3,4) + "</span>&nbsp;<span class='timer'>" + data.term.substring(4,5) + table2);
+						$("#submit").html("<input type='submit' id='submitbutton' value='PLACE BID'/>")
 					}
 				},
 				error:function(request,status,error){
@@ -55,8 +57,13 @@ $(document).ready(function(){
 		}, 3000);
 
 		
-		
-		
+	function comma(str) {
+
+	    str = String(str);
+
+	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+
+	}
 		
 	
 	
