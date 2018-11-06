@@ -147,6 +147,19 @@ nav#filter{
 }
 
 
+.farrow{
+	height: 100px;
+	width: 100px;
+	font-size: 70px;
+	position:relative;
+	top:220px;
+	left:20px;
+	color: #D4D4D4;
+	cursor:pointer;
+	display: inline-block;
+}
+
+
 .arrow{
 	height: 100px;
 	width: 100px;
@@ -156,6 +169,7 @@ nav#filter{
 	left:20px;
 	color: #D4D4D4;
 	cursor:pointer;
+	display: inline-block;
 }
 
 /* .arrow:hover,.leftarrow:hover{
@@ -166,11 +180,12 @@ nav#filter{
 	height: 100px;
 	width: 100px;
 	font-size: 70px;
-	position:absolute;
-	top:1310px;
-	left:30px;
+	position:relative;
+	top:320px;
+	right:1335px;
 	color: #D4D4D4;
 	cursor:pointer;
+	display: inline-block;
 }
 
 /* ////////////////////////////sales내용  start////////////////////////////////////////////////////////// */

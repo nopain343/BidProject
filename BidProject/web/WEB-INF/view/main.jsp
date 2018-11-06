@@ -106,7 +106,7 @@ function paging(data){
 	if(data[0].page != totalP){
 			
 		var nextpage = parseInt(data[0].page)+1;
-		total += "<div onclick='ajax(" + nextpage + ")'><span class='arrow'><i class='fas fa-angle-right'></i></span></div>";
+		total += "<div onclick='ajax(" + nextpage + ")'><span class='farrow'><i class='fas fa-angle-right'></i></span></div>";
 
 	}
 	$('#update').html(total+"</section>");
@@ -172,10 +172,12 @@ $(document).on('mouseleave','#filter', function(){
 	
 </section>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+<!-- 광고효과 -->
+<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
  
 
-    <!-- Wrapper for slides -->
+    Wrapper for slides
     <div class="carousel-inner">
 
       <div class="item active">
@@ -195,7 +197,7 @@ $(document).on('mouseleave','#filter', function(){
   
     </div>
 
-    <!-- Left and right controls -->
+    Left and right controls
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
@@ -205,7 +207,7 @@ $(document).on('mouseleave','#filter', function(){
       <span class="sr-only">Next</span>
     </a>
   </div>
-
+ -->
 
 
 
