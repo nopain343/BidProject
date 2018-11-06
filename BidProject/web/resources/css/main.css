@@ -7,6 +7,11 @@ a{
 	text-decoration: none;
 	color: white;
 }
+
+a:hover{
+	text-decoration: none;
+	color: white;
+}
 html {
 height: 100%;
 }
@@ -52,6 +57,7 @@ header li {
 body{
 	margin: 0;
 	height: 100%;
+	position: relative;
 }
 
 #main {
@@ -87,18 +93,29 @@ body{
 
 
 nav#filter{
-	margin-top: 2px;
+	margin-top: auto;
 	background-color: #272727;
+	/* background-color:#046BFC; */
 	height: 60px;
-	padding-top: 20px;
+	padding-top: 12px;
 }
 
 #filter a {
 	padding: 15px;
 }
 
+#myCarousel{
+	padding-left: 400px;
+	padding-bottom: 20px;
+	}
 
 .boldmenu{
+	color: #DDFFFF;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.qna{
 	color: #DDFFFF;
 	font-size: 28px;
 	font-weight: bold;
@@ -109,6 +126,68 @@ nav#filter{
 	display : none;
 }
 
+.deal{
+	font-size:20px;
+	font-weight: bold;
+	/* padding-left: 100px; */
+	position: relative;
+	top: 97px;
+	left: 90px;
+}
+
+.hot{
+	font-weight: bold;
+	color: grey;
+	position:absolute;
+	/* top: 129.5%;
+	left: 13%; */
+	position: relative;
+	top: 95px;
+	left: 90px;
+}
+
+
+.farrow{
+	height: 100px;
+	width: 100px;
+	font-size: 70px;
+	position:relative;
+	top:220px;
+	left:20px;
+	color: #D4D4D4;
+	cursor:pointer;
+	display: inline-block;
+}
+
+
+.arrow{
+	height: 100px;
+	width: 100px;
+	font-size: 70px;
+	position:relative;
+	top:320px;
+	left:20px;
+	color: #D4D4D4;
+	cursor:pointer;
+	display: inline-block;
+}
+
+/* .arrow:hover,.leftarrow:hover{
+	color: #6CFCF4;
+} */
+
+.leftarrow{
+	height: 100px;
+	width: 100px;
+	font-size: 70px;
+	position:relative;
+	top:320px;
+	right:1335px;
+	color: #D4D4D4;
+	cursor:pointer;
+	display: inline-block;
+}
+
 /* ////////////////////////////sales내용  start////////////////////////////////////////////////////////// */
 
 
@@ -117,17 +196,18 @@ nav#filter{
 	height: 345px;
 	width: 250px;
 	/* background-color: #7d9fb6; */
-	border: 2px dashed teal;
+	/* border: 2px dashed teal */;
+	border: 1px solid #DCDCDC;
 	float: left;
 	margin-left:8px;
 	margin-top : 10px;
 	margin-bottom: 10px;
-	
+/* 	background-color: #F4F4F4; */
 		 
 }
 .photo{
 	
- 	 border: 1px solid black;
+ 	/*  border: 1px solid black; */
 	 
  /*   height: 180px;
     width: 228px;*/
@@ -137,7 +217,7 @@ nav#filter{
 
 
 .wrap0{
-	
+	padding-top:100px;
     padding-left: 85px;
 	
 }
@@ -149,7 +229,7 @@ nav#filter{
 }
 
 .wrap01{
-    border: 1px solid magenta;
+  /*   border: 1px solid magenta; */
     height: 135px;
     margin-left: 10px;
     margin-right: 10px;
@@ -157,13 +237,13 @@ nav#filter{
 }
 
 .prodname{
-	background-color: #7d9fb6;
+	/* background-color: #7d9fb6; */
+	color:black;
     width: 228px;
     overflow:hidden;
     text-overflow:ellipsis;
-    white-space:nowrap;
-    
-    
+    white-space:nowrap;    
+    padding-bottom: 1px;
     
 /* 	width:228 
 	너비 고정시키고
@@ -172,8 +252,18 @@ nav#filter{
 	white-space:nowrap; */
 }
 
+.prodname>a{
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* .prodname:hover{
+	overflow: auto;
+} */
+
 .wrap2{
-	border: solid 1px;
+	/* border: solid 1px; */
 	width: 228px;
 	
 	}
@@ -181,17 +271,30 @@ nav#filter{
 .ref{
 	
 	font-size: 11px;
-	border: 1px solid;
+	/* border: 1px solid; */
     height: 38px;
 }
+
 .price{
-	text-align: right;
-	font-size: 20px;
+	font-size: 18px;
+	display: inline-block;
+	/* font-weight: bold; */
+	float: right;
+	line-height: 1;
 }
+
+
+.pricetag{
+	display: inline-block;
+}
+
 .term{
 	text-align: right;
 	margin-bottom: 0px;
+	padding-top: 20px;
+	border-top: 1px solid;
 }
+
 
 /* /////////////////////////////////////sales내용 end///////////////////////////////////////////////// */
 section div p {
@@ -199,7 +302,7 @@ section div p {
 	
 }
 
-div.qna{
+/* div.qna{
 	
 	position: fixed ;
 	right: 30px;
@@ -211,15 +314,15 @@ div.qna{
 	text-align: center;
 	
 	
-}
+} */
 
-.qna {
+/* .qna {
 	border-radius: 25px;
 	background-image: linear-gradient(#53ffea, #2c9b9a);
-}
+} */
 
 
-/*FOOTER*****************************************************************************************************/
+
 
 .footer{
 	overflow:hidden;
@@ -232,16 +335,18 @@ div.qna{
     padding: 40px 0 40px 90px;
     margin : 0px;
 	color: white;
-	background: #DDDDDD;
-
+	background: #C4CCCC;
+	/* background-color: #046BFC; */
 }
 
 .footer li{
 	float: left;
-	padding-right: 50px 
+	padding-right: 50px;
 }
 .footerdesc{
-	background: #DDDDDD;
+	/* background: #DDDDDD; */
+	background-color:#C4CCCC;
+	/* background-color:#046BFC; */
 	padding: 0px 0 35px 90px;
 	color: white;
 }
