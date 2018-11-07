@@ -204,8 +204,7 @@ ${auction.ref}
 	<td>&nbsp;&nbsp;<input type="submit" value=" 등록  "/></td>
 	</tr>
 	</table>
-	
-	
+
 </form>
 </section>
 </c:if>
