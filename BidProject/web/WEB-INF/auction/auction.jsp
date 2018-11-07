@@ -70,6 +70,7 @@ $(document).on('mouseleave','#filter', function(){
 
 <section>
 	<nav id="filter">
+		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">BID NOW</a></span>
 		<span class="boldmenu" id="menuclick">CATEGORY</span>
 		<span id="menubar">
 		<a href="main.ct?cat1=AA">의류</a>
@@ -89,7 +90,7 @@ $(document).on('mouseleave','#filter', function(){
 		<a href="main.ct?cat1=HH">도서/티켓</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></span>
+		
 		
 		<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
 	
@@ -156,10 +157,7 @@ ${auction.ref}
 
 
 <br>댓글 수 &nbsp;<%=total %>&nbsp;&nbsp;&nbsp;
-<c:if test="${loginOK.id == sale.id}">
-<a href="mymodi.go"><button>수정</button></a>
-<a href="delete.bd?seq=${saModi.seq}"><button>삭제</button></a>
-</c:if>
+
 <hr>
 
 <table class="table table-hover table-secondary">
@@ -188,7 +186,10 @@ ${auction.ref}
 	<tr id="reply${ob.seq }"></tr>
 </c:forEach>
 </c:if>
-</table><br>
+</table>
+
+<br>
+
 <c:if test="${!empty loginOK}">
 <form action="/BidProject/replyInsert.au" method="post">
 	<input type="hidden" value="${loginOK.id}" name="id"/>

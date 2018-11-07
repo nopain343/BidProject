@@ -78,7 +78,7 @@ nav#filter{
 	margin-top: auto;
 	background-color: #272727;
 	/* background-color:#046BFC; */
-	height: 60px;
+	height: 52px;
 	padding-top: 12px;
 }
 
@@ -179,7 +179,7 @@ article .timer{
 	font-weight: bold;
 	font-size: 25px;
     padding:5px 15px; 
-    background: #486B8C; 
+    background: #00253E; 
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;

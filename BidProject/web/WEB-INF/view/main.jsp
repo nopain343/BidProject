@@ -143,6 +143,8 @@ $(document).on('mouseleave','#filter', function(){
 
 <section>
 	<nav id="filter">
+	<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">BID NOW</a></span>
+		
 		<span class="boldmenu" id="menuclick">CATEGORY</span>
 		<span id="menubar">
 		<a href="main.ct?cat1=AA">의류</a>
@@ -162,7 +164,7 @@ $(document).on('mouseleave','#filter', function(){
 		<a href="main.ct?cat1=HH">도서/티켓</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></span>
+		
 		
 			<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
 	
