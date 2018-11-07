@@ -32,18 +32,21 @@ function replyplus(value){
 	
 	$(replynum).html(submitform + value + submitform2 + "<img src = 'resources/image/reply.gif'>&nbsp;<input type='text' id='content' name='content' style='width:450px; height:19px;'/>&nbsp;&nbsp;<input type='submit' value=' 등록  '/></form></td>");
 }
-/* console.log("fprice : " + document.getElementById("fprice").value);
+
 function check(){
-	console.log("fprice : " + document.getelementbyid("fprice").value);
-	console.log(bidding.finalPrice.value);
 	
-	if(bidding.finalPrice.value <= $("fprice").val()){
-		alert("가격을 다시 한번 확인해주세요");
+	if(bidding.id.value == ""){
+		alert("로그인이 필요한 서비스입니다.")
 		return false;
-	}else{
-		return true;
 	}
-} */
+	if(bidding.finalPrice.value == ""){
+		alert("입찰 가격을 입력해주세요");
+		return false;
+	}
+	
+	return true;
+	
+} 
 
 $(document).on('mouseover','#menuclick', function(){
 	
@@ -191,13 +194,20 @@ ${auction.ref}
 <br>
 
 <c:if test="${!empty loginOK}">
+<section id="replysection">
 <form action="/BidProject/replyInsert.au" method="post">
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" name="code"/>
-	&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="content" name="content" style="width:450px; height:19px;"/>
-	&nbsp;&nbsp;
-	<input type="submit" value=" 등록  "/>
+	<table>
+	<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="content" name="content"/></td>
+	<td>&nbsp;&nbsp;<input type="submit" value=" 등록  "/></td>
+	</tr>
+	</table>
+	
+	
 </form>
+</section>
 </c:if>
 <br><br>
 </div>

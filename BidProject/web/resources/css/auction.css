@@ -195,34 +195,32 @@ article .timer{
 	margin-top:0px;
 }
 
+#replysection input[type=text]{
+	padding:5px; 
+    border:2px solid #BDBDBD; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height : 35px;
+    width : 750px;
+}
+#replysection input[type=text]:focus {
+    border-color:#333;
+}
+
+#replysection input[type=submit] {
+	color : white;
+	font-weight: bold;
+	font-size: 25px;
+    padding:5px 15px; 
+    background:#BDBDBD; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+} 
+
 #footer{
 	background-color: #272727;
 	height : 40px;
 	width : 100%;
 }
-/* 
-input[type=text] {
-    padding:5px; 
-    border:2px solid #ccc; 
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
-input[type=text]:focus {
-    border-color:#333;
-}
-
-
-
-input[type=submit] {
-	color : white;
-	font-weight: bold;
-	font-size: 25px;
-    padding:5px 15px; 
-    background:#81DAF5;; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-} */
-
