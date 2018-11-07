@@ -32,18 +32,21 @@ function replyplus(value){
 	
 	$(replynum).html(submitform + value + submitform2 + "<img src = 'resources/image/reply.gif'>&nbsp;<input type='text' id='content' name='content' style='width:450px; height:19px;'/>&nbsp;&nbsp;<input type='submit' value=' 등록  '/></form></td>");
 }
-/* console.log("fprice : " + document.getElementById("fprice").value);
+
 function check(){
-	console.log("fprice : " + document.getelementbyid("fprice").value);
-	console.log(bidding.finalPrice.value);
 	
-	if(bidding.finalPrice.value <= $("fprice").val()){
-		alert("가격을 다시 한번 확인해주세요");
+	if(bidding.id.value == ""){
+		alert("로그인이 필요한 서비스입니다.")
 		return false;
-	}else{
-		return true;
 	}
-} */
+	if(bidding.finalPrice.value == ""){
+		alert("입찰 가격을 입력해주세요");
+		return false;
+	}
+	
+	return true;
+	
+} 
 
 $(document).on('mouseover','#menuclick', function(){
 	
@@ -70,6 +73,7 @@ $(document).on('mouseleave','#filter', function(){
 
 <section>
 	<nav id="filter">
+		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">BID NOW</a></span>
 		<span class="boldmenu" id="menuclick">CATEGORY</span>
 		<span id="menubar">
 		<a href="main.ct?cat1=AA">의류</a>
@@ -89,7 +93,7 @@ $(document).on('mouseleave','#filter', function(){
 		<a href="main.ct?cat1=HH">도서/티켓</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></span>
+		
 		
 		<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
 	
@@ -156,10 +160,7 @@ ${auction.ref}
 
 
 <br>댓글 수 &nbsp;<%=total %>&nbsp;&nbsp;&nbsp;
-<c:if test="${loginOK.id == sale.id}">
-<a href="mymodi.go"><button>수정</button></a>
-<a href="delete.bd?seq=${saModi.seq}"><button>삭제</button></a>
-</c:if>
+
 <hr>
 
 <table class="table table-hover table-secondary">
@@ -188,15 +189,24 @@ ${auction.ref}
 	<tr id="reply${ob.seq }"></tr>
 </c:forEach>
 </c:if>
-</table><br>
+</table>
+
+<br>
+
 <c:if test="${!empty loginOK}">
+<section id="replysection">
 <form action="/BidProject/replyInsert.au" method="post">
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" name="code"/>
-	&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="content" name="content" style="width:450px; height:19px;"/>
-	&nbsp;&nbsp;
-	<input type="submit" value=" 등록  "/>
+	<table>
+	<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="content" name="content"/></td>
+	<td>&nbsp;&nbsp;<input type="submit" value=" 등록  "/></td>
+	</tr>
+	</table>
+
 </form>
+</section>
 </c:if>
 <br><br>
 </div>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-section.wrap1 {
+section.wrapper1 {
 	border: 1px solid #edecee;
 	box-shadow: 1px 1px 1px #e1e1e4;
 	width: 50%;
@@ -9,12 +9,12 @@ section.wrap1 {
 	margin-left: 25%;
 }
 
-div.wrap2 {
+div.wrapper2 {
 	width: 100%;
 	height: 160px;
 }
 
-.wrap2 .bidImage {
+.wrapper2 .bidPlaceImage {
 	width: 30%;
 	height: 140px;
 	object-fit:scale-down;
@@ -25,7 +25,7 @@ div.wrap2 {
 	margin-left: 20px;
 }
 
-.wrap3 {
+.wrapper3 {
 	width: 60%;
 	height: 140px;
 	float: left;
@@ -34,18 +34,22 @@ div.wrap2 {
 	font-size: 14px;
 }
 
-.wrap3 .prodname {
+.wrapper3 .prodname {
 	float: left;
 	margin-top: 10px;
 	font-size: 20px;
 	font-weight: 400;
 }
 
-.wrap4 {
+.wrapper4 {
 	float: left;
 }
 
-.wrap5 {
+.wrapper4 .priceCheck {
+	color: #4d71b1;
+}
+
+.wrapper5 {
 	float: right;
 	border: 1px solid gray;
 	padding: 8px;
@@ -54,7 +58,7 @@ div.wrap2 {
 	transition: background-color 300ms ease 0ms;	
 }
 
-.wrap5:hover {
+.wrapper5:hover {
 	background-color: rgb(42, 69, 136);
 }
 
