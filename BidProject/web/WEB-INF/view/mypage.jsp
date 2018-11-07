@@ -8,37 +8,56 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/myBidPlace.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/myBid.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/myBidPlace.css">
 <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<script>
+/* function event(){
+	if(confirm("정말로 탈퇴 하시겠습니까?") == true){
+		document.form.submit();
+	}else{
+		return;
+	}
+} */
+</script>
 
-
-<section id="middle">
-	<section id="main" class="main">
-		<h1>MY PAGE</h1>
-	</section>
-	
-	<section class="cover">
-	
-		<section class="cover2">
-			<form action="/BidProject/myBid.go" method="get">
-				<input type="hidden" name="id" value="${loginOK.id}">
-				<input type="submit" value="MY PRODUCTS" />
-			</form>
-			
-			<form action="/BidProject/myBidPlace.go" method="get">
-				<input type="hidden" name="id" value="${loginOK.id}">
-				<input type="submit" value="BIDDING STATUS" />
-			</form>
-		</section>
-		
-		<section class="cover3">
-			<form action="/BidProject/update.go" method="post">
-				<input type="submit" value="CHANGE USERINFO"/>
-			</form>
-			
-			<form action="/BidProject/delete.go" method="post">
-				<input type="submit" value="LEAVE"/>
-			</form>
-		</section>
-		
-	</section>
+<section id="main" class="main">
+	<h1>MY PAGE</h1>
 </section>
+
+
+<section id="middle">	
+	<div class="cover">
+	
+		<div class="cover2">
+		
+			<div class="cover3">
+				<form action="/BidProject/myBid.go" method="get" >
+					<input type="hidden" name="id" value="${loginOK.id}">
+					<input type="submit" value="MY PRODUCTS"/>
+				</form>
+			</div>
+			
+			<div class="cover4">
+				<form action="/BidProject/myBidPlace.go" method="get">
+					<input type="hidden" name="id" value="${loginOK.id}">
+					<input type="submit" value="BIDDING STATUS" />
+				</form>
+			</div>
+		
+			<div class="cover5">
+				<form action="/BidProject/delete.go" method="post">
+					<input type="submit" value="LEAVE" onclick="event();"/>
+				</form>
+			</div>
+			
+			<div class="cover6">
+				<form action="/BidProject/update.go" method="post">
+					<input type="submit" value="CHANGE USERINFO"/>
+				</form>
+			</div>
+			
+		</div>
+		
+	</div>
+</section>
+

@@ -31,13 +31,16 @@ public class MypageController {
 	
 	@RequestMapping(value="/trade.go", method=RequestMethod.GET)
 	public ModelAndView trade(@ModelAttribute TradeVO tradeVO) {
+		System.out.println(mybidService.trade(tradeVO).getFinalPrice());
+		System.out.println(mybidService.trade(tradeVO).getPhone_seller());
+		System.out.println(mybidService.trade(tradeVO).getPhone_bidder());
 		return new ModelAndView("trade","vo", mybidService.trade(tradeVO));
 	}
 	
 	
 	@RequestMapping(value="/myBidPlace.go", method=RequestMethod.GET)
 	public ModelAndView place(@ModelAttribute CategoryVO categoryVO) {
-		return new ModelAndView("myBidPlace","list",mybidService.bidplace(categoryVO));
+		return new ModelAndView("myBidPlace","list", mybidService.bidplace(categoryVO));
 	}
 	
 	

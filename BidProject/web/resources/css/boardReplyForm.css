@@ -1,8 +1,55 @@
 @charset "UTF-8";
 
-/* *{
-	background-color: #FAFAFA;
-} */
+/*header-----------------------------------------------------------------------------------------------------------------------*/
+header{
+	background-color: #00253E;
+	color: white;
+	width: 100%;
+	margin: 0;
+	height: 120px;
+}
+
+header div {
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 8px;
+}
+
+header #query {
+	margin-left: 5px;
+	background-color: #DDDDDD;
+}
+
+header h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 35px;
+	letter-spacing: 5px;
+	line-height: 18px;  /* LET IT BID 상하 위치 조정 */
+}
+
+header li {
+	float: right;
+	padding: 5px;
+	list-style: none;
+	margin: 0;
+}
+
+#title,.log,.mypage{
+	color: white;
+}
+
+.log:hover,.mypage:hover{
+	color: white;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
 
 body
 {
@@ -24,14 +71,6 @@ body
 	margin-top: 6%;
 }
 
-.box1
-{
-	background-color: black;
-	max-width;
-	height: 50px;
-	margin: 0;	
-	
-}
 
 .let
 {
@@ -62,37 +101,46 @@ body
 
 .btn1
 {
-	width: 20%;
-	height:20%;
+	width: 80px;
+	height:35px;
 	margin-right: 15px;
 	margin-top:15px;
 	margin-left:50px;
-	background-color: #272727;
+	background-color: #00253E;
 	cursor: pointer;
 	display: inline-block;
 	text-decoration: none;
 	border: none;
 	color: white;
 	border-radius: 2px;
+	font-size: 14px;
 }
 
 
 .btn2
 {
-	width: 20%;
-	background-color: #272727;
+	width: 80px;
+	height:35px;
+	background-color: white;
 	cursor: pointer;
 	display: inline-block;
-	border: none;
-	color: white;
+	border: 1px solid #00253E;
+	color: #00253E;
 	border-radius: 2px;
+	font-size: 14px;
 }
 
-.btn1:hover,.btn2:hover {
-	background-color: black;
+.btn1:hover{
+	background-color: white;
+	color: #00253E;
+	border: 1px solid #00253E;
 }
 
-
+.btn2:hover{
+	background-color: #00253E;
+	color: white;
+	border: none;
+}
 
 
 

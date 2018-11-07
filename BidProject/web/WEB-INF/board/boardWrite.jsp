@@ -9,10 +9,7 @@
 
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
-
+<jsp:include page="/menu.jsp" flush="true" />
 <div class="wrapper">
 <form method="post" action="/BidProject/write_proc.bd">
 <!-- <h3>글쓰기</h3> -->

@@ -17,23 +17,13 @@
 </script>
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
+<jsp:include page="/menu.jsp" flush="true" />
 
 
 <div class="wrap">
-<!-- <h2>게시글 보기</h2> -->
 <form method="get" action="/BidProject/boardview.bd">
 
 <table width="500">
-<!-- <tr>
-	<td colspan="3" bgcolor="777777"></td>
-</tr> -->
-
-<tr>
-<!-- 	<td colspan="3"><font size="5">{ob.subject}</font></td> -->
-</tr>
 <tr>
 <td width="500" class="sub">${view.subject}</td>
 </tr>

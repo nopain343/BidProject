@@ -1,5 +1,55 @@
 @charset "UTF-8";
 
+/*header-----------------------------------------------------------------------------------------------------------------------*/
+/* header{
+	background-color: #00253E;
+	color: white;
+	width: 100%;
+	margin: 0;
+	height: 120px;
+}
+
+header div {
+	text-align: right;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 8px;
+}
+
+header #query {
+	margin-left: 5px;
+	background-color: #DDDDDD;
+}
+
+header h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 35px;
+	letter-spacing: 5px;
+	line-height: 18px;  LET IT BID 상하 위치 조정
+}
+
+header li {
+	float: right;
+	padding: 5px;
+	list-style: none;
+	margin: 0;
+}
+
+#title,.log,.mypage{
+	color: white;
+}
+
+.log:hover,.mypage:hover{
+	color: white;
+}
+
+a{
+	text-decoration: none;
+}
+ */
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
 
 body
 {
@@ -21,18 +71,11 @@ body
 	margin-top: 5%;
 }
 
-.box1
-{
-	background-color: black;
-	max-width;
-	height: 50px;
-	margin: 0;	
-	
-}
 
 
 
-.let
+
+/* .let
 {
 	font-size: 25px;
     color: white;
@@ -40,7 +83,7 @@ body
     padding-left: 20px;
     line-height: 1.8;
 	
-}
+} */
 
 .sub
 {
@@ -76,21 +119,43 @@ body
 	text-align: right;
 }
 
-#list,#mod,#del,#rep
+#list,#del
 {
-	background-color: #272727;
+	width:60px;
+	height:30px;
+	background-color: #00253E;
 	cursor: pointer;
 	border: none;
 	color: white;
 	border-radius: 2px;
 }
 
-#list:hover,#mod:hover,#del:hover,#rep:hover
-{
-	background-color: black;
+#mod,#rep{
+	width:60px;
+	height:30px;
+	background-color: white;
+	cursor: pointer;
+	border: 1px solid #00253E;
+	color: #00253E;
+	border-radius: 2px;
+	font-weight: bold;
 }
 
+#list:hover,#del:hover
+{
+	background-color: white;
+	border: 1px solid #00253E;
+	color: #00253E;
+	border-radius: 2px;
+}
 
+#mod:hover,#rep:hover
+{
+	background-color: #00253E;
+	border: none;
+	color: white;
+	border-radius: 2px;
+}
 
 
 

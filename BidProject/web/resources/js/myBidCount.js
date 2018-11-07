@@ -64,12 +64,12 @@ $(document).ready(function(){
 			
 			if($(confirmname).val() == 1){
 				$(myBidname).html('<a href="/BidProject/trade.go?code=' + $(secretCodename).val() + 
-						          '&finalPrice=' + $(finalPrice).val() + '" style="color:black;">응찰자 연결</a>')
+						          '&finalPrice=' + $(finalPrice).val() + '">응찰자 연결</a>')
 			}else{
 				if(months < 0 || days < 0 || hours < 0 || minutes < 0 || seconds < 0){
-					$(myBidname).html('<a href="/BidProject/confirm.go?code=' + $(secretCodename).val() + '" style="color:black;">판매확정</a>')
+					$(myBidname).html('<a href="/BidProject/confirm.go?code=' + $(secretCodename).val() + '">판매확정</a>')
 				}else{
-					$(myBidname).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '" style="color:black;">상품정보가기</a>')
+					$(myBidname).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품정보가기</a>')
 				};
 			};
 		};
