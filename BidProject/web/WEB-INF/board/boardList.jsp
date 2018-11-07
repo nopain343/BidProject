@@ -38,15 +38,14 @@
 </head>
 <body>
 <jsp:include page="/menu.jsp" flush="true" />
-
 <div class="backimg"></div>
 
 <div class="container">
 <h1 class="qna">Q&A</h1>
 
-<table class="table table-hover table-secondary">
+<table class="table table-hover">  <!-- table-secondary -->
 
-	<thead class="thead-dark">
+	<thead class="thead">
 	<tr>
 		<th>글번호</th>
 		<th class="tt">제목</th>
@@ -98,8 +97,10 @@
 
 
 <div class="row justify-content-end">
-<div class="write"><a href="write.bd" class="btn btn-dark">글쓰기</a></div>
-<div class="col-md-offset-3"><a href="main.go?page=1" class="btn btn-outline-dark">MAIN</a></div>
+<c:if test="${!empty loginOK.id }">
+<a href="write.bd"><button id="writebtn" class="btn">글쓰기</button></a>
+</c:if>
+<a href="main.go?page=1"><button id="mainbtn" class="btn">MAIN</button></a>
 </div>
 
 </div>

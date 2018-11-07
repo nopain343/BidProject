@@ -10,11 +10,7 @@
 <title>글 수정</title>
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
-
-
+<jsp:include page="/menu.jsp" flush="true" />
 <div class="wrap">
 <form method="post" action="/BidProject/modify_proc.bd">
 <table>

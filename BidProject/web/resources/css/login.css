@@ -45,21 +45,22 @@
 {
 	width:30%;
 	height: 7%;
-	background-color: #272727;
+	/* background-color: #272727; */
+	background-color:#00253E;
 	cursor: pointer;
 	display: inline-block;
 	text-decoration: none;
 	border: none;
 	color: white;
 	font-size: 18px;
+	border-radius: 2px;
 }
 
 
 
-/* #submit:hover {background-color: #92FFFF} */
+/* #submit:hover {background-color: black} */
 
 #submit:active {
-  /* background-color: #6EE3F7; */
   border: none;
   transform: translateY(1px);
 }

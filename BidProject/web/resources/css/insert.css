@@ -32,11 +32,11 @@ a{
 	color: black;
 }
 
-.idbtn,.addrbtn
+.addrbtn
 {
 	height: 5%;
   	cursor: pointer;
-	background-color: #272727;
+	background-color: #00253E;
 	text-decoration: none;
 	border: none;
 	color: white;
@@ -86,7 +86,7 @@ a{
 	width:30%;
 	height: 5%;
 	cursor: pointer;
-	background-color: #272727;
+	background-color: #00253E;
 	font-size: 18px;
 	text-decoration: none;
 	border: none;
@@ -114,8 +114,10 @@ a{
 	font-weight: bold;
 }
 
-
-
+/* .addrbtn:hover,.submit:hover{
+	background-color: black;
+}
+ */
 
 
 

@@ -19,10 +19,7 @@ function checkBoardReply(){
 </script>
 </head>
 <body>
-<div class="box1">
-<span class="let">LET IT BID</span>
-</div>
-
+<jsp:include page="/menu.jsp" flush="true" />
 <div class="wrap">
 <form name="boardReplyForm" method="post" action="reply_proc.bd">
 <input type="hidden" name="seq" value="${reply.seq }">
