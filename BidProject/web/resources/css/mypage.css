@@ -12,41 +12,6 @@ input{
 	all:unset;
 }
 
-/*HEADER*****************************************************************************************************/
-header{
-	background-color: #272727;
-	color: white;
-	width: 100%;
-	margin: 0;
-	height: 120px;
-}
-
-header div {
-	text-align: right;
-	padding-right: 10px;
-	padding-top: 10px;
-	padding-bottom: 8px;
-}
-
-header #query {
-	margin-left: 5px;
-	background-color: #DDDDDD;
-}
-
-header h1 {
-	margin: 0;
-	text-align: center;
-	font-size: 35px;
-	letter-spacing: 5px;
-}
-
-header li {
-	float: right;
-	padding: 5px;
-	list-style: none;
-	margin: 0;
-}
-	
 /*BODY*****************************************************************************************************/
 
 body{

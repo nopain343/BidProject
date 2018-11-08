@@ -20,16 +20,14 @@
 					<a href="/BidProject/auction.au?code=${ob.code}">상품정보가기</a>
 				</div>
 				<%-- <span id="timetest${vs.count}"></span><br> --%>
+				
 				<br><br><br><br>
+				
 				<div class="wrapper4">
 					<span>마감시간 ${ob.term}</span><br>
 					<span>나의 응찰가 ${ob.price}원</span><br>
 					<span id="priceCheck${vs.count}" class="priceCheck"></span><br>
 				</div>
-				
-				<%-- <div id="myBidPlace${vs.count}" class="wrapper5">
-					<a href="/BidProject/auction.au?code=${ob.code}">상품정보가기</a>
-				</div> --%>
 				
 				
 				<input type="hidden" id="finalPrice${vs.count}" value="${ob.finalPrice}"/>

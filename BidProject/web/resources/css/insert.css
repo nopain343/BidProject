@@ -1,133 +1,76 @@
 @charset "UTF-8";
 
-*{
+body {
+	margin: 0;
+}
+
+input {
+	all:unset;
+	padding: 6px;
+}
+
+section {
 	background-color: #FAFAFA;
-	
 }
 
-
-.wrap
-{
+.wrap {
 	width:100%;
-	height:100%;
-	margin: 0 auto;
-	text-align: left;
-	margin-top: 3%;
-	margin-left: 36%;
-	
 }
 
-.title
-{
-	margin-top: 3%;
-	text-align: center;
-	font-size: 50px;
-	color: #272727;
-}
-
-a{
-	cursor:pointer;
-	border: none;
-	text-decoration: none;
-	color: black;
-}
-
-.addrbtn
-{
-	height: 5%;
-  	cursor: pointer;
-	background-color: #00253E;
-	text-decoration: none;
-	border: none;
-	color: white;
-}
-
-.txtid
-{
-	text-align: left;
-	text-justify: inter-word;
-	
+form {
+	width: 40%;
+	margin: auto;
 }
 
 
-/* #id,#password,#password2,#username,#roadFullAddr,#phone,#pwquestion,#pwanswer
-{
+form .label {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.8em;
+}
+
+form .textbox {
+	width: 100%;
+	cursor: pointer;
 	background-color: white;
-} */
+	font-size: 16px;
+}
 
-#idch,#pwch,#usernamech,#addrch,#phonech,#questionch
-{
+form .roadFullAddr {
+	width: 84%;
+	cursor: pointer;
+	background-color: white;
+	font-size: 16px;
+}
+
+form .addrbtn {
+	width: 10%;
+	color: white;
+	font-size: 14px;
+  	cursor: pointer;
+	background-color: rgb(0, 37, 62);
+	transition: background-color 300ms ease 0ms;
+	
+}
+
+form .addrbtn:hover {
+  	background-color: rgb(42, 69, 136);
+}
+
+#idch,#pwch,#usernamech,#addrch,#phonech,#questionch {
 	font-size: 14px;
 }
 
-
-#roadFullAddr
-{
-	width:25%;
-	height: 5%;
-	cursor: pointer;
-	background-color: white;
-	font-size: 18px;
-}
-
-#id,#password,#password2,#username,#phone,#pwquestion,#pwanswer
-{
+.submit {
 	width:30%;
-	height: 5%;
 	cursor: pointer;
-	background-color: white;
 	font-size: 18px;
-}
-
-
-
-.submit
-{
-	width:30%;
-	height: 5%;
-	cursor: pointer;
-	background-color: #00253E;
-	font-size: 18px;
-	text-decoration: none;
-	border: none;
 	color: white;
-	margin-bottom: 5%;
+	background-color: rgb(0, 37, 62);
+	transition: background-color 300ms ease 0ms;
 }
 
-.submit:active {
-  /* background-color: #6EE3F7; */
-  border: none;
-  transform: translateY(1px);
+.submit:hover {
+	background-color: rgb(42, 69, 136);
 }
-
-.txtid,.txtpw,.txtpw2,.txtname,.txtaddr,.txtphone,.txtpwqt,.txtpwas
-{
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 2em;
-}
-
-
-#roadFullAddr
-{
-	font-size: 12px;
-	font-weight: bold;
-}
-
-/* .addrbtn:hover,.submit:hover{
-	background-color: black;
-}
- */
-
-
-
-
-
-
-
-
-
-
-
-
 
