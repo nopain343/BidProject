@@ -52,7 +52,6 @@
 					<label for="pwanswer" class="label">비밀번호 찾기 답</label><br>
 					<input type="text" id="pwanswer" class="textbox" name="pwanswer" autocomplete="off"/><br>
 					<span id="questionch"></span><br>
-					
 					<input type="submit" class="submit" value="가입하기"/>
 					
 					<a href="/BidProject/login.go" id="back" class="back">뒤로가기</a>
