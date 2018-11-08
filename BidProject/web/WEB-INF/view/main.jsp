@@ -32,15 +32,9 @@
 	}
 %>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-	 <meta name="viewport" content="width=device-width, initial-scale=1">
- 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<jsp:include page="/menu.jsp" flush="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
@@ -50,7 +44,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <title>Let It Bid</title>
-<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/category.js"></script> --%>
 <script>
 function ajax(value){
 	var dataToPost = { 
@@ -102,7 +95,7 @@ function paging(data){
 		var prepage = parseInt(data[0].page)-1;
 		total += "<div onclick='ajax(" + prepage + ")'><span class='leftarrow'><i class='fas fa-angle-left'></i></span></div>";
 	}
-	
+
 	if(data[0].page != totalP){
 			
 		var nextpage = parseInt(data[0].page)+1;
@@ -129,99 +122,20 @@ $(document).on('mouseleave','#filter', function(){
 </script>
 
 
-</head>
-<body>
-<jsp:include page="/menu.jsp" flush="true" />
-
-
 <section id="main" class="main">
 	<div>
 		<h1>BID YOUR ITEMS</h1>
 	</div>
 </section>
 
-
-<section>
-	<nav id="filter">
-	<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">BID NOW</a></span>
-		
-		<span class="boldmenu" id="menuclick">CATEGORY</span>
-		<span id="menubar">
-		<a href="main.ct?cat1=AA">의류</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-		<a href="main.ct?cat1=BB">패션잡화</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=CC">뷰티미용</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=DD">유아,아동,출산</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=EE">스포츠레저</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=FF">디지털가전</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=GG">애완</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=HH">도서/티켓</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		
-		
-			<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
-	
-	</nav>	
-
-	
-	
-</section>
-
-
-<!-- 광고효과 -->
-<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
- 
-
-    Wrapper for slides
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <a href="http://m.bunjang.co.kr/splash"><img src="/BidProject/resources/image/iphone.jpg" alt="Los Angeles" style="width:60%;"></a>
-       
-      </div>
-
-      <div class="item">
-       <a href="http://m.bunjang.co.kr/products/91762800?ref=event_banner"><img src="/BidProject/resources/image/knit.jpg" alt="Chicago" style="width: 60%;"></a> 
-        
-      </div>
-    
-      <div class="item">
-       <a href="http://m.bunjang.co.kr/products/79107403?ref=event_banner"> <img src="/BidProject/resources/image/cosmetic.jpg" alt="New York" style="width:60%;"></a>
-    
-      </div>
-  
-    </div>
-
-    Left and right controls
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
- -->
-
-
-
+<jsp:include page="/Categorybar.jsp" flush="true" />
 <span class="deal">오늘의 경매</span> <span class="hot">ㅣ Let it Bid가 엄선한 핫한 경매품!</span>
-
 
 
 <div id="update">
 <%
 if(searchn != 0){ 
 %>
-
 
 
 <section class=wrap0>
@@ -258,7 +172,7 @@ if(pg != totalP){%>
 	<div onclick="ajax(<%=pg+1%>)">
 		<input type="hidden" id="nxt_page" value="<%=pg+1%>">
 		
-		<!-- <h4>Next</h4> --><span class="arrow"><i class="fas fa-angle-right"></i></span>
+		<span class="arrow"><i class="fas fa-angle-right"></i></span>
 	</div>
 <% 
 }
@@ -268,13 +182,9 @@ if(pg != totalP){%>
 <%
 }
 %>
-	 
-
-
 </div>
 
-	
-
+<footer>
 <ul class="footer">
 <li>LET IT BID 소개</li>
 <li>이용 안내</li>
@@ -285,5 +195,6 @@ if(pg != totalP){%>
  LET IT BID 주소 : 335 효령로 서초1동 서초구 서울특별시     TEL : 02-754-7302 <br>
  LET IT BID는 판매중개자로서 중고거래마켓의 거래 당사자가 아니며, 입점판매가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.
 </div>
+</footer>
 </body>
 </html>

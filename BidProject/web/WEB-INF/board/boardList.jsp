@@ -14,38 +14,32 @@
 %>
 
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/boardList.css">
 <title>Insert title here</title>
 <script>
-
   function boardView(seq,pg){
-	
 	location.href="boardview.bd?seq="+seq+"&pg="+pg;
 }  
-
-   
 </script>
 </head>
 <body>
 <jsp:include page="/menu.jsp" flush="true" />
-<div class="backimg"></div>
 
-<div class="container">
-<h1 class="qna">Q&A</h1>
+<section id="backimg" class="backimg">
+	<div>
+		<h1>CUSTOMER SERVICE</h1>
+	</div>
+</section>
 
-<table class="table table-hover">  <!-- table-secondary -->
-
-	<thead class="thead">
+<jsp:include page="/Categorybar.jsp" flush="true" />
+<table class="tb">
+	<thead class="tbhead">
 	<tr>
 		<th>글번호</th>
 		<th class="tt">제목</th>
@@ -69,51 +63,24 @@
 				<a href="javascript:boardView(${ob.seq},'${list.get(0).pg}')">${ob.subject}</a></td>
 				<td class="name">${ob.username}</td>
 				<td class="hit">${ob.hit}</td>
-				<td>${ob.logtime}</td>
+				<td class="time">${ob.logtime}</td>
 			</tr>
 		</c:forEach>
 	</c:if>
 	<c:if test="${empty list}">
 		<tr><th>내용이 없습니다.</th></tr>
 	</c:if>
-	
+</table>
 
-	
-	
-
-</table><br>
-
-
+<br>
 <span class="pg" align="center" bgcolor="white"><%=paging.getPagingHTML() %></span>
 
-		
-		
-<ul class="pagination">
-
-</ul>
-    
-    
-
-
+<ul class="pagination"></ul>
 
 <div class="row justify-content-end">
-<c:if test="${!empty loginOK.id }">
 <a href="write.bd"><button id="writebtn" class="btn">글쓰기</button></a>
-</c:if>
 <a href="main.go?page=1"><button id="mainbtn" class="btn">MAIN</button></a>
-</div>
-
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 

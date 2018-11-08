@@ -48,7 +48,6 @@ function checkBoardReply(){
 		<input type="button" class="btn1" value="답글쓰기" onclick="checkBoardReply()">
 		<input type="reset" class="btn2" value="다시작성">
 		</td>
-		
 	</tr>
 </table>
 </form>

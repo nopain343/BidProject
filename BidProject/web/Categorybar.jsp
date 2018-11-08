@@ -1,32 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Categorybar.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 	<script defer src="js/all.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<title>Insert title here</title>
 <script type="text/javascript">
+$(document).on('mouseleave','#filter', function(){
+	$('#menubar').slideUp(200);
+	
+}); 
 $(document).on('mouseover','#menuclick', function(){
 	
 	$('#menubar').slideDown(200);	
 	
 });
 
-$(document).on('mouseleave','#filter', function(){
-	$('#menubar').slideUp(200);
-	
-}); 
 </script>
-</head>
-<body>
 <section>
 	<nav id="filter">
+		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">BID NOW</a></span>
 		<span class="boldmenu" id="menuclick">CATEGORY</span>
 		<span id="menubar">
 		<a href="main.ct?cat1=AA">의류</a>
@@ -46,10 +40,6 @@ $(document).on('mouseleave','#filter', function(){
 		<a href="main.ct?cat1=HH">도서/티켓</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">START BIDDING</a></span>
 		
-			<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
 	</nav>	
 </section>
-</body>
-</html>
