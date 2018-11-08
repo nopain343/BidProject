@@ -10,15 +10,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/myBid.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/myBidPlace.css">
 <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-<script>
-/* function event(){
-	if(confirm("정말로 탈퇴 하시겠습니까?") == true){
-		document.form.submit();
-	}else{
-		return;
-	}
-} */
-</script>
 
 <section id="main" class="main">
 	<h1>MY PAGE</h1>
@@ -46,7 +37,7 @@
 		
 			<div class="cover5">
 				<form action="/BidProject/delete.go" method="post">
-					<input type="submit" value="LEAVE" onclick="event();"/>
+					<input type="submit" value="LEAVE" onclick="return confirm('정말로 탈퇴 하시겠습니까?');"/>
 				</form>
 			</div>
 			

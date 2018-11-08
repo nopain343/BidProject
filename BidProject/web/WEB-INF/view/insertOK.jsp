@@ -23,9 +23,9 @@
 		<div class="outer">
 			<div class="inner">
 				<div class="centered">
-		<p class="welhead">LET IT BID의 회원이 되신 것을 환영합니다</p>
-		<p>회원가입이 완료되었습니다</p>
-		<p>패션, 뷰티, 스포츠레저 등 회원님을 위한 다채로운 경매물품 들이 기다리고 있습니다</p> 
+					<p class="welhead">LET IT BID의 회원이 되신 것을 환영합니다</p>
+					<p>회원가입이 완료되었습니다</p>
+					<p>패션, 뷰티, 스포츠레저 등 회원님을 위한 다채로운 경매물품 들이 기다리고 있습니다</p> 
 				</div>
 			</div>
 		</div>

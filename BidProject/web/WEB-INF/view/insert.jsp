@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<jsp:include page="/menu.jsp" flush="true"/>
-
 <head>
 <meta charset="UTF-8">
 <title>Sign Up</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/insert.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/insert.css">
 </head>
+
+<jsp:include page="/menu.jsp" flush="true"/>
 		<section>
 			<div class="wrap">
 				<form action="/BidProject/insertProc.go" method="post" name="form" onsubmit="return Validate();">
@@ -28,8 +28,9 @@
 					<span id="usernamech"></span><br>
 					
 					<label for="roadFullAddr" class="label">주소</label><br>
-					<input type="text" id="roadFullAddr" name="roadFullAddr" class="roadFullAddr"/>
+					<input type="text" id="roadFullAddr" name="roadFullAddr" class="textbox"><br>
 					<input type="button" class="addrbtn" onclick="goPopup();" value="주소검색"/><br>
+					
 					<span id="addrch"></span><br>
 					
 					<label for="phone" class="label">전화번호</label><br>
@@ -50,10 +51,11 @@
 					     
 					<label for="pwanswer" class="label">비밀번호 찾기 답</label><br>
 					<input type="text" id="pwanswer" class="textbox" name="pwanswer" autocomplete="off"/><br>
-					<span id="questionch"></span><br><br>
+					<span id="questionch"></span><br>
 					
 					<input type="submit" class="submit" value="가입하기"/>
-				
+					
+					<a href="/BidProject/login.go" id="back" class="back">뒤로가기</a>
 				</form>
 			</div>
 		</section>

@@ -111,7 +111,7 @@ public class UserController {
 		String id = ((UserVO)session.getAttribute("loginOK")).getId();
 		if(service.deleteUser(id)) {
 			session.invalidate();
-			return new ModelAndView("deleteOK");
+			return new ModelAndView("login");
 		}
 		return null;
 	}
