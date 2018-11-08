@@ -2,6 +2,7 @@
 
 *{
 	font-family: 'Cinzel';
+
 }
 a{
 	text-decoration: none;
@@ -94,12 +95,10 @@ header h1 {
 }
 
 .head{
-	font-size: 55px;
+	font-size: 50px;
 	text-align: center;
-	font-style: 'Cinzel';
 	color: white;
-	font-weight: bold;
-	margin-top: 100px;
+	padding-top: 80px;
 }
 
 
@@ -192,5 +191,9 @@ input[type=file] {
 
     color: #000080;
 }
+.prodname-1{
+	font-size: 22px;
+}
+
 
 
