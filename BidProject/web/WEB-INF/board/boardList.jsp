@@ -20,10 +20,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/boardList.css">
 <title>Insert title here</title>
 <script>
@@ -39,13 +39,14 @@
 <body>
 <jsp:include page="/menu.jsp" flush="true" />
 <div class="backimg"></div>
+<jsp:include page="/Categorybar.jsp" flush="true" />
 
 <div class="container">
 <h1 class="qna">Q&A</h1>
 
-<table class="table table-hover">  <!-- table-secondary -->
+<table class="tb">
 
-	<thead class="thead">
+	<thead class="tbhead">
 	<tr>
 		<th>글번호</th>
 		<th class="tt">제목</th>

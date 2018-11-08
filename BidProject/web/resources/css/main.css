@@ -17,46 +17,12 @@ html {
 }
 
 
-/*HEADER*****************************************************************************************************/
-header{
-	background-color: #272727;
-	color: white;
-	width: 100%;
-	margin: 0;
-	height: 120px;
-}
 
-header div {
-	text-align: right;
-	padding-right: 10px;
-	padding-top: 10px;
-	padding-bottom: 8px;
-}
-
-header #query {
-	margin-left: 5px;
-	background-color: #DDDDDD;
-}
-
-header h1 {
-	margin: 0;
-	text-align: center;
-	font-size: 35px;
-	letter-spacing: 5px;
-}
-
-header li {
-	float: right;
-	padding: 5px;
-	list-style: none;
-	margin: 0;
-}
-	
-/*BODY*****************************************************************************************************/
-
+/*body-------------------------------------------------------------------------------------------------------------*/
 body{
 	margin: 0;
 	height: 100%;
+	width:100%;
 	position: relative;
 }
 
@@ -66,9 +32,6 @@ body{
 	height: 350px;
 }
 
-
-
-
 #main h1 {
 	color: #DDFFFF;
 	text-shadow: 1px 4px teal; 
@@ -77,41 +40,6 @@ body{
 	text-align: center;
 	padding-top: 140px;
 	
-}
-
-
-
-nav#filter{
-	margin-top: auto;
-	background-color: #272727;
-	height: 60px;
-	padding-top: 12px;
-}
-
-#filter a {
-	padding: 15px;
-}
-
-#myCarousel{
-	padding-left: 400px;
-	padding-bottom: 20px;
-	}
-
-.boldmenu{
-	color: #DDFFFF;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.qna{
-	color: #DDFFFF;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-#menubar{
-	font-size : 15px;
-	display : none;
 }
 
 .deal{

@@ -10,13 +10,13 @@
 	<!-- <link rel="stylesheet" type="text/css" href="menu.css"> -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/menu.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- æ∆¿Ãƒ‹ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- ÏïÑÏù¥ÏΩò -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- jQuery -->
 <script>
 function enterkey() {
     if (window.event.keyCode == 13) {
 
-         // ø£≈Õ≈∞∞° ¥≠∑»¿ª ∂ß Ω««‡«“ ≥ªøÎ
+         // ÏóîÌÑ∞ÌÇ§Í∞Ä ÎàåÎ†∏ÏùÑ Îïå Ïã§ÌñâÌï† ÎÇ¥Ïö©
          search();
     }
 }
@@ -61,85 +61,9 @@ function search(){
 		
 		<div id="search" class="search">
 				<span id="searchon" onclick="search()"><i class="fa fa-search" class="w3-xlarge"></i></span>
-				<input id="query" name="query" type="text" title="∞ÀªˆæÓ ¿‘∑¬" maxlength="255" onkeyup="enterkey();" 
-				class="input_text" style="display : none; color:black;" placeholder="∞ÀªˆæÓ∏¶ ¿‘∑¬«œººø‰"/>
+				<input id="query" name="query" type="text" title="Í≤ÄÏÉâÏñ¥ ÏûÖÎ†•" maxlength="255" onkeyup="enterkey();" 
+				class="input_text" style="display : none; color:black;" placeholder="Í≤ÄÏÉâÏñ¥Î•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî"/>
 		</div>
 		<span class="let">LET IT BID</span>
 	
 	</header>
-</body>	
-</html>
-
-
-
-
-
-
-
-
-
-
-<%-- <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<script>
-function enterkey() {
-    if (window.event.keyCode == 13) {
-
-         // ø£≈Õ≈∞∞° ¥≠∑»¿ª ∂ß Ω««‡«“ ≥ªøÎ
-         search();
-    }
-}
-
-function search(){
-	var word = $("#query").val();
-	
-	location.href="search.ct?word="+word;
-	
-}
-
-$(document).on('mouseover','#searchon', function(){
-	$('#query').slideDown(200);
-	
-});
-
-/* $(document).on('mouseleave','#search', function(){
-	$('#query').slideUp(200);
-	
-}); */
-</script>
-</head>
-
-<body>
-<header>
-<div>
-	<ul>
-		<li id="log">
-			<c:if test="${empty loginOK}">
-				<a href="/BidProject/login.go" class="log">LOGIN</a>
-			</c:if>
-			<c:if test="${!empty loginOK}">
-			  	<a href="/BidProject/logout.go" class="log">LOGOUT</a>
-			</c:if>
-		</li>
-		<li id="mypage">
-			<c:if test="${!empty loginOK}">
-	      		<a href="/BidProject/mypage.go" class="mypage">MY PAGE</a>
-	      	</c:if>
-	   	</li>
-	</ul>
-	<div id="search" class="search">
-		<span id="searchon" onclick="search()"><i class="fa fa-search" class="w3-xlarge"></i></span>
-		<input id="query" name="query" type="text" title="∞ÀªˆæÓ ¿‘∑¬" maxlength="255" onkeyup="enterkey();" 
-		 class="input_text" style="display : none; color:black;"/>
-	</div>
-	
-
-	<h1><a href="main.go?page=1" id="title">LET IT BID</a></h1>
-</div>	
-</header> --%>
