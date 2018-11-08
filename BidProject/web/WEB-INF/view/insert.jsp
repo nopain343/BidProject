@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Sign Up</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/insert.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/insert.css">
 </head>
