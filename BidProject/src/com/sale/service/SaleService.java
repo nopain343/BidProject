@@ -12,6 +12,17 @@ public class SaleService {
 	private SaleDAO saleDAO;
 	
 	public String insert(CategoryVO categoryVO) {
+		
+		String year = categoryVO.getYear();
+		String month = categoryVO.getMonth();
+		String day = categoryVO.getDay();
+		String hour = categoryVO.getHour();
+		String min = categoryVO.getMin();
+	
+		String term = year +"-"+ month +"-"+ day+" "+hour+":"+ min +":"+"00";
+		
+		categoryVO.setTerm(term);
+		
 		return saleDAO.insert(categoryVO);
 	}
 

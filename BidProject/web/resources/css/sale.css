@@ -2,15 +2,14 @@
 
 *{
 	font-family: 'Cinzel';
-
 }
 a{
 	text-decoration: none;
 	color: white;
 }
-/* html {
-height: 100%;
-} */
+html {
+	height: 100%;
+}
 
 /*HEADER*****************************************************************************************************/
 header{
@@ -48,152 +47,165 @@ header li {
 }
 
 /*BODY*****************************************************************************************************/
-header{
-	background-color: #272727;
-	color: black;
-	width: 100%;
-	margin: 0;
-	height: 120px;
-}
-header h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 35px;
-    letter-spacing: 5px;
-    color: white;
-}
 
 #main {
 	background-image: url("/BidProject/resources/image/minimal.jpg");
 	background-size: cover;
 	height: 200px;
-	width: 100%;
-	position: absolute;
-	z-index: 1;
 }
 
 
-.table{
-	   
-    margin: auto;
-    padding-bottom: 22px;
-    margin-top: 225px;
-    margin-bottom: 33px;
-    padding-top: 20px;
-    padding-left: 199px;
-    padding-right: 217px;
-
-	
-/* 	    position: center;
-	    width: 30%;
-	    height : 1000px;
-	    margin: auto;
-	  	 border-color : aqua;
-	    border: solid;
-	    background-color: light grey;
-	    padding-bottom: 22px; */
-}
-
-.head{
+#main h1{
 	font-size: 50px;
-	text-align: center;
-	color: white;
-	padding-top: 80px;
-}
-
-
-.form{
-	border: solid;
-	position: relative;
 	width: 100%;
-	z-index: 2;
-	opacity: 0.9;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-.formcover{
-	border: solid;
-	position: absolute;
-	background-color : #d9aa80;
-	width:100%;
-	height : 200px;
-	z-index: 3;
-	opacity: 0.2;
-	
-}
-
-/* .left{
-	width: 50px;
-	height:200px;
-	padding-top:100px;
-	margin-left: 10px;
-	border: 1px;
-	background-color: magenta;
-} */
-
-#cat1{
-	height: 43px;
-    width: 223px;
-}
-#term{
-	height: 34px;
-	width: 219px;
-}
-#prodname{
-	height: 34px;
-	width: 219px;
-}
-#price{
-	height: 34px;
-	width: 219px;
-}
-#ref{
-	height: 34px;
-	width: 219px;
-}
-#condition{
-	height: 43px;
-    width: 223px;
-}
-input[type=text] {
-	border-top: 0 none;
-	border-left: 0 none;
-	border-right: 0 none;
-}
-input[type=number] {
-	border-top: 0 none;
-	border-left: 0 none;
-	border-right: 0 none;
-	border-bottom-color: grey;
-	
-}
-select{
-	border-top: 0 none;
-	border-left: 0 none;
-	border-right: 0 none;
-}
-
-#submit
-{
-	width:30%;
-	height: 7%;
-	background-color: #c0c0c0;
-	cursor: pointer;
-	display: inline-block;
-	text-decoration: none;
-	border: none;
+	margin: auto;
+	text-align: center;
+	padding-top: 80px;
 	color: white;
-	font-size: 18px;
-}
-
-input[type=file] {
-
-    color: #000080;
-}
-.prodname-1{
-	font-size: 22px;
 }
 
 
+
+.container{
+	/* margin-top: 20px;
+	border-color: magenta;
+	border: 1px dotted; */
+	
+	width: 70%;
+	height: 70%;
+	margin: 40px auto;
+	
+}
+
+.outer{
+	
+	display:table;
+	width:100%;
+	height: 100%;
+}
+.inner{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.centered{
+	position: relative;
+	display: inline-block;
+	
+	width:60%;
+	padding: 1em;
+	color: black;
+}
+
+
+.prodcover{
+}
+
+.prodtitle{
+	text-align: left;
+}
+.descrip{
+	margin-top: 10px;
+}
+
+.prodname{
+	width: 100%;
+		border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+	border-color: black;
+	border-bottom: 1px solid;
+}
+
+.descover{
+	
+}
+
+.selec{
+	margin-top: 30px;
+	border: 1px dotted red;
+	height: 50%;
+}
+
+select{
+	text-align: left;
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+	border-color: black;
+	border-bottom: 1px solid;
+}
+.cat1cover{
+	text-align: left;
+	width: 30%;
+	border: 1px dotted magenta;
+	float: left;
+}
+
+.condicover{
+	text-align: left;
+	border: 1px dotted aqua;
+	width: 30%;
+	float: left;
+}
+
+#condition{
+	width:90%;
+	
+}
+
+
+.pricecover{
+	float:left;
+	width:30%;
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+	border-color: black;
+	border-bottom: 1px solid;
+}
+
+
+.middle{
+	text-align: left;
+	margin-top: 63px;
+	float: left;
+}
+
+
+.termcover{
+}
+.termtitle{
+	
+}
+
+
+
+.filecover{
+	border: 1px dotted black;
+	height: 30px;
+	margin-top: 50px;
+	position:relative;
+	width:20px;
+}
+
+
+
+.bottom{
+	border : 3px dotted red;
+	margin-top : 150px;
+	height: 50px;
+}
+
+
+
+
+/* .condition{
+	margin-left: 20px;
+	float: left;
+	}
+
+.pricecover{
+} */
 
