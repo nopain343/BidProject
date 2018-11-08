@@ -1,55 +1,5 @@
 @charset "UTF-8";
 
-/*header-----------------------------------------------------------------------------------------------------------------------*/
-header{
-	background-color: #00253E;
-	color: white;
-	width: 100%;
-	margin: 0;
-	height: 120px;
-}
-
-header div {
-	text-align: right;
-	padding-right: 10px;
-	padding-top: 10px;
-	padding-bottom: 8px;
-}
-
-header #query {
-	margin-left: 5px;
-	background-color: #DDDDDD;
-}
-
-header h1 {
-	margin: 0;
-	text-align: center;
-	font-size: 35px;
-	letter-spacing: 5px;
-	line-height: 18px;  /* LET IT BID 상하 위치 조정 */
-}
-
-header li {
-	float: right;
-	padding: 5px;
-	list-style: none;
-	margin: 0;
-}
-
-#title,.log,.mypage{
-	color: white;
-}
-
-.log:hover,.mypage:hover{
-	color: white;
-}
-
-a{
-	text-decoration: none;
-}
-
-/*-----------------------------------------------------------------------------------------------------------------------*/
-
 body
 {
 	margin: 0;
@@ -59,6 +9,10 @@ body
 	background-color: #FAFAFA;
 }
 
+a{
+	text-decoration: none;
+	color: white;
+}
 .wrapper
 {
 	box-sizing:border-box;
@@ -68,17 +22,6 @@ body
 	margin: 0 auto;
 	text-align: center;
 	margin-top: 7%;
-}
-
-
-.let
-{
-	font-size: 25px;
-    color: white;
-    background-color: black;
-    padding-left: 20px;
-    line-height: 1.8;
-	
 }
 
 .sub
@@ -139,24 +82,5 @@ body
 	color: white;
 	border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
