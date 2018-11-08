@@ -88,3 +88,7 @@ section .wrap .back {
 section .wrap .back:hover {
 	background-color: rgb(42, 69, 136);
 }
+
+a{
+	text-decoration: none;
+}
