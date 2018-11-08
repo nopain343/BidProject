@@ -9,11 +9,29 @@ body
 	background-color: #FAFAFA;
 }
 
-.backimg{
+/* .backimg{
 	background-image: url('../image/Havana.jpeg');
 	background-size: cover;
 	width: 100%;
 	height: 230px;
+}
+ */
+
+
+#backimg {
+	background-image: url("/BidProject/resources/image/Havana.jpeg");
+	background-size: cover;
+	height: 200px;
+}
+
+#backimg h1 {
+	color: #DDFFFF;
+	text-shadow: 1px 4px teal; 
+	font-size: 50px;
+	margin: auto;
+	text-align: center;
+	padding-top: 80px;
+	letter-spacing: 5px;
 }
 
 .write
@@ -66,21 +84,42 @@ font{
 	padding-left: 27px !important;
 }
 
-.tt
-{
-	padding-left: 24px !important;
+.tb{
+	width: 1000px;
+	height: 300px;
+	margin-top: 100px;
+    margin-left: 18%;
 }
-
-
-.hit
-{
-	padding-left: 31px !important;
-}
-
 
 .tbhead{
 	background-color: #00253E;
 	color: white;
+}
+
+td.time,td.name{
+	text-align: center;
+}
+
+td.seq{
+	text-align:center;
+	width: 80px;
+	padding-right: 25px;
+}
+
+td.hit{
+	text-align:center;
+	width: 100px;
+}
+
+td{
+	border-bottom: 1px solid grey;
+}
+
+td.a:hover{
+	color: black;
+}
+table{
+	 border-collapse: collapse; border-spacing: 0;
 }
 
 .btn{
@@ -96,12 +135,17 @@ font{
 #writebtn{
 	background-color: #00253E;
 	color: white;
+	display:inline-block;
+	border: none;
+	margin-left: 70%;
+	cursor:pointer;
 }
 
 #mainbtn{
 	background-color: white;
 	color: #00253E;
 	border: 1px solid #00253E;
+	cursor:pointer;
 }
 
 
