@@ -50,5 +50,11 @@ public class MypageDAO {
 	}
 
 
+	public List<BanVO> banlist() {
+		
+		return factory.openSession().selectList("myPageMapper.banlist");
+	}
+
+
 
 }
