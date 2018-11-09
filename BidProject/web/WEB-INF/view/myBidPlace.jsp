@@ -21,7 +21,7 @@
 				</div>
 				<%-- <span id="timetest${vs.count}"></span><br> --%>
 				
-				<br><br><br><br>
+				<br><br><br>
 				
 				<div class="wrapper4">
 					<span>마감시간 ${ob.term}</span><br>
