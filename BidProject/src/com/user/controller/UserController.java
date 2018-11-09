@@ -61,10 +61,6 @@ public class UserController {
 		return new ModelAndView("main", "list", categoryService.categoryList(1));
 	}
 	
-	@RequestMapping("/mypage.go")
-	public ModelAndView mypage() {
-		return new ModelAndView("mypage");
-	}
 	
 	@RequestMapping("/insert.go")
 	public ModelAndView insert() {

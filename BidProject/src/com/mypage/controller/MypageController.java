@@ -20,31 +20,37 @@ public class MypageController {
 	private MypageService mybidService;
 	
 	
-	@RequestMapping(value="/myBid.go" , method=RequestMethod.GET)
+
+	@RequestMapping("/mypage.mp")
+	public ModelAndView mypage() {
+		return new ModelAndView("mypage");
+	}
+	
+	@RequestMapping(value="/myBid.mp" , method=RequestMethod.GET)
 	public ModelAndView list(@ModelAttribute CategoryVO categoryVO) {
 		return new ModelAndView("myBid","list",mybidService.mybid(categoryVO));
 	}
 	
 	
-	@RequestMapping(value="/confirm.go", method=RequestMethod.GET)
+	@RequestMapping(value="/confirm.mp", method=RequestMethod.GET)
 	public ModelAndView confirm(@ModelAttribute CategoryVO categoryVO) {
 		return new ModelAndView("myBid","list", mybidService.confirm(categoryVO));
 	}
 	
-	@RequestMapping(value="/trade.go", method=RequestMethod.GET)
+	@RequestMapping(value="/trade.mp", method=RequestMethod.GET)
 	public ModelAndView trade(@ModelAttribute TradeVO tradeVO) {
 		
 		return new ModelAndView("trade","vo", mybidService.trade(tradeVO));
 	}
 	
 	
-	@RequestMapping(value="/myBidPlace.go", method=RequestMethod.GET)
+	@RequestMapping(value="/myBidPlace.mp", method=RequestMethod.GET)
 	public ModelAndView place(@ModelAttribute CategoryVO categoryVO) {
 		return new ModelAndView("myBidPlace","list", mybidService.bidplace(categoryVO));
 	}
 	
 	
-	@RequestMapping(value="/banyou.go" , method=RequestMethod.POST)
+	@RequestMapping(value="/banyou.mp" , method=RequestMethod.POST)
 	public ModelAndView banyou(@ModelAttribute BanVO bann) {
 		BanVO ban = bann;
 		switch(bann.getReason()) {
@@ -60,15 +66,14 @@ public class MypageController {
 	}
 	
 
-	@RequestMapping(value="/banready.go", method=RequestMethod.GET)
+	@RequestMapping(value="/banready.mp", method=RequestMethod.GET)
 	public ModelAndView banready(@ModelAttribute BanVO ban) {
 		return new ModelAndView("banready","ban",ban);
 	}
 	
-	@RequestMapping(value="/bantest.go", method=RequestMethod.POST)
-	public ModelAndView bantest(@RequestParam(value="code") String code) {
-		System.out.println("bantest : " + code);
-		return new ModelAndView("mypage");
+	@RequestMapping(value="/banlist.mp")
+	public ModelAndView bantest() {
+		return new ModelAndView("banlist","list",mybidService.banlist());
 	}
 	
 }

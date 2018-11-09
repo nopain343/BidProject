@@ -52,4 +52,12 @@
 			INSERT INTO BAN VALUES(#{code},#{prodname},#{seller_id}, #{seller_name}, #{buyer_id}, #{reason})
 		]]>
 	</insert>
+	
+	<select id="banlist" resultType="banVO">
+		<![CDATA[
+			SELECT * FROM BAN
+		]]>
+	</select>
+	
+	
 </mapper>

@@ -38,4 +38,8 @@ public class MypageService {
 		return mybidDAO.banyou(ban);
 	}
 
+	public List<BanVO> banlist() {
+		return mybidDAO.banlist();
+	}
+
 }

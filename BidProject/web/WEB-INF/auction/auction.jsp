@@ -67,7 +67,7 @@ function banyou(value1 , value2,value3){
 	var code = value1;
 	var prodname = value2;
 	var id = value3;
-	openWin = window.open("banready.go?code=" + code + "&prodname="+prodname+"&seller_id=" + id,"childForm","width=570, height=350, resizable = no, scrollbars = no");
+	openWin = window.open("banready.mp?code=" + code + "&prodname="+prodname+"&seller_id=" + id,"childForm","width=300, height=310, resizable = no, scrollbars = no");
 }
 
 </script>
