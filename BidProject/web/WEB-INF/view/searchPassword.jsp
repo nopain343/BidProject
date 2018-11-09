@@ -12,7 +12,7 @@
 <div class="wrap">
 <form action="/BidProject/searchPassword2.go" method="post">
 <label for="id" class="inputid">아이디를 입력해주세요</label><br>
-<input type="text" id="id" name="id"/>
+<input type="text" id="id" name="id"/><br>
 <input type="submit" class="btn1" value="찾기"/>
 
 <!-- <a href="/BidProject/login.go">뒤로 가기</a> -->
