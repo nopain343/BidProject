@@ -46,4 +46,10 @@
 		]]>
 	</select>
 	
+	
+	<insert id="ban" parameterType="banVO">
+		<![CDATA[
+			INSERT INTO BAN VALUES(#{code},#{prodname},#{seller_id}, #{seller_name}, #{buyer_id}, #{reason})
+		]]>
+	</insert>
 </mapper>
