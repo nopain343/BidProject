@@ -57,41 +57,46 @@ body{
 	left: 120px;
 }
 
+
+#update{
+	height: 920px;
+}
+
 .farrow{
+	position:absolute;
+	color:#D4D4D4;
 	height: 100px;
 	width: 100px;
 	font-size: 70px;
-	position:relative;
-	top:220px;
-	left:20px;
-	color: #D4D4D4;
-	color:red;
+	/* margin-top: 320px;
+	margin-left: 20px; */
+	top:421px;
+	right:1px;
 	cursor:pointer;
-	display: inline-block;
 }
 
 .arrow{
+	position:absolute;
+	color:#D4D4D4;
 	height: 100px;
 	width: 100px;
 	font-size: 70px;
-	position:relative;
-	top:320px;
-	left:20px;
-	color:red;
+	/* margin-top: 320px;
+	margin-left: 20px; */
+	top:980.5px;
+	right:1px;
 	cursor:pointer;
-	display: inline-block;
 }
 
 .leftarrow{
+	position:absolute;
+	color:#D4D4D4;
 	height: 100px;
 	width: 100px;
 	font-size: 70px;
-	position:relative;
-	top:320px;
-	right:1335px;
-	color:red;
+	top:419.5px;
+	right:1355px;
 	cursor:pointer;
-	display: inline-block;
 }
 
 /* ////////////////////////////sales내용  start////////////////////////////////////////////////////////// */
