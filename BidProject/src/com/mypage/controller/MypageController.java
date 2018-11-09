@@ -58,8 +58,6 @@ public class MypageController {
 		case "2" :  ban.setReason("추가 가격 인상 요구"); break;
 		case "3" :  ban.setReason("제품 불량 및 미배송"); break;
 		}
-		ban.setBuyer_id("jin");
-		ban.setSeller_name("내가 넣은 이름");
 		boolean success = mybidService.banyou(ban);
 		System.out.println("컨트롤러 insert 끝 이제 마이페이지");
 		return new ModelAndView("mypage");

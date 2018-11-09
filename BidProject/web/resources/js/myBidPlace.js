@@ -66,7 +66,7 @@ $(document).ready(function(){
 			if($(finalPricename).val() === $(pricename).val()){
 				if($(confirmname).val() == 1){
 					$(priceCheckname).html("축하드립니다. 경매에 응찰 되었습니다");
-					$(myBidPlacename).html('<a href="/BidProject/trade.go?code=' + $(secretCodename).val() + '&finalPrice=' + $(finalPricename).val() + '">경매자 정보보기</a>');
+					$(myBidPlacename).html('<a href="/BidProject/trade.mp?code=' + $(secretCodename).val() + '&finalPrice=' + $(finalPricename).val() + '">경매자 정보보기</a>');
 				}else{
 					$(myBidPlacename).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품 정보가기</a>');
 					if(months < 0 || days < 0 || hours < 0 || minutes < 0 || seconds < 0){

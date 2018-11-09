@@ -47,3 +47,16 @@ table td{
 #buttons{
 	text-align: center;
 }
+
+input[type=button]{
+	color : white;
+	font-weight: bold;
+	font-size: 12.5px;
+    padding:5px 15px; 
+    background:#BDBDBD; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+

@@ -43,6 +43,9 @@ public class MypageDAO {
 
 
 	public boolean banyou(BanVO ban) {
+		System.out.println(ban.getBuyer_name());
+		System.out.println(ban.getCode());
+		System.out.println(ban.getProdname());
 		int n = factory.openSession().insert("myPageMapper.ban",ban);
 		
 		

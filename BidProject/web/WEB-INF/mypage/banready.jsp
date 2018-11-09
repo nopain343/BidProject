@@ -24,7 +24,7 @@ function bango(){
 <table>
 	<tr>
 	<th>판매자 : </th>
-	<td>${ban.seller_id}</td>
+	<td>${ban.seller_name}</td>
 	</tr>
 	<tr>
 	<th>제목 : </th>
@@ -35,9 +35,9 @@ function bango(){
 
 <form action="banyou.mp" name="banreason" method="post">
 	<input type="hidden" value="${ban.code}" name="code"/>
-	<input type="hidden" value="${ban.seller_id}" name="seller_id"/>
+	<input type="hidden" value="${ban.seller_name}" name="seller_name"/>
 	<input type="hidden" value="${ban.prodname}" name="prodname"/>
-
+	<input type="hidden" value="${ban.buyer_name}" name="buyer_name"/>
 
 <table>
 <tr>
@@ -59,8 +59,8 @@ function bango(){
 
 <br><hr>
 <div id="buttons">
-	<input type="button" value="신고하기" onclick="bango();">
-	<input type="button" value="취소하기" onclick="javascript:window.close()">
+	<input type="button" id="ban" value="신고하기" onclick="bango();">
+	<input type="button" id="cancel" value="취소하기" onclick="javascript:window.close()">
 </div>
 </form>
 
