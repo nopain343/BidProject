@@ -7,46 +7,15 @@ a{
 	text-decoration: none;
 	color: white;
 }
-html {
-	height: 100%;
-}
-
-/*HEADER*****************************************************************************************************/
-header{
-	background-color: #272727;
-	color: white;
-	width: 100%;
-	margin: 0;
-	height: 120px;
-}
-
-header div {
-	text-align: right;
-	padding-right: 10px;
-	padding-top: 10px;
-	padding-bottom: 8px;
-}
-
-header #query {
-	margin-left: 5px;
-	background-color: #DDDDDD;
-}
-
-header h1 {
-	margin: 0;
-	text-align: center;
-	font-size: 35px;
-	letter-spacing: 5px;
-}
-
-header li {
-	float: right;
-	padding: 5px;
-	list-style: none;
-	margin: 0;
-}
 
 /*BODY*****************************************************************************************************/
+
+
+
+body{
+	margin: 0 auto;
+	height: 100%;
+}
 
 #main {
 	background-image: url("/BidProject/resources/image/minimal.jpg");
@@ -60,11 +29,18 @@ header li {
 	width: 100%;
 	margin: auto;
 	text-align: center;
-	padding-top: 80px;
-	color: white;
+	color: #DDFFFF;
+	text-shadow: 1px 2px teal; 
+	padding-top: 70px;
+	z-index: 2;
 }
 
 
+input, select{
+	all:unset;
+	padding: 6px;
+	border-bottom:0.1px solid #00243e;
+}
 
 .container{
 	/* margin-top: 20px;
@@ -105,27 +81,24 @@ header li {
 
 .prodtitle{
 	color: #00243e;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 1.8em;
+	font-size: 25px;
+	line-height: 1.5em;
 }
 .descrip{
 	margin-top: 10px;
 }
 
 .prodname{
-	width: 99%;
+	width:100%;
 	border-top: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
-	border-color: black;
+	border-bottom-color: gray;
 	border-bottom: 1px solid;
 	padding: 6px;
 }
 
-.descover{
-	
-}
+
 
 .selec{
 	margin-top: 30px;
@@ -134,26 +107,26 @@ header li {
 	width: 101%;
 }
 
+
+
 form .label1{
 	color: #00243e;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 1.8em;
+	font-size: 18px;
+	line-height: 1.6em;
 }
 
 .termtitle{
 	color: #00243e;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 1.8em;
+	font-size: 18px;
+	line-height: 1.6em;
 }
 
 .filetitle{
 	color: #00243e;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 1.8em;
+	font-size: 18px;
+	line-height: 1.6em;
 }
+
 
 select{
 	text-align: left;
@@ -164,109 +137,125 @@ select{
 	border-bottom: 1px solid;
 	padding: 6px;
 }
-
-#cat1{
-width:100%;
-padding: 6px;
-	}
-#condition{
-width:101%;
-padding: 6px;
-	}
-
-
+/* //////////////////////////////////////////////////////////////////top */
+.top{
+	text-align:left;
+	border : 1px solid white;
+	width: 100%;
+	height: 100px;
+}
 .cat1cover{
-	text-align: left;
-	width: 31%;
-	border: 1px dotted white;
+	width: 32%;
 	float: left;
+	border : 1px dotted white;
 }
 
 .condicover{
-	text-align: left;
-	border: 1px dotted white;
-	width: 31%;
+	width: 32%;
 	float: left;
-	margin-left: 10px;
+	border : 1px dotted white;
+	margin-left: 7.7px
 }
-
-
 .pricecover{
-	text-align: left;
-	float:left;
-	width:31%;
-	margin-left: 10px;
+	width: 32%;
+	float: left;
+	border : 1px dotted white;
+	margin-left: 7.7px
 }
 
-#price{
-	border-top: 0 none;
-	border-left: 0 none;
-	border-right: 0 none;
-	border-color: black;
-	border-bottom: 1px solid;
-	width: 100%;
-	padding: 6px;
-	margin-top:2.01px;
+.cat1{
+	    
 }
-
-
+ 
+ 
+ /*////////////////////////////////////////////////////////////////////// middle */
+ 
 .middle{
 	text-align: left;
-	margin-top: 90px;
-	border : 1px dotted white;
-	width: 100%;
-	height: 80px;
+    margin-top: 32px;
+    border: 1px dotted white;
+    width: 100%;
+    height: 100px;
 }
+
 .termcover{
-	float: left;
-	width: 63%;
-}
-
-.term{
-}
-
-
-.termtitle{
-	
+	width: 56%;
+	float : left;
 }
 .filecover{
+	width: 11%;
+	float : left;
+	margin-left: 63px;
+}
+
+
+.date{
+	width:170px;
+	float : left;
+}
+.sss{
+	padding : 6px;
 	float:left;
+}
+
+.time{
+	float : left;
+	width:82px;
+	font-size: 14px;
+	padding: 2.4px;
+}
+
+
+.file{
 	width: 30%;
 }
-.filetitle{
-	margin-left: 18px;
-	
-}
-.file{
-	padding-top : 6px;
-	padding-left: 16px;
-}
+
+ 
+ /* //////////////////////////////////////////////////////////////////bottom */
+
 
 
 .bottom{
-	text-align:left;
-	margin-top: 15px;
+	text-align: left;
+    margin-top: 32px;
+    border: 1px dotted white;
+    width: 100%;
+    height: 100px;
 }
 .ref{
+	float : left;
+	width: 60%;
+}
+
+.tag{
+	width : 73%;
+	float : right;
+	font-size: 13px;
+	padding: 4px;
+	color: gray;
+}
+
+
+
+/* .bottom{
+	text-align:left;
+	margin-top: 15px;
+	border : 2px dotted red;
+} */
+/* .ref{
 	border-top: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
-	border-color: black;
+	border-color: gray;
 	border-bottom: 1px solid;
 	padding: 6px;
 	float: left;
 	width: 65%;
 }
 
-.tag{
-	width : 41%;
-	margin-left :300px;
-	font-size: 12px;
-	padding: 6px;
-	color: gray;
-}
 
 
+ */
 .button{
 		width: 100%;
 		margin-top: 30px;
@@ -305,7 +294,7 @@ padding: 6px;
 }
 
 
-.return{
+.back{
 	
 	width: 32%;
 	text-align: center;
@@ -318,7 +307,7 @@ padding: 6px;
 	transition: background-color 300ms ease 0ms;
 }
 
-.return:hover{
+.back:hover{
 	background-color: rgb(42, 69, 136);
 }
 
