@@ -20,12 +20,11 @@
 					<a href="/BidProject/auction.au?code=${ob.code}">상품정보가기</a>
 				</div>
 				
-				<br><br><br><br>
+				<br><br><br><br><br>
 				
 				<div class="wrapper4">
-					<span>판매자 아이디: ${ob.seller_id}</span>
 					<span>판매자 이름 : ${ob.seller_name}</span><br>
-					<span>구매자 아이디 : ${ob.buyer_id}</span><br>
+					<span>구매자 이름 : ${ob.buyer_name}</span><br>
 					<span>사유 : ${ob.reason }</span>
 				</div>
 				
