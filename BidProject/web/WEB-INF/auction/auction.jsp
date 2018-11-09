@@ -58,17 +58,6 @@ $(document).on('mouseleave','#filter', function(){
 	$('#menubar').slideUp(200);
 	
 }); 
-
-
-var openwin;
-window.name = "parent";
-function banyou(value1 , value2,value3){
-
-	var code = value1;
-	var prodname = value2;
-	var id = value3;
-	openWin = window.open("banready.go?code=" + code + "&prodname="+prodname+"&seller_id=" + id,"childForm","width=570, height=350, resizable = no, scrollbars = no");
-}
 </script>
 
 </head>
@@ -82,45 +71,14 @@ function banyou(value1 , value2,value3){
 	</div>
 </section>
 
-<section>
-	<nav id="filter">
-		<span class="boldmenu"><a href="/BidProject/sale.sa" class="sale">BID NOW</a></span>
-		<span class="boldmenu" id="menuclick">CATEGORY</span>
-		<span id="menubar">
-		<a href="main.ct?cat1=AA">의류</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-		<a href="main.ct?cat1=BB">패션잡화</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=CC">뷰티미용</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=DD">유아,아동,출산</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=EE">스포츠레저</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=FF">디지털가전</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=GG">애완</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a href="main.ct?cat1=HH">도서/티켓</a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		</span>
-		
-		
-		<span class="qna"><a href="qna.bd?pg=1" class="qna2">Q&A</a></span>
-	
-	</nav>	
+<jsp:include page="/Categorybar.jsp" flush="true" />
 
-	
-	
-</section>
+
 
 <input type="button" value="열기" onclick="banyou('${auction.code}','${auction.prodname }','${auction.id }')">
 <br>
 
 <div id="wrapper">
-
-
-
 <img id = "photo" src="/BidProject/resources/image/${auction.code }.jpg">
 
 <!-- article 0000000000000000000000000000000000000000000000000000000000000000000000 -->

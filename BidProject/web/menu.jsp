@@ -55,7 +55,7 @@ function search(){
 		<div id="search" class="search">
 				<span id="searchon" onclick="search()"><i class="fa fa-search" class="w3-xlarge"></i></span>
 				<input id="query" name="query" type="text" maxlength="255" onkeyup="enterkey();" 
-				class="input_text" style="display : none; color:black;" placeholder="검색어를 입력해주세요"/>
+				class="input_text" style="display : none; background-color:white; color:black;" placeholder="검색어를 입력해주세요"/>
 		</div>
 		<a href="main.go?page=1"><span class="let">LET IT BID</span></a>
 	</header>
