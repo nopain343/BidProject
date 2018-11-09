@@ -1,9 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
 <jsp:include page="/menu.jsp" flush="true" />
 <title>경매자 & 낙찰자 정보 확인</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/trade.css">
 
+<script>
+var openwin;
+window.name = "parent";
+function banyou(value1 , value2,value3, value4){
+
+	var code = value1;
+	var prodname = value2;
+	var seller_name = value3;
+	var buyer_name = value4;
+	openWin = window.open("banready.mp?code=" + code + "&prodname="+prodname+"&seller_name=" + seller_name+"buyer_name=" + buyer_name,"childForm","width=300, height=310, resizable = no, scrollbars = no");
+}
+</script>
+
+<!-- 신고 버튼 -->
+<input type="button" value="열기" onclick="banyou('${vo.code}','${vo.prodname }',' ${vo.username_seller}','${vo.username_bidder}')">
 
 		<section class="wra0">
 			<div class="wra1">

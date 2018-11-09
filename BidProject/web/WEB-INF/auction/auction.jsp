@@ -60,15 +60,7 @@ $(document).on('mouseleave','#filter', function(){
 });
 
 
-var openwin;
-window.name = "parent";
-function banyou(value1 , value2,value3){
 
-	var code = value1;
-	var prodname = value2;
-	var id = value3;
-	openWin = window.open("banready.go?code=" + code + "&prodname="+prodname+"&seller_id=" + id,"childForm","width=570, height=350, resizable = no, scrollbars = no");
-}
 
 </script>
 
@@ -89,8 +81,7 @@ function banyou(value1 , value2,value3){
 
 
 
-<input type="button" value="열기" onclick="banyou('${auction.code}','${auction.prodname }','${auction.id }')">
-<br>
+
 
 
 <div id="wrapper">

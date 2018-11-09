@@ -1,7 +1,7 @@
 package com.ban.vo;
 
 public class BanVO {
-	private String code, prodname, seller_id, seller_name, buyer_id, reason;
+	private String code, prodname, seller_name, buyer_name, reason;
 
 	public String getCode() {
 		return code;
@@ -19,14 +19,6 @@ public class BanVO {
 		this.prodname = prodname;
 	}
 
-	public String getSeller_id() {
-		return seller_id;
-	}
-
-	public void setSeller_id(String seller_id) {
-		this.seller_id = seller_id;
-	}
-
 	public String getSeller_name() {
 		return seller_name;
 	}
@@ -35,12 +27,12 @@ public class BanVO {
 		this.seller_name = seller_name;
 	}
 
-	public String getBuyer_id() {
-		return buyer_id;
+	public String getBuyer_name() {
+		return buyer_name;
 	}
 
-	public void setBuyer_id(String buyer_id) {
-		this.buyer_id = buyer_id;
+	public void setBuyer_name(String buyer_name) {
+		this.buyer_name = buyer_name;
 	}
 
 	public String getReason() {
@@ -50,9 +42,7 @@ public class BanVO {
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-	
-	
-	
+
 	
 	
 }

@@ -12,7 +12,7 @@ href="${pageContext.request.contextPath}/resources/css/sale.css">
 	<c:choose>
 		<c:when test="${empty loginOK}">
 			<script type="text/javascript">
-				alert("로그인이 필요합니다")
+				alert("로그인이 필요합니다"); history.go(-1);
 			</script>
 		</c:when>
 

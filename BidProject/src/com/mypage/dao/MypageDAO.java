@@ -43,10 +43,19 @@ public class MypageDAO {
 
 
 	public boolean banyou(BanVO ban) {
+		System.out.println(ban.getBuyer_name());
+		System.out.println(ban.getCode());
+		System.out.println(ban.getProdname());
 		int n = factory.openSession().insert("myPageMapper.ban",ban);
 		
 		
 		return n > 0 ? true : false;
+	}
+
+
+	public List<BanVO> banlist() {
+		
+		return factory.openSession().selectList("myPageMapper.banlist");
 	}
 
 

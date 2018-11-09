@@ -16,27 +16,20 @@
 			
 			<div class="wrapper3">
 				<span class="prodname">${ob.prodname}</span>
-				<div id="myBidPlace${vs.count}" class="wrapper5">
+				<div id="banbutton" class="wrapper5">
 					<a href="/BidProject/auction.au?code=${ob.code}">상품정보가기</a>
 				</div>
-				<%-- <span id="timetest${vs.count}"></span><br> --%>
 				
-				<br><br><br>
+				<br><br><br><br>
 				
 				<div class="wrapper4">
-					<span>마감시간 ${ob.term}</span><br>
-					<span>나의 응찰가 ${ob.price}원</span><br>
-					<span id="priceCheck${vs.count}" class="priceCheck"></span><br>
+					<span>판매자 아이디: ${ob.seller_id}</span>
+					<span>판매자 이름 : ${ob.seller_name}</span><br>
+					<span>구매자 아이디 : ${ob.buyer_id}</span><br>
+					<span>사유 : ${ob.reason }</span>
 				</div>
 				
-				
-				<input type="hidden" id="finalPrice${vs.count}" value="${ob.finalPrice}"/>
-				<input type="hidden" id="price${vs.count}" value="${ob.price}"/>
-				<input type="hidden" id="term${vs.count}" value="${ob.term}"/>
-				<input type="hidden" id="catchTotal" value="<%=n%>"/>
-				<input type="hidden" id="secretCode${vs.count}" value="${ob.code}"/>
-				<input type="hidden" id="confirm${vs.count}" value="${ob.confirm}"/>
-				
+			
 			</div>
 		</div>
 		<hr class="midLine">

@@ -49,7 +49,15 @@
 	
 	<insert id="ban" parameterType="banVO">
 		<![CDATA[
-			INSERT INTO BAN VALUES(#{code},#{prodname},#{seller_id}, #{seller_name}, #{buyer_id}, #{reason})
+			INSERT INTO BAN VALUES(#{code},#{prodname}, #{seller_name}, #{buyer_name}, #{reason})
 		]]>
 	</insert>
+	
+	<select id="banlist" resultType="banVO">
+		<![CDATA[
+			SELECT * FROM BAN
+		]]>
+	</select>
+	
+	
 </mapper>
