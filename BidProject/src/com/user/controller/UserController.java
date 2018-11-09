@@ -96,7 +96,7 @@ public class UserController {
 		session.setAttribute("loginOK", user);
 		
 		if(service.updateUser(user)) {
-			return new ModelAndView("mypage");
+			return new ModelAndView("login");
 		}
 		return new ModelAndView("update");
 	}
