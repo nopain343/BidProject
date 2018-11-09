@@ -25,10 +25,10 @@ div.wra1 {
     width: 100vw; height: 100vh;
 	background-color: white;
 	display: flex;
-	opacity: 0.9;
+	opacity: 0.8;
 	z-index: 2;
     animation-name: wra1;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-delay: -0.1s;
     animation-timing-function: ease-in;
 }
@@ -40,7 +40,7 @@ div.wra1 {
     }
     to   {
     	background-color: white;
-    	opacity: 0.9;
+    	opacity: 0.8;
     	
     }
 }
@@ -95,6 +95,11 @@ div.wra8 {
 	line-height: 2em;
 }
 
+div.wra9 {
+	display: flex;
+	justify-content: center;
+}
+
 .label {
 	font-size: 1.2em;
 	font-weight: bold;
@@ -107,4 +112,20 @@ div.wra8 {
 
 .finalPrice {
 	font-weight: bold;
+}
+
+.report {
+	all: unset;
+	color: white;
+	width: 60px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	background-color: rgb(147, 2, 3);
+	border-radius: 4px;
+	transition: background-color 200ms ease 0ms;
+}
+
+.report:hover {
+	background-color: rgb(222, 2, 3);
 }

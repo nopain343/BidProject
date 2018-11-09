@@ -8,18 +8,15 @@
 <script>
 var openwin;
 window.name = "parent";
-function banyou(value1 , value2,value3, value4){
+function banyou(value1, value2, value3, value4){
 
 	var code = value1;
 	var prodname = value2;
 	var seller_name = value3;
 	var buyer_name = value4;
-	openWin = window.open("banready.mp?code=" + code + "&prodname="+prodname+"&seller_name=" + seller_name+"buyer_name=" + buyer_name,"childForm","width=300, height=310, resizable = no, scrollbars = no");
+	openWin = window.open("banready.mp?code=" + code + "&prodname="+prodname+"&seller_name=" + seller_name+"buyer_name=" + buyer_name, "childForm","width=300, height=310, resizable = no, scrollbars = no");
 }
 </script>
-
-<!-- 신고 버튼 -->
-<input type="button" value="열기" onclick="banyou('${vo.code}','${vo.prodname }',' ${vo.username_seller}','${vo.username_bidder}')">
 
 		<section class="wra0">
 			<div class="wra1">
@@ -49,6 +46,10 @@ function banyou(value1 , value2,value3, value4){
 								<span>성함 : ${vo.username_bidder}</span><br>
 								<span>주소 : ${vo.roadFullAddr_bidder}</span><br>
 								<span>연락처 : ${vo.phone_bidder}</span>
+							</div>
+							
+							<div class="wra9">
+								<input class="report" type="button" value="신고하기" onclick="banyou('${vo.code}','${vo.prodname }',' ${vo.username_seller}','${vo.username_bidder}')">
 							</div>
 						</div>
 						

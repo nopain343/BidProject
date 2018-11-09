@@ -1,15 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/menu.css">
-	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--검색-->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- jQuery -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/menu.css">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 function enterkey() {
     if (window.event.keyCode == 13) {
