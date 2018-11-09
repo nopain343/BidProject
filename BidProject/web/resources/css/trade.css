@@ -10,7 +10,42 @@ body {
 	background-color: #FAFAFA;
 }
 
-input, select {
+section.wra1 {
+	border: 1px solid red;
+}
+
+div.wra2 {
+	border: 1px solid gray;
+	width: 60%;
+	margin: auto;
+}
+
+div.wra3 {
+	width: 100%;
+}
+
+section .bidImage {
+	width: 30%;
+}
+
+div.wra4 {
+	width: 68%;
+}
+
+div.wra5 {
+	width: 100%;
+}
+
+div.wra6 {
+	width: 50%;
+}
+
+div.wra7 {
+	width: 50%;
+}
+
+
+/* input, select {
 	all:unset;
 	padding: 6px;
 	border-bottom: 0.1px solid #00243e;
@@ -91,4 +126,4 @@ section .wrap2 .back {
 
 section .wrap2 .back:hover {
 	background-color: rgb(42, 69, 136);
-}
+} */
