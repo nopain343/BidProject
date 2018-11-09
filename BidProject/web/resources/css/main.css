@@ -1,6 +1,7 @@
 @charset "UTF-8";
 *{
 	font-family: 'Cinzel';
+	box-sizing: border-box;
 }
 
 a{
@@ -16,14 +17,12 @@ html {
 	height: 100%;
 }
 
-
-
 /*body-------------------------------------------------------------------------------------------------------------*/
 body{
-	margin: 0;
-	height: 100%;
-	width:100%;
+	margin: 0 auto;
+	width:1519.5px;
 	position: relative;
+	
 }
 
 #main {
@@ -47,18 +46,16 @@ body{
 	font-weight: bold;
 	position: relative;
 	top: 97px;
-	left: 90px;
+	left: 120px;
 }
 
 .hot{
 	font-weight: bold;
 	color: grey;
-	position:absolute;
 	position: relative;
 	top: 95px;
-	left: 90px;
+	left: 120px;
 }
-
 
 .farrow{
 	height: 100px;
@@ -68,10 +65,10 @@ body{
 	top:220px;
 	left:20px;
 	color: #D4D4D4;
+	color:red;
 	cursor:pointer;
 	display: inline-block;
 }
-
 
 .arrow{
 	height: 100px;
@@ -80,12 +77,10 @@ body{
 	position:relative;
 	top:320px;
 	left:20px;
-	color: #D4D4D4;
+	color:red;
 	cursor:pointer;
 	display: inline-block;
 }
-
-
 
 .leftarrow{
 	height: 100px;
@@ -94,13 +89,33 @@ body{
 	position:relative;
 	top:320px;
 	right:1335px;
-	color: #D4D4D4;
+	color:red;
 	cursor:pointer;
 	display: inline-block;
 }
 
 /* ////////////////////////////sales내용  start////////////////////////////////////////////////////////// */
 
+
+.wrap0{
+    margin:0 auto;
+    width: 100%;
+	position:relative;
+	padding-top:100px;
+    padding-left: 110px;
+}
+
+.wrap1{
+    width: 230px;
+    height: 136px;
+}
+
+.wrap01{
+    height: 135px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
 
 .product1 {
 	position:relative;
@@ -115,27 +130,6 @@ body{
 }
 .photo{
      margin: 10px 10px 10px 10px;
-	
-}
-
-
-.wrap0{
-	padding-top:100px;
-    padding-left: 85px;
-	
-}
-.wrap1{
-
-    width: 230px;
-    height: 136px;
-   
-}
-
-.wrap01{
-    height: 135px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: -4px;
 }
 
 .prodname{
@@ -191,7 +185,6 @@ section div p {
 	border: 1px solid black;
 	
 }
-
 
 .footer{
 	overflow:hidden;

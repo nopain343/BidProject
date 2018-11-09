@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ban.vo.BanVO;
 import com.category.vo.CategoryVO;
 import com.mypage.service.MypageService;
 import com.mypage.vo.TradeVO;
@@ -31,9 +33,7 @@ public class MypageController {
 	
 	@RequestMapping(value="/trade.go", method=RequestMethod.GET)
 	public ModelAndView trade(@ModelAttribute TradeVO tradeVO) {
-		System.out.println(mybidService.trade(tradeVO).getFinalPrice());
-		System.out.println(mybidService.trade(tradeVO).getPhone_seller());
-		System.out.println(mybidService.trade(tradeVO).getPhone_bidder());
+		
 		return new ModelAndView("trade","vo", mybidService.trade(tradeVO));
 	}
 	
@@ -44,13 +44,31 @@ public class MypageController {
 	}
 	
 	
+	@RequestMapping(value="/banyou.go" , method=RequestMethod.POST)
+	public ModelAndView banyou(@ModelAttribute BanVO bann) {
+		BanVO ban = bann;
+		switch(bann.getReason()) {
+		case "1" :  ban.setReason("연락 두절"); break;
+		case "2" :  ban.setReason("추가 가격 인상 요구"); break;
+		case "3" :  ban.setReason("제품 불량 및 미배송"); break;
+		}
+		ban.setBuyer_id("jin");
+		ban.setSeller_name("내가 넣은 이름");
+		boolean success = mybidService.banyou(ban);
+		System.out.println("컨트롤러 insert 끝 이제 마이페이지");
+		return new ModelAndView("mypage");
+	}
 	
-//	@RequestMapping(value="/mymodi.go" , method=RequestMethod.POST)
-//	public ModelAndView modify(@ModelAttribute CategoryVO categoryVO) {
-//		
-//		System.out.println("modi controller");
-//		
-//		
-//		return new ModelAndView("sale");
-//	}
+
+	@RequestMapping(value="/banready.go", method=RequestMethod.GET)
+	public ModelAndView banready(@ModelAttribute BanVO ban) {
+		return new ModelAndView("banready","ban",ban);
+	}
+	
+	@RequestMapping(value="/bantest.go", method=RequestMethod.POST)
+	public ModelAndView bantest(@RequestParam(value="code") String code) {
+		System.out.println("bantest : " + code);
+		return new ModelAndView("mypage");
+	}
+	
 }

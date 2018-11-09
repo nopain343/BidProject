@@ -1,23 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>거래자 정보 확인</title>
-</head>
-<body>
-<span>${vo.prodname}</span><br>
-<span>${vo.finalPrice}원</span><br>
-<span>${vo.descrip}</span>
-<br><br>
-판매자 내역 : 
-이름 : <span>${vo.username_seller}</span><br>
-주소 : <span>${vo.roadFullAddr_seller}</span><br>
-연락처 : <span>${vo.phone_seller}</span>
-<br><br>
-응찰자 내역 : 
-이름 : <span>${vo.username_bidder}</span><br>
-주소 : <span>${vo.roadFullAddr_bidder}</span><br>
-연락처 : <span>${vo.phone_bidder}</span>
-</body>
+
+<jsp:include page="/menu.jsp" flush="true" />
+<title>경매자 & 낙찰자 정보 확인</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/trade.css">
+
+
+		<section class="wra0">
+			<div class="wra1">
+				<div class="wra2">
+					<div class="wra3">
+					
+						<div class="wra4">
+							
+							<img class="bidImage" src="/BidProject/resources/image/${vo.code}.jpg">
+							
+							<div class="wra5">
+								<span class="prodname">${vo.prodname}</span><br>
+								<span class="finalPrice">낙찰가 : ${vo.finalPrice}원</span>
+							</div>
+						</div>
+						
+						<div class="wra6">
+							<div class="wra7">
+								<span class="label">경매자</span><br>
+								<span>성함 : ${vo.username_seller}</span><br>
+								<span>주소 : ${vo.roadFullAddr_seller}</span><br>
+								<span>연락처 : ${vo.phone_seller}</span>
+							</div>
+							
+							<div class="wra8">
+								<span class="label">낙찰자</span><br>
+								<span>성함 : ${vo.username_bidder}</span><br>
+								<span>주소 : ${vo.roadFullAddr_bidder}</span><br>
+								<span>연락처 : ${vo.phone_bidder}</span>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
