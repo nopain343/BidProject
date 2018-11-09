@@ -17,7 +17,7 @@ div.wrap2 {
 .wrap2 .bidImage {
 	width: 30%;
 	height: 140px;
-	object-fit:scale-down;
+	object-fit: scale-down;
 	float: left;
 	margin-top: 10px;
 	margin-bottom: 20px;
