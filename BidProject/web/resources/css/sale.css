@@ -92,30 +92,35 @@ header li {
 .centered{
 	position: relative;
 	display: inline-block;
-	
-	width:60%;
+	width:50%;
 	padding: 1em;
 	color: black;
 }
 
 
 .prodcover{
+	text-align: left;
+	margin-bottom: 18px;
 }
 
 .prodtitle{
-	text-align: left;
+	color: #00243e;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.8em;
 }
 .descrip{
 	margin-top: 10px;
 }
 
 .prodname{
-	width: 100%;
-		border-top: 0 none;
+	width: 99%;
+	border-top: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
 	border-color: black;
 	border-bottom: 1px solid;
+	padding: 6px;
 }
 
 .descover{
@@ -124,8 +129,30 @@ header li {
 
 .selec{
 	margin-top: 30px;
-	border: 1px dotted red;
+	border: 1px dotted white;
 	height: 50%;
+	width: 101%;
+}
+
+form .label1{
+	color: #00243e;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.8em;
+}
+
+.termtitle{
+	color: #00243e;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.8em;
+}
+
+.filetitle{
+	color: #00243e;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.8em;
 }
 
 select{
@@ -135,70 +162,169 @@ select{
 	border-right: 0 none;
 	border-color: black;
 	border-bottom: 1px solid;
+	padding: 6px;
 }
+
+#cat1{
+width:100%;
+padding: 6px;
+	}
+#condition{
+width:101%;
+padding: 6px;
+	}
+
+
 .cat1cover{
 	text-align: left;
-	width: 30%;
-	border: 1px dotted magenta;
+	width: 31%;
+	border: 1px dotted white;
 	float: left;
 }
 
 .condicover{
 	text-align: left;
-	border: 1px dotted aqua;
-	width: 30%;
+	border: 1px dotted white;
+	width: 31%;
 	float: left;
-}
-
-#condition{
-	width:90%;
-	
+	margin-left: 10px;
 }
 
 
 .pricecover{
+	text-align: left;
 	float:left;
-	width:30%;
+	width:31%;
+	margin-left: 10px;
+}
+
+#price{
 	border-top: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
 	border-color: black;
 	border-bottom: 1px solid;
+	width: 100%;
+	padding: 6px;
+	margin-top:2.01px;
 }
 
 
 .middle{
 	text-align: left;
-	margin-top: 63px;
-	float: left;
+	margin-top: 90px;
+	border : 1px dotted white;
+	width: 100%;
+	height: 80px;
 }
-
-
 .termcover{
+	float: left;
+	width: 63%;
 }
+
+.term{
+}
+
+
 .termtitle{
 	
 }
-
-
-
 .filecover{
-	border: 1px dotted black;
-	height: 30px;
-	margin-top: 50px;
-	position:relative;
-	width:20px;
+	float:left;
+	width: 30%;
 }
-
+.filetitle{
+	margin-left: 18px;
+	
+}
+.file{
+	padding-top : 6px;
+	padding-left: 16px;
+}
 
 
 .bottom{
-	border : 3px dotted red;
-	margin-top : 150px;
-	height: 50px;
+	text-align:left;
+	margin-top: 15px;
+}
+.ref{
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+	border-color: black;
+	border-bottom: 1px solid;
+	padding: 6px;
+	float: left;
+	width: 65%;
+}
+
+.tag{
+	width : 41%;
+	margin-left :300px;
+	font-size: 12px;
+	padding: 6px;
+	color: gray;
 }
 
 
+.button{
+		width: 100%;
+		margin-top: 30px;
+		margin-left: -5px;
+}
+
+.submit{
+	width: 32%;
+	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 4px;
+	color: white;
+	border-radius: 3px;
+	background-color: rgb(0, 37, 62);
+	transition: background-color 300ms ease 0ms;
+}
+
+.submit:hover{
+	background-color: rgb(42, 69, 136);
+}
+
+.modify{
+	width: 32%;
+	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 4px;
+	color: white;
+	border-radius: 3px;
+	background-color: rgb(0, 37, 62);
+	transition: background-color 300ms ease 0ms;
+}
+.modify:hover{
+	background-color: rgb(42, 69, 136);
+}
+
+
+.return{
+	
+	width: 32%;
+	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 4px;
+	color: white;
+	border-radius: 3px;
+	background-color: rgb(0, 37, 62);
+	transition: background-color 300ms ease 0ms;
+}
+
+.return:hover{
+	background-color: rgb(42, 69, 136);
+}
+
+form label{
+	
+}
 
 
 /* .condition{

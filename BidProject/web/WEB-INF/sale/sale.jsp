@@ -38,8 +38,8 @@
 								</div>
 
 								<div class="prodcover">
-									<div class="prodtitle">상품명</div>
-									<div>
+									<label class="prodtitle">상품명</label>
+									<div >
 										<input type="text" name="prodname" id="prodname"
 											class="prodname"><br>
 									</div>
@@ -49,7 +49,8 @@
 									<div class="descover">
 										<div class="descrip">
 											<textarea rows="12" cols="40" name="descrip" id="descrip"
-												style="resize: none; border: 1px solid; width: 100%;"></textarea>
+												style="resize: none; border: 1px solid;
+												padding : 6px; width: 100%; height: 300px;"></textarea>
 										</div>
 									</div>
 								</div>
@@ -58,10 +59,10 @@
 								<div class="selec">
 
 									<div class="cat1cover">
-										<label>분류</label>
+										<label class="label1">분류</label>
 										<div class="cat1">
 											<select name="cat1" id="cat1">
-												<option value='' selected>-카테고리-</option>
+												<option value='' selected>select</option>
 												<option value="AA">의류</option>
 												<option value="BB">패션잡화</option>
 												<option value="CC">뷰티미용</option>
@@ -75,10 +76,10 @@
 									</div>
 
 									<div class="condicover">
-										<label>상태</label>
+										<label class="label1">상태</label>
 										<div class="condition">
 											<select name="condition" id="condition">
-												<option value='' selected>-상품 상태-</option>
+												<option value='' selected>select</option>
 												<option>중고</option>
 												<option>중고+하자</option>
 												<option>새물품</option>
@@ -88,8 +89,8 @@
 										</div>
 									</div>
 									<div class="pricecover">
-										<label>시작가</label>
-										<div>
+										<label class="label1">시작가</label>
+										<div class="price">
 											<input type="number" name="price" id="price">
 										</div>
 									</div>
@@ -97,9 +98,11 @@
 									
 									
 									<div class="middle">
+									
+									
 										<div class="termcover">
 											<label class="termtitle">마감 시간</label>
-											<div>
+											<div class="term">
 												<select name="year" id="year">
 													<option value='' selected>YYYY</option>
 													<option>2018</option>
@@ -245,42 +248,31 @@
 										</div>
 										
 										<div class="filecover">
-												<label class="filetitle">업로드</label>
-												<div>
-													<input type="file" name="file" placeholder="이미지">
-													<form:errors path="file" />
-												</div>
-											</div>
-										
-										</div>
-										
-										
-										
-<!-- 										<div class="bottom">
-											
-											<div>
-												<label>해시태그</label>
-												<div>
-													<input type="text" name="ref">
-												</div>
-
+											<label class="filetitle">업로드</label>
+											<div class="file">
+												<input type="file" name="file">
+												<form:errors path="file" />
 											</div>
 										</div>
 										
-										
-										
-										<div>
-
-											<input type="submit" id="submit" value="등록"> <input
-												type="reset" id="submit" value="수정"> <input
-												type="reset" id="submit" value="돌아가기">
-										</div> -->
 									</div>
-									
-									
-									
-								</div>
-							</div>
+										<div class="bottom">
+												<label class="label1">해시태그</label>
+												<div>
+													<input type="text" name="ref" class="ref">
+												</div>
+												<div class="tag">※검색시 키워드로 사용됩니다.</div>
+										</div>
+										
+										<div class="button">
+
+											<input type="submit" id="submit"  class="submit" value="등록"> 
+											<input type="reset" id="submit" class="modify" value="수정"> 
+											<input type="reset" id="submit" class="return" value="돌아가기">
+										</div>
+									</div>
+								</div><!--center end  -->
+							</div><!--inner end  -->
 						</div><!--outer end  -->
 					</div><!--container end  -->
 
