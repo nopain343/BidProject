@@ -10,7 +10,16 @@ public class UserVO {
 	private String username;
 	private String pwquestion;
 	private String pwanswer;
+	private int ban;
 	
+	public int getBan() {
+		return ban;
+	}
+
+	public void setBan(int ban) {
+		this.ban = ban;
+	}
+
 	public UserVO() {
 		super();
 	}

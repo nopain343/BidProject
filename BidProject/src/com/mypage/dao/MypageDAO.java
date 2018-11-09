@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ban.vo.BanVO;
 import com.category.vo.CategoryVO;
 import com.mypage.vo.TradeVO;
 
@@ -36,14 +37,16 @@ public class MypageDAO {
 
 	public TradeVO trade(TradeVO tradeVO) {
 		TradeVO vo = factory.openSession().selectOne("myPageMapper.trade", tradeVO);
-		System.out.println(vo.getFinalPrice());
-		System.out.println(vo.getDescrip());
-		System.out.println(vo.getPhone_bidder());
-		System.out.println(vo.getPhone_seller());
-		System.out.println(vo.getProdname());
-		System.out.println(vo.getRoadFullAddr_bidder());
-		System.out.println(vo.getRoadFullAddr_seller());
+
 		return vo;
+	}
+
+
+	public boolean banyou(BanVO ban) {
+		int n = factory.openSession().insert("myPageMapper.ban",ban);
+		
+		
+		return n > 0 ? true : false;
 	}
 
 

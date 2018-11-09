@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ban.vo.BanVO;
 import com.category.vo.CategoryVO;
 import com.mypage.dao.MypageDAO;
 import com.mypage.vo.TradeVO;
@@ -30,6 +31,11 @@ public class MypageService {
 
 	public TradeVO trade(TradeVO tradeVO) {
 		return mybidDAO.trade(tradeVO);
+	}
+
+	public boolean banyou(BanVO ban) {
+		
+		return mybidDAO.banyou(ban);
 	}
 
 }
