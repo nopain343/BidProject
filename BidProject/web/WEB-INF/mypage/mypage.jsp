@@ -22,23 +22,30 @@
 		<div class="cover2">
 		
 			<div class="cover3">
-				<form action="/BidProject/myBid.go" method="get" >
+				<form action="/BidProject/myBid.mp" method="get" >
 					<input type="hidden" name="id" value="${loginOK.id}">
 					<input type="submit" value="MY PRODUCTS"/>
 				</form>
 			</div>
 			
 			<div class="cover4">
-				<form action="/BidProject/myBidPlace.go" method="get">
+				<form action="/BidProject/myBidPlace.mp" method="get">
 					<input type="hidden" name="id" value="${loginOK.id}">
 					<input type="submit" value="BIDDING STATUS" />
 				</form>
 			</div>
 		
 			<div class="cover5">
+				<c:if test="${loginOK.ban >= 0}">
 				<form action="/BidProject/delete.go" method="post">
 					<input type="submit" value="LEAVE" onclick="return confirm('정말로 탈퇴 하시겠습니까?');"/>
 				</form>
+				</c:if>
+				<c:if test="${loginOK.ban < 0}">
+				<form action="/BidProject/banlist.mp" method="post">
+					<input type="submit" value="신고 리스트"/>
+				</form>
+				</c:if>
 			</div>
 			
 			<div class="cover6">

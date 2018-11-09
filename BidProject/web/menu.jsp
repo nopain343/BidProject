@@ -41,7 +41,7 @@ function search(){
 		</c:if>
 		
 		<c:if test="${!empty loginOK}">
-		<a href="/BidProject/mypage.go"><span class="headertext">MYPAGE</span></a>
+		<a href="/BidProject/mypage.mp"><span class="headertext">MYPAGE</span></a>
 		</c:if>
 		
 		<c:if test="${empty loginOK}">
