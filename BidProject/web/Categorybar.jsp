@@ -40,6 +40,5 @@ $(document).on('mouseover','#menuclick', function(){
 		<a href="main.ct?cat1=HH">도서/티켓</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 		</span>
-		
 	</nav>	
 </section>
