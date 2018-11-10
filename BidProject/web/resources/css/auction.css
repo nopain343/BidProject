@@ -88,7 +88,7 @@ body{
 article{
 	min-height : 400px;
 	margin-left : 400px;
-	width : 500px;
+	width : 549px;
 }
 
 article p{
@@ -147,6 +147,7 @@ article .timer{
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
+    
 }
 
 .point{
@@ -187,3 +188,27 @@ article .timer{
 	height : 40px;
 	width : 100%;
 }
+
+
+
+
+
+article .timer2{
+	/* border : 1px solid black; */
+	font-size: 30px;
+}
+
+
+article .t1{
+	font-size: 30px;
+}
+article .t2{
+	font-size: 30px;
+}
+
+article .t3{
+	font-size: 30px;
+}
+
+
+

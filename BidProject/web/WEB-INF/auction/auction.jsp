@@ -126,7 +126,7 @@ ${auction.prodname}
 
 <h2>응찰하시기 전에 <span class="point">반드시 확인</span>하세요.</h2>
 <span id="plus">
-※ 본 경매 참여는 응찰자가 충분히 사전에 확인한 것을 전제로 하며, <span class="point">상품 컨디션을 이류로 응찰 또는 낙찰을 취소할 수 없습니다.</span> <br>
+※ 본 경매 참여는 응찰자가 충분히 사전에 확인한 것을 전제로 하며, <span class="point">상품 컨디션을 이유로 응찰 또는 낙찰을 취소할 수 없습니다.</span> <br>
 ※ <span class="point">낙찰일로부터 7일 이내</span>에 연락 및 거래해 주시기 부탁드리며 7일 초과 시 <span class="point">상대방 신고에 따른 패널티가 부과</span>될 수 있습니다. <br>
 ※ 위 사항을 염두에 두시고, <span class="point">신중한 선택</span>을 해주시기 바랍니다.
 </span>
