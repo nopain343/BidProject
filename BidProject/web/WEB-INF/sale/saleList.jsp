@@ -8,5 +8,22 @@
 </head>
 <body>
 sale 올린거 목록스
+
+<table style='margin-left: auto; margin-right: auto;' >
+<tr>
+
+<th>Days</th>
+<th>Hours</th>
+<th>Minutes</th>
+</tr>
+
+<tr>
+<th>00</th>
+<th>00</th>
+<th>00</th>
+
+</tr>
+
+</table>
 </body>
 </html>

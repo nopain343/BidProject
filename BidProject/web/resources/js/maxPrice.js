@@ -15,7 +15,7 @@ $(document).ready(function(){
 			var result = comma(data.finalPrice);
 			$("#output").html("KRW " + result);
 			if(data.term == 'fin'){
-				$("#dtime").html("-일 -시 -분")
+				$("#dtime").html("<table id='timetable' style='margin-left: auto; margin-right: auto;' ><tr><th>Days</th><th>Hours</th><th>Minutes</th></tr><tr><td class='t1'>&nbsp;00&nbsp;</td><td class='t2'>&nbsp;00&nbsp;</td><td class='t3'>&nbsp;00</td></tr>")
 				$("#submit").html("<input type='button' id='submitbutton' value='경매가 종료되었습니다'/>")
 			}else{
 				$("#dtime").html(table + data.term.substring(0,1) + "</span></td><td class='timerbox'><span class='timer'>" + data.term.substring(1,2) + "</span>&nbsp;<span class='timer'>" + data.term.substring(2,3) + "</span></td><td class='timerbox'><span class='timer'>" +  data.term.substring(3,4) + "</span>&nbsp;<span class='timer'>" + data.term.substring(4,5) + table2);
@@ -42,7 +42,7 @@ $(document).ready(function(){
 					var result = comma(data.finalPrice);
 					$("#output").html("KRW " + result);
 					if(data.term == 'fin'){
-						$("#dtime").html("-일 -시 -분")
+						$("#dtime").html("<table id='timetable' style='margin-left: auto; margin-right: auto;' ><tr><th>Days</th><th>Hours</th><th>Minutes</th></tr><tr><td class='t1'>&nbsp;00&nbsp;</td><td class='t2'>&nbsp;00&nbsp;</td><td class='t3'>&nbsp;00</td></tr>")
 						$("#submit").html("<input type='button' id='submitbutton'  value='경매가 종료되었습니다'/>")
 					}else{
 						$("#dtime").html(table + data.term.substring(0,1) + "</span></td><td class='timerbox'><span class='timer'>" + data.term.substring(1,2) + "</span>&nbsp;<span class='timer'>" + data.term.substring(2,3) + "</span></td><td class='timerbox'><span class='timer'>" +  data.term.substring(3,4) + "</span>&nbsp;<span class='timer'>" + data.term.substring(4,5) + table2);
