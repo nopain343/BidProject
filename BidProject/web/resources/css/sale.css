@@ -6,6 +6,7 @@
 a{
 	text-decoration: none;
 	color: white;
+	
 }
 
 /*BODY*****************************************************************************************************/
@@ -15,6 +16,10 @@ a{
 body{
 	margin: 0;
 	height: 100%;
+	background-color: #FAFAFA;
+/* 	background-color: #edeae7; */
+
+/* 	background : linear-gradient( 30deg, white ,#edeae7  ); */
 }
 
 #main {
@@ -43,9 +48,6 @@ input, select{
 }
 
 .container{
-	/* margin-top: 20px;
-	border-color: magenta;
-	border: 1px dotted; */
 	
 	width: 70%;
 	height: 70%;
@@ -68,9 +70,10 @@ input, select{
 .centered{
 	position: relative;
 	display: inline-block;
-	width:50%;
+	width:53%;
 	padding: 1em;
 	color: black;
+	
 }
 
 
@@ -89,22 +92,25 @@ input, select{
 }
 
 .prodname{
-	width:100%;
+	width:96%;
 	border-top: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
 	border-bottom-color: gray;
 	border-bottom: 1px solid;
 	padding: 6px;
+	margin-left: 5px;
+	
 }
 
 
 
 .selec{
 	margin-top: 30px;
-	border: 1px dotted white;
+	border: 1px dotted  #FAFAFA;
 	height: 50%;
 	width: 101%;
+	
 }
 
 
@@ -140,26 +146,26 @@ select{
 /* //////////////////////////////////////////////////////////////////top */
 .top{
 	text-align:left;
-	border : 1px solid white;
+	border : 1px solid  #FAFAFA;
 	width: 100%;
 	height: 100px;
 }
 .cat1cover{
 	width: 32%;
 	float: left;
-	border : 1px dotted white;
+	border : 1px dotted  #FAFAFA;
 }
 
 .condicover{
 	width: 32%;
 	float: left;
-	border : 1px dotted white;
+	border : 1px dotted  #FAFAFA;
 	margin-left: 7.7px
 }
 .pricecover{
 	width: 32%;
 	float: left;
-	border : 1px dotted white;
+	border : 1px dotted  #FAFAFA;
 	margin-left: 7.7px
 }
 
@@ -173,7 +179,7 @@ select{
 .middle{
 	text-align: left;
     margin-top: 32px;
-    border: 1px dotted white;
+    border: 1px dotted  #FAFAFA;
     width: 100%;
     height: 100px;
 }
@@ -218,7 +224,7 @@ select{
 .bottom{
 	text-align: left;
     margin-top: 32px;
-    border: 1px dotted white;
+    border: 1px dotted  #FAFAFA;
     width: 100%;
     height: 100px;
 }
@@ -236,26 +242,6 @@ select{
 }
 
 
-
-/* .bottom{
-	text-align:left;
-	margin-top: 15px;
-	border : 2px dotted red;
-} */
-/* .ref{
-	border-top: 0 none;
-	border-left: 0 none;
-	border-right: 0 none;
-	border-color: gray;
-	border-bottom: 1px solid;
-	padding: 6px;
-	float: left;
-	width: 65%;
-}
-
-
-
- */
 .button{
 		width: 100%;
 		margin-top: 30px;
@@ -311,16 +297,4 @@ select{
 	background-color: rgb(42, 69, 136);
 }
 
-form label{
-	
-}
-
-
-/* .condition{
-	margin-left: 20px;
-	float: left;
-	}
-
-.pricecover{
-} */
 
