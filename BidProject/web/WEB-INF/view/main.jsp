@@ -76,7 +76,7 @@ function paging(data){
 	var box5 = "<br></div>현재가<br><div class='term'>";
 	var last = "</div></div></section></section></section>";
 	$.each(data, function(index, entry){
-		total += box1 + entry.code + box2+ entry.code + plus + entry.prodname + box3 + entry.ref + box4 + entry.price + box5 + entry.term + last;
+		total += box1 + entry.code + box2+ entry.code + plus + entry.prodname + box3 + entry.ref + box4 + entry.finalPrice + box5 + entry.term + last;
 });
 	if(${check} == true){
 		

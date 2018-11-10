@@ -6,7 +6,7 @@
 	<select id="categorylist" resultType="categoryVO" parameterType="Integer">
 		<![CDATA[
 			SELECT a.CAT1,a.PRODNAME,a.PRICE,FINALPRICE,a.CONDITION,a.REF,CODE,a.ID,a.TERM,a.DESCRIP 
-			FROM (SELECT ROWNUM RN, SALES.* FROM SALES)a 
+			FROM (SELECT ROWNUM RN, SALES.* FROM SALES WHERE CONFIRM = 0)a 
 			JOIN (SELECT MAX(finalPrice) AS FINALPRICE, CODE FROM AUCTION GROUP BY CODE) USING(CODE) 
 			WHERE RN>=#{page}*10-9 AND RN<=#{page}*10
 		]]>
@@ -56,6 +56,7 @@
 	</select>
 	
 </mapper>
+
 
 
 

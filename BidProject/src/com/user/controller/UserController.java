@@ -96,7 +96,8 @@ public class UserController {
 		session.setAttribute("loginOK", user);
 		
 		if(service.updateUser(user)) {
-			return new ModelAndView("mypage");
+			CatogoryPaging.categorycheck = false;
+			return new ModelAndView("main", "list", categoryService.categoryList(1));
 		}
 		return new ModelAndView("update");
 	}
