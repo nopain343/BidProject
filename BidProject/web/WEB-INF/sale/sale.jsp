@@ -49,7 +49,7 @@ href="${pageContext.request.contextPath}/resources/css/sale.css">
 											<textarea 
 											rows="12" cols="40" name="descrip" id="descrip"
 												style=" all:unset; resize: none; border: 1px solid;
-												padding : 6px; width: 100%; height: 300px;
+												padding : 6px; width: 96%; height: 300px;
 												text-align: left"></textarea>
 										</div>
 									</div>
@@ -280,13 +280,11 @@ href="${pageContext.request.contextPath}/resources/css/sale.css">
 												<label class="label1">해시태그</label>
 													<div class="tag">※검색시 키워드로 사용됩니다.</div>
 												<div>
-													<input type="text" name="ref" class="ref" style="width: 525px;" placeholder="#키워드입력">
+													<input type="text" name="ref" class="ref" style="width: 540px;" placeholder="#키워드입력">
 												</div>
 												
 												</div>
-											
 										</div>
-										
 										
 										
 										<div class="button">

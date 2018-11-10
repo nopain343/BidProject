@@ -73,10 +73,10 @@ function paging(data){
 	var plus = "'>";
 	var box3 = "</a><br></div><div class='wrap2'><div class='ref'>";
 	var box4 = "<br></div><div class='price'>";
-	var box5 = "<br></div>입찰가<br><div class='term'>";
+	var box5 = "<br></div>현재가<br><div class='term'>";
 	var last = "</div></div></section></section></section>";
 	$.each(data, function(index, entry){
-		total += box1 + entry.code + box2+ entry.code + plus + entry.prodname + box3 + entry.ref + box4 + entry.price + box5 + entry.term + last;
+		total += box1 + entry.code + box2+ entry.code + plus + entry.prodname + box3 + entry.ref + box4 + entry.finalPrice + box5 + entry.term + last;
 });
 	if(${check} == true){
 		
@@ -140,9 +140,9 @@ if(searchn != 0){
 							<div class="prodname"><a href="/BidProject/auction.au?code=${ob.code}">${ob.prodname}</a><br></div>
 										<div class="wrap2">	 
 											<div class="ref">${ob.ref}<br></div>
-											<span class="pricetag">입찰가</span>
+											<span class="pricetag">현재가</span>
 											
-								        	 <div class="price">${ob.price}원</div> 
+								        	 <div class="price">${ob.finalPrice}원</div> 
 											  			<br> 
 											 <div class="term">${ob.term}</div>
 										</div>

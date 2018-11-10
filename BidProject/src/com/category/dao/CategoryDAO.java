@@ -84,10 +84,11 @@ public class CategoryDAO {
 		ResultSet rs=null;
 		
 		try{
-			pstmt=conn.prepareStatement("SELECT CAT1,PRODNAME,PRICE,CONDITION,REF,CODE,ID,TERM,DESCRIP FROM (SELECT ROWNUM RN, AA.* FROM SALES AA WHERE CAT1 like ?) WHERE RN>=?*10-9 AND RN<=?*10");
+			pstmt=conn.prepareStatement("SELECT a.CAT1,a.PRODNAME,a.PRICE,FINALPRICE,a.CONDITION,a.REF,CODE,a.ID,a.TERM,a.DESCRIP FROM (SELECT ROWNUM RN, AA.* FROM SALES AA WHERE CAT1 like ?  AND CONFIRM = 0)a JOIN (SELECT MAX(finalPrice) AS FINALPRICE, CODE FROM AUCTION WHERE CODE LIKE ? GROUP BY CODE) USING(CODE) WHERE RN>=?*10-9 AND RN<=?*10");
 			pstmt.setString(1, "%"+ cat1 + "%");
-			pstmt.setInt(2, page);
+			pstmt.setString(2, "%"+ cat1 + "%");
 			pstmt.setInt(3, page);
+			pstmt.setInt(4, page);
 			rs=pstmt.executeQuery();
 		
 			list = new ArrayList();
@@ -98,6 +99,7 @@ public class CategoryDAO {
 				vo.setCat1(rs.getString("CAT1"));
 				vo.setProdname(rs.getString("PRODNAME"));
 				vo.setPrice(rs.getInt("PRICE"));
+				vo.setFinalPrice(rs.getInt("FINALPRICE"));
 				vo.setCondition(rs.getString("CONDITION"));
 				vo.setRef(rs.getString("REF"));
 				vo.setTerm(rs.getString("TERM"));
