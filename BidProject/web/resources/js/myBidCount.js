@@ -69,7 +69,7 @@ $(document).ready(function(){
 				if(months < 0 || days < 0 || hours < 0 || minutes < 0 || seconds < 0){
 					$(myBidname).html('<a href="/BidProject/confirm.mp?code=' + $(secretCodename).val() + '">판매확정</a>')
 				}else{
-					$(myBidname).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품정보가기</a>')
+					$(myBidname).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품 정보가기</a>')
 				};
 			};
 		};

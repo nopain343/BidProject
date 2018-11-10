@@ -26,6 +26,7 @@ public class MypageController {
 		return new ModelAndView("mypage");
 	}
 	
+// 내상품현황
 	@RequestMapping(value="/myBid.mp" , method=RequestMethod.GET)
 	public ModelAndView list(@ModelAttribute CategoryVO categoryVO) {
 		return new ModelAndView("myBid","list",mybidService.mybid(categoryVO));
@@ -43,7 +44,7 @@ public class MypageController {
 		return new ModelAndView("trade","vo", mybidService.trade(tradeVO));
 	}
 	
-	
+// 내 입찰 현황
 	@RequestMapping(value="/myBidPlace.mp", method=RequestMethod.GET)
 	public ModelAndView place(@ModelAttribute CategoryVO categoryVO) {
 		return new ModelAndView("myBidPlace","list", mybidService.bidplace(categoryVO));

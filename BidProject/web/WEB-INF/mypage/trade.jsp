@@ -14,7 +14,7 @@ function banyou(value1, value2, value3, value4){
 	var prodname = value2;
 	var seller_name = value3;
 	var buyer_name = value4;
-	openWin = window.open("banready.mp?code=" + code + "&prodname="+prodname+"&seller_name=" + seller_name+"buyer_name=" + buyer_name, "childForm","width=300, height=310, resizable = no, scrollbars = no");
+	openWin = window.open("banready.mp?code=" + code + "&prodname="+prodname+"&seller_name=" + seller_name+"&buyer_name=" + buyer_name, "childForm","width=300, height=310, resizable = no, scrollbars = no");
 }
 </script>
 

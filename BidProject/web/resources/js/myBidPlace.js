@@ -65,7 +65,7 @@ $(document).ready(function(){
 			
 			if($(finalPricename).val() === $(pricename).val()){
 				if($(confirmname).val() == 1){
-					$(priceCheckname).html("축하드립니다. 경매에 응찰 되었습니다");
+					$(priceCheckname).html("축하드립니다. 경매에 입찰 되었습니다");
 					$(myBidPlacename).html('<a href="/BidProject/trade.mp?code=' + $(secretCodename).val() + '&finalPrice=' + $(finalPricename).val() + '">경매자 정보보기</a>');
 				}else{
 					$(myBidPlacename).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품 정보가기</a>');
@@ -77,12 +77,12 @@ $(document).ready(function(){
 				}
 			}else{
 				if($(confirmname).val() == 1){
-					$(priceCheckname).html("경매에 실패하였습니다");
+					$(priceCheckname).html("입찰에 실패하였습니다");
 					$(myBidPlacename).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품 정보가기</a>');
 				}else{
 					$(myBidPlacename).html('<a href="/BidProject/auction.au?code=' + $(secretCodename).val() + '">상품 정보가기</a>');
 					if(months < 0 || days < 0 || hours < 0 || minutes < 0 || seconds < 0){
-						$(priceCheckname).html("경매에 실패하였습니다");
+						$(priceCheckname).html("입찰에 실패하였습니다");
 					}else{
 						$(priceCheckname).html("다른 사람에 의해 응찰 최고가가 갱신되었습니다<br><span>최고 응찰가 " + $(finalPricename).val() + "원</span>");
 					}
@@ -92,4 +92,7 @@ $(document).ready(function(){
 		};
 	}, 1000);
 });
+
+
+
 

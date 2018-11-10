@@ -11,21 +11,16 @@
 %>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/boardList.css">
-<title>Insert title here</title>
+<title>Customer Service</title>
+
 <script>
   function boardView(seq,pg){
 	location.href="boardview.bd?seq="+seq+"&pg="+pg;
 }  
 </script>
-</head>
-<body>
+
 <jsp:include page="/menu.jsp" flush="true" />
 
 <section id="backimg" class="backimg">
