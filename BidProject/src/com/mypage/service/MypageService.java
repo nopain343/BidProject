@@ -1,5 +1,8 @@
 package com.mypage.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,32 @@ public class MypageService {
 
 	public List<CategoryVO> mybid(CategoryVO categoryVO) {
 
-		return mybidDAO.myBid(categoryVO);
+		List<CategoryVO> list = mybidDAO.myBid(categoryVO);
+		
+		for(CategoryVO vo : list) {
+			String term = vo.getTerm();
+			Date today = new Date();
+			SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			try {
+				Date dday = dateForm.parse(term);
+				long datetime = dday.getTime();
+				today = dateForm.parse(dateForm.format(today));
+				long todaytime = today.getTime();
+				if((datetime - todaytime)<0) {
+					vo.setYear("0");
+				}else {
+			
+				vo.setYear("1");
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+
+			
+			
+		}
+		
+		return list;
 	}
 
 	public List<CategoryVO> confirm(CategoryVO categoryVO) {
@@ -26,7 +54,35 @@ public class MypageService {
 	
 	
 	public List<CategoryVO> bidplace(CategoryVO categoryVO) {
-		return mybidDAO.bidplace(categoryVO);
+		
+		List<CategoryVO> list = mybidDAO.bidplace(categoryVO);
+		
+		for(CategoryVO vo : list) {
+			String term = vo.getTerm();
+			Date today = new Date();
+			SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			try {
+				Date dday = dateForm.parse(term);
+				long datetime = dday.getTime();
+				today = dateForm.parse(dateForm.format(today));
+				long todaytime = today.getTime();
+				if((datetime - todaytime)<0) {
+					vo.setYear("0");
+				}else {
+			
+				vo.setYear("1");
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+
+			
+			
+		}
+		
+		
+		
+		return list;
 	}
 
 	public TradeVO trade(TradeVO tradeVO) {

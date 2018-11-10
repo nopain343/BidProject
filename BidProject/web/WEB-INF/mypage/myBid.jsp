@@ -18,10 +18,24 @@
 			
 			<div class="wrap3">
 				<span class="prodname">${ob.prodname}</span>
-				
-				<div id="myBid${vs.count}" class="wrap5">
-					<a href="/BidProject/auction.au?code=${ob.code}" class="toAuction">상품정보가기</a>
-				</div>
+<!-- 버튼 바꾸기 -->				
+				<c:if test="${ob.confirm == 1}">
+					<div id="myBid${vs.count}" class="wrap5">
+						<a href="/BidProject/trade.mp?code=${ob.code}&finalPrice=${ob.finalPrice}">낙찰자 연결</a>				
+					</div>
+					</c:if>
+				<c:if test="${ob.confirm != 1}">
+					<c:if test="${ob.year == 0 }">
+						<div id="myBid${vs.count}" class="wrap5">
+						<a href="/BidProject/confirm.mp?code=${ob.code}" >판매확정</a>
+						</div>
+					</c:if>
+					<c:if test="${ob.year != 0 }">
+						<div id="myBid${vs.count}" class="wrap5">
+						<a href="/BidProject/auction.au?code=${ob.code}" class="toAuction">상품 정보가기</a>
+						</div>
+					</c:if>
+				</c:if>
 				
 				<br><br><br><br><br>
 				
