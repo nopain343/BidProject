@@ -47,7 +47,7 @@ function check(){
 		alert("현재 최고가보다 낮은 값을 응찰할 순 없습니다.");
 		return false;
 	}
-	if((bidding.finalPrice.value-bidding.checkprice.value)%1000 != 0){
+	if((bidding.finalPrice.value)%1000 != 0){
 		alert("응찰 단위 확인 부탁드립니다.");
 		return false;
 	}
