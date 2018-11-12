@@ -12,7 +12,6 @@
 	if(searchn != 0){
 	total= ((List<CategoryVO>)request.getAttribute("list")).get(0).getTotal();
 	
-	System.out.println("main.jsp에서 total갯수 : " + total);
 	pg = ((List<CategoryVO>)request.getAttribute("list")).get(0).getPage();
 	
 	
@@ -27,7 +26,6 @@
 	<c:set var="check" value="false"/>		
 <% 		
 	}
-	System.out.println("현재 페이지 : " + pg);
  	
 	}
 %>
@@ -38,7 +36,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-	<script defer src="js/all.min.js"></script>
+	<!-- <script defer src="js/all.min.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

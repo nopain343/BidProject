@@ -25,4 +25,3 @@ public class FileValidator implements Validator{
 
 }
 
-//  || file.getFile().getSize() > 5242880

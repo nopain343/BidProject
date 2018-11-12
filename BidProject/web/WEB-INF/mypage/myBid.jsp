@@ -26,9 +26,11 @@
 					</c:if>
 				<c:if test="${ob.confirm != 1}">
 					<c:if test="${ob.year == 0 }">
+					<c:if test="${ob.id != null}">
 						<div id="myBid${vs.count}" class="wrap5">
 						<a href="/BidProject/confirm.mp?code=${ob.code}" >판매확정</a>
 						</div>
+					</c:if>
 					</c:if>
 					<c:if test="${ob.year != 0 }">
 						<div id="myBid${vs.count}" class="wrap5">
@@ -36,12 +38,12 @@
 						</div>
 					</c:if>
 				</c:if>
-				
 				<br><br><br><br><br>
 				
 				<div class="wrap4">
 					<span class="term">마감시간 ${ob.term}</span><br>
-					<span class="price">현재응찰 최고가 ${ob.price}원</span><br>
+					<c:if test="${ob.id != null}"><span class="price">현재응찰 최고가 ${ob.price}원 </span><br></c:if>
+					<c:if test="${ob.id == null}"><span class="price">아직 응찰자가 없습니다. </span><br></c:if>
 				</div>
 				
 				<%-- <span id="timetest${vs.count}"></span><br> --%>

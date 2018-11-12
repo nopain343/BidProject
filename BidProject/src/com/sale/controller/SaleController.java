@@ -75,15 +75,10 @@ public class SaleController {
 			
 			try {
 				inputStream = file.getInputStream();
-//				File newFile = new File("/Users/jypark/workspace-sts-3.9.6.RELEASE/BidProject/web/resources/image/⁩" + filename_new);
-//				System.out.println("업로드 경로 : " + newFile);
 				
 				String path = WebUtils.getRealPath(request.getSession().getServletContext(), "/resources/image");
 				File newFile = new File(path + "/" + filename_new);
-				System.out.println("업로드시 실제저장될 경로 : " + path);
 
-				
-//				System.out.println(newFile.getName());
 			
 				if(!newFile.exists()) {
 					newFile.createNewFile();

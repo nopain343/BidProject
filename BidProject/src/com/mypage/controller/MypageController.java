@@ -55,9 +55,9 @@ public class MypageController {
 	public ModelAndView banyou(@ModelAttribute BanVO bann) {
 		BanVO ban = bann;
 		switch(bann.getReason()) {
-		case "1" :  ban.setReason("ì—°ë½ ë‘ì ˆ"); break;
-		case "2" :  ban.setReason("ì¶”ê°€ ê°€ê²© ì¸ìƒ ìš”êµ¬"); break;
-		case "3" :  ban.setReason("ì œí’ˆ ë¶ˆëŸ‰ ë° ë¯¸ë°°ì†¡"); break;
+		case "1" :  ban.setReason("¿¬¶ô µÎÀı"); break;
+		case "2" :  ban.setReason("Ãß°¡ °¡°İ ÀÎ»ó ¿ä±¸"); break;
+		case "3" :  ban.setReason("Á¦Ç° ºÒ·® ¹× ¹Ì¹è¼Û"); break;
 		}
 		boolean success = mybidService.banyou(ban);
 		return new ModelAndView("mypage");

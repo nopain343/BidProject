@@ -79,7 +79,6 @@ public class UserController {
 	@ResponseBody
 	public UserVO idcheck(@RequestParam(value="id") String user) {
 		UserVO vo = service.idcheck(user);
-		System.out.println(vo);
 		return vo;
 	}
 

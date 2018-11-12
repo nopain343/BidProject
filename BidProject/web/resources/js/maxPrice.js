@@ -41,6 +41,7 @@ $(document).ready(function(){
 					var table2 = "</span></td></tr></table>"
 					var result = comma(data.finalPrice);
 					$("#output").html("KRW " + result);
+					$("#checkhere").html("<input type='hidden' id='checkprice' value='" + data.finalPrice + "'>");
 					if(data.term == 'fin'){
 						$("#dtime").html("<table id='timetable' style='margin-left: auto; margin-right: auto;' ><tr><th>Days</th><th>Hours</th><th>Minutes</th></tr><tr><td class='t1'>&nbsp;00&nbsp;</td><td class='t2'>&nbsp;00&nbsp;</td><td class='t3'>&nbsp;00</td></tr>")
 						$("#submit").html("<input type='button' id='submitbutton'  value='경매가 종료되었습니다'/>")

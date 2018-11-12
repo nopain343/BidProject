@@ -43,6 +43,17 @@ function check(){
 		alert("입찰 가격을 입력해주세요");
 		return false;
 	}
+	if(bidding.finalPrice.value <= bidding.checkprice.value){
+		alert("현재 최고가보다 낮은 값을 응찰할 순 없습니다.");
+		return false;
+	}
+	if((bidding.finalPrice.value-bidding.checkprice.value)%1000 != 0){
+		alert("응찰 단위 확인 부탁드립니다.");
+		return false;
+	}
+
+	
+	
 	
 	return true;
 	
@@ -95,7 +106,7 @@ ${auction.prodname}
 </h1>
 <span class="title">시작가  &nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="answer">KRW <fmt:formatNumber value="${auction.price}" pattern="#,##0" /></span>
-<br><br><br><p> </p><p> </p><p> </p><p> </p><p> </p></p><p>
+<br><br><br><p> </p><p> </p><p> </p><p> </p><p> </p><p></p><p></p>
 
 <span class="title">현재가   &nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span id="output" class="answer"></span>
@@ -109,6 +120,8 @@ ${auction.prodname}
 <div id="dtime"></div>
 <p> </p>
 <form action="/BidProject/auctionProc.au" name="bidding" method="post" onsubmit="return check()">
+	<span id="checkhere"><input type="hidden" id="checkprice" value="0"></span>
+	
 	<input type="hidden" value="${loginOK.id}" name="id"/>
 	<input type="hidden" value="${auction.code}" id="code" name="code"/>
 	<input type="hidden" value="${auction.term}" id="term" name="term"/>
@@ -126,6 +139,7 @@ ${auction.prodname}
 
 <h2>응찰하시기 전에 <span class="point">반드시 확인</span>하세요.</h2>
 <span id="plus">
+※ 응찰시 최고가 기준 <span class="point">1000원 </span>단위로 입찰 부탁드립니다.<br>
 ※ 본 경매 참여는 응찰자가 충분히 사전에 확인한 것을 전제로 하며, <span class="point">상품 컨디션을 이유로 응찰 또는 낙찰을 취소할 수 없습니다.</span> <br>
 ※ <span class="point">낙찰일로부터 7일 이내</span>에 연락 및 거래해 주시기 부탁드리며 7일 초과 시 <span class="point">상대방 신고에 따른 패널티가 부과</span>될 수 있습니다. <br>
 ※ 위 사항을 염두에 두시고, <span class="point">신중한 선택</span>을 해주시기 바랍니다.

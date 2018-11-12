@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Categorybar.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script defer src="js/all.min.js"></script>
+<!-- 	<script defer src="js/all.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(document).on('mouseleave','#filter', function(){

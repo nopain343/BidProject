@@ -72,6 +72,9 @@ public class AuctionController {
 			return new ModelAndView("auction");
 		}
 	}
+	
+	
+	
 	@RequestMapping(value="/replyInsert.au", method=RequestMethod.POST)
 	public ModelAndView replyInsert(@ModelAttribute ReplyVO vo) {
 		
