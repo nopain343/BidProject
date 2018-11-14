@@ -15,7 +15,7 @@ INSERT INTO AUCTION(ID, CODE, FINALPRICE) VALUES ('a', 'AA02', 22222)
 
 SELECT COUNT(*) AS NUM FROM BOARD
 update 
-select * from user1
+select * from board
 CREATE TABLE board(
      seq NUMBER NOT NULL,                     --글번호
      id VARCHAR2(20) NOT NULL,              --아이디

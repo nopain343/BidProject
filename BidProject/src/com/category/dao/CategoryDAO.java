@@ -74,8 +74,8 @@ public class CategoryDAO {
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn=DriverManager.getConnection(
-					"jdbc:oracle:thin:@192.168.1.145:1521:xe",
-					"bidproject", "1234");
+					"jdbc:oracle:thin:@127.0.0.1:1521:xe",
+					"edu", "1234");
 		}catch(Exception e){
 			e.printStackTrace();		
 		}
